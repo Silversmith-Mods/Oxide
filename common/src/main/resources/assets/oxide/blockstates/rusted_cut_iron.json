@@ -12,24 +12,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron/3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron/9"
       }
     ]
   }
