@@ -2,7 +2,13 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/rusted_corrugated_iron"
+        "model": "oxide:block/rusted_corrugated_iron/0"
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1"
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2"
       }
     ]
   }
