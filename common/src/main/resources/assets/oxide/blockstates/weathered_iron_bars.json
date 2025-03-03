@@ -1,0 +1,100 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/post_ends0"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/post0"
+      }
+    },
+    {
+      "when": {
+        "north": "true",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/cap0"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "true"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/cap0",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "true",
+        "east": "false"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/cap_alt0"
+      }
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "true",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/cap_alt0",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/side0"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/side0",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/side_alt0"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "oxide:block/weathered_iron_bars/side_alt0",
+        "y": 90
+      }
+    }
+  ]
+}

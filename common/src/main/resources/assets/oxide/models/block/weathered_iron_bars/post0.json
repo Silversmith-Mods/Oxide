@@ -1,0 +1,7 @@
+{
+    "parent": "block/iron_bars/post",
+    "textures": {
+        "particle": "oxide:block/weathered_iron_bars/0",
+        "bars": "oxide:block/weathered_iron_bars/0"
+    }
+}

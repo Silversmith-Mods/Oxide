@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "oxide:block/rusted_cut_iron/5",
-    "side": "oxide:block/rusted_cut_iron/5",
-    "top": "oxide:block/rusted_cut_iron/5"
-  }
-}

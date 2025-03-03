@@ -20,36 +20,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
         "uvlock": true,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "y": 270
       }
     ],
     "facing=east,half=bottom,shape=inner_right": [
@@ -64,24 +34,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9"
       }
     ],
     "facing=east,half=bottom,shape=outer_left": [
@@ -104,36 +56,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
         "uvlock": true,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "y": 270
       }
     ],
     "facing=east,half=bottom,shape=outer_right": [
@@ -148,24 +70,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9"
       }
     ],
     "facing=east,half=bottom,shape=straight": [
@@ -180,24 +84,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9"
       }
     ],
     "facing=east,half=top,shape=inner_left": [
@@ -218,36 +104,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "x": 180
       }
@@ -276,42 +132,6 @@
         "uvlock": true,
         "x": 180,
         "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
       }
     ],
     "facing=east,half=top,shape=outer_left": [
@@ -332,36 +152,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
         "uvlock": true,
         "x": 180
       }
@@ -390,42 +180,6 @@
         "uvlock": true,
         "x": 180,
         "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
       }
     ],
     "facing=east,half=top,shape=straight": [
@@ -446,36 +200,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
         "uvlock": true,
         "x": 180
       }
@@ -500,36 +224,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
         "uvlock": true,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "y": 180
       }
     ],
     "facing=north,half=bottom,shape=inner_right": [
@@ -550,36 +244,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "y": 270
       }
@@ -604,36 +268,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
         "uvlock": true,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "y": 180
       }
     ],
     "facing=north,half=bottom,shape=outer_right": [
@@ -656,36 +290,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
         "uvlock": true,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "y": 270
       }
     ],
     "facing=north,half=bottom,shape=straight": [
@@ -706,36 +310,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
         "uvlock": true,
         "y": 270
       }
@@ -764,42 +338,6 @@
         "uvlock": true,
         "x": 180,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
       }
     ],
     "facing=north,half=top,shape=inner_right": [
@@ -820,36 +358,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "x": 180
       }
@@ -878,42 +386,6 @@
         "uvlock": true,
         "x": 180,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
       }
     ],
     "facing=north,half=top,shape=outer_right": [
@@ -934,36 +406,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
         "uvlock": true,
         "x": 180
       }
@@ -992,42 +434,6 @@
         "uvlock": true,
         "x": 180,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
       }
     ],
     "facing=south,half=bottom,shape=inner_left": [
@@ -1042,24 +448,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9"
       }
     ],
     "facing=south,half=bottom,shape=inner_right": [
@@ -1082,36 +470,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
         "uvlock": true,
         "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "y": 90
       }
     ],
     "facing=south,half=bottom,shape=outer_left": [
@@ -1126,24 +484,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8"
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9"
       }
     ],
     "facing=south,half=bottom,shape=outer_right": [
@@ -1166,36 +506,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
         "uvlock": true,
         "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "y": 90
       }
     ],
     "facing=south,half=bottom,shape=straight": [
@@ -1216,36 +526,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
         "uvlock": true,
         "y": 90
       }
@@ -1271,42 +551,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -1336,42 +580,6 @@
         "uvlock": true,
         "x": 180,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
       }
     ],
     "facing=south,half=top,shape=outer_left": [
@@ -1395,42 +603,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -1460,42 +632,6 @@
         "uvlock": true,
         "x": 180,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
       }
     ],
     "facing=south,half=top,shape=straight": [
@@ -1522,42 +658,6 @@
         "uvlock": true,
         "x": 180,
         "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 90
       }
     ],
     "facing=west,half=bottom,shape=inner_left": [
@@ -1578,36 +678,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "y": 90
       }
@@ -1632,36 +702,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
         "uvlock": true,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "y": 180
       }
     ],
     "facing=west,half=bottom,shape=outer_left": [
@@ -1682,36 +722,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 90
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
         "uvlock": true,
         "y": 90
       }
@@ -1736,36 +746,6 @@
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
         "uvlock": true,
         "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "y": 180
       }
     ],
     "facing=west,half=bottom,shape=straight": [
@@ -1786,36 +766,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
         "uvlock": true,
         "y": 180
       }
@@ -1841,42 +791,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/inner_3",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -1906,42 +820,6 @@
         "uvlock": true,
         "x": 180,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/inner_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
       }
     ],
     "facing=west,half=top,shape=outer_left": [
@@ -1965,42 +843,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/outer_3",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -2030,42 +872,6 @@
         "uvlock": true,
         "x": 180,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/outer_9",
-        "uvlock": true,
-        "x": 180,
-        "y": 270
       }
     ],
     "facing=west,half=top,shape=straight": [
@@ -2089,42 +895,6 @@
       },
       {
         "model": "oxide:block/rusted_cut_iron_stairs/straight_3",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_4",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_5",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_6",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_7",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_8",
-        "uvlock": true,
-        "x": 180,
-        "y": 180
-      },
-      {
-        "model": "oxide:block/rusted_cut_iron_stairs/straight_9",
         "uvlock": true,
         "x": 180,
         "y": 180

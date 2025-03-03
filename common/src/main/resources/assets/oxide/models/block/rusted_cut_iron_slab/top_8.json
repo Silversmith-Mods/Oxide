@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "oxide:block/rusted_cut_iron/8",
-    "side": "oxide:block/rusted_cut_iron/8",
-    "top": "oxide:block/rusted_cut_iron/8"
-  }
-}
