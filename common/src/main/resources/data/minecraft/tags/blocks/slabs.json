@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:iron_scaffold_slab",
+    "oxide:weathered_iron_scaffold_slab",
+    "oxide:rusted_iron_scaffold_slab"
+  ]
+}
