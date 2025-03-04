@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_top",
+  "textures": {
+    "texture": "oxide:block/rusted_heavy_iron_trapdoor"
+  }
+}

@@ -145,5 +145,13 @@
 
   "block.oxide.rusted_corrugated_iron": "Rusted Corrugated Iron",
   "block.oxide.rusted_corrugated_iron_stairs": "Rusted Corrugated Iron Stairs",
-  "block.oxide.rusted_corrugated_iron_slab": "Rusted Corrugated Iron Slab"
+  "block.oxide.rusted_corrugated_iron_slab": "Rusted Corrugated Iron Slab",
+
+  "block.oxide.heavy_iron_door": "Heavy Iron Door",
+  "block.oxide.weathered_heavy_iron_door": "Weathered Heavy Iron Door",
+  "block.oxide.rusted_heavy_iron_door": "Rusted Heavy Iron Door",
+
+  "block.oxide.heavy_iron_trapdoor": "Heavy Iron Trapdoor",
+  "block.oxide.weathered_heavy_iron_trapdoor": "Weathered Heavy Iron Trapdoor",
+  "block.oxide.rusted_heavy_iron_trapdoor": "Rusted Heavy Iron Trapdoor"
 }

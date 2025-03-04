@@ -8,8 +8,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.block.state.properties.SlabType;
 
 import java.util.Objects;
 
@@ -26,9 +25,10 @@ public class RotatableSlabBlock extends RustableSlabBlock {
         BlockState blockState = context.getLevel().getBlockState(blockPos);
         var bl = Objects.requireNonNull(context.getPlayer()).isSecondaryUseActive();
         var dir = context.getHorizontalDirection();
+        var type = (context.getClickLocation().y - (double)blockPos.getY() > 0.5) ? SlabType.TOP : SlabType.BOTTOM;
         if (blockState.is(this)) {
             return blockState.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, false).setValue(FACING, bl ? dir.getOpposite() : dir);
-        } return this.defaultBlockState().setValue(FACING, bl ? dir.getOpposite() : dir);
+        } return this.defaultBlockState().setValue(FACING, bl ? dir.getOpposite() : dir).setValue(TYPE, type);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

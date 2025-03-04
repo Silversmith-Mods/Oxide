@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "oxide:block/rusted_heavy_iron_door/bottom",
+    "top": "oxide:block/rusted_heavy_iron_door/top"
+  }
+}

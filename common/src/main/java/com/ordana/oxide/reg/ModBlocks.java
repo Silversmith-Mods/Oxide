@@ -382,43 +382,26 @@ public class ModBlocks {
 
     public static final Supplier<Block> HEAVY_IRON_DOOR = regWithItem("heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
-
     public static final Supplier<Block> WEATHERED_HEAVY_IRON_DOOR = regWithItem("weathered_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_DOOR = regWithItem("rusted_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
 
-    public static final Supplier<Block> WEATHERED_IRON_TRAPDOOR = regWithItem("weathered_iron_trapdoor", () ->
+
+    public static final Supplier<Block> HEAVY_IRON_TRAPDOOR = regWithItem("heavy_iron_trapdoor", () ->
+            new RustableTrapdoorBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
+    public static final Supplier<Block> WEATHERED_HEAVY_IRON_TRAPDOOR = regWithItem("weathered_heavy_iron_trapdoor", () ->
             new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
-    public static final Supplier<Block> RUSTED_IRON_TRAPDOOR = regWithItem("rusted_iron_trapdoor", () ->
+    public static final Supplier<Block> RUSTED_HEAVY_IRON_TRAPDOOR = regWithItem("rusted_heavy_iron_trapdoor", () ->
             new RustableTrapdoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
+
 
     public static final Supplier<Block> WEATHERED_IRON_BARS = regWithItem("weathered_iron_bars", () ->
             new RustableBarsBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
     public static final Supplier<Block> RUSTED_IRON_BARS = regWithItem("rusted_iron_bars", () ->
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
 
-    //waxed
-    public static final Supplier<Block> WAXED_HEAVY_IRON_DOOR = regWithItem("waxed_heavy_iron_door", () ->
-            new RustAffectedDoorBlock(Rustable.RustLevel.UNAFFECTED, noTick(Blocks.IRON_DOOR)));
-    public static final Supplier<Block> WAXED_WEATHERED_HEAVY_IRON_DOOR = regWithItem("waxed_weathered_heavy_iron_door", () ->
-            new RustAffectedDoorBlock(Rustable.RustLevel.WEATHERED, noTick(Blocks.IRON_DOOR)));
-    public static final Supplier<Block> WAXED_RUSTED_HEAVY_IRON_DOOR = regWithItem("waxed_rusted_heavy_iron_door", () ->
-            new RustAffectedDoorBlock(Rustable.RustLevel.RUSTED, noTick(Blocks.IRON_DOOR)));
 
-    public static final Supplier<Block> WAXED_IRON_TRAPDOOR = regWithItem("waxed_iron_trapdoor", () ->
-            new RustAffectedTrapdoorBlock(Rustable.RustLevel.UNAFFECTED, noTick(Blocks.IRON_TRAPDOOR), BlockSetType.IRON));
-    public static final Supplier<Block> WAXED_WEATHERED_IRON_TRAPDOOR = regWithItem("waxed_weathered_iron_trapdoor", () ->
-            new RustAffectedTrapdoorBlock(Rustable.RustLevel.WEATHERED, noTick(Blocks.IRON_TRAPDOOR), BlockSetType.IRON));
-    public static final Supplier<Block> WAXED_RUSTED_IRON_TRAPDOOR = regWithItem("waxed_rusted_iron_trapdoor", () ->
-            new RustAffectedTrapdoorBlock(Rustable.RustLevel.RUSTED, noTick(Blocks.IRON_TRAPDOOR), BlockSetType.IRON));
-
-    public static final Supplier<Block> WAXED_IRON_BARS = regWithItem("waxed_iron_bars", () ->
-            new IronBarsBlock(noTick(Blocks.IRON_BARS)) {});
-    public static final Supplier<Block> WAXED_WEATHERED_IRON_BARS = regWithItem("waxed_weathered_iron_bars", () ->
-            new IronBarsBlock(noTick(Blocks.IRON_BARS)) {});
-    public static final Supplier<Block> WAXED_RUSTED_IRON_BARS = regWithItem("waxed_rusted_iron_bars", () ->
-            new IronBarsBlock(noTick(Blocks.IRON_BARS)) {});
 
 
     private static BlockBehaviour.Properties noTick(Block copyFrom){
