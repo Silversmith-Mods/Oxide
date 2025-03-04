@@ -380,9 +380,12 @@ public class ModBlocks {
 
     //iron decor
 
-    public static final Supplier<Block> WEATHERED_IRON_DOOR = regWithItem("weathered_iron_door", () ->
+    public static final Supplier<Block> HEAVY_IRON_DOOR = regWithItem("heavy_iron_door", () ->
+            new RustableDoorBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
+
+    public static final Supplier<Block> WEATHERED_HEAVY_IRON_DOOR = regWithItem("weathered_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
-    public static final Supplier<Block> RUSTED_IRON_DOOR = regWithItem("rusted_iron_door", () ->
+    public static final Supplier<Block> RUSTED_HEAVY_IRON_DOOR = regWithItem("rusted_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_DOOR)));
 
     public static final Supplier<Block> WEATHERED_IRON_TRAPDOOR = regWithItem("weathered_iron_trapdoor", () ->
@@ -396,11 +399,11 @@ public class ModBlocks {
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_BARS)));
 
     //waxed
-    public static final Supplier<Block> WAXED_IRON_DOOR = regWithItem("waxed_iron_door", () ->
+    public static final Supplier<Block> WAXED_HEAVY_IRON_DOOR = regWithItem("waxed_heavy_iron_door", () ->
             new RustAffectedDoorBlock(Rustable.RustLevel.UNAFFECTED, noTick(Blocks.IRON_DOOR)));
-    public static final Supplier<Block> WAXED_WEATHERED_IRON_DOOR = regWithItem("waxed_weathered_iron_door", () ->
+    public static final Supplier<Block> WAXED_WEATHERED_HEAVY_IRON_DOOR = regWithItem("waxed_weathered_heavy_iron_door", () ->
             new RustAffectedDoorBlock(Rustable.RustLevel.WEATHERED, noTick(Blocks.IRON_DOOR)));
-    public static final Supplier<Block> WAXED_RUSTED_IRON_DOOR = regWithItem("waxed_rusted_iron_door", () ->
+    public static final Supplier<Block> WAXED_RUSTED_HEAVY_IRON_DOOR = regWithItem("waxed_rusted_heavy_iron_door", () ->
             new RustAffectedDoorBlock(Rustable.RustLevel.RUSTED, noTick(Blocks.IRON_DOOR)));
 
     public static final Supplier<Block> WAXED_IRON_TRAPDOOR = regWithItem("waxed_iron_trapdoor", () ->

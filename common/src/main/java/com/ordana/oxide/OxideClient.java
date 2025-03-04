@@ -34,8 +34,9 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
 
-        ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_DOOR.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.HEAVY_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WEATHERED_HEAVY_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.RUSTED_HEAVY_IRON_DOOR.get(), RenderType.cutout());
 
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_TRAPDOOR.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_TRAPDOOR.get(), RenderType.cutout());
@@ -43,9 +44,9 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_BARS.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_BARS.get(), RenderType.cutoutMipped());
 
-        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_DOOR.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_DOOR.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_DOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_DOOR.get(), RenderType.cutout());
 
         ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_TRAPDOOR.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_TRAPDOOR.get(), RenderType.cutout());

@@ -69,8 +69,8 @@ public class ModCreativeTab {
         );
 
         after(e, Items.IRON_DOOR, CreativeModeTabs.BUILDING_BLOCKS,
-            ModBlocks.WEATHERED_IRON_DOOR, ModBlocks.RUSTED_IRON_DOOR,
-            ModBlocks.WAXED_IRON_DOOR, ModBlocks.WAXED_WEATHERED_IRON_DOOR, ModBlocks.WAXED_RUSTED_IRON_DOOR
+            ModBlocks.HEAVY_IRON_DOOR, ModBlocks.WEATHERED_HEAVY_IRON_DOOR, ModBlocks.RUSTED_HEAVY_IRON_DOOR,
+            ModBlocks.WAXED_HEAVY_IRON_DOOR, ModBlocks.WAXED_WEATHERED_HEAVY_IRON_DOOR, ModBlocks.WAXED_RUSTED_HEAVY_IRON_DOOR
         );
 
         after(e, Items.IRON_TRAPDOOR, CreativeModeTabs.BUILDING_BLOCKS,
