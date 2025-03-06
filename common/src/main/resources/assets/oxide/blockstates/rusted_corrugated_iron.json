@@ -1,6 +1,130 @@
 {
   "variants": {
-    "": [
+    "axis=x,facing=north": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=x,facing=south": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=x,facing=east": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=x,facing=west": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=z,facing=north": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90
+      }
+    ],
+    "axis=,facing=south": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90
+      }
+    ],
+    "axis=z,facing=east": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90
+      }
+    ],
+    "axis=z,facing=west": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1_horizontal",
+        "x": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2_horizontal",
+        "x": 90
+      }
+    ],
+    "axis=y,facing=north": [
       {
         "model": "oxide:block/rusted_corrugated_iron/0"
       },
@@ -9,6 +133,48 @@
       },
       {
         "model": "oxide:block/rusted_corrugated_iron/2"
+      }
+    ],
+    "axis=y,facing=south": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0",
+        "y": 180
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1",
+        "y": 180
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2",
+        "y": 180
+      }
+    ],
+    "axis=y,facing=east": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0",
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1",
+        "y": 90
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2",
+        "y": 90
+      }
+    ],
+    "axis=y,facing=west": [
+      {
+        "model": "oxide:block/rusted_corrugated_iron/0",
+        "y": 270
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/1",
+        "y": 270
+      },
+      {
+        "model": "oxide:block/rusted_corrugated_iron/2",
+        "y": 270
       }
     ]
   }

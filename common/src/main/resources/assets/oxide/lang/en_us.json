@@ -153,5 +153,8 @@
 
   "block.oxide.heavy_iron_trapdoor": "Heavy Iron Trapdoor",
   "block.oxide.weathered_heavy_iron_trapdoor": "Weathered Heavy Iron Trapdoor",
-  "block.oxide.rusted_heavy_iron_trapdoor": "Rusted Heavy Iron Trapdoor"
+  "block.oxide.rusted_heavy_iron_trapdoor": "Rusted Heavy Iron Trapdoor",
+
+  "block.oxide.weathered_iron_bars": "Weathered Iron Bars",
+  "block.oxide.rusted_iron_bars": "Rusted Iron Bars"
 }

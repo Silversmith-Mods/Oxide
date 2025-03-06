@@ -47,7 +47,7 @@
 		},
 		{
 			"name": "innercube",
-			"from": [16, 16, 16],
+			"from": [15.99, 15.99, 15.99],
 			"to": [8, 8, 8],
 			"faces": {
 				"north": {"uv": [8, 8, 0, 0], "texture": "#east"},
@@ -59,8 +59,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [16, 8, 16],
-			"to": [8, 0, 8],
+			"from": [15.99, 8, 15.99],
+			"to": [8, 0.01, 8],
 			"faces": {
 				"north": {"uv": [8, 16, 0, 8], "texture": "#east"},
 				"west": {"uv": [16, 16, 8, 8], "texture": "#south"}
@@ -68,8 +68,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [16, 8, 8],
-			"to": [8, 0, 0],
+			"from": [15.99, 8, 8],
+			"to": [8, 0.01, 0.01],
 			"faces": {
 				"south": {"uv": [16, 16, 8, 8], "texture": "#north", "cullface": "south"},
 				"west": {"uv": [8, 16, 0, 8], "texture": "#south"},
@@ -78,8 +78,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [8, 8, 16],
-			"to": [0, 0, 0],
+			"from": [8, 8, 15.99],
+			"to": [0.01, 0.01, 0.01],
 			"faces": {
 				"north": {"uv": [16, 16, 8, 8], "texture": "#east"},
 				"east": {"uv": [16, 16, 0, 8], "texture": "#west", "cullface": "east"},

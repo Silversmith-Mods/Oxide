@@ -166,73 +166,73 @@ public class ModBlocks {
 
     //corrugated iron
     public static final Supplier<Block> WHITE_CORRUGATED_IRON = regWithItem("white_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIGHT_GRAY_CORRUGATED_IRON = regWithItem("light_gray_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> GRAY_CORRUGATED_IRON = regWithItem("gray_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BLACK_CORRUGATED_IRON = regWithItem("black_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BROWN_CORRUGATED_IRON = regWithItem("brown_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> RED_CORRUGATED_IRON = regWithItem("red_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> ORANGE_CORRUGATED_IRON = regWithItem("orange_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> YELLOW_CORRUGATED_IRON = regWithItem("yellow_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIME_CORRUGATED_IRON = regWithItem("lime_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> GREEN_CORRUGATED_IRON = regWithItem("green_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BLUE_CORRUGATED_IRON = regWithItem("blue_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> PURPLE_CORRUGATED_IRON = regWithItem("purple_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> MAGENTA_CORRUGATED_IRON = regWithItem("magenta_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> PINK_CORRUGATED_IRON = regWithItem("pink_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIGHT_BLUE_CORRUGATED_IRON = regWithItem("light_blue_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> CYAN_CORRUGATED_IRON = regWithItem("cyan_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> WEATHERED_WHITE_CORRUGATED_IRON = regWithItem("weathered_white_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIGHT_GRAY_CORRUGATED_IRON = regWithItem("weathered_light_gray_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_GRAY_CORRUGATED_IRON = regWithItem("weathered_gray_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BLACK_CORRUGATED_IRON = regWithItem("weathered_black_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BROWN_CORRUGATED_IRON = regWithItem("weathered_brown_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_RED_CORRUGATED_IRON = regWithItem("weathered_red_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_ORANGE_CORRUGATED_IRON = regWithItem("weathered_orange_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_YELLOW_CORRUGATED_IRON = regWithItem("weathered_yellow_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIME_CORRUGATED_IRON = regWithItem("weathered_lime_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_GREEN_CORRUGATED_IRON = regWithItem("weathered_green_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BLUE_CORRUGATED_IRON = regWithItem("weathered_blue_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_PURPLE_CORRUGATED_IRON = regWithItem("weathered_purple_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_MAGENTA_CORRUGATED_IRON = regWithItem("weathered_magenta_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_PINK_CORRUGATED_IRON = regWithItem("weathered_pink_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIGHT_BLUE_CORRUGATED_IRON = regWithItem("weathered_light_blue_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_CYAN_CORRUGATED_IRON = regWithItem("weathered_cyan_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> RUSTED_CORRUGATED_IRON = regWithItem("rusted_corrugated_iron", () ->
-            new RustableBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableSheetMetalBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
 
 
