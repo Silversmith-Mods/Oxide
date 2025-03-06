@@ -1,5 +1,5 @@
 {
-    "parent": "block/iron_bars/cap_alt",
+    "parent": "block/iron_bars_side_alt",
     "textures": {
         "particle": "oxide:block/weathered_iron_bars/0",
         "bars": "oxide:block/weathered_iron_bars/0",

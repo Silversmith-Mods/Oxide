@@ -1,8 +1,7 @@
 {
-    "parent": "block/iron_bars/side",
+    "parent": "block/iron_bars_post_ends",
     "textures": {
         "particle": "oxide:block/weathered_iron_bars/0",
-        "bars": "oxide:block/weathered_iron_bars/0",
         "edge": "oxide:block/weathered_iron_bars/0"
     }
 }
