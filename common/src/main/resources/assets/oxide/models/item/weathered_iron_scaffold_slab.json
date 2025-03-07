@@ -5,7 +5,7 @@
 		"6": "oxide:block/weathered_iron_scaffold_stairs/default",
 		"7": "oxide:block/weathered_iron_scaffold_stairs/lat",
 		"8": "oxide:block/weathered_iron_scaffold_stairs/top/block",
-		"particle": "#bottom"
+		"particle": "oxide:block/weathered_iron_scaffold_stairs/default"
 	},
 	"elements": [
 		{
@@ -22,8 +22,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [16, 8, 16],
-			"to": [0, 0, 0],
+			"from": [15.98, 7.98, 15.98],
+			"to": [0.02, 0.02, 0.02],
 			"faces": {
 				"north": {"uv": [16, 16, 0, 8], "texture": "#7", "cullface": "north"},
 				"east": {"uv": [16, 16, 0, 8], "texture": "#7"},
@@ -34,6 +34,7 @@
 			}
 		}
 	],
+	"gui_light": "front",
 	"display": {
 		"thirdperson_lefthand": {
 			"rotation": [75, -135, 0],

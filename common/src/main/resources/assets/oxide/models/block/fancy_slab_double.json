@@ -18,8 +18,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [15.99, 8, 15.99],
-			"to": [0.01, 0.01, 0.01],
+			"from": [15.98, 7.99, 15.98],
+			"to": [0.02, 0.02, 0.02],
 			"faces": {
 				"north": {"uv": [16, 16, 0, 8], "texture": "#south", "cullface": "south"},
 				"east": {"uv": [16, 16, 0, 8], "texture": "#west", "cullface": "west"},
@@ -41,8 +41,8 @@
 		},
 		{
 			"name": "innercube",
-			"from": [15.99, 15.99, 15.99],
-			"to": [0.01, 8, 0.01],
+			"from": [15.98, 15.98, 15.98],
+			"to": [0.02, 8.01, 0.02],
 			"faces": {
 				"north": {"uv": [16, 8, 0, 0], "texture": "#south", "cullface": "south"},
 				"east": {"uv": [16, 8, 0, 0], "texture": "#west", "cullface": "west"},
