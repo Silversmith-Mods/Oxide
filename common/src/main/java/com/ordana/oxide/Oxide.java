@@ -2,9 +2,7 @@ package com.ordana.oxide;
 
 import com.ordana.oxide.configs.ClientConfigs;
 import com.ordana.oxide.configs.CommonConfigs;
-import com.ordana.oxide.reg.ModBlocks;
-import com.ordana.oxide.reg.ModCreativeTab;
-import com.ordana.oxide.reg.ModParticles;
+import com.ordana.oxide.reg.*;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -33,6 +31,8 @@ public class Oxide {
         ModParticles.init();
         ModCreativeTab.init();
         ModBlocks.init();
+        ModItems.init();
+        ModEntities.init();
     }
 
     public static void setup() {

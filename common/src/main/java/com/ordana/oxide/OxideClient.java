@@ -1,25 +1,33 @@
 package com.ordana.oxide;
 
 import com.ordana.oxide.configs.ClientConfigs;
+import com.ordana.oxide.entities.RustyNailRenderer;
 import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModEntities;
 import com.ordana.oxide.reg.ModParticles;
+import net.mehvahdjukaar.moonlight.api.client.renderer.FallingBlockRendererGeneric;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.ArrowRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
 
 public class OxideClient {
-    
+
+    public static final ModelLayerLocation RUSTY_NAIL =  new ModelLayerLocation(Oxide.res("rusty_nail"), "rusty_nail");
+
     public static void init() {
         ClientHelper.addClientSetup(OxideClient::setup);
+        ClientHelper.addEntityRenderersRegistration(OxideClient::registerEntityRenderers);
         ClientHelper.registerOptionalTexturePack(Oxide.res("visual_waxed_iron_items"));
         ClientHelper.addParticleRegistration(OxideClient::registerParticles);
     }
-
 
     public static void setup() {
         ClientHelper.registerRenderType(ModBlocks.IRON_SCAFFOLD.get(), RenderType.cutout());
@@ -40,6 +48,10 @@ public class OxideClient {
 
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_BARS.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_BARS.get(), RenderType.cutoutMipped());
+    }
+
+    private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
+        event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {

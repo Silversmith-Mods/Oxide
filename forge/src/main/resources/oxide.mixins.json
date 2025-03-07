@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.ordana.oxide.mixins.fabric",
+  "package": "com.ordana.oxide.forge.mixins",
   "compatibilityLevel": "JAVA_17",
   "client": [
   ],
