@@ -153,6 +153,9 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
 
             .put(ModBlocks.HEAVY_IRON_TRAPDOOR.get(), ModBlocks.WEATHERED_HEAVY_IRON_TRAPDOOR.get())
             .put(ModBlocks.WEATHERED_HEAVY_IRON_TRAPDOOR.get(), ModBlocks.RUSTED_HEAVY_IRON_TRAPDOOR.get())
+            
+            .put(ModBlocks.HEAVY_IRON_CHAIN.get(), ModBlocks.WEATHERED_HEAVY_IRON_CHAIN.get())
+            .put(ModBlocks.WEATHERED_HEAVY_IRON_CHAIN.get(), ModBlocks.RUSTED_HEAVY_IRON_CHAIN.get())
 
             .put(Blocks.IRON_BARS, ModBlocks.WEATHERED_IRON_BARS.get())
             .put(ModBlocks.WEATHERED_IRON_BARS.get(), ModBlocks.RUSTED_IRON_BARS.get())

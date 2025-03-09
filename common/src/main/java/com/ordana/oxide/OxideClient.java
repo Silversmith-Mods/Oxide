@@ -46,6 +46,10 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
 
+        ClientHelper.registerRenderType(ModBlocks.HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WEATHERED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.RUSTED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_BARS.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_BARS.get(), RenderType.cutoutMipped());
     }
