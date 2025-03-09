@@ -6,10 +6,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class HeavyChainBlock extends ChainBlock implements Rustable {
+public class RustableChainBlock extends ChainBlock implements Rustable {
     private final RustLevel rustLevel;
 
-    public HeavyChainBlock(RustLevel rustLevel, Properties settings) {
+    public RustableChainBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
     }

@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/chain",
+    "textures": {
+        "particle": "oxide:block/rusted_heavy_iron_chain/0",
+        "all": "oxide:block/rusted_heavy_iron_chain/0"
+    }
+}

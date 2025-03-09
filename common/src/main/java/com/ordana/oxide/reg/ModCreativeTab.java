@@ -28,9 +28,10 @@ public class ModCreativeTab {
 
 
         after(e, Items.IRON_BLOCK, CreativeModeTabs.BUILDING_BLOCKS,
-                ModBlocks.WET_CEMENT, ModBlocks.CEMENT, ModBlocks.CEMENT_STAIRS, ModBlocks.CEMENT_SLAB,
+            ModBlocks.WET_CEMENT, ModBlocks.CEMENT, ModBlocks.CEMENT_STAIRS, ModBlocks.CEMENT_SLAB,
 
-                ModBlocks.PLATE_IRON, ModBlocks.PLATE_IRON_STAIRS, ModBlocks.PLATE_IRON_SLAB,
+            ModItems.RUSTY_NAIL,
+            ModBlocks.PLATE_IRON, ModBlocks.PLATE_IRON_STAIRS, ModBlocks.PLATE_IRON_SLAB,
             ModBlocks.WEATHERED_PLATE_IRON, ModBlocks.WEATHERED_PLATE_IRON_STAIRS, ModBlocks.WEATHERED_PLATE_IRON_SLAB,
             ModBlocks.RUSTED_PLATE_IRON, ModBlocks.RUSTED_PLATE_IRON_STAIRS, ModBlocks.RUSTED_PLATE_IRON_SLAB,
 
@@ -65,6 +66,10 @@ public class ModCreativeTab {
 
         after(e, Items.IRON_TRAPDOOR, CreativeModeTabs.BUILDING_BLOCKS,
             ModBlocks.HEAVY_IRON_TRAPDOOR, ModBlocks.WEATHERED_HEAVY_IRON_TRAPDOOR, ModBlocks.RUSTED_HEAVY_IRON_TRAPDOOR
+        );
+
+        after(e, Items.IRON_TRAPDOOR, CreativeModeTabs.BUILDING_BLOCKS,
+                ModBlocks.HEAVY_IRON_CHAIN, ModBlocks.WEATHERED_HEAVY_IRON_CHAIN, ModBlocks.RUSTED_HEAVY_IRON_CHAIN
         );
     }
 

@@ -397,11 +397,11 @@ public class ModBlocks {
 
 
     public static final Supplier<Block> HEAVY_IRON_CHAIN = regWithItem("heavy_iron_chain", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
+            new RustableChainBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
     public static final Supplier<Block> WEATHERED_HEAVY_IRON_CHAIN = regWithItem("weathered_heavy_iron_chain", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
+            new RustableChainBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_CHAIN = regWithItem("rusted_heavy_iron_chain", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
+            new RustableChainBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.copy(Blocks.CHAIN)));
 
 
     public static final Supplier<Block> WEATHERED_IRON_BARS = regWithItem("weathered_iron_bars", () ->
