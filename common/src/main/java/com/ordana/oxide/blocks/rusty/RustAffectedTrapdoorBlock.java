@@ -1,24 +1,19 @@
 package com.ordana.oxide.blocks.rusty;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 //affected by rust but cannot rust itself (waxed)
 public class RustAffectedTrapdoorBlock extends TrapDoorBlock {
     private final Rustable.RustLevel rustLevel;
 
-    public RustAffectedTrapdoorBlock(Rustable.RustLevel rustLevel, Properties properties, BlockSetType type) {
-        super(properties, type);
+    public RustAffectedTrapdoorBlock(Rustable.RustLevel rustLevel, Properties properties) {
+        super(properties, BlockSetType.IRON);
         this.rustLevel = rustLevel;
     }
 
+
+/*
     public void playOpenCloseSound(Level level, BlockPos pos, boolean open) {
         level.levelEvent(null, open ? 1011 : 1006, pos, 0);
     }
@@ -66,6 +61,7 @@ public class RustAffectedTrapdoorBlock extends TrapDoorBlock {
             level.setBlock(pos, state.setValue(OPEN, state.getValue(OPEN)), Block.UPDATE_CLIENTS); // set open to match the powered state (powered true, open true)
         }
     }
+    */
 
     public Rustable.RustLevel getAge() {
         return this.rustLevel;

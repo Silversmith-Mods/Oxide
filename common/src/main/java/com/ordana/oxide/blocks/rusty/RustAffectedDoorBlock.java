@@ -3,7 +3,9 @@ package com.ordana.oxide.blocks.rusty;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -13,8 +15,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
-public class RustAffectedDoorBlock extends DoorBlock{
+public class RustAffectedDoorBlock extends DoorBlock {
 
     protected final Rustable.RustLevel rustLevel;
 
@@ -43,6 +46,7 @@ public class RustAffectedDoorBlock extends DoorBlock{
         level.levelEvent(null, open ? 1011 : 1005, pos, 0);
     }
 
+    /*
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
         boolean hasPower = level.hasNeighborSignal(pos) || level.hasNeighborSignal(pos.relative(state.getValue(HALF) == DoubleBlockHalf.LOWER ? Direction.UP : Direction.DOWN));
@@ -51,6 +55,8 @@ public class RustAffectedDoorBlock extends DoorBlock{
             switch (this.getAge()) {
                 case UNAFFECTED -> {
                     if (hasPower != state.getValue(OPEN)) {
+                        this.playSound((Entity)null, level, pos, bl);
+                        level.gameEvent(null, bl ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                         this.playSound(level, pos, hasPower);
                         level.gameEvent(null,hasPower ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
                     }
@@ -87,6 +93,11 @@ public class RustAffectedDoorBlock extends DoorBlock{
         }
     }
 
+    private void playSound(@Nullable Entity source, Level level, BlockPos pos, boolean isOpening) {
+        level.playSound(source, pos, isOpening ? this.type.doorOpen() : this.type.doorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+    }
+
+     */
 
     public Rustable.RustLevel getAge() {
         return rustLevel;

@@ -20,5 +20,5 @@ public class ModEntities {
 
     public static Supplier<EntityType<RustyNailEntity>> RUSTY_NAIL = RegHelper.registerEntityType(
             Oxide.res("rusty_nail"),
-            RustyNailEntity::new, MobCategory.MISC, 0.7F, 0.7F, 10, 20);
+            RustyNailEntity::new, MobCategory.MISC, 0.3F, 0.3F, 10, 20);
 }

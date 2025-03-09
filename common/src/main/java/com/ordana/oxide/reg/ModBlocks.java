@@ -14,6 +14,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.function.Supplier;
 
@@ -389,7 +391,7 @@ public class ModBlocks {
 
 
     public static final Supplier<Block> HEAVY_IRON_TRAPDOOR = regWithItem("heavy_iron_trapdoor", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
+            new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
     public static final Supplier<Block> WEATHERED_HEAVY_IRON_TRAPDOOR = regWithItem("weathered_heavy_iron_trapdoor", () ->
             new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.copy(Blocks.IRON_TRAPDOOR)));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_TRAPDOOR = regWithItem("rusted_heavy_iron_trapdoor", () ->

@@ -23,17 +23,19 @@ public class RustyNailRenderer<T extends RustyNailEntity> extends EntityRenderer
 
     public void render(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
-        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0F));
-        poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot())));
-        float p = 1 - partialTicks;
-        if (p > 0.0F) {
-            float q = -Mth.sin(p * 3.0F) * p;
-            poseStack.mulPose(Axis.ZP.rotationDegrees(q));
-        }
+        //poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0F));
+        //poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot())));
+        //float p = 1 - partialTicks;
+        //if (p > 0.0F) {
+        //    float q = -Mth.sin(p * 3.0F) * p;
+        //    poseStack.mulPose(Axis.ZP.rotationDegrees(q));
+        //}
 
-        poseStack.mulPose(Axis.XP.rotationDegrees(45.0F));
-        poseStack.scale(0.05625F, 0.05625F, 0.05625F);
-        poseStack.translate(-4.0F, 0.0F, 0.0F);
+        poseStack.mulPose(Axis.YP.rotationDegrees(45.0F));
+        poseStack.mulPose(Axis.ZP.rotationDegrees(90.0F));
+
+        poseStack.scale(0.075F, 0.075F, 0.075F);
+        poseStack.translate(8.0F, 0.0F, 0.0F);
         VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.entityCutout(LOCATION));
         PoseStack.Pose pose = poseStack.last();
         Matrix4f matrix4f = pose.pose();
