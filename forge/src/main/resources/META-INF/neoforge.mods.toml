@@ -1,0 +1,38 @@
+
+modLoader="javafml"
+
+loaderVersion="[4,)"
+
+license="LGPLv3"
+
+[[mods]]
+    modId="oxide"
+    version = "${version}"
+    displayName="Oxide"
+    logoFile="icon.png"
+    credits="Ordana"
+    authors="Ordana, Keyberries"
+    itemIcon="oxide:template"
+    description='''Template Mod Description'''
+
+[[dependencies.oxide]]
+    modId="neoforge"
+    type = "required"
+    versionRange="[4,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.oxide]]
+    modId="minecraft"
+    type = "required"
+    versionRange="[1.21.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.oxide]]
+    modId="moonlight"
+    type = "required"
+    referralUrl = "https://www.curseforge.com/minecraft/mc-mods/selene"
+    versionRange="[1.21-2.17.34,]"
+    ordering="NONE"
+    side="BOTH"
