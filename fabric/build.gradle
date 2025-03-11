@@ -23,19 +23,21 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
 
-    modImplementation("curse.maven:selene-499980:6285008")
-
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+    modImplementation("curse.maven:selene-499980:6285008")
+
+    modCompileOnly "com.terraformersmc:modmenu:4.0.6", {
+        exclude module: "fabric-api"
+    }
 }
 
+
+
 processResources {
-
-    inputs.property "version", project.version
-    inputs.property "mod_id", rootProject.mod_id
-
     filesMatching("fabric.mod.json") {
-        expand "version": project.version, "mod_id": rootProject.mod_id, "moonlight_version": rootProject.moonlight_version
+        expand rootProject.ext.replaceProperties + [project: project]
     }
 }
 
@@ -72,7 +74,7 @@ components.java {
 publishing {
     publications {
         mavenFabric(MavenPublication) {
-            artifactId = rootProject.mod_id + "-" + project.name
+            artifactId = mod_id + "-" + project.name
             from components.java
         }
     }
@@ -84,13 +86,7 @@ publishing {
             url = "https://www.cursemaven.com"
             allowInsecureProtocol = true
         }
-        maven {
-            name = "TerraformersMC"
-            url = "https://maven.terraformersmc.com/releases"
-        }
     }
 }
-
 repositories {
-    maven { url "https://maven.terraformersmc.com/releases" }
 }

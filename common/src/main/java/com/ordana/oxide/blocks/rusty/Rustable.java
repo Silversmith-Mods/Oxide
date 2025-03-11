@@ -195,7 +195,7 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
     }
 
     //same as the base one but has configurable radius
-    @Override
+    //@Override
     default void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
 
         int airCheck = 0;

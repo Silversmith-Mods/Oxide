@@ -59,11 +59,6 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
     }
 
     @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return PlatHelper.getEntitySpawnPacket(this);
-    }
-
-    @Override
     protected Item getDefaultItem() {
         return ModItems.RUSTY_NAIL.get();
     }

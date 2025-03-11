@@ -24,7 +24,7 @@
       "model": "oxide:block/corrugated_iron/magenta_horizontal",
       "x": 90
     },
-    "axis=,facing=south": {
+    "axis=z,facing=south": {
       "model": "oxide:block/corrugated_iron/magenta_horizontal",
       "x": 90
     },

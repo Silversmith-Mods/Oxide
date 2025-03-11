@@ -1,18 +1,16 @@
-package com.ordana.oxide.fabric;
+package com.ordana.oxide.neoforge;
 
 import com.ordana.oxide.Oxide;
 import com.ordana.oxide.reg.ModSetup;
-import net.fabricmc.api.ModInitializer;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
+import net.neoforged.fml.common.Mod;
 
+@Mod(Oxide.MOD_ID)
+public class OxideForge {
 
-public class OxideFabric implements ModInitializer {
-
-    @Override
-    public void onInitialize() {
-
+    public OxideForge() {
         Oxide.commonInit();
-
         PlatHelper.addCommonSetup(ModSetup::setup);
     }
 }
+

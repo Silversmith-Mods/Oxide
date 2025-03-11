@@ -27,7 +27,7 @@ public class RustableTrapdoorBlock extends RustAffectedTrapdoorBlock implements 
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 
         state = state.cycle(OPEN);
         level.setBlock(pos, state, 2);

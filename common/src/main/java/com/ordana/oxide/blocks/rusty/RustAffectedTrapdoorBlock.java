@@ -8,7 +8,7 @@ public class RustAffectedTrapdoorBlock extends TrapDoorBlock {
     private final Rustable.RustLevel rustLevel;
 
     public RustAffectedTrapdoorBlock(Rustable.RustLevel rustLevel, Properties properties) {
-        super(properties, BlockSetType.IRON);
+        super(BlockSetType.IRON, properties);
         this.rustLevel = rustLevel;
     }
 

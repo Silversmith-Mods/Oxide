@@ -12,16 +12,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.SlabType;
 
 import java.util.Objects;
 
-public class RustableSheetMetalBlock extends RotatedPillarBlock implements Rustable {
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements Rustable {
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     private final RustLevel rustLevel;
 
-    public RustableSheetMetalBlock(RustLevel rustLevel, Properties settings) {
+    public RustableCorrugatedIronBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
         this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AXIS, Direction.Axis.Y);

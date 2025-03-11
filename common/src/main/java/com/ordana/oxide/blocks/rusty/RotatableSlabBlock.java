@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.properties.SlabType;
 import java.util.Objects;
 
 public class RotatableSlabBlock extends RustableSlabBlock {
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public RotatableSlabBlock(RustLevel rustLevel, Properties settings) {
         super(rustLevel, settings);

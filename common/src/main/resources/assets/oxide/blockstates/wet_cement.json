@@ -1,5 +1,8 @@
 {
   "variants": {
+    "type=top": {
+      "model": "oxide:block/cement_wet/bottom"
+    },
     "type=bottom": {
       "model": "oxide:block/cement_wet/bottom"
     },

@@ -25,7 +25,7 @@ public class OxideClient {
     public static void init() {
         ClientHelper.addClientSetup(OxideClient::setup);
         ClientHelper.addEntityRenderersRegistration(OxideClient::registerEntityRenderers);
-        ClientHelper.registerOptionalTexturePack(Oxide.res("visual_waxed_iron_items"));
+        //ClientHelper.registerOptionalTexturePack(Oxide.res("visual_waxed_iron_items"));
         ClientHelper.addParticleRegistration(OxideClient::registerParticles);
     }
 

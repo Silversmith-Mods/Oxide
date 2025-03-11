@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "oxide",
-  "version": "${version}",
+  "version": "${mod_version}",
   "name": "Template Mod",
   "description": "Template Mod Description",
   "authors": [
