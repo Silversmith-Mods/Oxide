@@ -26,7 +26,8 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
-    modImplementation("curse.maven:selene-499980:6285008")
+    //modImplementation("curse.maven:selene-499980:6285008")
+    modImplementation("curse.maven:selene-499980:6285009")
 
     modCompileOnly "com.terraformersmc:modmenu:4.0.6", {
         exclude module: "fabric-api"
