@@ -1,0 +1,43 @@
+{
+  "variants": {
+    "axis=x,facing=north": {
+      "model": "oxide:block/rusted_iron_pillar/x"
+    },
+    "axis=x,facing=south": {
+      "model": "oxide:block/rusted_iron_pillar/x"
+    },
+    "axis=x,facing=east": {
+      "model": "oxide:block/rusted_iron_pillar/x"
+    },
+    "axis=x,facing=west": {
+      "model": "oxide:block/rusted_iron_pillar/x"
+    },
+    "axis=z,facing=north": {
+      "model": "oxide:block/rusted_iron_pillar/z"
+    },
+    "axis=z,facing=south": {
+      "model": "oxide:block/rusted_iron_pillar/z"
+    },
+    "axis=z,facing=east": {
+      "model": "oxide:block/rusted_iron_pillar/z"
+    },
+    "axis=z,facing=west": {
+      "model": "oxide:block/rusted_iron_pillar/z"
+    },
+    "axis=y,facing=north": {
+      "model": "oxide:block/rusted_iron_pillar/y"
+    },
+    "axis=y,facing=south": {
+      "model": "oxide:block/rusted_iron_pillar/y",
+      "y": 180
+    },
+    "axis=y,facing=east": {
+      "model": "oxide:block/rusted_iron_pillar/y",
+      "y": 90
+    },
+    "axis=y,facing=west": {
+      "model": "oxide:block/rusted_iron_pillar/y",
+      "y": 270
+    }
+  }
+}

@@ -103,7 +103,8 @@ public class ModCreativeTab {
 
                 ModBlocks.IRON_SCAFFOLD, ModBlocks.IRON_SCAFFOLD_STAIRS, ModBlocks.IRON_SCAFFOLD_SLAB,
                 ModBlocks.WEATHERED_IRON_SCAFFOLD, ModBlocks.WEATHERED_IRON_SCAFFOLD_STAIRS, ModBlocks.WEATHERED_IRON_SCAFFOLD_SLAB,
-                ModBlocks.RUSTED_IRON_SCAFFOLD, ModBlocks.RUSTED_IRON_SCAFFOLD_STAIRS, ModBlocks.RUSTED_IRON_SCAFFOLD_SLAB
+                ModBlocks.RUSTED_IRON_SCAFFOLD, ModBlocks.RUSTED_IRON_SCAFFOLD_STAIRS, ModBlocks.RUSTED_IRON_SCAFFOLD_SLAB,
+                ModBlocks.IRON_PILLAR, ModBlocks.WEATHERED_IRON_PILLAR, ModBlocks.RUSTED_IRON_PILLAR
         );
 
         after(e, Items.IRON_BARS, CreativeModeTabs.BUILDING_BLOCKS,

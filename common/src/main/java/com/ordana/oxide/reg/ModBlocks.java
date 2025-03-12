@@ -169,6 +169,14 @@ public class ModBlocks {
     public static final Supplier<Block> RUSTED_IRON_SCAFFOLD_SLAB = regWithItem("rusted_iron_scaffold_slab", () ->
             new RustableScaffoldSlabBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.NETHERITE_BLOCK)));
 
+    //iron pillar
+    public static final Supplier<Block> IRON_PILLAR = regWithItem("iron_pillar", () ->
+            new RustableCorrugatedIronBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Supplier<Block> WEATHERED_IRON_PILLAR = regWithItem("weathered_iron_pillar", () ->
+            new RustableCorrugatedIronBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Supplier<Block> RUSTED_IRON_PILLAR = regWithItem("rusted_iron_pillar", () ->
+            new RustableCorrugatedIronBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+    
     //corrugated iron
     public static final Supplier<Block> WHITE_CORRUGATED_IRON = regWithItem("white_corrugated_iron", () ->
             new RustableCorrugatedIronBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
