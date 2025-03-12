@@ -176,7 +176,7 @@ public class ModBlocks {
             new RustableCorrugatedIronBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> RUSTED_IRON_PILLAR = regWithItem("rusted_iron_pillar", () ->
             new RustableCorrugatedIronBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
-    
+
     //corrugated iron
     public static final Supplier<Block> WHITE_CORRUGATED_IRON = regWithItem("white_corrugated_iron", () ->
             new RustableCorrugatedIronBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
@@ -421,6 +421,8 @@ public class ModBlocks {
             new RustableBarsBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
     public static final Supplier<Block> RUSTED_IRON_BARS = regWithItem("rusted_iron_bars", () ->
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
+    public static final Supplier<Block> WROUGHT_IRON_FENCE = regWithItem("wrought_iron_fence", () ->
+            new RustableBarsBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
 
 
 

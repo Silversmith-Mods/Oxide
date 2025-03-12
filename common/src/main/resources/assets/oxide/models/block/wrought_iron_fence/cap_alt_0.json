@@ -1,0 +1,26 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "oxide:block/wrought_iron_fence/base",
+		"particle": "block/iron_bars"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 7],
+			"to": [8, 16, 8],
+			"faces": {
+				"east": {"uv": [9, 0, 8, 16], "texture": "#1"},
+				"west": {"uv": [8, 0, 9, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 7],
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#1"},
+				"south": {"uv": [9, 0, 7, 16], "texture": "#1"}
+			}
+		}
+	]
+}

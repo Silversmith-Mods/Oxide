@@ -108,7 +108,8 @@ public class ModCreativeTab {
         );
 
         after(e, Items.IRON_BARS, CreativeModeTabs.BUILDING_BLOCKS,
-                ModBlocks.WEATHERED_IRON_BARS, ModBlocks.RUSTED_IRON_BARS
+                ModBlocks.WEATHERED_IRON_BARS, ModBlocks.RUSTED_IRON_BARS,
+                ModBlocks.WROUGHT_IRON_FENCE
         );
 
         after(e, Items.IRON_DOOR, CreativeModeTabs.BUILDING_BLOCKS,
