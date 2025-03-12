@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "oxide:wrought_iron_fence"
+    "oxide:wrought_iron_fence",
+    "oxide:weathered_wrought_iron_fence",
+    "oxide:rusted_wrought_iron_fence"
   ]
 }

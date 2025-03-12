@@ -52,7 +52,10 @@ public class OxideClient {
 
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_BARS.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_BARS.get(), RenderType.cutoutMipped());
+
         ClientHelper.registerRenderType(ModBlocks.WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {

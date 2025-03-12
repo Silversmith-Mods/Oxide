@@ -423,6 +423,10 @@ public class ModBlocks {
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
     public static final Supplier<Block> WROUGHT_IRON_FENCE = regWithItem("wrought_iron_fence", () ->
             new RustableFenceBlock(Rustable.RustLevel.UNAFFECTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
+    public static final Supplier<Block> WEATHERED_WROUGHT_IRON_FENCE = regWithItem("weathered_wrought_iron_fence", () ->
+            new RustableFenceBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
+    public static final Supplier<Block> RUSTED_WROUGHT_IRON_FENCE = regWithItem("rusted_wrought_iron_fence", () ->
+            new RustableFenceBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS)));
 
 
 
