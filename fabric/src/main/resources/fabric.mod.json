@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "oxide",
   "version": "${mod_version}",
-  "name": "Template Mod",
-  "description": "Template Mod Description",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
     "Ordana"
   ],
@@ -24,7 +24,7 @@
     "oxide-common.mixins.json"
   ],
   "depends": {
-    "fabric": "*",
+    "fabric-api": "*",
     "minecraft": "1.21.1",
     "moonlight": ">=1.21-2.17.34"
   }
