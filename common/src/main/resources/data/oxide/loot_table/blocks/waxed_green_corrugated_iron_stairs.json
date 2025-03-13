@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oxide:waxed_green_corrugated_iron_stairs"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "blocks/waxed_green_corrugated_iron_stairs"
+}
