@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "oxide:block/rusted_cut_iron/0"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/1"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/2"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/3"
+      }
+    ]
+  }
+}

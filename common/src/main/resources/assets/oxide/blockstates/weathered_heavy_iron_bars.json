@@ -1,0 +1,154 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/post_ends_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/post_ends_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/post_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/post_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_0",
+          "y": 90
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_1",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "true",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_alt_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_alt_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "true",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_alt_0",
+          "y": 90
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/cap_alt_1",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/side_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/side_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/side_0",
+          "y": 90
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/side_1",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/side_alt_0"
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/side_alt_1"
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/weathered_iron_bars/side_alt_0",
+          "y": 90
+        },
+        {
+          "model": "oxide:block/weathered_iron_bars/side_alt_1",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

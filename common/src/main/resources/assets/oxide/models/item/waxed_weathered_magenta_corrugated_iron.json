@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oxide:block/weathered_corrugated_iron/magenta"
+  }
+}

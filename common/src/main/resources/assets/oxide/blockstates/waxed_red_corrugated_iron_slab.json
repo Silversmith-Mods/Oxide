@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "type=bottom,facing=north": {
+      "model": "oxide:block/corrugated_iron_slab/red"
+    },
+    "type=double,facing=north": {
+      "model": "oxide:block/corrugated_iron/red"
+    },
+    "type=top,facing=north": {
+      "model": "oxide:block/corrugated_iron_slab/red_top"
+    },
+
+    "type=bottom,facing=south": {
+      "model": "oxide:block/corrugated_iron_slab/red",
+      "y": 180
+    },
+    "type=double,facing=south": {
+      "model": "oxide:block/corrugated_iron/red",
+      "y": 180
+    },
+    "type=top,facing=south": {
+      "model": "oxide:block/corrugated_iron_slab/red_top",
+      "y": 180
+    },
+
+    "type=bottom,facing=east": {
+      "model": "oxide:block/corrugated_iron_slab/red",
+      "y": 90
+    },
+    "type=double,facing=east": {
+      "model": "oxide:block/corrugated_iron/red",
+      "y": 90
+    },
+    "type=top,facing=east": {
+      "model": "oxide:block/corrugated_iron_slab/red_top",
+      "y": 90
+    },
+
+    "type=bottom,facing=west": {
+      "model": "oxide:block/corrugated_iron_slab/red",
+      "y": 270
+    },
+    "type=double,facing=west": {
+      "model": "oxide:block/corrugated_iron/red",
+      "y": 270
+    },
+    "type=top,facing=west": {
+      "model": "oxide:block/corrugated_iron_slab/red_top",
+      "y": 270
+    }
+  }
+}

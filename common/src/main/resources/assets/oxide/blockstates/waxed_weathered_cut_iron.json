@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "oxide:block/weathered_cut_iron/0"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron/1"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron/2"
+      }
+    ]
+  }
+}

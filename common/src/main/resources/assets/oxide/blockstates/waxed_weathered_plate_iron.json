@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "oxide:block/weathered_plate_iron/0"
+      },
+      {
+        "model": "oxide:block/weathered_plate_iron/1"
+      },
+      {
+        "model": "oxide:block/weathered_plate_iron/2"
+      }
+    ]
+  }
+}

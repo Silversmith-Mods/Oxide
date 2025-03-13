@@ -1,0 +1,46 @@
+{
+  "variants": {
+    "type=bottom": [
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/bottom_0"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/bottom_1"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/bottom_2"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/bottom_3"
+      }
+    ],
+    "type=double": [
+      {
+        "model": "oxide:block/rusted_cut_iron/0"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/1"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/2"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron/3"
+      }
+    ],
+    "type=top": [
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/top_0"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/top_1"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/top_2"
+      },
+      {
+        "model": "oxide:block/rusted_cut_iron_slab/top_3"
+      }
+    ]
+  }
+}

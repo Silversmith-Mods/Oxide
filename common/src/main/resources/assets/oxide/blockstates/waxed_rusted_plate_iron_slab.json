@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "type=bottom": [
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_0"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_1"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_2"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_3"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_4"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_5"
+      }
+    ],
+    "type=double": [
+      {
+        "model": "oxide:block/rusted_plate_iron/0"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/1"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/2"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/3"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/4"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/5"
+      }
+    ],
+    "type=top": [
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_0"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_1"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_2"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_3"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_4"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/top_5"
+      }
+    ]
+  }
+}

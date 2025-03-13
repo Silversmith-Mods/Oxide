@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "type=bottom,facing=north": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray"
+    },
+    "type=double,facing=north": {
+      "model": "oxide:block/weathered_corrugated_iron/light_gray"
+    },
+    "type=top,facing=north": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray_top"
+    },
+
+    "type=bottom,facing=south": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray",
+      "y": 180
+    },
+    "type=double,facing=south": {
+      "model": "oxide:block/weathered_corrugated_iron/light_gray",
+      "y": 180
+    },
+    "type=top,facing=south": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray_top",
+      "y": 180
+    },
+
+    "type=bottom,facing=east": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray",
+      "y": 90
+    },
+    "type=double,facing=east": {
+      "model": "oxide:block/weathered_corrugated_iron/light_gray",
+      "y": 90
+    },
+    "type=top,facing=east": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray_top",
+      "y": 90
+    },
+
+    "type=bottom,facing=west": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray",
+      "y": 270
+    },
+    "type=double,facing=west": {
+      "model": "oxide:block/weathered_corrugated_iron/light_gray",
+      "y": 270
+    },
+    "type=top,facing=west": {
+      "model": "oxide:block/weathered_corrugated_iron_slab/light_gray_top",
+      "y": 270
+    }
+  }
+}

@@ -99,6 +99,7 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
             if (this.tickCount < 10) return;
             playSound(SoundEvents.THORNS_HIT);
             if (!entityIn.isCreative()) {
+                entityIn.hurt(level().damageSources().thrown(this, this.getOwner()), 1);
                 entityIn.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 1, true, false, true));
             }
             this.discard();
@@ -108,10 +109,10 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
     @Override
     protected void onHitEntity(EntityHitResult hit) {
         super.onHitEntity(hit);
-        hit.getEntity().hurt(level().damageSources().thrown(this, this.getOwner()), 1);
         playSound(SoundEvents.THORNS_HIT);
         if (hit.getEntity() instanceof Player player) {
             if (!player.isCreative()) {
+                hit.getEntity().hurt(level().damageSources().thrown(this, this.getOwner()), 1);
                 player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 1, true, false, true));
             }
         }

@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "type=bottom": [
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/bottom_0"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/bottom_1"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/bottom_2"
+      }
+    ],
+    "type=double": [
+      {
+        "model": "oxide:block/weathered_cut_iron/0"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron/1"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron/2"
+      }
+    ],
+    "type=top": [
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/top_0"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/top_1"
+      },
+      {
+        "model": "oxide:block/weathered_cut_iron_slab/top_2"
+      }
+    ]
+  }
+}

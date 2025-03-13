@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "oxide:block/rusted_iron_scaffold_slab/bottom"
+    },
+    "type=double": {
+      "model": "oxide:block/rusted_iron_scaffold_slab/double"
+    },
+    "type=top": {
+      "model": "oxide:block/rusted_iron_scaffold_slab/top"
+    }
+  }
+}

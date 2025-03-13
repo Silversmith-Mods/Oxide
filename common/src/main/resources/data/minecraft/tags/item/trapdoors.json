@@ -3,6 +3,9 @@
   "values": [
     "oxide:heavy_iron_trapdoor",
     "oxide:weathered_heavy_iron_trapdoor",
-    "oxide:rusted_heavy_iron_trapdoor"
+    "oxide:rusted_heavy_iron_trapdoor",
+    "oxide:waxed_heavy_iron_trapdoor",
+    "oxide:waxed_weathered_heavy_iron_trapdoor",
+    "oxide:waxed_rusted_heavy_iron_trapdoor"
   ]
 }

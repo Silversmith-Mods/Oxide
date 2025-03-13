@@ -3,6 +3,9 @@
   "values": [
     "oxide:wrought_iron_fence",
     "oxide:weathered_wrought_iron_fence",
-    "oxide:rusted_wrought_iron_fence"
+    "oxide:rusted_wrought_iron_fence",
+    "oxide:waxed_wrought_iron_fence",
+    "oxide:waxed_weathered_wrought_iron_fence",
+    "oxide:waxed_rusted_wrought_iron_fence"
   ]
 }

@@ -45,12 +45,41 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
 
-        ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_BARS.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_BARS.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WEATHERED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.RUSTED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
 
         ClientHelper.registerRenderType(ModBlocks.WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD.get(), RenderType.cutout());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {

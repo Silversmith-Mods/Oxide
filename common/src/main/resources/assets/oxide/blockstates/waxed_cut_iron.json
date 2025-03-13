@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "oxide:block/cut_iron/0"
+      }
+    ]
+  }
+}

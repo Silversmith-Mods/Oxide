@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "oxide:block/rusted_iron_scaffold"
+      }
+    ]
+  }
+}

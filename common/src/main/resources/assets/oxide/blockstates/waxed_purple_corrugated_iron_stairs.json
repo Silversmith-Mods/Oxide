@@ -1,0 +1,206 @@
+{
+  "variants": {
+    "facing=east,half=bottom,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lne/purple",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lse/purple"
+    },
+    "facing=east,half=bottom,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lsw/purple",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lnw/purple"
+    },
+    "facing=east,half=bottom,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple"
+    },
+    "facing=east,half=top,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lse/purple",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lne/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lnw/purple",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lsw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=bottom,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lnw/purple",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lne/purple",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lse/purple",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lsw/purple",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "y": 270
+    },
+    "facing=north,half=top,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lsw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lse/purple",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lne/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lnw/purple",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=south,half=bottom,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lse/purple"
+    },
+    "facing=south,half=bottom,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lsw/purple",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lnw/purple"
+    },
+    "facing=south,half=bottom,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lne/purple",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "y": 90
+    },
+    "facing=south,half=top,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lne/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lnw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lsw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lse/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,half=bottom,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lsw/purple",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lnw/purple",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lne/purple",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lse/purple",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "y": 180
+    },
+    "facing=west,half=top,shape=inner_left": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lnw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,shape=inner_right": {
+      "model": "oxide:block/corrugated_iron_stairs/inner/lsw/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,shape=outer_left": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lse/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,shape=outer_right": {
+      "model": "oxide:block/corrugated_iron_stairs/outer/lne/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,shape=straight": {
+      "model": "oxide:block/corrugated_iron_stairs/purple",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    }
+  }
+}
