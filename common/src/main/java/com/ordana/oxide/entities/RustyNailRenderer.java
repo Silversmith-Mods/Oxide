@@ -6,14 +6,10 @@ import com.mojang.math.Axis;
 import com.ordana.oxide.Oxide;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import org.joml.Matrix3f;
-import org.joml.Matrix4f;
 
 public class RustyNailRenderer<T extends RustyNailEntity> extends EntityRenderer<T> {
     private static final ResourceLocation LOCATION = Oxide.res("textures/entity/rusty_nail/rusty_nail.png");

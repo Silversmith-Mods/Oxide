@@ -2,7 +2,6 @@ package com.ordana.oxide.reg;
 
 import com.google.common.base.Stopwatch;
 import com.ordana.oxide.Oxide;
-import net.minecraft.core.RegistryAccess;
 
 import java.util.ArrayList;
 import java.util.List;

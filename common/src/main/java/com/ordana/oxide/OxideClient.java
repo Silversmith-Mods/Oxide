@@ -1,11 +1,9 @@
 package com.ordana.oxide;
 
-import com.ordana.oxide.configs.ClientConfigs;
 import com.ordana.oxide.entities.RustyNailRenderer;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModEntities;
 import com.ordana.oxide.reg.ModParticles;
-import net.mehvahdjukaar.moonlight.api.client.renderer.FallingBlockRendererGeneric;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -13,9 +11,6 @@ import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
 
 public class OxideClient {

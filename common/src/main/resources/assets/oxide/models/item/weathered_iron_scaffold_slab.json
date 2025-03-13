@@ -1,39 +1,13 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "block/block",
+	"parent": "oxide:block/fancy_slab",
 	"textures": {
-		"6": "oxide:block/weathered_iron_scaffold_stairs/default",
-		"7": "oxide:block/weathered_iron_scaffold_stairs/lat",
-		"8": "oxide:block/weathered_iron_scaffold_stairs/top/block",
-		"particle": "oxide:block/weathered_iron_scaffold_stairs/default"
+		"bottom": "oxide:block/weathered_iron_scaffold/side",
+		"top": "oxide:block/weathered_iron_scaffold_stairs/top/block",
+		"north": "oxide:block/weathered_iron_scaffold_stairs/lat",
+		"south": "oxide:block/weathered_iron_scaffold_stairs/lat",
+		"west": "oxide:block/weathered_iron_scaffold_stairs/lat",
+		"east": "oxide:block/weathered_iron_scaffold_stairs/lat"
 	},
-	"elements": [
-		{
-			"from": [0, 0, 0],
-			"to": [16, 8, 16],
-			"faces": {
-				"north": {"uv": [0, 8, 16, 16], "texture": "#7", "cullface": "north"},
-				"east": {"uv": [0, 8, 16, 16], "texture": "#7"},
-				"south": {"uv": [0, 8, 16, 16], "texture": "#7", "cullface": "south"},
-				"west": {"uv": [0, 8, 16, 16], "texture": "#7", "cullface": "west"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#8"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#6", "cullface": "down"}
-			}
-		},
-		{
-			"name": "innercube",
-			"from": [15.98, 7.98, 15.98],
-			"to": [0.02, 0.02, 0.02],
-			"faces": {
-				"north": {"uv": [16, 16, 0, 8], "texture": "#7", "cullface": "north"},
-				"east": {"uv": [16, 16, 0, 8], "texture": "#7"},
-				"south": {"uv": [16, 16, 0, 8], "texture": "#7", "cullface": "south"},
-				"west": {"uv": [16, 16, 0, 8], "texture": "#7", "cullface": "west"},
-				"up": {"uv": [16, 16, 0, 0], "texture": "#6"},
-				"down": {"uv": [16, 16, 0, 0], "texture": "#8", "cullface": "down"}
-			}
-		}
-	],
 	"gui_light": "front",
 	"display": {
 		"thirdperson_lefthand": {
