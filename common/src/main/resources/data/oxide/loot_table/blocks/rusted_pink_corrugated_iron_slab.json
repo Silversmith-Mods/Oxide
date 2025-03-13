@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oxide:rusted_pink_corrugated_iron_slab"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "blocks/rusted_pink_corrugated_iron_slab"
+}

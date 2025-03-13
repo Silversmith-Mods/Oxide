@@ -1,6 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.items.PureNailItem;
 import com.ordana.oxide.items.RustyNailItem;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.core.component.DataComponents;
@@ -20,4 +21,6 @@ public class ModItems {
 
     public static final Supplier<Item> RUSTY_NAIL = regItem("rusty_nail", () ->
             new RustyNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));
+    public static final Supplier<Item> PURE_NAIL = regItem("pure_nail", () ->
+            new PureNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));
 }

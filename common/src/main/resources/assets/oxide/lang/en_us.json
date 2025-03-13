@@ -170,5 +170,6 @@
   "block.oxide.weathered_iron_bars": "Weathered Iron Bars",
   "block.oxide.rusted_iron_bars": "Rusted Iron Bars",
 
-  "item.oxide.rusty_nail": "Rusty Nail"
+  "item.oxide.rusty_nail": "Rusty Nail",
+  "item.oxide.pure_nail": "Pure Nail"
 }
