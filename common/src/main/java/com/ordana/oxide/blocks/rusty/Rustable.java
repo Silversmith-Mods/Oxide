@@ -16,6 +16,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -444,126 +445,41 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
         CLEAN,
         WEATHERED,
         RUSTED;
-
-        public boolean canScrape() {
-            return this != RUSTED;
-        }
     }
 
-    default int getInfluenceRadius() {
-        return CommonConfigs.RUSTING_INFLUENCE_RADIUS.get();
-    }
-
-    //same as the base one but has configurable radius
-    //@Override
     default void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
         int airCheck = 0;
         int wetness = 0;
-        if (getAge() == RustLevel.WAXED) return;
+        if (getAge() == RustLevel.WAXED || getAge() == RustLevel.RUSTED) return;
         for (Direction dir : Direction.values()) {
             var dirPos = pos.relative(dir);
             var dirState = level.getBlockState(dirPos);
             if (!dirState.isSuffocating(level, dirPos)) airCheck += 1;
 
             if (level.isRainingAt(dirPos)) {
-                if (dir == Direction.UP) wetness += 2;
+                if (dir == Direction.UP) wetness += 30;
+                else if (dir != Direction.DOWN) wetness += 1;
                 //wetness += 1;
             }
-            if (level.getFluidState(dirPos).is(Fluids.WATER)) wetness += 10;
+            //if (level.getFluidState(dirPos).is(FluidTags.WATER)) wetness += 20;
             if (dirState.is(Blocks.BUBBLE_COLUMN)) wetness += 50;
             if (dirState.getBlock() instanceof Rustable rusty) {
-                if (getAge() == RustLevel.RUSTED) wetness += 100;
-                if (getAge() == RustLevel.WEATHERED) wetness += 10;
+                if (rusty.getAge() == RustLevel.RUSTED) wetness += 10;
+                if (rusty.getAge() == RustLevel.WEATHERED) wetness += 10;
             }
         }
         if (airCheck == 0) return;
 
         for (int i = 0; i < wetness; i++) {
-            if (level.random.nextInt(100) == 1) {
+            if (randomSource.nextInt(50) == 1) {
                 this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
                 return;
             }
         }
-
-        /*
-        int age = this.getAge().ordinal();
-        int j = 0;
-        int k = 0;
-        int affectingDistance = this.getInfluenceRadius();
-        for (BlockPos blockpos : BlockPos.withinManhattan(pos, affectingDistance, affectingDistance, affectingDistance)) {
-            int distance = blockpos.distManhattan(pos);
-            if (distance > affectingDistance) {
-                break;
-            }
-
-            if (!blockpos.equals(pos)) {
-                BlockState blockstate = serverLevel.getBlockState(blockpos);
-                Block block = blockstate.getBlock();
-                if (block instanceof ChangeOverTimeBlock<?> changeOverTimeBlock) {
-                    Enum<?> ageEnum = changeOverTimeBlock.getAge();
-                    //checks if they are of same age class
-                    if (this.getAge().getClass() == ageEnum.getClass()) {
-                        int neighbourAge = ageEnum.ordinal();
-                        if (neighbourAge < age) {
-                            return;
-                        }
-
-                        if (neighbourAge > age) {
-                            ++k;
-                        } else {
-                            ++j;
-                        }
-                    }
-                }
-            }
-        }
-
-        float f = (float) (k + 1) / (float) (k + j + 1);
-        float f1 = f * f * this.getChanceModifier();
-        if (randomSource.nextFloat() < f1) {
-            this.getNext(state).ifPresent(s -> serverLevel.setBlockAndUpdate(pos, s));
-        }
-
-         */
-
     }
 
     default void tryWeather(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         applyChangeOverTime(state, level, pos, random);
-
-        /*
-        if (!state.is(ModTags.RUSTED_IRON)) {
-            var canWeather = false;
-            for (Direction direction : Direction.values()) {
-                var targetPos = pos.relative(direction);
-                BlockState neighborState = level.getBlockState(targetPos);
-                if (neighborState.is(Blocks.BUBBLE_COLUMN) && random.nextFloat() < CommonConfigs.RUSTING_RATE.get()) {
-                    canWeather = true;
-                } else if (neighborState.getFluidState().is(FluidTags.WATER) && random.nextFloat() < CommonConfigs.RUSTING_RATE.get() / 1.25) {
-                    canWeather = true;
-                } else if (state.is(ModTags.CLEAN_IRON)) {
-                    if (neighborState.is(Blocks.AIR) && random.nextFloat() < CommonConfigs.RUSTING_RATE.get() / 5) {
-                        canWeather = true;
-                    }
-                } else if (state.is(ModTags.EXPOSED_IRON) || state.is(ModTags.CLEAN_IRON) && level.isRaining() && random.nextFloat() < CommonConfigs.RUSTING_RATE.get() / 2) {
-                    if (level.isRainingAt(pos.above())) {
-                        canWeather = true;
-                    } else if (level.isRainingAt(targetPos) && level.getBlockState(pos.above()).is(ModTags.WEATHERED_IRON) && random.nextFloat() < CommonConfigs.RUSTING_RATE.get() / 3) {
-                        if (BlockPos.withinManhattanStream(pos, 2, 2, 2)
-                                .map(level::getBlockState)
-                                .filter(b -> b.is(ModTags.WEATHERED_IRON))
-                                .toList().size() <= 9) {
-                            canWeather = true;
-                        }
-                    }
-                }
-            }
-            if (canWeather) {
-                applyChangeOverTime(state, level, pos, random);
-            }
-        }
-
-         */
     }
 
     static BlockBehaviour.Properties setRandomTicking(BlockBehaviour.Properties properties, RustLevel rustLevel) {
