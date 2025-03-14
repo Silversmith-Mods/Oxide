@@ -76,10 +76,11 @@ public class WetCementBlock extends Block {
         BlockPos blockPos = context.getClickedPos();
         BlockState blockState = context.getLevel().getBlockState(blockPos);
         if (blockState.is(this)) {
-            return blockState.setValue(TYPE, SlabType.DOUBLE);
+            if (blockState.getValue(TYPE) == SlabType.BOTTOM) return blockState.setValue(TYPE, SlabType.DOUBLE);
         } else {
             return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
         }
+        return super.getStateForPlacement(context);
     }
 
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
@@ -107,13 +108,6 @@ public class WetCementBlock extends Block {
         if (state.getValue(TYPE) == SlabType.DOUBLE) {
             for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
                 var dirState = level.getBlockState(pos.relative(dir));
-                if (dirState.is(ModBlocks.WET_CEMENT.get())) {
-                    if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
-                        level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.DOUBLE), 3);
-                        level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
-                        break;
-                    }
-                }
                 if (dirState.canBeReplaced()) {
                     level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.BOTTOM), 3);
                     level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
