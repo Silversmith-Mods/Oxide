@@ -1,8 +1,0 @@
-{
-    "parent": "block/iron_bars_cap_alt",
-    "textures": {
-        "particle": "oxide:block/rusted_iron_bars/1",
-        "bars": "oxide:block/rusted_iron_bars/1",
-        "edge": "oxide:block/rusted_iron_bars/1"
-    }
-}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "corrugated_slab",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "oxide:white_corrugated_iron"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "oxide:white_corrugated_iron_slab"
+  }
+}

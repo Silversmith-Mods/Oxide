@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oxide:weathered_green_corrugated_iron"
+  },
+  "result": {
+    "id": "oxide:weathered_green_corrugated_iron_slab"
+  }
+}

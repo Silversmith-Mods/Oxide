@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "weathered_corrugated_stairs",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "oxide:weathered_black_corrugated_iron"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "oxide:weathered_black_corrugated_iron_stairs"
+  }
+}

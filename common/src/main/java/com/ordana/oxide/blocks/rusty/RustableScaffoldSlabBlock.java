@@ -60,7 +60,9 @@ public class RustableScaffoldSlabBlock extends SlabBlock implements Rustable {
             if (adjacentState.getValue(BlockStateProperties.HALF) == Half.TOP) bl = false;
         }
         if (adjacentState.is(BlockTags.SLABS)) {
-            if (adjacentState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.TOP) bl = false;
+            if (direction == Direction.DOWN && adjacentState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.BOTTOM) bl = false;
+            if (direction == Direction.UP && adjacentState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.TOP) bl = false;
+            if (adjacentState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.DOUBLE) bl = true;
         }
         return (bl) || super.skipRendering(state, adjacentState, direction);
     }

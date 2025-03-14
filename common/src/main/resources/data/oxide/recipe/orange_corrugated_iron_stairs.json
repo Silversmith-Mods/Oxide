@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "corrugated_stairs",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "oxide:orange_corrugated_iron"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "oxide:orange_corrugated_iron_stairs"
+  }
+}

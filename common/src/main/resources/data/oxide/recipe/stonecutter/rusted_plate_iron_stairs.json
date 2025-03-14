@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oxide:rusted_plate_iron"
+  },
+  "result": {
+    "id": "oxide:rusted_plate_iron_stairs"
+  }
+}

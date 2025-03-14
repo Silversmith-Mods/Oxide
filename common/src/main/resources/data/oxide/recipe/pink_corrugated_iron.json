@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "corrugated",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "oxide:corrugated_iron"
+    },
+    "D": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "oxide:pink_corrugated_iron"
+  }
+}

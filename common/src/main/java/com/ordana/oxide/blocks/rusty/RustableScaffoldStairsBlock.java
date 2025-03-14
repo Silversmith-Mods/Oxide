@@ -63,7 +63,7 @@ public class RustableScaffoldStairsBlock extends ModStairBlock implements Rustab
             if (adjacentState.getValue(BlockStateProperties.HALF) == Half.TOP) bl = false;
         }
         if (adjacentState.is(BlockTags.SLABS)) {
-            if (adjacentState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.TOP) bl = false;
+            if (adjacentState.getValue(BlockStateProperties.SLAB_TYPE) != SlabType.DOUBLE) bl = false;
         }
         return (bl) || super.skipRendering(state, adjacentState, direction);
     }
