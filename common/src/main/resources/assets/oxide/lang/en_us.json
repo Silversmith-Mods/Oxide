@@ -1,8 +1,6 @@
 {
   "itemGroup.oxide.oxide": "Oxide",
-  "entity.oxide.mod_entity": "Mod Entity",
-  "item.oxide.mod_item": "Mod Item",
-  "block.oxide.mod_block": "Mod Block",
+  "tag.oxide.corrugated_iron": "Corrugated Iron Blocks",
 
   "block.oxide.wet_cement": "Wet Cement",
   "block.oxide.cement": "Block of Cement",

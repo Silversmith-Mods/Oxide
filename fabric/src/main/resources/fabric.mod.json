@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "com.ordana.oxide.fabric.OxideFabric"
+    ],
+    "emi": [
+      "com.ordana.oxide.integrations.EmiIntegration"
     ]
   },
   "mixins": [

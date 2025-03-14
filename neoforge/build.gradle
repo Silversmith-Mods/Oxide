@@ -95,6 +95,7 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
     modImplementation("curse.maven:selene-499980:6285009")
+    modLocalRuntime "dev.emi:emi-neoforge:${rootProject.emi_version}"
 
     implementation 'org.jetbrains:annotations:22.0.0'
 

@@ -4,6 +4,7 @@
     "item": "oxide:plate_iron"
   },
   "result": {
+    "count": 4,
     "id": "oxide:cut_iron_stairs"
   }
 }

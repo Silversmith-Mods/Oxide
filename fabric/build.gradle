@@ -28,6 +28,7 @@ dependencies {
 
     //modImplementation("curse.maven:selene-499980:6285008")
     modImplementation("curse.maven:selene-499980:6285009")
+    modLocalRuntime "dev.emi:emi-fabric:${rootProject.emi_version}"
 
     modCompileOnly "com.terraformersmc:modmenu:4.0.6", {
         exclude module: "fabric-api"
