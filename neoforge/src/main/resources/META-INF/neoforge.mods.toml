@@ -6,10 +6,10 @@ loaderVersion="[4,)"
 license="LGPLv3"
 
 [[mods]]
-    modId="${mod_id}"
+    modId="oxide"
     version = "${mod_version}"
     displayName="${mod_name}"
-    logoFile="icon.png"
+    logoFile="icon.gif"
     credits="Ordana"
     authors="Ordana, Keyberries"
     itemIcon="oxide:template"
