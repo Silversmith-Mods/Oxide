@@ -659,6 +659,9 @@ public class ModBlocks {
     public static final Supplier<Block> RUSTED_WROUGHT_IRON_FENCE = regWithItem("rusted_wrought_iron_fence", () ->
             new RustableFenceBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER)));
 
+    public static final Supplier<Block> WROUGHT_IRON_FENCE_GATE = regWithItem("wrought_iron_fence_gate", () ->
+            new RustableFenceGateBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER)));
+
     public static final Supplier<Block> WAXED_HEAVY_IRON_DOOR = regWithItem("waxed_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.WAXED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_HEAVY_IRON_DOOR = regWithItem("waxed_weathered_heavy_iron_door", () ->

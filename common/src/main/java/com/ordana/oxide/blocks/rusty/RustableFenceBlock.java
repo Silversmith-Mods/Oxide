@@ -32,7 +32,7 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
     public RustableFenceBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.shapeByIndex = this.makeShapes(2.0F, 2.0F, 16.0F, 0.0F, 16.0F, 16.0F);
-        this.collisionShapeByIndex = this.makeShapes(2.0F, 2.0F, 16.0F, 0.0F, 16.0F, 16.0F);
+        this.collisionShapeByIndex = this.makeShapes(2.0F, 2.0F, 24.0F, 0.0F, 24.0F, 24.0F);
         this.rustLevel = rustLevel;
     }
 
