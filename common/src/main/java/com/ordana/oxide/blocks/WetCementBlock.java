@@ -4,6 +4,8 @@ import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
@@ -73,14 +75,52 @@ public class WetCementBlock extends Block {
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
-        BlockState blockState = context.getLevel().getBlockState(blockPos);
+        BlockState blockState = level.getBlockState(blockPos);
+        BlockPos belowPos = blockPos.below();
+        BlockState belowState = level.getBlockState(belowPos);
+
         if (blockState.is(this)) {
-            if (blockState.getValue(TYPE) == SlabType.BOTTOM) return blockState.setValue(TYPE, SlabType.DOUBLE);
-        } else {
-            return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
+
+            for (Direction dir : Direction.Plane.HORIZONTAL) {
+                var dirState = level.getBlockState(blockPos.relative(dir));
+
+                if (dirState.canBeReplaced()) {
+                    level.playSound(null, blockPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                    level.setBlockAndUpdate(blockPos.relative(dir), this.defaultBlockState());
+                    return blockState;
+                }
+            }
+            if (blockState.getValue(TYPE) == SlabType.BOTTOM) {
+                level.setBlockAndUpdate(blockPos, blockState);
+                return blockState.setValue(TYPE, SlabType.DOUBLE);
+            }
         }
-        return super.getStateForPlacement(context);
+        else if (belowState.is(this)) {
+            if (belowState.getValue(TYPE) == SlabType.DOUBLE) {
+
+                for (Direction dir : Direction.Plane.HORIZONTAL) {
+                    var dirState = level.getBlockState(belowPos.relative(dir));
+
+                    if (dirState.canBeReplaced()) {
+                        level.playSound(null, belowPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                        level.setBlockAndUpdate(belowPos.relative(dir), this.defaultBlockState());
+                        return blockState;
+                    }
+                    if (dirState.is(this)) {
+                        if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
+                            level.playSound(null, belowPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                            level.setBlockAndUpdate(belowPos.relative(dir), dirState.setValue(TYPE, SlabType.DOUBLE));
+                            return blockState;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
     }
 
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
@@ -105,28 +145,28 @@ public class WetCementBlock extends Block {
 
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (state.getValue(TYPE) == SlabType.DOUBLE) {
-            for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
-                var dirState = level.getBlockState(pos.relative(dir));
-                if (dirState.canBeReplaced()) {
-                    level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.BOTTOM), 3);
-                    level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
-                    break;
-                }
-            }
-        }
-        var belowPos = (level.getBlockState(pos.below()));
-
-        if (belowPos.canBeReplaced()) {
-            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-            level.setBlock(pos.below(), state, 3);
-        }
-        if (belowPos.is(ModBlocks.WET_CEMENT.get())) {
-            if (belowPos.getValue(TYPE) == SlabType.BOTTOM) {
-                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-                level.setBlock(pos.below(), state.setValue(TYPE, SlabType.DOUBLE), 3);
-            }
-        }
+        //if (state.getValue(TYPE) == SlabType.DOUBLE) {
+        //    for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
+        //        var dirState = level.getBlockState(pos.relative(dir));
+        //        if (dirState.canBeReplaced()) {
+        //            level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.BOTTOM), 3);
+        //            level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
+        //            break;
+        //        }
+        //    }
+        //}
+        //var belowPos = (level.getBlockState(pos.below()));
+//
+        //if (belowPos.canBeReplaced()) {
+        //    level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        //    level.setBlock(pos.below(), state, 3);
+        //}
+        //if (belowPos.is(ModBlocks.WET_CEMENT.get())) {
+        //    if (belowPos.getValue(TYPE) == SlabType.BOTTOM) {
+        //        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        //        level.setBlock(pos.below(), state.setValue(TYPE, SlabType.DOUBLE), 3);
+        //    }
+        //}
 
 
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);

@@ -95,18 +95,18 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         Direction.Axis axis = direction.getAxis();
         if (state.getValue(FACING).getClockWise().getAxis() != axis) {
-            boolean open = false;
-            boolean above = level.getBlockState(pos.above()).is(this);
-            boolean below = level.getBlockState(pos.below()).is(this);
+            boolean open = state.getValue(OPEN);
+            boolean above = level.getBlockState(pos.above()).getBlock() instanceof RustableFenceGateBlock;
+            boolean below = level.getBlockState(pos.below()).getBlock() instanceof RustableFenceGateBlock;
             var facing = state.getValue(FACING);
-            if (axis == Direction.Axis.Y && neighborState.is(this)) open = neighborState.getValue(OPEN);
-            if (axis == Direction.Axis.Y && neighborState.is(this)) facing = neighborState.getValue(FACING);
+            if (axis == Direction.Axis.Y && neighborState.getBlock() instanceof RustableFenceGateBlock) open = neighborState.getValue(OPEN);
+            if (axis == Direction.Axis.Y && neighborState.getBlock() instanceof RustableFenceGateBlock) facing = neighborState.getValue(FACING);
             return super.updateShape(state, direction, neighborState, level, pos, neighborPos).setValue(TOP, !above).setValue(BOTTOM, !below).setValue(OPEN, open).setValue(FACING, facing);
         } else {
             boolean open = state.getValue(OPEN);
-            boolean above = level.getBlockState(pos.above()).is(this);
-            boolean below = level.getBlockState(pos.below()).is(this);
-            if (axis == Direction.Axis.Y && neighborState.is(this)) open = neighborState.getValue(OPEN);
+            boolean above = level.getBlockState(pos.above()).getBlock() instanceof RustableFenceGateBlock;
+            boolean below = level.getBlockState(pos.below()).getBlock() instanceof RustableFenceGateBlock;
+            if (axis == Direction.Axis.Y && neighborState.getBlock() instanceof RustableFenceGateBlock) open = neighborState.getValue(OPEN);
             return state.setValue(TOP, !above).setValue(BOTTOM, !below).setValue(OPEN, open);
         }
     }
