@@ -54,6 +54,8 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
 
         ClientHelper.registerRenderType(ModBlocks.WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
         ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD.get(), RenderType.cutout());
@@ -82,6 +84,10 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WAXED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
+
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
+        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {

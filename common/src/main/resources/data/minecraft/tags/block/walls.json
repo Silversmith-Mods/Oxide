@@ -7,6 +7,11 @@
     "oxide:waxed_wrought_iron_fence",
     "oxide:waxed_weathered_wrought_iron_fence",
     "oxide:waxed_rusted_wrought_iron_fence",
-    "oxide:wrought_iron_fence_gate"
+    "oxide:wrought_iron_fence_gate",
+    "oxide:weathered_wrought_iron_fence_gate",
+    "oxide:rusted_wrought_iron_fence_gate",
+    "oxide:waxed_wrought_iron_fence_gate",
+    "oxide:waxed_weathered_wrought_iron_fence_gate",
+    "oxide:waxed_rusted_wrought_iron_fence_gate"
   ]
 }

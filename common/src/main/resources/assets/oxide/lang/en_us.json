@@ -185,6 +185,10 @@
   "block.oxide.weathered_wrought_iron_fence": "Weathered Wrought Iron Fence",
   "block.oxide.rusted_wrought_iron_fence": "Rusted Wrought Iron Fence",
 
+  "block.oxide.wrought_iron_fence_gate": "Wrought Iron Gate",
+  "block.oxide.weathered_wrought_iron_fence_gate": "Weathered Wrought Iron Gate",
+  "block.oxide.rusted_wrought_iron_fence_gate": "Rusted Wrought Iron Gate",
+
   "block.oxide.heavy_iron_bars": "Heavy Iron Bars",
   "block.oxide.weathered_heavy_iron_bars": "Weathered Heavy Iron Bars",
   "block.oxide.rusted_heavy_iron_bars": "Rusted Heavy Iron Bars",
@@ -328,6 +332,10 @@
   "block.oxide.waxed_wrought_iron_fence": "Waxed Wrought Iron Fence",
   "block.oxide.waxed_weathered_wrought_iron_fence": "Waxed Weathered Wrought Iron Fence",
   "block.oxide.waxed_rusted_wrought_iron_fence": "Waxed Rusted Wrought Iron Fence",
+
+  "block.oxide.waxed_wrought_iron_fence_gate": "Waxed Wrought Iron Gate",
+  "block.oxide.waxed_weathered_wrought_iron_fence_gate": "Waxed Weathered Wrought Iron Gate",
+  "block.oxide.waxed_rusted_wrought_iron_fence_gate": "Waxed Rusted Wrought Iron Gate",
 
   "block.oxide.waxed_heavy_iron_bars": "Waxed Heavy Iron Bars",
   "block.oxide.waxed_weathered_heavy_iron_bars": "Waxed Weathered Heavy Iron Bars",

@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "oxide:block/wrought_iron_fence_gate/bottom",
-		"2": "oxide:block/wrought_iron_fence/base",
-		"particle": "oxide:block/wrought_iron_fence_gate/bottom"
+		"1": "oxide:block/weathered_wrought_iron_fence_gate/middle",
+		"2": "oxide:block/weathered_wrought_iron_fence/base",
+		"particle": "oxide:block/weathered_wrought_iron_fence_gate/middle"
 	},
 	"elements": [
 		{
@@ -34,22 +34,22 @@
 		},
 		{
 			"name": "gate",
-			"from": [1.01, 0, 8],
-			"to": [1.01, 16, 15],
+			"from": [1, 0, 8],
+			"to": [8, 16, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [1, 8, 8]},
 			"faces": {
-				"east": {"uv": [8, 0, 15, 16], "texture": "#1", "cullface": "north"},
-				"west": {"uv": [1, 0, 8, 16], "texture": "#1"}
+				"north": {"uv": [8, 0, 15, 16], "texture": "#1", "cullface": "north"},
+				"south": {"uv": [1, 0, 8, 16], "texture": "#1"}
 			}
 		},
 		{
 			"name": "gate",
-			"from": [14.99, 0, 8],
-			"to": [14.99, 16, 15],
+			"from": [8, 0, 8],
+			"to": [15, 16, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [15, 8, 8]},
 			"faces": {
-				"east": {"uv": [8, 0, 15, 16], "texture": "#1"},
-				"west": {"uv": [1, 0, 8, 16], "texture": "#1", "cullface": "north"}
+				"north": {"uv": [1, 0, 8, 16], "texture": "#1", "cullface": "north"},
+				"south": {"uv": [8, 0, 15, 16], "texture": "#1"}
 			}
 		}
 	]

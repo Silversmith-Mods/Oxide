@@ -163,6 +163,9 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
             .put(ModBlocks.WROUGHT_IRON_FENCE.get(), ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get())
             .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get(), ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get())
 
+            .put(ModBlocks.WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get())
+            .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get())
+
             .put(ModBlocks.IRON_PILLAR.get(), ModBlocks.WEATHERED_IRON_PILLAR.get())
             .put(ModBlocks.WEATHERED_IRON_PILLAR.get(), ModBlocks.RUSTED_IRON_PILLAR.get())
 
@@ -335,6 +338,10 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
             .put(ModBlocks.WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_WROUGHT_IRON_FENCE.get())
             .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE.get())
             .put(ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE.get())
+
+            .put(ModBlocks.WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_WROUGHT_IRON_FENCE_GATE.get())
+            .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE_GATE.get())
+            .put(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE_GATE.get())
 
             .put(ModBlocks.IRON_PILLAR.get(), ModBlocks.WAXED_IRON_PILLAR.get())
             .put(ModBlocks.WEATHERED_IRON_PILLAR.get(), ModBlocks.WAXED_WEATHERED_IRON_PILLAR.get())
