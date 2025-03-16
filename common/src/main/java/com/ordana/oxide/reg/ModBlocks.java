@@ -54,6 +54,22 @@ public class ModBlocks {
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
 
+    public static final Supplier<Block> CINDER_BRICKS = regWithItem("cinder_bricks", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CINDER_BRICK_STAIRS = regWithItem("cinder_brick_stairs", () ->
+            new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CINDER_BRICK_SLAB = regWithItem("cinder_brick_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+
+    public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CINDER_BLOCKS = regWithItem("cinder_blocks", () ->
+            new RustableCorrugatedIronBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->
+            new RotatableSlabBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+
+
+
 
     //plate iron
     public static final Supplier<Block> PLATE_IRON = regWithItem("plate_iron", () ->

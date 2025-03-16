@@ -121,7 +121,9 @@ public class ModCreativeTab {
 
         after(e, Items.IRON_TRAPDOOR, CreativeModeTabs.BUILDING_BLOCKS,
                 ModItems.RUSTY_NAIL,
-                ModBlocks.WET_CEMENT, ModBlocks.CEMENT, ModBlocks.CEMENT_STAIRS, ModBlocks.CEMENT_SLAB
+                ModBlocks.WET_CEMENT, ModBlocks.CEMENT, ModBlocks.CEMENT_STAIRS, ModBlocks.CEMENT_SLAB,
+                ModBlocks.CEMENT_BLOCK, ModBlocks.CINDER_BLOCKS, ModBlocks.CINDER_BLOCK_SLAB,
+                ModBlocks.CINDER_BRICKS,ModBlocks.CINDER_BRICK_SLAB,ModBlocks.CINDER_BRICK_STAIRS
         );
 
 
