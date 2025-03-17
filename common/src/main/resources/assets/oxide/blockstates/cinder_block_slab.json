@@ -1,52 +1,38 @@
 {
   "variants": {
-    "type=bottom,facing=north": {
-      "model": "oxide:block/cinder_block_slab_bottom"
+    "type=bottom,axis=z": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom"
     },
-    "type=double,facing=north": {
+    "type=double,axis=z": {
       "model": "oxide:block/cinder_blocks_horizontal"
     },
-    "type=top,facing=north": {
-      "model": "oxide:block/cinder_block_slab_top"
+    "type=top,axis=z": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top"
     },
 
-    "type=bottom,facing=south": {
-      "model": "oxide:block/cinder_block_slab_bottom",
-      "y": 180
+    
+    "type=bottom,axis=y": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom_vertical"
     },
-    "type=double,facing=south": {
-      "model": "oxide:block/cinder_blocks_horizontal",
-      "y": 180
+    "type=double,axis=y": {
+      "model": "oxide:block/cinder_blocks"
     },
-    "type=top,facing=south": {
-      "model": "oxide:block/cinder_block_slab_top",
-      "y": 180
+    "type=top,axis=y": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top_vertical"
     },
 
-    "type=bottom,facing=east": {
-      "model": "oxide:block/cinder_block_slab_bottom",
+    
+    "type=bottom,axis=x": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom",
       "y": 90
     },
-    "type=double,facing=east": {
+    "type=double,axis=x": {
       "model": "oxide:block/cinder_blocks_horizontal",
       "y": 90
     },
-    "type=top,facing=east": {
-      "model": "oxide:block/cinder_block_slab_top",
+    "type=top,axis=x": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top",
       "y": 90
-    },
-
-    "type=bottom,facing=west": {
-      "model": "oxide:block/cinder_block_slab_bottom",
-      "y": 270
-    },
-    "type=double,facing=west": {
-      "model": "oxide:block/cinder_blocks_horizontal",
-      "y": 270
-    },
-    "type=top,facing=west": {
-      "model": "oxide:block/cinder_block_slab_top",
-      "y": 270
     }
   }
 }

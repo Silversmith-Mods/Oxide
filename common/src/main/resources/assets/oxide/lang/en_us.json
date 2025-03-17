@@ -3,9 +3,16 @@
   "tag.oxide.corrugated_iron": "Corrugated Iron Blocks",
 
   "block.oxide.wet_cement": "Wet Cement",
-  "block.oxide.cement": "Block of Cement",
+  "block.oxide.cement": "Cement",
   "block.oxide.cement_stairs": "Cement Stairs",
   "block.oxide.cement_slab": "Cement Slab",
+
+  "block.oxide.cement_blocks": "Block of Cement",
+  "block.oxide.cinder_block": "Cinder Blocks",
+  "block.oxide.cinder_block_slab": "Cinder Block slab",
+  "block.oxide.cinder_bricks": "Cinder Bricks",
+  "block.oxide.cinder_brick_slab": "Cinder Brick slab",
+  "block.oxide.cinder_brick_stairs": "Cinder Brick Stairs",
   
   "block.oxide.plate_iron": "Plate Iron",
   "block.oxide.weathered_plate_iron": "Weathered Plate Iron",

@@ -1,55 +1,14 @@
 {
   "variants": {
-    "axis=x,facing=north": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90,
+    "axis=x": {
+      "model": "oxide:block/cinder_blocks_horizontal",
       "y": 90
     },
-    "axis=x,facing=south": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90,
-      "y": 90
+    "axis=z": {
+      "model": "oxide:block/cinder_blocks_horizontal"
     },
-    "axis=x,facing=east": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90,
-      "y": 90
-    },
-    "axis=x,facing=west": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90,
-      "y": 90
-    },
-    "axis=z,facing=north": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90
-    },
-    "axis=z,facing=south": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90
-    },
-    "axis=z,facing=east": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90
-    },
-    "axis=z,facing=west": {
-      "model": "oxide:block/cinder_blocks",
-      "x": 90
-    },
-    "axis=y,facing=north": {
+    "axis=y": {
       "model": "oxide:block/cinder_blocks"
-    },
-    "axis=y,facing=south": {
-      "model": "oxide:block/cinder_blocks",
-      "y": 180
-    },
-    "axis=y,facing=east": {
-      "model": "oxide:block/cinder_blocks",
-      "y": 90
-    },
-    "axis=y,facing=west": {
-      "model": "oxide:block/cinder_blocks",
-      "y": 270
     }
   }
 }

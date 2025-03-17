@@ -9,10 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -64,9 +61,9 @@ public class ModBlocks {
     public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> CINDER_BLOCKS = regWithItem("cinder_blocks", () ->
-            new RustableCorrugatedIronBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+            new RotatableSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
 
 
@@ -499,142 +496,142 @@ public class ModBlocks {
 
     
     public static final Supplier<Block> WHITE_CORRUGATED_IRON_SLAB = regWithItem("white_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIGHT_GRAY_CORRUGATED_IRON_SLAB = regWithItem("light_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> GRAY_CORRUGATED_IRON_SLAB = regWithItem("gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BLACK_CORRUGATED_IRON_SLAB = regWithItem("black_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BROWN_CORRUGATED_IRON_SLAB = regWithItem("brown_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> RED_CORRUGATED_IRON_SLAB = regWithItem("red_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> ORANGE_CORRUGATED_IRON_SLAB = regWithItem("orange_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> YELLOW_CORRUGATED_IRON_SLAB = regWithItem("yellow_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIME_CORRUGATED_IRON_SLAB = regWithItem("lime_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> GREEN_CORRUGATED_IRON_SLAB = regWithItem("green_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> BLUE_CORRUGATED_IRON_SLAB = regWithItem("blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> PURPLE_CORRUGATED_IRON_SLAB = regWithItem("purple_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> MAGENTA_CORRUGATED_IRON_SLAB = regWithItem("magenta_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> PINK_CORRUGATED_IRON_SLAB = regWithItem("pink_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> LIGHT_BLUE_CORRUGATED_IRON_SLAB = regWithItem("light_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> CYAN_CORRUGATED_IRON_SLAB = regWithItem("cyan_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.CLEAN,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> WEATHERED_WHITE_CORRUGATED_IRON_SLAB = regWithItem("weathered_white_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_SLAB = regWithItem("weathered_light_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_GRAY_CORRUGATED_IRON_SLAB = regWithItem("weathered_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BLACK_CORRUGATED_IRON_SLAB = regWithItem("weathered_black_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BROWN_CORRUGATED_IRON_SLAB = regWithItem("weathered_brown_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_RED_CORRUGATED_IRON_SLAB = regWithItem("weathered_red_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_ORANGE_CORRUGATED_IRON_SLAB = regWithItem("weathered_orange_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_YELLOW_CORRUGATED_IRON_SLAB = regWithItem("weathered_yellow_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIME_CORRUGATED_IRON_SLAB = regWithItem("weathered_lime_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_GREEN_CORRUGATED_IRON_SLAB = regWithItem("weathered_green_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_BLUE_CORRUGATED_IRON_SLAB = regWithItem("weathered_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_PURPLE_CORRUGATED_IRON_SLAB = regWithItem("weathered_purple_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_MAGENTA_CORRUGATED_IRON_SLAB = regWithItem("weathered_magenta_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_PINK_CORRUGATED_IRON_SLAB = regWithItem("weathered_pink_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_SLAB = regWithItem("weathered_light_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WEATHERED_CYAN_CORRUGATED_IRON_SLAB = regWithItem("weathered_cyan_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WEATHERED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> RUSTED_CORRUGATED_IRON_SLAB = regWithItem("rusted_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.RUSTED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.RUSTED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> WAXED_WHITE_CORRUGATED_IRON_SLAB = regWithItem("waxed_white_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_LIGHT_GRAY_CORRUGATED_IRON_SLAB = regWithItem("waxed_light_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_GRAY_CORRUGATED_IRON_SLAB = regWithItem("waxed_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_BLACK_CORRUGATED_IRON_SLAB = regWithItem("waxed_black_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_BROWN_CORRUGATED_IRON_SLAB = regWithItem("waxed_brown_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_RED_CORRUGATED_IRON_SLAB = regWithItem("waxed_red_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_ORANGE_CORRUGATED_IRON_SLAB = regWithItem("waxed_orange_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_YELLOW_CORRUGATED_IRON_SLAB = regWithItem("waxed_yellow_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_LIME_CORRUGATED_IRON_SLAB = regWithItem("waxed_lime_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_GREEN_CORRUGATED_IRON_SLAB = regWithItem("waxed_green_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_BLUE_CORRUGATED_IRON_SLAB = regWithItem("waxed_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_PURPLE_CORRUGATED_IRON_SLAB = regWithItem("waxed_purple_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_MAGENTA_CORRUGATED_IRON_SLAB = regWithItem("waxed_magenta_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_PINK_CORRUGATED_IRON_SLAB = regWithItem("waxed_pink_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_LIGHT_BLUE_CORRUGATED_IRON_SLAB = regWithItem("waxed_light_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_CYAN_CORRUGATED_IRON_SLAB = regWithItem("waxed_cyan_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> WAXED_WEATHERED_WHITE_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_white_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_light_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_GRAY_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_gray_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_BLACK_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_black_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_BROWN_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_brown_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_RED_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_red_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_ORANGE_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_orange_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_YELLOW_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_yellow_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_LIME_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_lime_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_GREEN_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_green_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_BLUE_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_PURPLE_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_purple_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_MAGENTA_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_magenta_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_PINK_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_pink_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_light_blue_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
     public static final Supplier<Block> WAXED_WEATHERED_CYAN_CORRUGATED_IRON_SLAB = regWithItem("waxed_weathered_cyan_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final Supplier<Block> WAXED_RUSTED_CORRUGATED_IRON_SLAB = regWithItem("waxed_rusted_corrugated_iron_slab", () ->
-            new RotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            new RustableRotatableSlabBlock(Rustable.RustLevel.WAXED,BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     //iron decor
 

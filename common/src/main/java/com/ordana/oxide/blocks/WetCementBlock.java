@@ -9,12 +9,14 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ScaffoldingBlockItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ScaffoldingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -81,22 +83,84 @@ public class WetCementBlock extends Block {
         BlockPos belowPos = blockPos.below();
         BlockState belowState = level.getBlockState(belowPos);
 
+        int range = 5;
+        for (int k = 1; k < 3; k++) {
+            var rangeState = level.getBlockState(blockPos.below(k));
+            if (rangeState.is(this))
+                if (rangeState.getValue(TYPE) == SlabType.DOUBLE) range = range -1;
+        }
+
         if (blockState.is(this)) {
+            for (int i = 1; i < range; i++) {
+                for (Direction dir : Direction.Plane.HORIZONTAL) {
+                    var dirPos = blockPos.relative(dir, i);
+                    var dirState = level.getBlockState(dirPos);
 
-            for (Direction dir : Direction.Plane.HORIZONTAL) {
-                var dirState = level.getBlockState(blockPos.relative(dir));
+                    if (dirState.canBeReplaced()) {
+                        level.playSound(null, dirPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                        level.setBlockAndUpdate(dirPos, this.defaultBlockState());
+                        return blockState;
+                    } else {
 
-                if (dirState.canBeReplaced()) {
-                    level.playSound(null, blockPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                    level.setBlockAndUpdate(blockPos.relative(dir), this.defaultBlockState());
-                    return blockState;
+                        for (int j = 1; j <= i; j++) {
+                            var newPos = dirPos.relative(dir.getClockWise(), j);
+                            dirState = level.getBlockState(newPos);
+                            if (dirState.canBeReplaced()) {
+                                level.playSound(null, newPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                                level.setBlockAndUpdate(newPos, this.defaultBlockState());
+                                return blockState;
+                            }
+                            var newPos2 = dirPos.relative(dir.getCounterClockWise(), j);
+                            dirState = level.getBlockState(newPos2);
+                            if (dirState.canBeReplaced()) {
+                                level.playSound(null, newPos2, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                                level.setBlockAndUpdate(newPos2, this.defaultBlockState());
+                                return blockState;
+                            }
+                        }
+                    }
                 }
             }
-            if (blockState.getValue(TYPE) == SlabType.BOTTOM) {
-                level.setBlockAndUpdate(blockPos, blockState);
-                return blockState.setValue(TYPE, SlabType.DOUBLE);
+            return blockState.setValue(TYPE, SlabType.DOUBLE);
+        }
+
+        else if (belowState.is(this)) {
+            if (belowState.getValue(TYPE) == SlabType.DOUBLE) {
+                for (int i = 1; i < range - 1; i++) {
+                    for (Direction dir : Direction.Plane.HORIZONTAL) {
+                        var dirPos = belowPos.relative(dir, i);
+                        var dirState = level.getBlockState(dirPos);
+
+                        if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
+                            level.playSound(null, dirPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                            level.setBlockAndUpdate(dirPos, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                            return blockState;
+                        } else {
+
+                            for (int j = 1; j <= i; j++) {
+                                var newPos = dirPos.relative(dir.getClockWise(), j);
+                                dirState = level.getBlockState(newPos);
+                                if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
+                                    level.playSound(null, newPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                                    level.setBlockAndUpdate(newPos, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                                    return blockState;
+                                }
+                                var newPos2 = dirPos.relative(dir.getCounterClockWise(), j);
+                                dirState = level.getBlockState(newPos2);
+                                if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
+                                    level.playSound(null, newPos2, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                                    level.setBlockAndUpdate(newPos2, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                                    return blockState;
+                                }
+                            }
+                        }
+
+                    }
+                }
             }
         }
+
+        /*
         else if (belowState.is(this)) {
             if (belowState.getValue(TYPE) == SlabType.DOUBLE) {
 
@@ -119,6 +183,8 @@ public class WetCementBlock extends Block {
                 }
             }
         }
+
+         */
 
         return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
     }
