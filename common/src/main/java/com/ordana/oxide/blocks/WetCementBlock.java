@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks;
 
 import com.ordana.oxide.reg.ModBlocks;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -50,7 +51,7 @@ public class WetCementBlock extends Block {
 
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        serverLevel.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ? ModBlocks.CEMENT.get().defaultBlockState() : ModBlocks.CEMENT_SLAB.get().defaultBlockState());
+        if (!serverLevel.getBlockState(pos.below()).is(this)) serverLevel.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ? ModBlocks.CEMENT.get().defaultBlockState() : ModBlocks.CEMENT_SLAB.get().defaultBlockState());
     }
 
 
@@ -77,116 +78,13 @@ public class WetCementBlock extends Block {
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
-        BlockState blockState = level.getBlockState(blockPos);
-        BlockPos belowPos = blockPos.below();
-        BlockState belowState = level.getBlockState(belowPos);
-
-        int range = 5;
-        for (int k = 1; k < 3; k++) {
-            var rangeState = level.getBlockState(blockPos.below(k));
-            if (rangeState.is(this))
-                if (rangeState.getValue(TYPE) == SlabType.DOUBLE) range = range -1;
-        }
-
+        BlockState blockState = context.getLevel().getBlockState(blockPos);
         if (blockState.is(this)) {
-            for (int i = 1; i < range; i++) {
-                for (Direction dir : Direction.Plane.HORIZONTAL) {
-                    var dirPos = blockPos.relative(dir, i);
-                    var dirState = level.getBlockState(dirPos);
-
-                    if (dirState.canBeReplaced()) {
-                        level.playSound(null, dirPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                        level.setBlockAndUpdate(dirPos, this.defaultBlockState());
-                        return blockState;
-                    } else {
-
-                        for (int j = 1; j <= i; j++) {
-                            var newPos = dirPos.relative(dir.getClockWise(), j);
-                            dirState = level.getBlockState(newPos);
-                            if (dirState.canBeReplaced()) {
-                                level.playSound(null, newPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                                level.setBlockAndUpdate(newPos, this.defaultBlockState());
-                                return blockState;
-                            }
-                            var newPos2 = dirPos.relative(dir.getCounterClockWise(), j);
-                            dirState = level.getBlockState(newPos2);
-                            if (dirState.canBeReplaced()) {
-                                level.playSound(null, newPos2, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                                level.setBlockAndUpdate(newPos2, this.defaultBlockState());
-                                return blockState;
-                            }
-                        }
-                    }
-                }
-            }
             return blockState.setValue(TYPE, SlabType.DOUBLE);
+        } else {
+            return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
         }
-
-        else if (belowState.is(this)) {
-            if (belowState.getValue(TYPE) == SlabType.DOUBLE) {
-                for (int i = 1; i < range - 1; i++) {
-                    for (Direction dir : Direction.Plane.HORIZONTAL) {
-                        var dirPos = belowPos.relative(dir, i);
-                        var dirState = level.getBlockState(dirPos);
-
-                        if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
-                            level.playSound(null, dirPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                            level.setBlockAndUpdate(dirPos, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
-                            return blockState;
-                        } else {
-
-                            for (int j = 1; j <= i; j++) {
-                                var newPos = dirPos.relative(dir.getClockWise(), j);
-                                dirState = level.getBlockState(newPos);
-                                if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
-                                    level.playSound(null, newPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                                    level.setBlockAndUpdate(newPos, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
-                                    return blockState;
-                                }
-                                var newPos2 = dirPos.relative(dir.getCounterClockWise(), j);
-                                dirState = level.getBlockState(newPos2);
-                                if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
-                                    level.playSound(null, newPos2, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                                    level.setBlockAndUpdate(newPos2, this.defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
-                                    return blockState;
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
-        /*
-        else if (belowState.is(this)) {
-            if (belowState.getValue(TYPE) == SlabType.DOUBLE) {
-
-                for (Direction dir : Direction.Plane.HORIZONTAL) {
-                    var dirState = level.getBlockState(belowPos.relative(dir));
-
-                    if (dirState.canBeReplaced()) {
-                        level.playSound(null, belowPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                        level.setBlockAndUpdate(belowPos.relative(dir), this.defaultBlockState());
-                        return blockState;
-                    }
-                    if (dirState.is(this)) {
-                        if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
-                            level.playSound(null, belowPos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-                            level.setBlockAndUpdate(belowPos.relative(dir), dirState.setValue(TYPE, SlabType.DOUBLE));
-                            return blockState;
-                        }
-                    }
-
-                }
-            }
-        }
-
-         */
-
-        return this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
     }
 
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
@@ -211,28 +109,29 @@ public class WetCementBlock extends Block {
 
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        //if (state.getValue(TYPE) == SlabType.DOUBLE) {
-        //    for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
-        //        var dirState = level.getBlockState(pos.relative(dir));
-        //        if (dirState.canBeReplaced()) {
-        //            level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.BOTTOM), 3);
-        //            level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
-        //            break;
-        //        }
-        //    }
-        //}
-        //var belowPos = (level.getBlockState(pos.below()));
-//
-        //if (belowPos.canBeReplaced()) {
-        //    level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        //    level.setBlock(pos.below(), state, 3);
-        //}
-        //if (belowPos.is(ModBlocks.WET_CEMENT.get())) {
-        //    if (belowPos.getValue(TYPE) == SlabType.BOTTOM) {
-        //        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        //        level.setBlock(pos.below(), state.setValue(TYPE, SlabType.DOUBLE), 3);
-        //    }
-        //}
+        if (level instanceof ClientLevel) return Blocks.AIR.defaultBlockState();
+        if (state.getValue(TYPE) == SlabType.DOUBLE) {
+            for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
+                var dirState = level.getBlockState(pos.relative(dir));
+                if (dirState.canBeReplaced()) {
+                    level.setBlock(pos.relative(dir), state.setValue(TYPE, SlabType.BOTTOM), 3);
+                    level.setBlock(pos, state.setValue(TYPE, SlabType.BOTTOM), 3);
+                    break;
+                }
+            }
+        }
+        var belowPos = (level.getBlockState(pos.below()));
+
+        if (belowPos.canBeReplaced()) {
+            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+            level.setBlock(pos.below(), state, 3);
+        }
+        if (belowPos.is(ModBlocks.WET_CEMENT.get())) {
+            if (belowPos.getValue(TYPE) == SlabType.BOTTOM) {
+                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                level.setBlock(pos.below(), state.setValue(TYPE, SlabType.DOUBLE), 3);
+            }
+        }
 
 
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);

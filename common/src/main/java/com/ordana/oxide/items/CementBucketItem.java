@@ -18,55 +18,5 @@ public class CementBucketItem extends BlockItem {
     public CementBucketItem(Block block, Properties properties) {
         super(block, properties);
     }
-
-    @Nullable
-    public BlockPlaceContext updatePlacementContext(BlockPlaceContext context) {
-        BlockPos blockPos = context.getClickedPos();
-        Level level = context.getLevel();
-        BlockState blockState = level.getBlockState(blockPos);
-        Block block = this.getBlock();
-        if (!blockState.is(block)) {
-            return ScaffoldingBlock.getDistance(level, blockPos) == 7 ? null : context;
-        } else {
-            Direction direction;
-            if (context.isSecondaryUseActive()) {
-                direction = context.isInside() ? context.getClickedFace().getOpposite() : context.getClickedFace();
-            } else {
-                direction = context.getClickedFace() == Direction.UP ? context.getHorizontalDirection() : Direction.UP;
-            }
-
-            int i = 0;
-            BlockPos.MutableBlockPos mutableBlockPos = blockPos.mutable().move(direction);
-
-            while(i < 7) {
-                if (!level.isClientSide && !level.isInWorldBounds(mutableBlockPos)) {
-                    Player player = context.getPlayer();
-                    int j = level.getMaxBuildHeight();
-                    if (player instanceof ServerPlayer && mutableBlockPos.getY() >= j) {
-                        ((ServerPlayer)player).sendSystemMessage(Component.translatable("build.tooHigh", new Object[]{j - 1}).withStyle(ChatFormatting.RED), true);
-                    }
-                    break;
-                }
-
-                blockState = level.getBlockState(mutableBlockPos);
-                if (!blockState.is(this.getBlock())) {
-                    if (blockState.canBeReplaced(context)) {
-                        return BlockPlaceContext.at(context, mutableBlockPos, direction);
-                    }
-                    break;
-                }
-
-                mutableBlockPos.move(direction);
-                if (direction.getAxis().isHorizontal()) {
-                    ++i;
-                }
-            }
-
-            return null;
-        }
-    }
-
-    protected boolean mustSurvive() {
-        return false;
-    }
+    
 }
