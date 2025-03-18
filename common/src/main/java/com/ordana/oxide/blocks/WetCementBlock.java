@@ -1,7 +1,6 @@
 package com.ordana.oxide.blocks;
 
 import com.ordana.oxide.reg.ModBlocks;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -105,7 +104,7 @@ public class WetCementBlock extends Block {
 
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (level instanceof ClientLevel) return Blocks.AIR.defaultBlockState();
+        if (level.isClientSide()) return Blocks.AIR.defaultBlockState();
         if (state.getValue(TYPE) == SlabType.DOUBLE) {
             for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.getRandom())) {
                 var dirState = level.getBlockState(pos.relative(dir));
