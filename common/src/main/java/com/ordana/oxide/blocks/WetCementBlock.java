@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks;
 
 import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -85,7 +86,7 @@ public class WetCementBlock extends Block {
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
         ItemStack itemStack = useContext.getItemInHand();
         SlabType slabType = state.getValue(TYPE);
-        if (slabType != SlabType.DOUBLE && itemStack.is(this.asItem())) {
+        if (slabType != SlabType.DOUBLE && (itemStack.is(this.asItem()) || itemStack.is(ModItems.CEMENT_BUCKET.get()))) {
             if (useContext.replacingClickedOnBlock()) {
                 boolean bl = useContext.getClickLocation().y - (double)useContext.getClickedPos().getY() > 0.5;
                 Direction direction = useContext.getClickedFace();

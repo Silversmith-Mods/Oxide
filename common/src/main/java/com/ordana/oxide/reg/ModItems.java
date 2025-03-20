@@ -1,6 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.items.CementBucketItem;
 import com.ordana.oxide.items.PureNailItem;
 import com.ordana.oxide.items.RustyNailItem;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
@@ -18,9 +19,11 @@ public class ModItems {
     public static <T extends Item> Supplier<T> regItem(String name, Supplier<T> itemSup) {
         return RegHelper.registerItem(Oxide.res(name), itemSup);
     }
+    public static final Supplier<Item> CEMENT_BUCKET = regItem("cement_bucket", () ->
+            new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128)));
 
     public static final Supplier<Item> RUSTY_NAIL = regItem("rusty_nail", () ->
             new RustyNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));
     public static final Supplier<Item> PURE_NAIL = regItem("pure_nail", () ->
-            new PureNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));
+            new PureNailItem(new Item.Properties().attributes(PureNailItem.createAttributes()).component(DataComponents.TOOL, PureNailItem.createToolProperties())));
 }

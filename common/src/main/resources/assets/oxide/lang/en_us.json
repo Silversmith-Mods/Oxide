@@ -1,6 +1,11 @@
 {
   "itemGroup.oxide.oxide": "Oxide",
   "tag.oxide.corrugated_iron": "Corrugated Iron Blocks",
+  "tooltip.oxide.cement_bucket": "%1$s/%2$s Wet Cement stored",
+
+  "item.oxide.cement_bucket": "Bucket of Wet Cement",
+  "item.oxide.rusty_nail": "Rusty Nail",
+  "item.oxide.pure_nail": "Pure Nail",
 
   "block.oxide.wet_cement": "Wet Cement",
   "block.oxide.cement": "Cement",
@@ -346,8 +351,5 @@
 
   "block.oxide.waxed_heavy_iron_bars": "Waxed Heavy Iron Bars",
   "block.oxide.waxed_weathered_heavy_iron_bars": "Waxed Weathered Heavy Iron Bars",
-  "block.oxide.waxed_rusted_heavy_iron_bars": "Waxed Rusted Heavy Iron Bars",
-
-  "item.oxide.rusty_nail": "Rusty Nail",
-  "item.oxide.pure_nail": "Pure Nail"
+  "block.oxide.waxed_rusted_heavy_iron_bars": "Waxed Rusted Heavy Iron Bars"
 }

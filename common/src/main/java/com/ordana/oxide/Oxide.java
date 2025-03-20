@@ -37,6 +37,7 @@ public class Oxide {
         ModBlocks.init();
         ModItems.init();
         ModEntities.init();
+        ModComponents.init();
     }
 
     public static void setup() {
