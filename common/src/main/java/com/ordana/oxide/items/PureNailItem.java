@@ -4,6 +4,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -32,9 +34,9 @@ public class PureNailItem extends Item {
         return 72000;
     }
 
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.BOW;
-    }
+    //public UseAnim getUseAnimation(ItemStack stack) {
+        //return UseAnim.BOW;
+    //}
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack itemStack = player.getItemInHand(usedHand);
@@ -44,18 +46,13 @@ public class PureNailItem extends Item {
 
     public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int timeCharged) {
         if (!(livingEntity instanceof Player player)) return;
-
-        player.knockback((double) timeCharged /10000, player.getLookAngle().x, player.getLookAngle().z);
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
-
+        player.setDeltaMovement(player.getDeltaMovement().x, 0.6, player.getDeltaMovement().z);
+        player.knockback((double) timeCharged /150000, -player.getLookAngle().x, -player.getLookAngle().z);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.PHANTOM_FLAP, SoundSource.NEUTRAL, 3F, 2F / (level.random.nextFloat() * 0.4F + 0.8F));
     }
-
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+    public void AttackEntity(Player player, Level level) {
+        player.setDeltaMovement(player.getDeltaMovement().x, 0.6, player.getDeltaMovement().z);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.THORNS_HIT, SoundSource.NEUTRAL, 3F, 3.4F / (level.random.nextFloat() * 0.4F + 0.8F));
     }
 
     public static Tool createToolProperties() {
