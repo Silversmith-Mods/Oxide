@@ -425,11 +425,13 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
 
             if (rusted.isPresent()) {
                 level.playSound(player, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 1.0f, 1.0f);
-                ParticleUtil.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.SPLASH, UniformInt.of(3, 5), -0.05f, 0.05f, false);
                 if (player instanceof ServerPlayer serverPlayer) {
                     player.awardStat(Stats.ITEM_USED.get(item));
                     CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
                     level.setBlockAndUpdate(pos, rusted.get());
+                }
+                else {
+                    ParticleUtil.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.SPLASH, UniformInt.of(3, 5), -0.05f, 0.05f, false);
                 }
                 return ItemInteractionResult.sidedSuccess(level.isClientSide);
             }
