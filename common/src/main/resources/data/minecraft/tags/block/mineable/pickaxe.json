@@ -55,6 +55,12 @@
     "oxide:cement",
     "oxide:cement_stairs",
     "oxide:cement_slab",
+    "oxide:cement_block",
+    "oxide:cinder_blocks",
+    "oxide:cinder_block_slab",
+    "oxide:cinder_bricks",
+    "oxide:cinder_brick_slab",
+    "oxide:cinder_brick_stair",
 
     "oxide:red_corrugated_iron",
     "oxide:red_corrugated_iron_stairs",
