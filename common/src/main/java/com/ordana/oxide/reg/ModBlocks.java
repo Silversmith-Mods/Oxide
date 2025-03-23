@@ -724,7 +724,8 @@ public class ModBlocks {
 
     public static final Supplier<Block> CEMENT_EATER = regWithItem("cement_eater", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
-
+    public static final Supplier<Block> CIRNONAIL = regWithItem("cirnonail", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
 
 
     private static BlockBehaviour.Properties noTick(Block ofFullCopyFrom){
