@@ -34,10 +34,10 @@ public class PureNailItem extends Item {
         if (attacker instanceof ServerPlayer serverPlayer) {
             ServerLevel serverLevel = (ServerLevel)attacker.level();
 
-            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 2));
-            attacker.setDeltaMovement(attacker.getDeltaMovement().x, 0.6, attacker.getDeltaMovement().z);
+            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20));
+            attacker.setDeltaMovement(attacker.getLookAngle().x, 0.8, attacker.getLookAngle().z);
             serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
-            serverLevel.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.THORNS_HIT, serverPlayer.getSoundSource(), 1.0F, 2F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
+            serverLevel.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.THORNS_HIT, serverPlayer.getSoundSource(), 5.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
 
         }
 

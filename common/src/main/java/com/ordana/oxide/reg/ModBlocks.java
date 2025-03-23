@@ -722,6 +722,8 @@ public class ModBlocks {
     public static final Supplier<Block> WAXED_RUSTED_WROUGHT_IRON_FENCE_GATE = regWithItem("waxed_rusted_wrought_iron_fence_gate", () ->
             new RustableFenceGateBlock(Rustable.RustLevel.WAXED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER)));
 
+    public static final Supplier<Block> CEMENT_EATER = regWithItem("cement_eater", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK)));
 
 
 
