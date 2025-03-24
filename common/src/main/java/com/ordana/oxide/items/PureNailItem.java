@@ -43,6 +43,7 @@ public class PureNailItem extends Item {
             target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 1, true, false));
             attacker.setDeltaMovement(attacker.getLookAngle().x * 0.7, 0.8, attacker.getLookAngle().z * 0.7);
             serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
+            serverLevel.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.THORNS_HIT, serverPlayer.getSoundSource(), 9.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
             serverLevel.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, serverPlayer.getSoundSource(), 5.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
         }
 
@@ -55,6 +56,7 @@ public class PureNailItem extends Item {
 
             serverPlayer.setDeltaMovement(serverPlayer.isCrouching() ? -serverPlayer.getLookAngle().x : serverPlayer.getLookAngle().x, 0.8, serverPlayer.isCrouching() ? -serverPlayer.getLookAngle().z : serverPlayer.getLookAngle().z);
             serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
+            level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.THORNS_HIT, serverPlayer.getSoundSource(), 9.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
             level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, serverPlayer.getSoundSource(), 5.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
         }
         return !player.isCreative();
