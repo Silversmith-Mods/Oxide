@@ -1,38 +1,39 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
 
-modLoader="javafml"
+license = "${mod_license}"
+issueTrackerURL = "${mod_github}/issues"
 
-loaderVersion="[4,)"
-
-license="LGPLv3"
 
 [[mods]]
-    modId="oxide"
+    modId = "${mod_id}"
     version = "${mod_version}"
-    displayName="${mod_name}"
-    logoFile="icon.gif"
-    credits="Ordana"
-    authors="Ordana, Keyberries"
-    itemIcon="oxide:template"
-    description='''${mod_description}'''
+    displayName = "${mod_name}"
+    logoFile = "icon.gif"
+    authors = "${mod_authors}"
+    credits = "${mod_credits}"
+    description = '''${mod_description}'''
+    modUrl = "${mod_homepage}"
+    itemIcon = "oxide:rusted_cut_iron" #catalogue icon
 
-[[dependencies.oxide]]
-    modId="neoforge"
+[[dependencies.${mod_id}]]
+    modId = "neoforge"
     type = "required"
-    versionRange="[4,)"
-    ordering="NONE"
-    side="BOTH"
+    versionRange = "${neo_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
 
-[[dependencies.oxide]]
-    modId="minecraft"
+[[dependencies.${mod_id}]]
+    modId = "minecraft"
     type = "required"
-    versionRange="[1.21.1]"
-    ordering="NONE"
-    side="BOTH"
+    versionRange = "[${minecraft_min_version},${minecraft_max_version})"
+    ordering = "NONE"
+    side = "BOTH"
 
-[[dependencies.oxide]]
-    modId="moonlight"
+[[dependencies.${mod_id}]]
+    modId = "moonlight"
     type = "required"
     referralUrl = "https://www.curseforge.com/minecraft/mc-mods/selene"
     versionRange="[1.21-2.17.34,]"
-    ordering="NONE"
-    side="BOTH"
+    ordering = "NONE"
+    side = "BOTH"

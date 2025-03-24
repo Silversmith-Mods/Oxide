@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "oxide",
+  "id": "${mod_id}",
   "version": "${mod_version}",
   "name": "${mod_name}",
   "description": "${mod_description}",
   "authors": [
-    "Ordana"
+    "${mod_authors}"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/oxide",
-    "sources": "https://github.com/AstralOrdana/oxide"
+    "homepage": "${mod_homepage}",
+    "sources": "${mod_github}"
   },
-  "license": "LGPLv3",
+  "license": "${mod_license}",
   "icon": "icon.gif",
   "environment": "*",
   "entrypoints": {
@@ -28,7 +28,7 @@
   ],
   "depends": {
     "fabric-api": "*",
-    "minecraft": "1.21.1",
+    "minecraft": ">=${minecraft_min_version} <${minecraft_max_version}",
     "moonlight": ">=1.21-2.17.34"
   }
 }
