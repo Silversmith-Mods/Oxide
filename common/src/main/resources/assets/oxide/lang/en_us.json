@@ -18,6 +18,12 @@
   "block.oxide.cinder_bricks": "Cinder Bricks",
   "block.oxide.cinder_brick_slab": "Cinder Brick Slab",
   "block.oxide.cinder_brick_stairs": "Cinder Brick Stairs",
+  "block.oxide.cinder_brick_wall": "Cinder Brick Wall",
+
+  "block.oxide.weathered_cinder_bricks": "Weathered Cinder Bricks",
+  "block.oxide.weathered_cinder_brick_slab": "Weathered Cinder Brick Slab",
+  "block.oxide.weathered_cinder_brick_stairs": "Weathered Cinder Brick Stairs",
+  "block.oxide.weathered_cinder_brick_wall": "Weathered Cinder Brick Wall",
   
   "block.oxide.plate_iron": "Plate Iron",
   "block.oxide.weathered_plate_iron": "Weathered Plate Iron",

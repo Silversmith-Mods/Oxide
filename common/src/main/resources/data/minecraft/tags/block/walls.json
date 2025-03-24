@@ -12,6 +12,8 @@
     "oxide:rusted_wrought_iron_fence_gate",
     "oxide:waxed_wrought_iron_fence_gate",
     "oxide:waxed_weathered_wrought_iron_fence_gate",
-    "oxide:waxed_rusted_wrought_iron_fence_gate"
+    "oxide:waxed_rusted_wrought_iron_fence_gate",
+    "oxide:cinder_brick_wall",
+    "oxide:weathered_cinder_brick_wall"
   ]
 }

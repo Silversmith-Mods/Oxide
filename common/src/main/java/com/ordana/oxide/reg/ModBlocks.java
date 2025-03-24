@@ -57,6 +57,17 @@ public class ModBlocks {
             new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> CINDER_BRICK_SLAB = regWithItem("cinder_brick_slab", () ->
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CINDER_BRICK_WALL = regWithItem("cinder_brick_wall", () ->
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+
+    public static final Supplier<Block> WEATHERED_CINDER_BRICKS = regWithItem("weathered_cinder_bricks", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> WEATHERED_CINDER_BRICK_STAIRS = regWithItem("weathered_cinder_brick_stairs", () ->
+            new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> WEATHERED_CINDER_BRICK_SLAB = regWithItem("weathered_cinder_brick_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> WEATHERED_CINDER_BRICK_WALL = regWithItem("weathered_cinder_brick_wall", () ->
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
     public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));

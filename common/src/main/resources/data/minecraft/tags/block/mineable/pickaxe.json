@@ -62,6 +62,11 @@
     "oxide:cinder_brick_slab",
     "oxide:cinder_brick_stairs",
 
+    "oxide:weathered_cinder_bricks",
+    "oxide:weathered_cinder_brick_stairs",
+    "oxide:weathered_cinder_brick_slab",
+    "oxide:weathered_cinder_brick_wall",
+
     "oxide:red_corrugated_iron",
     "oxide:red_corrugated_iron_stairs",
     "oxide:red_corrugated_iron_slab",

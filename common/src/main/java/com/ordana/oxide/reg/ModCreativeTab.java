@@ -123,7 +123,8 @@ public class ModCreativeTab {
                 ModItems.RUSTY_NAIL, ModItems.PURE_NAIL,
                 ModItems.CEMENT_BUCKET, ModBlocks.CEMENT, ModBlocks.CEMENT_STAIRS, ModBlocks.CEMENT_SLAB,
                 ModBlocks.CEMENT_BLOCK, ModBlocks.CINDER_BLOCKS, ModBlocks.CINDER_BLOCK_SLAB,
-                ModBlocks.CINDER_BRICKS,ModBlocks.CINDER_BRICK_SLAB,ModBlocks.CINDER_BRICK_STAIRS
+                ModBlocks.CINDER_BRICKS,ModBlocks.CINDER_BRICK_SLAB,ModBlocks.CINDER_BRICK_STAIRS,ModBlocks.CINDER_BRICK_WALL,
+                ModBlocks.WEATHERED_CINDER_BRICKS,ModBlocks.WEATHERED_CINDER_BRICK_SLAB,ModBlocks.WEATHERED_CINDER_BRICK_STAIRS,ModBlocks.WEATHERED_CINDER_BRICK_WALL
         );
 
 
