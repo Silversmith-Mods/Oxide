@@ -51,9 +51,9 @@ public class PureNailItem extends Item {
 
     public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
         if (player instanceof ServerPlayer serverPlayer) {
-            ServerLevel serverLevel = (ServerLevel)player.level();
+            ServerLevel serverLevel = (ServerLevel)serverPlayer.level();
 
-            player.setDeltaMovement(player.isCrouching() ? -player.getLookAngle().x : player.getLookAngle().x, 0.8, player.isCrouching() ? -player.getLookAngle().z : player.getLookAngle().z);
+            serverPlayer.setDeltaMovement(serverPlayer.isCrouching() ? -serverPlayer.getLookAngle().x : serverPlayer.getLookAngle().x, 0.8, serverPlayer.isCrouching() ? -serverPlayer.getLookAngle().z : serverPlayer.getLookAngle().z);
             serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
             level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, serverPlayer.getSoundSource(), 5.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
         }
