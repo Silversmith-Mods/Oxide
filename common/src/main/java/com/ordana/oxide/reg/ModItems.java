@@ -20,7 +20,7 @@ public class ModItems {
         return RegHelper.registerItem(Oxide.res(name), itemSup);
     }
     public static final Supplier<Item> CEMENT_BUCKET = regItem("cement_bucket", () ->
-            new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128)));
+            new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 
     public static final Supplier<Item> RUSTY_NAIL = regItem("rusty_nail", () ->
             new RustyNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));

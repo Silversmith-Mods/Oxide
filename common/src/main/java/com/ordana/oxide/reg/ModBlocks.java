@@ -39,9 +39,8 @@ public class ModBlocks {
         return block;
     }
 
-
     public static final Supplier<Block> WET_CEMENT = regWithItem("wet_cement", () ->
-            new WetCementBlock(BlockBehaviour.Properties.of().sound(SoundType.MUD).randomTicks().isSuffocating(ModBlocks::always)));
+            new WetCementBlock(BlockBehaviour.Properties.of().sound(SoundType.MUD).randomTicks().strength(3.0F, 6.0F).requiresCorrectToolForDrops().isSuffocating(ModBlocks::always)));
 
     public static final Supplier<Block> CEMENT = regWithItem("cement", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
@@ -71,6 +70,8 @@ public class ModBlocks {
 
     public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CEMENT_BLOCK_SLAB = regWithItem("cement_block_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> CINDER_BLOCKS = regWithItem("cinder_blocks", () ->
             new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->

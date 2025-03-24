@@ -6,12 +6,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 
@@ -34,11 +36,10 @@ public class PureNailItem extends Item {
         if (attacker instanceof ServerPlayer serverPlayer) {
             ServerLevel serverLevel = (ServerLevel)attacker.level();
 
-            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20));
-            attacker.setDeltaMovement(attacker.getLookAngle().x, 0.8, attacker.getLookAngle().z);
+            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 1, true, false));
+            attacker.setDeltaMovement(attacker.getLookAngle().x / 2, 0.8, attacker.getLookAngle().z / 2);
             serverPlayer.connection.send(new ClientboundSetEntityMotionPacket(serverPlayer));
             serverLevel.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), SoundEvents.THORNS_HIT, serverPlayer.getSoundSource(), 5.0F, 3F / (serverLevel.random.nextFloat() * 0.4F + 0.8F));
-
         }
 
         return true;

@@ -14,8 +14,10 @@
     "oxide:weathered_iron_scaffold_slab",
     "oxide:rusted_iron_scaffold_slab",
     "oxide:cement_slab",
+    "oxide:cement_block_slab",
     "oxide:cinder_block_slab",
     "oxide:cinder_brick_slab",
+    "oxide:weathered_cinder_brick_slab",
 
     "oxide:red_corrugated_iron_slab",
     "oxide:orange_corrugated_iron_slab",
