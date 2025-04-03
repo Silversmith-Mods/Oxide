@@ -59,14 +59,26 @@
     "oxide:cement_block_slab",
     "oxide:cinder_blocks",
     "oxide:cinder_block_slab",
+
     "oxide:cinder_bricks",
-    "oxide:cinder_brick_slab",
     "oxide:cinder_brick_stairs",
+    "oxide:cinder_brick_slab",
+    "oxide:cinder_brick_wall",
 
     "oxide:weathered_cinder_bricks",
     "oxide:weathered_cinder_brick_stairs",
     "oxide:weathered_cinder_brick_slab",
     "oxide:weathered_cinder_brick_wall",
+
+    "oxide:clinker_bricks",
+    "oxide:clinker_brick_slab",
+    "oxide:clinker_brick_stairs",
+    "oxide:clinker_brick_wall",
+
+    "oxide:cream_bricks",
+    "oxide:cream_brick_slab",
+    "oxide:cream_brick_stairs",
+    "oxide:cream_brick_wall",
 
     "oxide:red_corrugated_iron",
     "oxide:red_corrugated_iron_stairs",

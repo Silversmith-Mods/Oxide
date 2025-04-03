@@ -18,6 +18,9 @@
     "oxide:cinder_block_slab",
     "oxide:cinder_brick_slab",
     "oxide:weathered_cinder_brick_slab",
+    "oxide:clinker_brick_slab",
+    "oxide:stock_brick_slab",
+    "oxide:cream_brick_slab",
 
     "oxide:red_corrugated_iron_slab",
     "oxide:orange_corrugated_iron_slab",

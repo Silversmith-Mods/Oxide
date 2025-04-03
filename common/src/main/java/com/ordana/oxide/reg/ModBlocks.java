@@ -62,7 +62,7 @@ public class ModBlocks {
     public static final Supplier<Block> WEATHERED_CINDER_BRICKS = regWithItem("weathered_cinder_bricks", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_STAIRS = regWithItem("weathered_cinder_brick_stairs", () ->
-            new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+            new ModStairBlock(ModBlocks.CINDER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_SLAB = regWithItem("weathered_cinder_brick_slab", () ->
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_WALL = regWithItem("weathered_cinder_brick_wall", () ->
@@ -77,6 +77,32 @@ public class ModBlocks {
     public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->
             new RotatableSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
+    public static final Supplier<Block> CLINKER_BRICKS = regWithItem("clinker_bricks", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CLINKER_BRICK_STAIRS = regWithItem("clinker_brick_stairs", () ->
+            new ModStairBlock(ModBlocks.CLINKER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CLINKER_BRICK_SLAB = regWithItem("clinker_brick_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CLINKER_BRICK_WALL = regWithItem("clinker_brick_wall", () ->
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+
+    public static final Supplier<Block> STOCK_BRICKS = regWithItem("stock_bricks", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> STOCK_BRICK_STAIRS = regWithItem("stock_brick_stairs", () ->
+            new ModStairBlock(ModBlocks.STOCK_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> STOCK_BRICK_SLAB = regWithItem("stock_brick_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> STOCK_BRICK_WALL = regWithItem("stock_brick_wall", () ->
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+
+    public static final Supplier<Block> CREAM_BRICKS = regWithItem("cream_bricks", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CREAM_BRICK_STAIRS = regWithItem("cream_brick_stairs", () ->
+            new ModStairBlock(ModBlocks.CREAM_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CREAM_BRICK_SLAB = regWithItem("cream_brick_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+    public static final Supplier<Block> CREAM_BRICK_WALL = regWithItem("cream_brick_wall", () ->
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
 
 

@@ -26,7 +26,22 @@
   "block.oxide.weathered_cinder_brick_slab": "Weathered Cinder Brick Slab",
   "block.oxide.weathered_cinder_brick_stairs": "Weathered Cinder Brick Stairs",
   "block.oxide.weathered_cinder_brick_wall": "Weathered Cinder Brick Wall",
-  
+
+  "block.oxide.clinker_bricks": "Clinker Bricks",
+  "block.oxide.clinker_brick_slab": "Clinker Brick Slab",
+  "block.oxide.clinker_brick_stairs": "Clinker Brick Stairs",
+  "block.oxide.clinker_brick_wall": "Clinker Brick Wall",
+
+  "block.oxide.stock_bricks": "Stock Bricks",
+  "block.oxide.stock_brick_slab": "Stock Brick Slab",
+  "block.oxide.stock_brick_stairs": "Stock Brick Stairs",
+  "block.oxide.stock_brick_wall": "Stock Brick Wall",
+
+  "block.oxide.cream_bricks": "Cream Bricks",
+  "block.oxide.cream_brick_slab": "Cream Brick Slab",
+  "block.oxide.cream_brick_stairs": "Cream Brick Stairs",
+  "block.oxide.cream_brick_wall": "Cream Brick Wall",
+
   "block.oxide.plate_iron": "Plate Iron",
   "block.oxide.weathered_plate_iron": "Weathered Plate Iron",
   "block.oxide.rusted_plate_iron": "Rusted Plate Iron",
