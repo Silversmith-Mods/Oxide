@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "oxide:cement_block"
+          "name": "oxide:cinder_block"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "oxide:blocks/cement_block"
+  "random_sequence": "oxide:blocks/cinder_block"
 }

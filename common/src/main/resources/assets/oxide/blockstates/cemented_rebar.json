@@ -1,0 +1,236 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oxide:block/cement_wet/bottom"
+      },
+      "when": {
+        "type": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/cement_wet/double"
+      },
+      "when": {
+        "type": "double"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/lower_corners"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/up"
+      },
+      "when": {
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/down"
+      },
+      "when": {
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/nesw"
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/ring"
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+
+
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert",
+        "y": 90
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert"
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+
+
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side"
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side",
+        "y": 90
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side",
+        "y": 180
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side",
+        "y": 270
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+
+    
+    
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t"
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t",
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t",
+        "y": 180
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t",
+        "y": 270
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+
+
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner"
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner",
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner",
+        "y": 180
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner",
+        "y": 270
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "false",
+        "west": "true"
+      }
+    }
+  ]
+}

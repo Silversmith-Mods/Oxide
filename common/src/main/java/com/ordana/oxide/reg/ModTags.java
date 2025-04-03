@@ -14,6 +14,8 @@ public class ModTags {
     public static final TagKey<Block> WAXED_BLOCKS = registerBlockTag("waxed_blocks");
     public static final TagKey<Block> SCAFFOLDS = registerBlockTag("scaffolds");
     public static final TagKey<Block> WEATHERED = registerBlockTag("weathered");
+    public static final TagKey<Block> CEMENT = registerBlockTag("cement");
+    public static final TagKey<Block> REBAR = registerBlockTag("rebar");
 
 
     public static final TagKey<Block> BARS = registerBlockTag("bars");

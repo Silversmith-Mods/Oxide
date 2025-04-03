@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:rebar",
+    "oxide:cemented_rebar"
+  ]
+}
