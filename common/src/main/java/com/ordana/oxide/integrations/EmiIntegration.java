@@ -38,31 +38,5 @@ public class EmiIntegration implements EmiPlugin {
                 .build());
         }
 
-        BiMap<Block, Block> wax = Rustable.WAXING.get();
-        for (Block key : wax.keySet()) {
-            ResourceLocation blockId = BuiltInRegistries.ITEM.getKey(key.asItem());
-            EmiStack input = EmiStack.of(key);
-            EmiStack output = EmiStack.of(wax.get(key));
-            registry.addRecipe(EmiWorldInteractionRecipe.builder()
-                    .id(ResourceLocation.fromNamespaceAndPath("oxide", "/rust_waxing/" + blockId.getNamespace() + "/" + blockId.getPath()))
-                    .leftInput(input)
-                    .rightInput(EmiStack.of(Items.HONEYCOMB), false)
-                    .output(output)
-                    .build());
-        }
-
-        BiMap<Block, Block> unwax = Rustable.UNWAXED.get();
-        for (Block key : unwax.keySet()) {
-            ResourceLocation blockId = BuiltInRegistries.ITEM.getKey(key.asItem());
-            EmiStack input = EmiStack.of(key);
-            EmiStack output = EmiStack.of(unwax.get(key));
-            registry.addRecipe(EmiWorldInteractionRecipe.builder()
-                    .id(ResourceLocation.fromNamespaceAndPath("oxide", "/rust_unwaxing/" + blockId.getNamespace() + "/" + blockId.getPath()))
-                    .leftInput(input)
-                    .rightInput(axes, true)
-                    .output(output)
-                    .build());
-        }
-
     }
 }

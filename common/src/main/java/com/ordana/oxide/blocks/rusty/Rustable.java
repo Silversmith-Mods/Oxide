@@ -4,6 +4,7 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableMap;
+import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -193,235 +194,44 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
         return Rustable.getIncreasedRustBlock(state.getBlock()).map(block -> block.withPropertiesOf(state));
     }
 
-
-    Supplier<BiMap<Block, Block>> WAXING = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
-            .put(ModBlocks.PLATE_IRON.get(), ModBlocks.WAXED_PLATE_IRON.get())
-            .put(ModBlocks.WEATHERED_PLATE_IRON.get(), ModBlocks.WAXED_WEATHERED_PLATE_IRON.get())
-            .put(ModBlocks.RUSTED_PLATE_IRON.get(), ModBlocks.WAXED_RUSTED_PLATE_IRON.get())
-            .put(ModBlocks.PLATE_IRON_STAIRS.get(), ModBlocks.WAXED_PLATE_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_PLATE_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_PLATE_IRON_STAIRS.get())
-            .put(ModBlocks.RUSTED_PLATE_IRON_STAIRS.get(), ModBlocks.WAXED_RUSTED_PLATE_IRON_STAIRS.get())
-            .put(ModBlocks.PLATE_IRON_SLAB.get(), ModBlocks.WAXED_PLATE_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_PLATE_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_PLATE_IRON_SLAB.get())
-            .put(ModBlocks.RUSTED_PLATE_IRON_SLAB.get(), ModBlocks.WAXED_RUSTED_PLATE_IRON_SLAB.get())
-
-            .put(ModBlocks.CUT_IRON.get(), ModBlocks.WAXED_CUT_IRON.get())
-            .put(ModBlocks.WEATHERED_CUT_IRON.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON.get())
-            .put(ModBlocks.RUSTED_CUT_IRON.get(), ModBlocks.WAXED_RUSTED_CUT_IRON.get())
-            .put(ModBlocks.CUT_IRON_STAIRS.get(), ModBlocks.WAXED_CUT_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_CUT_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON_STAIRS.get())
-            .put(ModBlocks.RUSTED_CUT_IRON_STAIRS.get(), ModBlocks.WAXED_RUSTED_CUT_IRON_STAIRS.get())
-            .put(ModBlocks.CUT_IRON_SLAB.get(), ModBlocks.WAXED_CUT_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_CUT_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON_SLAB.get())
-            .put(ModBlocks.RUSTED_CUT_IRON_SLAB.get(), ModBlocks.WAXED_RUSTED_CUT_IRON_SLAB.get())
-
-            .put(ModBlocks.IRON_SCAFFOLD.get(), ModBlocks.WAXED_IRON_SCAFFOLD.get())
-            .put(ModBlocks.WEATHERED_IRON_SCAFFOLD.get(), ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD.get())
-            .put(ModBlocks.RUSTED_IRON_SCAFFOLD.get(), ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD.get())
-
-            .put(ModBlocks.IRON_SCAFFOLD_SLAB.get(), ModBlocks.WAXED_IRON_SCAFFOLD_SLAB.get())
-            .put(ModBlocks.WEATHERED_IRON_SCAFFOLD_SLAB.get(), ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_SLAB.get())
-            .put(ModBlocks.RUSTED_IRON_SCAFFOLD_SLAB.get(), ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_SLAB.get())
-
-            .put(ModBlocks.IRON_SCAFFOLD_STAIRS.get(), ModBlocks.WAXED_IRON_SCAFFOLD_STAIRS.get())
-            .put(ModBlocks.WEATHERED_IRON_SCAFFOLD_STAIRS.get(), ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_STAIRS.get())
-            .put(ModBlocks.RUSTED_IRON_SCAFFOLD_STAIRS.get(), ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_STAIRS.get())
-
-            .put(ModBlocks.RED_CORRUGATED_IRON.get(), ModBlocks.WAXED_RED_CORRUGATED_IRON.get())
-            .put(ModBlocks.ORANGE_CORRUGATED_IRON.get(), ModBlocks.WAXED_ORANGE_CORRUGATED_IRON.get())
-            .put(ModBlocks.YELLOW_CORRUGATED_IRON.get(), ModBlocks.WAXED_YELLOW_CORRUGATED_IRON.get())
-            .put(ModBlocks.LIME_CORRUGATED_IRON.get(), ModBlocks.WAXED_LIME_CORRUGATED_IRON.get())
-            .put(ModBlocks.GREEN_CORRUGATED_IRON.get(), ModBlocks.WAXED_GREEN_CORRUGATED_IRON.get())
-            .put(ModBlocks.CYAN_CORRUGATED_IRON.get(), ModBlocks.WAXED_CYAN_CORRUGATED_IRON.get())
-            .put(ModBlocks.BLUE_CORRUGATED_IRON.get(), ModBlocks.WAXED_BLUE_CORRUGATED_IRON.get())
-            .put(ModBlocks.LIGHT_BLUE_CORRUGATED_IRON.get(), ModBlocks.WAXED_LIGHT_BLUE_CORRUGATED_IRON.get())
-            .put(ModBlocks.PURPLE_CORRUGATED_IRON.get(), ModBlocks.WAXED_PURPLE_CORRUGATED_IRON.get())
-            .put(ModBlocks.MAGENTA_CORRUGATED_IRON.get(), ModBlocks.WAXED_MAGENTA_CORRUGATED_IRON.get())
-            .put(ModBlocks.PINK_CORRUGATED_IRON.get(), ModBlocks.WAXED_PINK_CORRUGATED_IRON.get())
-            .put(ModBlocks.WHITE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WHITE_CORRUGATED_IRON.get())
-            .put(ModBlocks.LIGHT_GRAY_CORRUGATED_IRON.get(), ModBlocks.WAXED_LIGHT_GRAY_CORRUGATED_IRON.get())
-            .put(ModBlocks.GRAY_CORRUGATED_IRON.get(), ModBlocks.WAXED_GRAY_CORRUGATED_IRON.get())
-            .put(ModBlocks.BLACK_CORRUGATED_IRON.get(), ModBlocks.WAXED_BLACK_CORRUGATED_IRON.get())
-            .put(ModBlocks.BROWN_CORRUGATED_IRON.get(), ModBlocks.WAXED_BROWN_CORRUGATED_IRON.get())
-
-            .put(ModBlocks.WEATHERED_RED_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_RED_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_ORANGE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_ORANGE_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_YELLOW_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_YELLOW_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_LIME_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_LIME_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_GREEN_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_GREEN_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_CYAN_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_CYAN_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_BLUE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_BLUE_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_LIGHT_BLUE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_LIGHT_BLUE_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_PURPLE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_PURPLE_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_MAGENTA_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_MAGENTA_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_PINK_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_PINK_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_WHITE_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_WHITE_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_LIGHT_GRAY_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_LIGHT_GRAY_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_GRAY_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_GRAY_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_BLACK_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_BLACK_CORRUGATED_IRON.get())
-            .put(ModBlocks.WEATHERED_BROWN_CORRUGATED_IRON.get(), ModBlocks.WAXED_WEATHERED_BROWN_CORRUGATED_IRON.get())
-            
-            .put(ModBlocks.RUSTED_CORRUGATED_IRON.get(), ModBlocks.WAXED_RUSTED_CORRUGATED_IRON.get())
-
-            .put(ModBlocks.RED_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_RED_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.ORANGE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_ORANGE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.YELLOW_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_YELLOW_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.LIME_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_LIME_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.GREEN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_GREEN_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.CYAN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_CYAN_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.BLUE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_BLUE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.LIGHT_BLUE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_LIGHT_BLUE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.PURPLE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_PURPLE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.MAGENTA_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_MAGENTA_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.PINK_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_PINK_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WHITE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WHITE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.LIGHT_GRAY_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_LIGHT_GRAY_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.GRAY_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_GRAY_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.BLACK_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_BLACK_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.BROWN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_BROWN_CORRUGATED_IRON_STAIRS.get())
-
-            .put(ModBlocks.WEATHERED_RED_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_RED_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_ORANGE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_ORANGE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_YELLOW_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_YELLOW_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_LIME_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_LIME_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_GREEN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_GREEN_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_CYAN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_CYAN_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_BLUE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_BLUE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_PURPLE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_PURPLE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_MAGENTA_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_MAGENTA_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_PINK_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_PINK_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_WHITE_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_WHITE_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_GRAY_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_GRAY_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_BLACK_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_BLACK_CORRUGATED_IRON_STAIRS.get())
-            .put(ModBlocks.WEATHERED_BROWN_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_BROWN_CORRUGATED_IRON_STAIRS.get())
-
-            .put(ModBlocks.RUSTED_CORRUGATED_IRON_STAIRS.get(), ModBlocks.WAXED_RUSTED_CORRUGATED_IRON_STAIRS.get())
-
-            .put(ModBlocks.RED_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_RED_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.ORANGE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_ORANGE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.YELLOW_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_YELLOW_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.LIME_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_LIME_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.GREEN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_GREEN_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.CYAN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_CYAN_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.BLUE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_BLUE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.LIGHT_BLUE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_LIGHT_BLUE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.PURPLE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_PURPLE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.MAGENTA_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_MAGENTA_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.PINK_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_PINK_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WHITE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WHITE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.LIGHT_GRAY_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_LIGHT_GRAY_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.GRAY_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_GRAY_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.BLACK_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_BLACK_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.BROWN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_BROWN_CORRUGATED_IRON_SLAB.get())
-
-            .put(ModBlocks.WEATHERED_RED_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_RED_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_ORANGE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_ORANGE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_YELLOW_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_YELLOW_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_LIME_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_LIME_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_GREEN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_GREEN_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_CYAN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_CYAN_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_BLUE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_BLUE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_LIGHT_BLUE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_PURPLE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_PURPLE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_MAGENTA_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_MAGENTA_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_PINK_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_PINK_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_WHITE_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_WHITE_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_LIGHT_GRAY_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_GRAY_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_GRAY_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_BLACK_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_BLACK_CORRUGATED_IRON_SLAB.get())
-            .put(ModBlocks.WEATHERED_BROWN_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_BROWN_CORRUGATED_IRON_SLAB.get())
-
-            .put(ModBlocks.RUSTED_CORRUGATED_IRON_SLAB.get(), ModBlocks.WAXED_RUSTED_CORRUGATED_IRON_SLAB.get())
-
-            .put(ModBlocks.WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_WROUGHT_IRON_FENCE.get())
-            .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE.get())
-            .put(ModBlocks.RUSTED_WROUGHT_IRON_FENCE.get(), ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE.get())
-
-            .put(ModBlocks.WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_WROUGHT_IRON_FENCE_GATE.get())
-            .put(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE_GATE.get())
-            .put(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE_GATE.get())
-
-            .put(ModBlocks.IRON_PILLAR.get(), ModBlocks.WAXED_IRON_PILLAR.get())
-            .put(ModBlocks.WEATHERED_IRON_PILLAR.get(), ModBlocks.WAXED_WEATHERED_IRON_PILLAR.get())
-            .put(ModBlocks.RUSTED_IRON_PILLAR.get(), ModBlocks.WAXED_RUSTED_IRON_PILLAR.get())
-
-            .put(ModBlocks.HEAVY_IRON_TRAPDOOR.get(), ModBlocks.WAXED_HEAVY_IRON_TRAPDOOR.get())
-            .put(ModBlocks.WEATHERED_HEAVY_IRON_TRAPDOOR.get(), ModBlocks.WAXED_WEATHERED_HEAVY_IRON_TRAPDOOR.get())
-            .put(ModBlocks.RUSTED_HEAVY_IRON_TRAPDOOR.get(), ModBlocks.WAXED_RUSTED_HEAVY_IRON_TRAPDOOR.get())
-
-            .put(ModBlocks.HEAVY_IRON_CHAIN.get(), ModBlocks.WAXED_HEAVY_IRON_CHAIN.get())
-            .put(ModBlocks.WEATHERED_HEAVY_IRON_CHAIN.get(), ModBlocks.WAXED_WEATHERED_HEAVY_IRON_CHAIN.get())
-            .put(ModBlocks.RUSTED_HEAVY_IRON_CHAIN.get(), ModBlocks.WAXED_RUSTED_HEAVY_IRON_CHAIN.get())
-
-            .put(ModBlocks.HEAVY_IRON_DOOR.get(), ModBlocks.WAXED_HEAVY_IRON_DOOR.get())
-            .put(ModBlocks.WEATHERED_HEAVY_IRON_DOOR.get(), ModBlocks.WAXED_WEATHERED_HEAVY_IRON_DOOR.get())
-            .put(ModBlocks.RUSTED_HEAVY_IRON_DOOR.get(), ModBlocks.WAXED_RUSTED_HEAVY_IRON_DOOR.get())
-
-            .put(ModBlocks.HEAVY_IRON_BARS.get(), ModBlocks.WAXED_HEAVY_IRON_BARS.get())
-            .put(ModBlocks.WEATHERED_HEAVY_IRON_BARS.get(), ModBlocks.WAXED_WEATHERED_HEAVY_IRON_BARS.get())
-            .put(ModBlocks.RUSTED_HEAVY_IRON_BARS.get(), ModBlocks.WAXED_RUSTED_HEAVY_IRON_BARS.get())
-
-            .build());
-
-    Supplier<BiMap<Block, Block>> UNWAXED = Suppliers.memoize(() -> WAXING.get().inverse());
-
-    static Optional<Block> getWaxed(Block block) {
-        return Optional.ofNullable(WAXING.get().get(block));
-    }
-
-    default Optional<BlockState> getWaxed(BlockState state) {
-        return Rustable.getWaxed(state.getBlock()).map(block -> block.withPropertiesOf(state));
-    }
-    static Optional<Block> getUnWaxed(Block block) {
-        return Optional.ofNullable(UNWAXED.get().get(block));
-    }
-
-    default Optional<BlockState> getUnWaxed(BlockState state) {
-        return Rustable.getUnWaxed(state.getBlock()).map(block -> block.withPropertiesOf(state));
-    }
-
     default ItemInteractionResult use(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         var item = stack.getItem();
         var age = getAge();
 
-        if (item instanceof AxeItem && (age == RustLevel.WAXED)) {
-            var waxed = this.getUnWaxed(state);
+        if (item instanceof AxeItem && state.getValue(ModBlockProperties.VARNISHED)) {
 
-            if (waxed.isPresent()) {
-                level.playSound(player, pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0f, 1.0f);
-                ParticleUtils.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.WAX_OFF, UniformInt.of(3, 5));
-                if (player instanceof ServerPlayer serverPlayer) {
-                    stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
-                    player.awardStat(Stats.ITEM_USED.get(item));
-                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
-                    level.setBlockAndUpdate(pos, waxed.get());
-                }
-                return ItemInteractionResult.sidedSuccess(level.isClientSide);
+            level.playSound(player, pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0f, 1.0f);
+            ParticleUtils.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.WAX_OFF, UniformInt.of(3, 5));
+            if (player instanceof ServerPlayer serverPlayer) {
+                stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
+                player.awardStat(Stats.ITEM_USED.get(item));
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
+                level.setBlockAndUpdate(pos, state.setValue(ModBlockProperties.VARNISHED, false));
             }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
 
-        if (item == Items.HONEYCOMB && (age != RustLevel.WAXED)) {
-            var waxed = this.getWaxed(state);
+        if (item == Items.HONEYCOMB && !state.getValue(ModBlockProperties.VARNISHED)) {
 
-            if (waxed.isPresent()) {
-                level.playSound(player, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0f, 1.0f);
-                ParticleUtils.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
-                if (player instanceof ServerPlayer serverPlayer) {
-                    player.awardStat(Stats.ITEM_USED.get(item));
-                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
-                    level.setBlockAndUpdate(pos, waxed.get());
-                    if (!player.getAbilities().instabuild) {
-                        stack.shrink(1);
-                    }
+            level.playSound(player, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0f, 1.0f);
+            ParticleUtils.spawnParticlesOnBlockFaces(level, pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
+            if (player instanceof ServerPlayer serverPlayer) {
+                player.awardStat(Stats.ITEM_USED.get(item));
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, stack);
+                level.setBlockAndUpdate(pos, state.setValue(ModBlockProperties.VARNISHED, true));
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
                 }
-                return ItemInteractionResult.sidedSuccess(level.isClientSide);
             }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
 
         if (item == Items.WET_SPONGE && (age == RustLevel.CLEAN || age == RustLevel.WEATHERED)) {
             var rusted = this.getNext(state);
+
+            if (!player.getAbilities().instabuild) {
+                if (state.getValue(ModBlockProperties.VARNISHED)) return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+            }
 
             if (rusted.isPresent()) {
                 level.playSound(player, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 1.0f, 1.0f);
