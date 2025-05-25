@@ -40,6 +40,7 @@ public class CementBucketItem extends Item {
     public CementBucketItem(Properties properties) {
         super(properties);
     }
+
     public void setAmount(ItemStack stack, int amount) {
         stack.set(ModComponents.CEMENT.get(), amount);
     }

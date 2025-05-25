@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks.rusty;
 
 import com.google.common.collect.ImmutableMap;
+import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -15,6 +16,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -25,6 +28,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class RustableFenceBlock extends WallBlock implements Rustable {
+    public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
     private final RustLevel rustLevel;
     private final Map<BlockState, VoxelShape> shapeByIndex;
     private final Map<BlockState, VoxelShape> collisionShapeByIndex;
@@ -34,6 +38,8 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
         this.shapeByIndex = this.makeShapes(2.0F, 2.0F, 16.0F, 0.0F, 16.0F, 16.0F);
         this.collisionShapeByIndex = this.makeShapes(2.0F, 2.0F, 24.0F, 0.0F, 24.0F, 24.0F);
         this.rustLevel = rustLevel;
+
+        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false));
     }
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
@@ -47,7 +53,7 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
 
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        this.tryWeather(state, serverLevel, pos, random);
+        if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
     }
 
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -103,8 +109,10 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
                             }
 
                             BlockState blockState = this.defaultBlockState().setValue(UP, boolean_).setValue(EAST_WALL, wallSide).setValue(WEST_WALL, wallSide3).setValue(NORTH_WALL, wallSide2).setValue(SOUTH_WALL, wallSide4);
-                            builder.put(blockState.setValue(WATERLOGGED, false), voxelShape10);
-                            builder.put(blockState.setValue(WATERLOGGED, true), voxelShape10);
+                            builder.put(blockState.setValue(WATERLOGGED, false).setValue(VARNISHED, false), voxelShape10);
+                            builder.put(blockState.setValue(WATERLOGGED, true).setValue(VARNISHED, false), voxelShape10);
+                            builder.put(blockState.setValue(WATERLOGGED, false).setValue(VARNISHED, true), voxelShape10);
+                            builder.put(blockState.setValue(WATERLOGGED, true).setValue(VARNISHED, true), voxelShape10);
                         }
                     }
                 }
@@ -124,5 +132,9 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
 
     public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         return this.use(stack, state, level, pos, player, hand, hitResult);
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(UP, NORTH_WALL, EAST_WALL, WEST_WALL, SOUTH_WALL, WATERLOGGED, VARNISHED);
     }
 }

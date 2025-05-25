@@ -1,5 +1,6 @@
 package com.ordana.oxide.blocks.rusty;
 
+import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -23,13 +25,14 @@ import java.util.Objects;
 
 public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements Rustable {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
 
     private final RustLevel rustLevel;
 
     public RustableCorrugatedIronBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
-        this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AXIS, Direction.Axis.Y);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AXIS, Direction.Axis.Y).setValue(VARNISHED, false));
     }
 
     @Override
@@ -39,7 +42,7 @@ public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements R
 
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        this.tryWeather(state, serverLevel, pos, random);
+        if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -54,7 +57,7 @@ public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements R
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, AXIS);
+        builder.add(FACING, AXIS, VARNISHED);
     }
 
 

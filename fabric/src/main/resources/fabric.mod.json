@@ -28,7 +28,7 @@
   ],
   "depends": {
     "fabric-api": "*",
-    "minecraft": ">=${minecraft_min_version} <${minecraft_max_version}",
+    "minecraft": "1.21.1",
     "moonlight": ">=1.21-2.17.34"
   }
 }

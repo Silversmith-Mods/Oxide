@@ -20,6 +20,12 @@ public class ModComponents {
             ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
 
+    public static final Supplier<DataComponentType<Integer>> VARNISH = register("varnish",
+            ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
+
+
+
+
     public static <T> Supplier<DataComponentType<T>> register(String name, Codec<T> codec, StreamCodec<? super RegistryFriendlyByteBuf, T> streamCodec) {
         return register(name, codec, streamCodec, false);
     }

@@ -19,7 +19,8 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -47,22 +48,12 @@ public class CementedRebarBlock extends RebarBlock {
 
     public CementedRebarBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
+        this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
 
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, WATERLOGGED, TYPE);
-    }
-
-
-
-    @Override
-    public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        var belowState = serverLevel.getBlockState(pos.below());
-        if (!belowState.is(ModTags.CEMENT) && belowState.isFaceSturdy(serverLevel, pos.below(), Direction.UP))
-            serverLevel.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ? ModBlocks.CEMENT.get().defaultBlockState()
-                    : ModBlocks.CEMENT_SLAB.get().defaultBlockState());
     }
 
     public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {

@@ -1,5 +1,6 @@
 package com.ordana.oxide.blocks.rusty;
 
+import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,13 +34,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class RustableScaffoldBlock extends Block implements Rustable, SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED;
+    public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
 
     private final Rustable.RustLevel rustLevel;
 
     public RustableScaffoldBlock(Rustable.RustLevel rustLevel, BlockBehaviour.Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
-        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(VARNISHED, false));
     }
 
     @Override
@@ -49,7 +51,7 @@ public class RustableScaffoldBlock extends Block implements Rustable, SimpleWate
 
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        this.tryWeather(state, serverLevel, pos, random);
+        if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
     }
 
 
@@ -98,7 +100,7 @@ public class RustableScaffoldBlock extends Block implements Rustable, SimpleWate
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED);
+        builder.add(WATERLOGGED, VARNISHED);
     }
 
     static {

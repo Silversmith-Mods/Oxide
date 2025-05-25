@@ -1,9 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
-import com.ordana.oxide.blocks.CementedRebarBlock;
-import com.ordana.oxide.blocks.RebarBlock;
-import com.ordana.oxide.blocks.WetCementBlock;
+import com.ordana.oxide.blocks.*;
 import com.ordana.oxide.blocks.rusty.*;
 import net.mehvahdjukaar.moonlight.api.block.ModStairBlock;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
@@ -71,13 +69,13 @@ public class ModBlocks {
             new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
 
     public static final Supplier<Block> WEATHERED_CINDER_BRICKS = regWithItem("weathered_cinder_bricks", () ->
-            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_STAIRS = regWithItem("weathered_cinder_brick_stairs", () ->
-            new ModStairBlock(ModBlocks.CINDER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new ModStairBlock(ModBlocks.CINDER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_SLAB = regWithItem("weathered_cinder_brick_slab", () ->
-            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_WALL = regWithItem("weathered_cinder_brick_wall", () ->
-            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
 
     public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
@@ -93,7 +91,7 @@ public class ModBlocks {
     public static final Supplier<Block> CLINKER_BRICKS = regWithItem("clinker_bricks", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Supplier<Block> CLINKER_BRICK_STAIRS = regWithItem("clinker_brick_stairs", () ->
-            new ModStairBlock(ModBlocks.CLINKER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
+            new ModStairBlock(ModBlocks.CLINKER_BRICKS, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Supplier<Block> CLINKER_BRICK_SLAB = regWithItem("clinker_brick_slab", () ->
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Supplier<Block> CLINKER_BRICK_WALL = regWithItem("clinker_brick_wall", () ->

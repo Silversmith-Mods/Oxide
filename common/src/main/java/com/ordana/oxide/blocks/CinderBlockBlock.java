@@ -1,4 +1,4 @@
-package com.ordana.oxide.blocks.rusty;
+package com.ordana.oxide.blocks;
 
 import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;

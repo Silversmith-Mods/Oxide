@@ -1,5 +1,6 @@
 package com.ordana.oxide.blocks.rusty;
 
+import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.phys.BlockHitResult;
@@ -21,10 +23,11 @@ import java.util.Objects;
 
 public class RustableRotatableSlabBlock extends RustableSlabBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
 
     public RustableRotatableSlabBlock(RustLevel rustLevel, Properties settings) {
         super(rustLevel, settings);
-        this.stateDefinition.any().setValue(FACING, Direction.NORTH);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(VARNISHED, false));
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -39,7 +42,7 @@ public class RustableRotatableSlabBlock extends RustableSlabBlock {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, TYPE, WATERLOGGED);
+        builder.add(FACING, TYPE, WATERLOGGED, VARNISHED);
     }
 
     public BlockState rotate(BlockState state, Rotation rotation) {

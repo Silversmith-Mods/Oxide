@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks.rusty;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -36,13 +37,14 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.function.BiConsumer;
 
 public class RustableFenceGateBlock extends HorizontalDirectionalBlock implements Rustable {
+    public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
     private final RustLevel rustLevel;
 
     public RustableFenceGateBlock(RustLevel rustLevel, Properties properties) {
         super(properties);
         this.rustLevel = rustLevel;
         this.type = WoodType.OAK;
-        this.registerDefaultState(this.stateDefinition.any().setValue(OPEN, false).setValue(POWERED, false).setValue(TOP, true).setValue(BOTTOM, true));
+        this.registerDefaultState(this.stateDefinition.any().setValue(OPEN, false).setValue(POWERED, false).setValue(TOP, true).setValue(BOTTOM, true).setValue(VARNISHED, false));
     }
 
     @Override
@@ -61,7 +63,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
 
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
-        this.tryWeather(state, serverLevel, pos, random);
+        if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
     }
 
     public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
@@ -199,7 +201,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM);
+        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM, VARNISHED);
     }
 
     static {

@@ -42,7 +42,7 @@ public class WetCementBlock extends Block {
 
     public WetCementBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
+        this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
     }
 
     public boolean useShapeForLightOcclusion(BlockState state) {
@@ -87,7 +87,7 @@ public class WetCementBlock extends Block {
             if (state.getValue(TYPE) == SlabType.DOUBLE) {
                 if (relativeState.canBeReplaced()) {
                     level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
-                    level.setBlockAndUpdate(relativePos, relativeState.setValue(TYPE, SlabType.BOTTOM));
+                    level.setBlockAndUpdate(relativePos, state.setValue(TYPE, SlabType.BOTTOM));
                     level.scheduleTick(relativePos, this, 8);
                     level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                     return ItemInteractionResult.sidedSuccess(level.isClientSide);

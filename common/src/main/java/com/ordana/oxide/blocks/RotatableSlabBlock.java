@@ -1,4 +1,4 @@
-package com.ordana.oxide.blocks.rusty;
+package com.ordana.oxide.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,7 +17,7 @@ public class RotatableSlabBlock extends SlabBlock {
 
     public RotatableSlabBlock(Properties settings) {
         super(settings);
-        this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y);
+        this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
