@@ -9,15 +9,6 @@
     "oxide:rusted_iron_scaffold_stairs",
     "oxide:iron_scaffold_slab",
     "oxide:weathered_iron_scaffold_slab",
-    "oxide:rusted_iron_scaffold_slab",
-    "oxide:waxed_iron_scaffold",
-    "oxide:waxed_weathered_iron_scaffold",
-    "oxide:waxed_rusted_iron_scaffold",
-    "oxide:waxed_iron_scaffold_stairs",
-    "oxide:waxed_weathered_iron_scaffold_stairs",
-    "oxide:waxed_rusted_iron_scaffold_stairs",
-    "oxide:waxed_iron_scaffold_slab",
-    "oxide:waxed_weathered_iron_scaffold_slab",
-    "oxide:waxed_rusted_iron_scaffold_slab"
+    "oxide:rusted_iron_scaffold_slab"
   ]
 }

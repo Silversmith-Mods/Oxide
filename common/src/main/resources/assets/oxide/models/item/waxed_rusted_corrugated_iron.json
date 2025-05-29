@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "oxide:block/rusted_corrugated_iron/0"
-  }
-}

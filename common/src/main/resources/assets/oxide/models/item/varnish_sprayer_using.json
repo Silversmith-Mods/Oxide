@@ -1,0 +1,6 @@
+{
+	"parent": "oxide:item/varnish_sprayer",
+	"textures": {
+		"layer0": "oxide:item/varnish_sprayer_using"
+	}
+}

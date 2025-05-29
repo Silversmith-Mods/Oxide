@@ -1,9 +1,8 @@
 package com.ordana.oxide;
 
 import com.ordana.oxide.entities.RustyNailRenderer;
-import com.ordana.oxide.reg.ModBlocks;
-import com.ordana.oxide.reg.ModEntities;
-import com.ordana.oxide.reg.ModParticles;
+import com.ordana.oxide.items.VarnishSprayer;
+import com.ordana.oxide.reg.*;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -11,7 +10,12 @@ import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ItemEntityRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.world.item.ItemStack;
 
 public class OxideClient {
 
@@ -57,41 +61,13 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
-        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD.get(), RenderType.cutout());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_STAIRS.get(), RenderType.cutout());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_IRON_SCAFFOLD_SLAB.get(), RenderType.cutout());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_TRAPDOOR.get(), RenderType.cutout());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_CHAIN.get(), RenderType.cutout());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_HEAVY_IRON_BARS.get(), RenderType.cutoutMipped());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE.get(), RenderType.cutoutMipped());
-
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
-        ClientHelper.registerRenderType(ModBlocks.WAXED_RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
+        ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("using"),
+                (stack, world, entity, s) -> entity != null && entity.isUsingItem() && ItemStack.isSameItemSameComponents(stack, entity.getUseItem()) ? 1.0F : 0.0F);
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
+        event.register(ModEntities.VARNISH_DROP.get(), ThrownItemRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {

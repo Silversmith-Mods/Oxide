@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -44,7 +45,16 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         super(properties);
         this.rustLevel = rustLevel;
         this.type = WoodType.OAK;
-        this.registerDefaultState(this.stateDefinition.any().setValue(OPEN, false).setValue(POWERED, false).setValue(TOP, true).setValue(BOTTOM, true).setValue(VARNISHED, false));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(OPEN, false)
+                .setValue(POWERED, false)
+                .setValue(TOP, true)
+                .setValue(BOTTOM, true)
+                .setValue(SIDE, false)
+                .setValue(SIDE_DIR, Direction.NORTH)
+                .setValue(CENTER, false)
+                .setValue(INNER_SIDE, false)
+                .setValue(VARNISHED, false));
     }
 
     @Override
@@ -74,6 +84,10 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     public static final BooleanProperty POWERED;
     public static final BooleanProperty BOTTOM;
     public static final BooleanProperty TOP;
+    public static final BooleanProperty SIDE;
+    public static final DirectionProperty SIDE_DIR;
+    public static final BooleanProperty CENTER;
+    public static final BooleanProperty INNER_SIDE;
 
     protected static final VoxelShape Z_SHAPE_LOW;
     protected static final VoxelShape X_SHAPE_LOW;
@@ -96,6 +110,13 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
 
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         Direction.Axis axis = direction.getAxis();
+        if (neighborState.getBlock() == this) {
+            if ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite())) {
+                if (neighborState.getValue(SIDE))
+                    return state.setValue(SIDE, true).setValue(SIDE_DIR, neighborState.getValue(SIDE_DIR).getOpposite());
+            }
+        }
+
         if (state.getValue(FACING).getClockWise().getAxis() != axis) {
             boolean open = state.getValue(OPEN);
             boolean above = level.getBlockState(pos.above()).getBlock() instanceof RustableFenceGateBlock;
@@ -149,10 +170,30 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         BlockPos blockPos = context.getClickedPos();
         boolean bl = level.hasNeighborSignal(blockPos);
         Direction direction = context.getHorizontalDirection();
+        Direction clockDir = direction.getClockWise();
+        Direction cClockDir = direction.getCounterClockWise();
+        Direction sideDir = null;
 
         boolean above = level.getBlockState(blockPos.above()).is(this);
         boolean below = level.getBlockState(blockPos.below()).is(this);
-        return this.defaultBlockState().setValue(FACING, direction).setValue(OPEN, bl).setValue(POWERED, bl).setValue(TOP, !above).setValue(BOTTOM, !below);
+        boolean adjacent = level.getBlockState(blockPos.relative(clockDir)).is(this);
+        boolean adjacent2 = level.getBlockState(blockPos.relative(cClockDir)).is(this);
+
+        if (adjacent ^ adjacent2) {
+            if (adjacent) sideDir = cClockDir;
+            if (adjacent2) sideDir = clockDir;
+        }
+
+
+        return this.defaultBlockState().setValue(FACING, direction)
+                .setValue(OPEN, bl)
+                .setValue(POWERED, bl)
+                .setValue(TOP, !above)
+                .setValue(SIDE, adjacent ^ adjacent2)
+                .setValue(SIDE_DIR, adjacent ^ adjacent2 ? sideDir : Direction.NORTH)
+                .setValue(CENTER, adjacent && adjacent2)
+                .setValue(TOP, !above)
+                .setValue(BOTTOM, !below);
     }
 
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
@@ -201,7 +242,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM, VARNISHED);
+        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM, SIDE, SIDE_DIR, CENTER, INNER_SIDE, VARNISHED);
     }
 
     static {
@@ -209,6 +250,10 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         POWERED = BlockStateProperties.POWERED;
         TOP = BooleanProperty.create("top");
         BOTTOM = BlockStateProperties.BOTTOM;
+        SIDE = BooleanProperty.create("side");
+        SIDE_DIR = DirectionProperty.create("side_dir", Direction.Plane.HORIZONTAL);
+        CENTER = BooleanProperty.create("center");
+        INNER_SIDE = BooleanProperty.create("inner_side");
         Z_SHAPE_LOW = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
         X_SHAPE_LOW = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
         Z_COLLISION_SHAPE = Block.box(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);

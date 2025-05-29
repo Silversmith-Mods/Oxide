@@ -2,6 +2,7 @@ package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
 import com.ordana.oxide.entities.RustyNailEntity;
+import com.ordana.oxide.entities.VarnishDropEntity;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -21,4 +22,8 @@ public class ModEntities {
     public static Supplier<EntityType<RustyNailEntity>> RUSTY_NAIL = RegHelper.registerEntityType(
             Oxide.res("rusty_nail"),
             RustyNailEntity::new, MobCategory.MISC, 0.3F, 0.3F, 10, 20);
+
+    public static Supplier<EntityType<VarnishDropEntity>> VARNISH_DROP = RegHelper.registerEntityType(
+            Oxide.res("varnish_drop"),
+            VarnishDropEntity::new, MobCategory.MISC, 0.3F, 0.3F, 10, 20);
 }

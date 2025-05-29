@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "oxide:item/weathered_heavy_iron_door"
-  }
-}
