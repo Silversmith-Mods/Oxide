@@ -110,8 +110,8 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
 
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         Direction.Axis axis = direction.getAxis();
-        if (neighborState.getBlock() == this) {
-            if ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite())) {
+        if (neighborState.getBlock() == this && !axis.isVertical()) {
+            if (!state.getValue(SIDE) && ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite()))) {
                 if (neighborState.getValue(SIDE))
                     return state.setValue(SIDE, true).setValue(SIDE_DIR, neighborState.getValue(SIDE_DIR).getOpposite());
             }
@@ -132,6 +132,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
             if (axis == Direction.Axis.Y && neighborState.getBlock() instanceof RustableFenceGateBlock) open = neighborState.getValue(OPEN);
             return state.setValue(TOP, !above).setValue(BOTTOM, !below).setValue(OPEN, open);
         }
+
     }
 
     protected VoxelShape getBlockSupportShape(BlockState state, BlockGetter level, BlockPos pos) {
@@ -169,31 +170,42 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
         boolean bl = level.hasNeighborSignal(blockPos);
+        boolean crouch = context.getPlayer().isCrouching();
+
         Direction direction = context.getHorizontalDirection();
         Direction clockDir = direction.getClockWise();
         Direction cClockDir = direction.getCounterClockWise();
-        Direction sideDir = null;
 
         boolean above = level.getBlockState(blockPos.above()).is(this);
         boolean below = level.getBlockState(blockPos.below()).is(this);
         boolean adjacent = level.getBlockState(blockPos.relative(clockDir)).is(this);
         boolean adjacent2 = level.getBlockState(blockPos.relative(cClockDir)).is(this);
 
+        Direction sideDir = null;
         if (adjacent ^ adjacent2) {
             if (adjacent) sideDir = cClockDir;
             if (adjacent2) sideDir = clockDir;
         }
 
-
-        return this.defaultBlockState().setValue(FACING, direction)
+        BlockState placementState = this.stateDefinition.any()
+                .setValue(FACING, direction)
                 .setValue(OPEN, bl)
                 .setValue(POWERED, bl)
                 .setValue(TOP, !above)
-                .setValue(SIDE, adjacent ^ adjacent2)
-                .setValue(SIDE_DIR, adjacent ^ adjacent2 ? sideDir : Direction.NORTH)
-                .setValue(CENTER, adjacent && adjacent2)
                 .setValue(TOP, !above)
                 .setValue(BOTTOM, !below);
+
+        if (!crouch && (adjacent || adjacent2)) {
+            placementState.setValue(SIDE, true);
+            if (adjacent ^ adjacent2) {
+                placementState.setValue(SIDE_DIR, sideDir);
+            }
+            if (adjacent && adjacent2) {
+                placementState.setValue(CENTER, true);
+            }
+        }
+
+        return placementState;
     }
 
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
