@@ -3,15 +3,18 @@
   "key": {
     "#": {
       "item": "minecraft:iron_ingot"
+    },
+    "G": {
+      "item": "oxide:plate_iron"
     }
   },
   "pattern": [
     "#",
-    "#",
+    "G",
     "#"
   ],
   "result": {
-    "count": 18,
+    "count": 16,
     "id": "oxide:heavy_iron_chain"
   }
 }

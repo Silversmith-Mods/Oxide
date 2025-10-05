@@ -6,8 +6,8 @@
 	"overrides": [
 		{
 			"predicate": {
-				"oxide:using": 1
-			}, "model": "oxide:item/varnish_sprayer_using"}
+				"oxide:primed": 1
+			}, "model": "oxide:item/varnish_sprayer_primed"}
 	],
 	"display": {
 		"thirdperson_righthand": {

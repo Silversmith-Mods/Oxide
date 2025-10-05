@@ -19,8 +19,13 @@ public class ModComponents {
     public static final Supplier<DataComponentType<Integer>> CEMENT = register("cement",
             ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
+    public static final Supplier<DataComponentType<Integer>> WATER = register("water",
+            ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
     public static final Supplier<DataComponentType<Integer>> VARNISH = register("varnish",
+            ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
+
+    public static final Supplier<DataComponentType<Integer>> PRIMED = register("primed",
             ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
 

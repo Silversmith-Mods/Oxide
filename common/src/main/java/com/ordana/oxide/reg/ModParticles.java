@@ -16,4 +16,6 @@ public class ModParticles {
     }
 
     public static final Supplier<SimpleParticleType> SCRAPE_RUST = registerParticle("scrape_rust");
+    public static final Supplier<SimpleParticleType> VARNISH = registerParticle("varnish");
+    public static final Supplier<SimpleParticleType> WATER = registerParticle("water");
 }

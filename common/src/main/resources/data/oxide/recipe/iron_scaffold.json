@@ -4,15 +4,18 @@
   "key": {
     "#": {
       "item": "minecraft:iron_ingot"
+    },
+    "G": {
+      "item": "oxide:plate_iron"
     }
   },
   "pattern": [
     "# #",
-    " # ",
+    " G ",
     "# #"
   ],
   "result": {
-    "count": 10,
+    "count": 16,
     "id": "oxide:iron_scaffold"
   }
 }

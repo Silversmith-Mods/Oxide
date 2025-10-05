@@ -2,7 +2,8 @@
   "itemGroup.oxide.oxide": "Oxide",
   "tag.oxide.corrugated_iron": "Corrugated Iron Blocks",
   "tooltip.oxide.cement_bucket": "%1$s/%2$s Wet Cement stored",
-  "tooltip.oxide.varnish_sprayer": "%1$s/%2$s Varnish stored",
+  "tooltip.oxide.varnish_sprayer_varnish": "%1$s/%2$s Varnish stored",
+  "tooltip.oxide.varnish_sprayer_water": "%1$s/%2$s Water stored",
 
   "item.oxide.cement_bucket": "Bucket of Wet Cement",
   "item.oxide.rusty_nail": "Rusty Nail",

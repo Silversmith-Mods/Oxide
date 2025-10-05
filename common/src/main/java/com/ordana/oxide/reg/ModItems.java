@@ -2,9 +2,9 @@ package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
 import com.ordana.oxide.items.CementBucketItem;
-import com.ordana.oxide.items.VarnishSprayer;
 import com.ordana.oxide.items.PureNailItem;
 import com.ordana.oxide.items.RustyNailItem;
+import com.ordana.oxide.items.VarnishSprayer;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
@@ -24,7 +24,7 @@ public class ModItems {
             new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 
     public static final Supplier<Item> VARNISH_SPRAYER = regItem("varnish_sprayer", () ->
-            new VarnishSprayer(new Item.Properties().component(ModComponents.VARNISH.get(), 1000).stacksTo(1)));
+            new VarnishSprayer(new Item.Properties().component(ModComponents.PRIMED.get(), 0).stacksTo(1)));
 
     public static final Supplier<Item> RUSTY_NAIL = regItem("rusty_nail", () ->
             new RustyNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));

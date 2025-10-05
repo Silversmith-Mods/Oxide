@@ -2,20 +2,21 @@ package com.ordana.oxide;
 
 import com.ordana.oxide.entities.RustyNailRenderer;
 import com.ordana.oxide.items.VarnishSprayer;
-import com.ordana.oxide.reg.*;
+import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModEntities;
+import com.ordana.oxide.reg.ModItems;
+import com.ordana.oxide.reg.ModParticles;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ItemEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.world.item.ItemStack;
 
 public class OxideClient {
 
@@ -61,17 +62,20 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
-        ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("using"),
-                (stack, world, entity, s) -> entity != null && entity.isUsingItem() && ItemStack.isSameItemSameComponents(stack, entity.getUseItem()) ? 1.0F : 0.0F);
+        ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("primed"),
+                (itemStack, clientLevel, livingEntity, i) -> VarnishSprayer.isPrimed(itemStack));
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
         event.register(ModEntities.VARNISH_DROP.get(), ThrownItemRenderer::new);
+        event.register(ModEntities.WATER_DROP.get(), ThrownItemRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {
         event.register(ModParticles.SCRAPE_RUST.get(), ScrapeRustFactory::new);
+        event.register(ModParticles.VARNISH.get(), ExplodeParticle.Provider::new);
+        event.register(ModParticles.WATER.get(), ExplodeParticle.Provider::new);
     }
 
     private static class ScrapeRustFactory extends GlowParticle.ScrapeProvider {

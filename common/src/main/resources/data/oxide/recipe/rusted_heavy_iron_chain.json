@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "G": {
+      "item": "oxide:rusted_plate_iron"
+    }
+  },
+  "pattern": [
+    "#",
+    "G",
+    "#"
+  ],
+  "result": {
+    "count": 16,
+    "id": "oxide:rusted_heavy_iron_chain"
+  }
+}
