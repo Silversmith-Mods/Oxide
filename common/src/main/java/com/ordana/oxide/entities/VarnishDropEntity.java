@@ -67,7 +67,7 @@ public class VarnishDropEntity extends ImprovedProjectileEntity {
 
     @Override
     public ItemStack getItem() {
-        return new ItemStack(Blocks.AIR);
+        return new ItemStack(Items.HONEYCOMB);
     }
 
 
@@ -91,7 +91,7 @@ public class VarnishDropEntity extends ImprovedProjectileEntity {
             int s = 1;
             for (int i = 0; i < s; ++i) {
                 double j = i / (double) s;
-                this.level().addParticle(ModParticles.VARNISH.get(),
+                this.level().addParticle(ParticleTypes.FALLING_HONEY,
                         xo - dx * j,
                         0.25 + yo - dy * j,
                         zo - dz * j,

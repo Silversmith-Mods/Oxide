@@ -14,6 +14,7 @@ import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -68,8 +69,8 @@ public class OxideClient {
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
-        event.register(ModEntities.VARNISH_DROP.get(), ThrownItemRenderer::new);
-        event.register(ModEntities.WATER_DROP.get(), ThrownItemRenderer::new);
+        event.register(ModEntities.VARNISH_DROP.get(), NoopRenderer::new);
+        event.register(ModEntities.WATER_DROP.get(), NoopRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {

@@ -9,9 +9,13 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -19,6 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
@@ -32,22 +37,18 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
 
     public WaterDropEntity(Level level, LivingEntity shooter) {
         super(ModEntities.WATER_DROP.get(), shooter, level);
+        this.maxAge = (level.dimensionType().ultraWarm() ? 7 : 300);
     }
 
     public WaterDropEntity(EntityType<? extends WaterDropEntity> type, Level world) {
         super(type, world);
-        this.maxAge = (300);
-        this.maxStuckTime = (90000000);
-    }
-
-    public WaterDropEntity(Level worldIn, LivingEntity throwerIn, EntityType type) {
-        super(ModEntities.WATER_DROP.get(), throwerIn, worldIn);
-        this.type = type;
-        this.maxAge = (300);
+        this.maxAge = (world.dimensionType().ultraWarm() ? 7 : 300);
         this.maxStuckTime = (90000000);
     }
 
     //data to be saved when the entity gets unloaded
+
+
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
@@ -60,17 +61,18 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return Items.HONEYCOMB;
+        return Items.GLASS_BOTTLE;
     }
 
     @Override
     public ItemStack getItem() {
-        return new ItemStack(Blocks.AIR);
+        return new ItemStack(Items.BARRIER);
     }
 
 
     @Override
     public void tick() {
+
         //if (this.active && this.isInWater() && this.type != BombType.BLUE) {
         //    this.turnOff();
         //}
@@ -89,7 +91,7 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
             int s = 1;
             for (int i = 0; i < s; ++i) {
                 double j = i / (double) s;
-                this.level().addParticle(ParticleTypes.SPLASH,
+                this.level().addParticle(level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.SPLASH,
                         xo - dx * j,
                         0.25 + yo - dy * j,
                         zo - dz * j,
@@ -127,4 +129,12 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
 
         super.onHitBlock(hit);
     }
+
+    protected void onHitEntity(EntityHitResult result) {
+        super.onHitEntity(result);
+        Entity entity = result.getEntity();
+        int i = entity instanceof Blaze ? 3 : 0;
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)i);
+    }
+
 }

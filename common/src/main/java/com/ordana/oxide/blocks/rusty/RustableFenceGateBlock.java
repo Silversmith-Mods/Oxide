@@ -38,22 +38,40 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.function.BiConsumer;
 
 public class RustableFenceGateBlock extends HorizontalDirectionalBlock implements Rustable {
+
+
+    public static final BooleanProperty OPEN;
+    public static final BooleanProperty POWERED;
+    public static final BooleanProperty TOP;
+    public static final BooleanProperty BOTTOM;
+    public static final BooleanProperty WIDE;
+    public static final DirectionProperty SIDE_DIR;
     public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
+
+    protected static final VoxelShape Z_SHAPE_LOW;
+    protected static final VoxelShape X_SHAPE_LOW;
+
+    protected static final VoxelShape Z_COLLISION_SHAPE;
+    protected static final VoxelShape X_COLLISION_SHAPE;
+
+    protected static final VoxelShape Z_SUPPORT_SHAPE;
+    protected static final VoxelShape X_SUPPORT_SHAPE;
+
+    protected static final VoxelShape Z_OCCLUSION_SHAPE_LOW;
+    protected static final VoxelShape X_OCCLUSION_SHAPE_LOW;
+
     private final RustLevel rustLevel;
 
     public RustableFenceGateBlock(RustLevel rustLevel, Properties properties) {
         super(properties);
         this.rustLevel = rustLevel;
-        this.type = WoodType.OAK;
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(OPEN, false)
                 .setValue(POWERED, false)
                 .setValue(TOP, true)
                 .setValue(BOTTOM, true)
-                .setValue(SIDE, false)
+                .setValue(WIDE, false)
                 .setValue(SIDE_DIR, Direction.NORTH)
-                .setValue(CENTER, false)
-                .setValue(INNER_SIDE, false)
                 .setValue(VARNISHED, false));
     }
 
@@ -80,29 +98,6 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         return this.use(stack, state, level, pos, player, hand, hitResult);
     }
 
-    public static final BooleanProperty OPEN;
-    public static final BooleanProperty POWERED;
-    public static final BooleanProperty BOTTOM;
-    public static final BooleanProperty TOP;
-    public static final BooleanProperty SIDE;
-    public static final DirectionProperty SIDE_DIR;
-    public static final BooleanProperty CENTER;
-    public static final BooleanProperty INNER_SIDE;
-
-    protected static final VoxelShape Z_SHAPE_LOW;
-    protected static final VoxelShape X_SHAPE_LOW;
-
-    protected static final VoxelShape Z_COLLISION_SHAPE;
-    protected static final VoxelShape X_COLLISION_SHAPE;
-
-    protected static final VoxelShape Z_SUPPORT_SHAPE;
-    protected static final VoxelShape X_SUPPORT_SHAPE;
-
-    protected static final VoxelShape Z_OCCLUSION_SHAPE_LOW;
-    protected static final VoxelShape X_OCCLUSION_SHAPE_LOW;
-
-    private final WoodType type;
-
 
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return state.getValue(FACING).getAxis() == Direction.Axis.X ? X_SHAPE_LOW : Z_SHAPE_LOW;
@@ -111,9 +106,9 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         Direction.Axis axis = direction.getAxis();
         if (neighborState.getBlock() == this && !axis.isVertical()) {
-            if (!state.getValue(SIDE) && ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite()))) {
-                if (neighborState.getValue(SIDE))
-                    return state.setValue(SIDE, true).setValue(SIDE_DIR, neighborState.getValue(SIDE_DIR).getOpposite());
+            if (!state.getValue(WIDE) && ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite()))) {
+                if (neighborState.getValue(WIDE))
+                    return state.setValue(WIDE, true).setValue(SIDE_DIR, neighborState.getValue(SIDE_DIR).getOpposite());
             }
         }
 
@@ -180,6 +175,8 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         boolean below = level.getBlockState(blockPos.below()).is(this);
         boolean adjacent = level.getBlockState(blockPos.relative(clockDir)).is(this);
         boolean adjacent2 = level.getBlockState(blockPos.relative(cClockDir)).is(this);
+        boolean wide = false;
+        boolean sideDirBl = false;
 
         Direction sideDir = null;
         if (adjacent ^ adjacent2) {
@@ -187,23 +184,21 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
             if (adjacent2) sideDir = clockDir;
         }
 
-        BlockState placementState = this.stateDefinition.any()
+        if (!crouch && (adjacent || adjacent2)) {
+            wide = true;
+            if (adjacent ^ adjacent2) {
+                sideDirBl = true;
+            }
+        }
+
+        BlockState placementState = this.stateDefinition.getOwner().defaultBlockState()
                 .setValue(FACING, direction)
+                .setValue(WIDE, wide)
+                .setValue(SIDE_DIR, sideDirBl ? sideDir : direction)
                 .setValue(OPEN, bl)
                 .setValue(POWERED, bl)
                 .setValue(TOP, !above)
-                .setValue(TOP, !above)
                 .setValue(BOTTOM, !below);
-
-        if (!crouch && (adjacent || adjacent2)) {
-            placementState.setValue(SIDE, true);
-            if (adjacent ^ adjacent2) {
-                placementState.setValue(SIDE_DIR, sideDir);
-            }
-            if (adjacent && adjacent2) {
-                placementState.setValue(CENTER, true);
-            }
-        }
 
         return placementState;
     }
@@ -254,7 +249,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM, SIDE, SIDE_DIR, CENTER, INNER_SIDE, VARNISHED);
+        builder.add(FACING, OPEN, POWERED, TOP, BOTTOM, WIDE, SIDE_DIR, VARNISHED);
     }
 
     static {
@@ -262,10 +257,8 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         POWERED = BlockStateProperties.POWERED;
         TOP = BooleanProperty.create("top");
         BOTTOM = BlockStateProperties.BOTTOM;
-        SIDE = BooleanProperty.create("side");
+        WIDE = BooleanProperty.create("wide");
         SIDE_DIR = DirectionProperty.create("side_dir", Direction.Plane.HORIZONTAL);
-        CENTER = BooleanProperty.create("center");
-        INNER_SIDE = BooleanProperty.create("inner_side");
         Z_SHAPE_LOW = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
         X_SHAPE_LOW = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
         Z_COLLISION_SHAPE = Block.box(0.0, 0.0, 6.0, 16.0, 24.0, 10.0);
