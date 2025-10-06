@@ -91,7 +91,7 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
             int s = 1;
             for (int i = 0; i < s; ++i) {
                 double j = i / (double) s;
-                this.level().addParticle(level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.SPLASH,
+                this.level().addParticle(level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER,
                         xo - dx * j,
                         0.25 + yo - dy * j,
                         zo - dz * j,
@@ -118,8 +118,7 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
         var rusted = Rustable.getIncreasedRustBlock(state.getBlock());
         if (rusted.isPresent()) {
             this.level().setBlockAndUpdate(pos, rusted.get().withPropertiesOf(state));
-            this.level().playSound(null, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 1.0f, 1.0f);
-            if (this.level().isClientSide) ParticleUtil.spawnParticlesOnBlockFaces(this.level(), pos, ParticleTypes.SPLASH, UniformInt.of(3, 5), -0.05f, 0.05f, false);
+            if (random.nextFloat() > 0.75) this.level().playSound(null, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
         }
 
         if (!this.level().isClientSide) {
@@ -133,8 +132,7 @@ public class WaterDropEntity extends ImprovedProjectileEntity {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        int i = entity instanceof Blaze ? 3 : 0;
-        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)i);
+        if (entity instanceof Blaze) entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)3);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.ordana.oxide.forge;
+package com.ordana.oxide.neoforge;
 
 public class PlatformSpecificImpl {
 }

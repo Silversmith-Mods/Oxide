@@ -90,7 +90,7 @@ public class VarnishSprayer extends Item {
             }
 
             if (level.getFluidState(blockPos).is(FluidTags.WATER) && (!isVarnish(stack))) {
-                level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 0.6F);
                 level.gameEvent(player, GameEvent.FLUID_PICKUP, blockPos);
                 stack.set(ModComponents.WATER.get(), 1000);
                 setPrimed(stack, 1);
@@ -102,10 +102,11 @@ public class VarnishSprayer extends Item {
         if (fluid > 0) {
             if (!state) {
                 setPrimed(stack, 1);
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1F, 1.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
                 return InteractionResultHolder.success(stack);
             }
 
-            level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+            level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.NEUTRAL, 1F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
             if (!level.isClientSide) {
                 for (int y = -4; y < 4; ++y) {
                     for (int x = -4; x < 4; ++x) {

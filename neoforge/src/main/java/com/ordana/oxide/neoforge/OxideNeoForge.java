@@ -6,9 +6,9 @@ import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.neoforged.fml.common.Mod;
 
 @Mod(Oxide.MOD_ID)
-public class OxideForge {
+public class OxideNeoForge {
 
-    public OxideForge() {
+    public OxideNeoForge() {
         Oxide.commonInit();
         PlatHelper.addCommonSetup(ModSetup::setup);
     }
