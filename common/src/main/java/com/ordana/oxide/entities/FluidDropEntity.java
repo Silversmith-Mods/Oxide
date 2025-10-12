@@ -9,7 +9,6 @@ import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import net.mehvahdjukaar.moonlight.api.entity.ParticleTrailEmitter;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -28,7 +27,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Supplier;
 
@@ -110,7 +108,10 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
     @Override
     public void spawnTrailParticles() {
         if (this.tickCount > 1) {
-            var pt = level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER;
+            boolean ultraWarm = level().dimensionType().ultraWarm();
+            var pt = ultraWarm ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER;
+            int color = ultraWarm ? 0 : getDataFluid().getParticleColor(level(), this.blockPosition());
+            //TODO:copy supplementaries faucet drop particles (how it does its color). then pass this color arg to the particle or similar
             trailEmitter.tick(this, (pos, speed) -> {
                 this.level().addParticle(
                         pt,
