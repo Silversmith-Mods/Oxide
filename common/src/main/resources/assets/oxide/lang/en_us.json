@@ -4,6 +4,7 @@
   "tooltip.oxide.cement_bucket": "%1$s/%2$s Wet Cement stored",
   "tooltip.oxide.varnish_sprayer_varnish": "%1$s/%2$s Varnish stored",
   "tooltip.oxide.varnish_sprayer_water": "%1$s/%2$s Water stored",
+  "tooltip.oxide.fluid": "%s: %d drops",
 
   "item.oxide.cement_bucket": "Bucket of Wet Cement",
   "item.oxide.rusty_nail": "Rusty Nail",

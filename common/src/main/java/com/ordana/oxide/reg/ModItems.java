@@ -24,7 +24,9 @@ public class ModItems {
             new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 
     public static final Supplier<Item> VARNISH_SPRAYER = regItem("varnish_sprayer", () ->
-            new VarnishSprayer(new Item.Properties().component(ModComponents.PRIMED.get(), false).stacksTo(1)));
+            new VarnishSprayer(new Item.Properties().component(ModComponents.PRIMED.get(), false)
+                    //dont initialize other component as it needs a level
+                    .stacksTo(1)));
 
     public static final Supplier<Item> RUSTY_NAIL = regItem("rusty_nail", () ->
             new RustyNailItem(new Item.Properties().attributes(RustyNailItem.createAttributes()).component(DataComponents.TOOL, RustyNailItem.createToolProperties())));

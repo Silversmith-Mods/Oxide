@@ -7,6 +7,7 @@ import com.ordana.oxide.reg.ModEntities;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModParticles;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.ExplodeParticle;
@@ -17,6 +18,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.world.level.Level;
 
 public class OxideClient {
 
@@ -63,19 +65,23 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
         ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("primed"),
-                (itemStack, clientLevel, livingEntity, i) -> VarnishSprayer.isPrimed(itemStack) ? 1 : 0);
+                (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && livingEntity.getUseItem() == itemStack ? 1 : 0);
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
         event.register(ModEntities.SPRAY_ENTITY.get(), NoopRenderer::new);
-        event.register(ModEntities.WATER_DROP.get(), NoopRenderer::new);
+        event.register(ModEntities.FLUID_DROP.get(), NoopRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {
         event.register(ModParticles.SCRAPE_RUST.get(), ScrapeRustFactory::new);
         event.register(ModParticles.VARNISH.get(), ExplodeParticle.Provider::new);
         event.register(ModParticles.WATER.get(), ExplodeParticle.Provider::new);
+    }
+
+    public static Level getClienntLevel() {
+        return Minecraft.getInstance().level;
     }
 
     private static class ScrapeRustFactory extends GlowParticle.ScrapeProvider {

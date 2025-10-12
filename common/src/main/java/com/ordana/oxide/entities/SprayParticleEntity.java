@@ -6,6 +6,7 @@ import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.ParticleUtils;
@@ -31,8 +32,6 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
     private boolean active = true;
     private int changeTimer = -1;
     private boolean superCharged = false;
-    private EntityType type = ModEntities.SPRAY_ENTITY.get();
-
 
     public SprayParticleEntity(Level level, LivingEntity shooter) {
         super(ModEntities.SPRAY_ENTITY.get(), shooter, level);
@@ -46,10 +45,10 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
 
     public SprayParticleEntity(Level worldIn, LivingEntity throwerIn, EntityType type) {
         super(ModEntities.SPRAY_ENTITY.get(), throwerIn, worldIn);
-        this.type = type;
         this.maxAge = (300);
         this.maxStuckTime = (90000000);
     }
+
 
     //data to be saved when the entity gets unloaded
     @Override

@@ -3,9 +3,9 @@ package com.ordana.oxide.items;
 import com.mojang.serialization.Codec;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluid;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
-import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidTank;
 import net.mehvahdjukaar.moonlight.api.misc.HolderReference;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -16,27 +16,27 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.component.TooltipProvider;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 // immutable view of a SoftFluidStack. Because components need to be guaranteed immutable
-public class SoftFluidStackView implements TooltipProvider {
+public class SFStackView implements TooltipProvider {
 
-    public static final Codec<SoftFluidStackView> CODEC = SoftFluidStack.CODEC.xmap(SoftFluidStackView::new, SoftFluidStackView::toMutable);
-    public static final StreamCodec<RegistryFriendlyByteBuf, SoftFluidStackView> STREAM_CODEC =
-            SoftFluidStack.STREAM_CODEC.map(SoftFluidStackView::new, SoftFluidStackView::toMutable);
+    public static final Codec<SFStackView> CODEC = SoftFluidStack.CODEC.xmap(SFStackView::new, SFStackView::toMutable);
+    public static final StreamCodec<RegistryFriendlyByteBuf, SFStackView> STREAM_CODEC =
+            SoftFluidStack.STREAM_CODEC.map(SFStackView::new, SFStackView::toMutable);
 
     private final SoftFluidStack fluid;
 
-    private SoftFluidStackView(SoftFluidStack stack) {
+    private SFStackView(SoftFluidStack stack) {
         this.fluid = stack.copy();
     }
 
-    public static SoftFluidStackView of(SoftFluidStack stack) {
-        return new SoftFluidStackView(stack);
+    public static SFStackView of(SoftFluidStack stack) {
+        return new SFStackView(stack);
     }
-
 
     public int getCount() {
         return this.fluid.getCount();
@@ -62,12 +62,18 @@ public class SoftFluidStackView implements TooltipProvider {
         return this.fluid.copy();
     }
 
+    public int getParticleColor(Level level, @Nullable BlockPos pos) {
+        //TODO: try still, particle and flowing color. idk which might work best
+        return fluid.getParticleColor(level, pos);
+    }
+
     @Override
     public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
         if (!this.fluid.isEmpty()) {
             Component fluidName = fluid.getDisplayName();
 
-            tooltipAdder.accept(Component.translatable("message.supplementaries.fluid_tooltip",
+            //tooltip is broen here, a bug I have in ML
+            tooltipAdder.accept(Component.translatable("tooltip.oxide.fluid",
                     fluidName, fluid.getCount()).withStyle(ChatFormatting.GRAY));
 
             PotionContents contents = fluid.get(DataComponents.POTION_CONTENTS);
@@ -80,7 +86,7 @@ public class SoftFluidStackView implements TooltipProvider {
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
-        if (!(object instanceof SoftFluidStackView that)) return false;
+        if (!(object instanceof SFStackView that)) return false;
         return Objects.equals(fluid, that.fluid);
     }
 
