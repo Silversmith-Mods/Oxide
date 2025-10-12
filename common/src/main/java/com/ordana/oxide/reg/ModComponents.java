@@ -20,6 +20,9 @@ public class ModComponents {
     public static final Supplier<DataComponentType<Integer>> CEMENT = register("cement",
             ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
+    public static final Supplier<DataComponentType<Integer>> MAX_DROPS = register("max_drops",
+            ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
+
     public static final Supplier<DataComponentType<SFStackView>> FLUID = register("fluid",
             SFStackView.CODEC, SFStackView.STREAM_CODEC);
 

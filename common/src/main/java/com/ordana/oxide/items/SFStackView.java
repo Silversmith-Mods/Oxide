@@ -54,6 +54,10 @@ public class SFStackView implements TooltipProvider {
         return this.fluid.is(tag);
     }
 
+    public boolean sameFluidSameComponents(SoftFluidStack stack){
+        return this.fluid.isSameFluidSameComponents(stack);
+    }
+
     public boolean is(HolderReference<SoftFluid> tag) {
         return this.fluid.is(tag);
     }

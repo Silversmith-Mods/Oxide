@@ -5,18 +5,12 @@ import com.ordana.oxide.reg.ModComponents;
 import com.ordana.oxide.reg.ModTags;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
-import net.mehvahdjukaar.moonlight.api.fluids.MLBuiltinSoftFluids;
-import net.mehvahdjukaar.moonlight.api.fluids.SoftFluid;
-import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidRegistry;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
+import net.mehvahdjukaar.moonlight.api.misc.FabricOverride;
+import net.mehvahdjukaar.moonlight.api.misc.ForgeOverride;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -27,12 +21,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -41,10 +31,12 @@ public class VarnishSprayer extends Item
         //implements IThirdPersonAnimationProvider //TODO: add this for fancy animation
 {
 
-    public static final int MAX_CHARGES = 128;
-
     public VarnishSprayer(Properties properties) {
         super(properties);
+    }
+
+    public static int getMaxCharges(ItemStack stack) {
+        return stack.getOrDefault(ModComponents.MAX_DROPS.get(), 0);
     }
 
     //initialize if null
@@ -66,9 +58,9 @@ public class VarnishSprayer extends Item
         Level level = context.getLevel();
 
         FluidState state = context.getLevel().getFluidState(pos);
-        if(!state.isEmpty()){
+        if (!state.isEmpty()) {
             SoftFluidStack sf = SoftFluidStack.fromFluid(state, level.registryAccess());
-            if(!sf.isEmpty() && sf.is(ModTags.CAN_GO_IN_SPRAY)){
+            if (!sf.isEmpty() && sf.is(ModTags.CAN_GO_IN_SPRAY)) {
                 //TODO: fill
             }
 
@@ -176,9 +168,8 @@ public class VarnishSprayer extends Item
     public int getBarWidth(ItemStack stack) {
         SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel());
         if (fluid.isEmpty()) return 0;
-        if (true) return 13;
-        //TODO: this might need to be adjusted
-        return Math.round(((((float) MAX_CHARGES + fluid.getCount()) / MAX_CHARGES * 13f) - 13));
+        int getMaxCharges = getMaxCharges(stack);
+        return Math.round(((((float) getMaxCharges + fluid.getCount()) / getMaxCharges * 13f) - 13));
     }
 
     @Environment(EnvType.CLIENT)
@@ -188,5 +179,31 @@ public class VarnishSprayer extends Item
         SFStackView fluid = getFluid(stack, clienntLevel);
         if (fluid.isEmpty()) return -1;
         return fluid.getParticleColor(clienntLevel, BlockPos.ZERO);
+    }
+
+
+    @FabricOverride
+    public boolean allowComponentsUpdateAnimation(Player player, InteractionHand hand, ItemStack oldStack, ItemStack newStack) {
+        SFStackView sf = oldStack.get(ModComponents.FLUID.get());
+        SFStackView sf2 = newStack.get(ModComponents.FLUID.get());
+        if (sf != null && sf2 != null) {
+            if (sf.getFluid() == sf2.getFluid()) {
+                return sf.getCount() == sf2.getCount();
+            }
+        }
+        return true;
+    }
+
+    @ForgeOverride
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        if (slotChanged) return true;
+        SFStackView sf = oldStack.get(ModComponents.FLUID.get());
+        SFStackView sf2 = newStack.get(ModComponents.FLUID.get());
+        if (sf != null && sf2 != null) {
+            if (sf.getFluid() == sf2.getFluid()) {
+                return sf.getCount() == sf2.getCount();
+            }
+        }
+        return true;
     }
 }

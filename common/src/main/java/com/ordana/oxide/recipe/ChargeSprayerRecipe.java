@@ -3,6 +3,12 @@ package com.ordana.oxide.recipe;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.ordana.oxide.items.SFStackView;
+import com.ordana.oxide.items.VarnishSprayer;
+import com.ordana.oxide.reg.ModComponents;
+import com.ordana.oxide.reg.ModRecipes;
+import com.ordana.oxide.reg.ModTags;
+import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -13,40 +19,54 @@ import net.minecraft.world.level.Level;
 
 public class ChargeSprayerRecipe extends CustomRecipe {
 
-    private final Ingredient targetItem;
+    private final Ingredient sprayerIngredient;
     private final int chargesPerItem;
     private final boolean canOverflow;
 
     public ChargeSprayerRecipe(CraftingBookCategory category, Ingredient arrow,
                                int chargesPerItem, boolean canOverflow) {
         super(category);
-        this.targetItem = arrow;
+        this.sprayerIngredient = arrow;
         this.chargesPerItem = chargesPerItem;
         this.canOverflow = canOverflow;
+    }
+
+    private boolean canAddToSpray(ItemStack sprayer, ItemStack charge, Level level) {
+        SFStackView sprayerContent = VarnishSprayer.getFluid(sprayer, level);
+        var bottleContent = SoftFluidStack.fromItem(charge, level.registryAccess());
+        if (bottleContent == null) return false;
+        var bottleFluid = bottleContent.getFirst();
+        if (bottleFluid.isEmpty()) return false;
+        if (!bottleFluid.is(ModTags.CAN_GO_IN_SPRAY)) return false;
+        return sprayerContent.isEmpty() || sprayerContent.sameFluidSameComponents(bottleFluid);
     }
 
     @Override
     public boolean matches(CraftingInput inv, Level worldIn) {
 
-        ItemStack arrow = null;
-        ItemStack rope = null;
+        ItemStack sprayer = null;
+        ItemStack fluidBottleItem = null;
         int newTotalCharges = 0;
 
         for (int i = 0; i < inv.size(); ++i) {
             ItemStack stack = inv.getItem(i);
-            if (targetItem.test(stack)) {
-                if (arrow != null) {
+            if (sprayerIngredient.test(stack)) {
+                if (sprayer != null) {
                     return false;
                 }
-                arrow = stack;
-                newTotalCharges += stack.getOrDefault(ModComponents.CHARGES.get(), 0);
-            } else if (targetCharge.test(stack)) {
-                rope = stack;
-                newTotalCharges += chargesPerItem;
-            } else if (!stack.isEmpty()) return false;
+                sprayer = stack;
+            } else if (!stack.isEmpty()) {
+                if (fluidBottleItem != null) return false;
+                fluidBottleItem = stack;
+            }
         }
-        return arrow != null && rope != null && (canOverflow || newTotalCharges <=
-                result.getDefaultInstance().getOrDefault(ModComponents.MAX_CHARGES.get(), 0));
+        if (!canAddToSpray(sprayer, fluidBottleItem, worldIn)) {
+            return false;
+        }
+        newTotalCharges += chargesPerItem;
+
+        return sprayer != null && fluidBottleItem != null && (canOverflow || newTotalCharges <=
+                sprayer.getOrDefault(ModComponents.MAX_DROPS.get(), 0));
     }
 
     @Override
@@ -55,7 +75,7 @@ public class ChargeSprayerRecipe extends CustomRecipe {
         ItemStack arrow = null;
         for (int i = 0; i < inv.size(); ++i) {
             ItemStack stack = inv.getItem(i);
-            if (targetItem.test(stack)) {
+            if (sprayerIngredient.test(stack)) {
                 arrow = stack;
                 newTotalCharges += stack.getOrDefault(ModComponents.CHARGES.get(), 0);
             } else if (targetCharge.test(stack)) {
@@ -76,21 +96,21 @@ public class ChargeSprayerRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return ModRecipes.ROPE_ARROW_ADD.get();
+        return ModRecipes.CHARGE_SPRAYER.get();
     }
 
     public static class Serializer implements RecipeSerializer<ChargeSprayerRecipe> {
 
         private static final MapCodec<ChargeSprayerRecipe> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
                 CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC).forGetter(CraftingRecipe::category),
-                Ingredient.CODEC.fieldOf("ingredient").forGetter((recipe) -> recipe.targetItem),
+                Ingredient.CODEC.fieldOf("ingredient").forGetter((recipe) -> recipe.sprayerIngredient),
                 Codec.INT.optionalFieldOf("charges_per_item", 1).forGetter((recipe) -> recipe.chargesPerItem),
                 Codec.BOOL.optionalFieldOf("can_overfill", false).forGetter((recipe) -> recipe.canOverflow)
         ).apply(instance, ChargeSprayerRecipe::new));
 
         private static final StreamCodec<RegistryFriendlyByteBuf, ChargeSprayerRecipe> STREAM_CODEC = StreamCodec.composite(
                 CraftingBookCategory.STREAM_CODEC, CraftingRecipe::category,
-                Ingredient.CONTENTS_STREAM_CODEC, recipe -> recipe.targetItem,
+                Ingredient.CONTENTS_STREAM_CODEC, recipe -> recipe.sprayerIngredient,
                 ByteBufCodecs.VAR_INT, recipe -> recipe.chargesPerItem,
                 ByteBufCodecs.BOOL, recipe -> recipe.canOverflow,
                 ChargeSprayerRecipe::new);

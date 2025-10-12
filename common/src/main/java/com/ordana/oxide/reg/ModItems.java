@@ -24,7 +24,7 @@ public class ModItems {
             new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 
     public static final Supplier<Item> VARNISH_SPRAYER = regItem("varnish_sprayer", () ->
-            new VarnishSprayer(new Item.Properties().component(ModComponents.PRIMED.get(), false)
+            new VarnishSprayer(new Item.Properties().component(ModComponents.MAX_DROPS.get(), 128)
                     //dont initialize other component as it needs a level
                     .stacksTo(1)));
 
