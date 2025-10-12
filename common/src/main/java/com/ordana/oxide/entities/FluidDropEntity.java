@@ -6,8 +6,10 @@ import com.ordana.oxide.blocks.rusty.Rustable;
 import com.ordana.oxide.items.SFStackView;
 import com.ordana.oxide.reg.ModEntities;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
+import net.mehvahdjukaar.moonlight.api.entity.ParticleTrailEmitter;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -34,6 +36,13 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
 
     private static final Supplier<EntityDataAccessor<SFStackView>> DATA_FLUID = Suppliers.memoize(() ->
             SynchedEntityData.defineId(FluidDropEntity.class, Preconditions.checkNotNull(ModEntities.FLUID_DATA.get())));
+
+    //TODO configure to your linking. this makes sure particles are equally spread out no matter the proj speed
+    private final ParticleTrailEmitter trailEmitter = new ParticleTrailEmitter.Builder()
+            .maxParticlesPerTick(20)
+            .minParticlesPerTick(1)
+            .spacing(0.3f)
+            .build();
 
     private boolean active = true;
     private int changeTimer = -1;
@@ -72,16 +81,18 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
+        compound.put("fluid", this.getDataFluid().save(this.level().registryAccess()));
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
+        this.setDataFluid(SFStackView.load(this.level().registryAccess(), compound.getCompound("fluid")));
     }
 
     @Override
     protected Item getDefaultItem() {
-        return Items.GLASS_BOTTLE;
+        return Items.BARRIER;
     }
 
     @Override
@@ -102,21 +113,16 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
 
     @Override
     public void spawnTrailParticles() {
-        Vec3 newPos = this.position();
         if (this.active && this.tickCount > 1) {
-
-            double dx = newPos.x - xo;
-            double dy = newPos.y - yo;
-            double dz = newPos.z - zo;
-            int s = 1;
-            for (int i = 0; i < s; ++i) {
-                double j = i / (double) s;
-                this.level().addParticle(level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER,
-                        xo - dx * j,
-                        0.25 + yo - dy * j,
-                        zo - dz * j,
+            var pt = level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER;
+            trailEmitter.tick(this, (pos, speed) -> {
+                this.level().addParticle(
+                        pt,
+                        pos.x,
+                        pos.y,
+                        pos.z,
                         0, 0.02, 0);
-            }
+            });
         }
     }
 

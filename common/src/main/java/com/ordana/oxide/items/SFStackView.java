@@ -6,7 +6,9 @@ import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
 import net.mehvahdjukaar.moonlight.api.misc.HolderReference;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
@@ -25,9 +27,9 @@ import java.util.function.Consumer;
 // technically not needed
 public class SFStackView implements TooltipProvider {
 
-    public static final Codec<SFStackView> CODEC = SoftFluidStack.CODEC.xmap(SFStackView::new, SFStackView::toMutable);
+    public static final Codec<SFStackView> CODEC = SoftFluidStack.CODEC.xmap(SFStackView::of, SFStackView::toMutable);
     public static final StreamCodec<RegistryFriendlyByteBuf, SFStackView> STREAM_CODEC =
-            SoftFluidStack.STREAM_CODEC.map(SFStackView::new, SFStackView::toMutable);
+            SoftFluidStack.STREAM_CODEC.map(SFStackView::of, SFStackView::toMutable);
 
     private final SoftFluidStack fluid;
 
@@ -40,7 +42,15 @@ public class SFStackView implements TooltipProvider {
     }
 
     public SFStackView copyWithCount(int count) {
-        return new SFStackView(this.fluid.copyWithCount(count));
+        return of(this.fluid.copyWithCount(count));
+    }
+
+    public static SFStackView load( HolderLookup.Provider provider, Tag nbt) {
+        return of(SoftFluidStack.load(provider, nbt));
+    }
+
+    public Tag save(HolderLookup.Provider provider) {
+        return this.fluid.save(provider);
     }
 
     public int getCount() {
