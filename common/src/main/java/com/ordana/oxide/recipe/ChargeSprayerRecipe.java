@@ -34,10 +34,10 @@ public class ChargeSprayerRecipe extends CustomRecipe {
 
     private int getBottlesToAdd(ItemStack sprayer, ItemStack charge, Level level) {
         RegistryAccess ra = level.registryAccess();
-        SFStackView sprayerContent = VarnishSprayer.getFluid(sprayer, ra);
+        SFStackView sprayerContent = VarnishSprayer.getFluidComponent(sprayer, ra);
         var bottleContent = SoftFluidStack.fromItem(charge, ra);
         if (bottleContent == null) return 0;
-        var bottleFluid = bottleContent.getFirst();
+        SoftFluidStack bottleFluid = bottleContent.getFirst();
         if (bottleFluid.isEmpty()) return 0;
         if (!bottleFluid.is(ModTags.CAN_GO_IN_SPRAY)) return 0;
         if (sprayerContent.isEmpty() || sprayerContent.sameFluidSameComponents(bottleFluid)) {
@@ -81,16 +81,17 @@ public class ChargeSprayerRecipe extends CustomRecipe {
             ItemStack stack = inv.getItem(i);
             if (sprayerIngredient.test(stack)) {
                 arrow = stack;
-                var sf = VarnishSprayer.getFluid(stack, access);
-                newTotalCharges += stack.getOrDefault(ModComponents.CHARGES.get(), 0);
-            } else if (targetCharge.test(stack)) {
-                newTotalCharges += chargesPerBottle;
             }
         }
-        ItemStack returnArrow = arrow.transmuteCopy(result, 1);
-        returnArrow.set(ModComponents.CHARGES.get(), Math.min(newTotalCharges,
-                returnArrow.getOrDefault(ModComponents.MAX_CHARGES.get(), 0)));
-        return returnArrow;
+
+        int maxCharges = arrow.getOrDefault(ModComponents.MAX_DROPS.get(), 0);
+        ItemStack returnSpray = arrow.copy();
+        SoftFluidStack sf = VarnishSprayer.getFluidComponent(returnSpray, access)
+                .toMutable();
+        sf.setCount(Math.min(maxCharges, sf.getCount() + newTotalCharges));
+        VarnishSprayer.setFluidComponent(returnSpray, sf);
+
+        return returnSpray;
 
     }
 
