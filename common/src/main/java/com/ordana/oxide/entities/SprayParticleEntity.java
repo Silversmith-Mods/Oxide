@@ -2,7 +2,6 @@ package com.ordana.oxide.entities;
 
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModEntities;
-import com.ordana.oxide.reg.ModParticles;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -16,40 +15,37 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class VarnishDropEntity extends ImprovedProjectileEntity {
+public class SprayParticleEntity extends ImprovedProjectileEntity {
 
     private boolean active = true;
     private int changeTimer = -1;
     private boolean superCharged = false;
-    private EntityType type = ModEntities.VARNISH_DROP.get();
+    private EntityType type = ModEntities.SPRAY_ENTITY.get();
 
 
-    public VarnishDropEntity(Level level, LivingEntity shooter) {
-        super(ModEntities.VARNISH_DROP.get(), shooter, level);
+    public SprayParticleEntity(Level level, LivingEntity shooter) {
+        super(ModEntities.SPRAY_ENTITY.get(), shooter, level);
     }
 
-    public VarnishDropEntity(EntityType<? extends VarnishDropEntity> type, Level world) {
+    public SprayParticleEntity(EntityType<? extends SprayParticleEntity> type, Level world) {
         super(type, world);
         this.maxAge = (300);
         this.maxStuckTime = (90000000);
     }
 
-    public VarnishDropEntity(Level worldIn, LivingEntity throwerIn, EntityType type) {
-        super(ModEntities.VARNISH_DROP.get(), throwerIn, worldIn);
+    public SprayParticleEntity(Level worldIn, LivingEntity throwerIn, EntityType type) {
+        super(ModEntities.SPRAY_ENTITY.get(), throwerIn, worldIn);
         this.type = type;
         this.maxAge = (300);
         this.maxStuckTime = (90000000);

@@ -5,7 +5,7 @@
       "item": "oxide:varnish_sprayer"
     },
     {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:milk_bucket"
     }
   ],
   "result": {
@@ -13,7 +13,7 @@
     "components": {
       "oxide:fluid": {
         "count": 128,
-        "id": "moonlight:water"
+        "id": "moonlight:milk"
       }
     },
     "count": 1

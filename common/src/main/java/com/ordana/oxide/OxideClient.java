@@ -15,7 +15,6 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.NoopRenderer;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.particles.SimpleParticleType;
 
@@ -64,12 +63,12 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
         ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("primed"),
-                (itemStack, clientLevel, livingEntity, i) -> VarnishSprayer.isPrimed(itemStack));
+                (itemStack, clientLevel, livingEntity, i) -> VarnishSprayer.isPrimed(itemStack) ? 1 : 0);
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
-        event.register(ModEntities.VARNISH_DROP.get(), NoopRenderer::new);
+        event.register(ModEntities.SPRAY_ENTITY.get(), NoopRenderer::new);
         event.register(ModEntities.WATER_DROP.get(), NoopRenderer::new);
     }
 
