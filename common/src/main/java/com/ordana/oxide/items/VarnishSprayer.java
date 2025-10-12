@@ -1,6 +1,7 @@
 package com.ordana.oxide.items;
 
 import com.ordana.oxide.OxideClient;
+import com.ordana.oxide.entities.FluidDropEntity;
 import com.ordana.oxide.reg.ModComponents;
 import com.ordana.oxide.reg.ModTags;
 import net.fabricmc.api.EnvType;
@@ -69,7 +70,7 @@ public class VarnishSprayer extends Item
             if (!fluidThatBlockContains.isEmpty() && fluidThatBlockContains.is(ModTags.CAN_GO_IN_SPRAY)) {
                 var myFluid = getFluidComponent(stack, level.registryAccess());
                 boolean full = getMaxCharges(stack) <= myFluid.getCount();
-                if(!full){
+                if (!full) {
                     int bottles = fluidThatBlockContains.getCount();
                     //TODO: fill
 
@@ -100,6 +101,18 @@ public class VarnishSprayer extends Item
     @Override
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
         super.onUseTick(level, livingEntity, stack, remainingUseDuration);
+
+        SFStackView fluid = getFluidComponent(stack, level.registryAccess());
+        if (fluid.isEmpty()) {
+            livingEntity.stopUsingItem();
+            return;
+        }
+        //shrink fluid stack count
+        SoftFluidStack mutable = fluid.toMutable();
+        mutable.shrink(1);
+        setFluidComponent(stack, mutable);
+        FluidDropEntity fluidDrop = new FluidDropEntity(level, livingEntity, fluid.copyWithCount(1));
+        //TODO: shoot
     }
 
 

@@ -39,9 +39,10 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
     private int changeTimer = -1;
     private boolean superCharged = false;
 
-    public FluidDropEntity(Level level, LivingEntity shooter) {
+    public FluidDropEntity(Level level, LivingEntity shooter, SFStackView fluid) {
         super(ModEntities.FLUID_DROP.get(), shooter, level);
         this.maxAge = (level.dimensionType().ultraWarm() ? 7 : 300);
+        this.setDataFluid(fluid);
     }
 
     public FluidDropEntity(EntityType<? extends FluidDropEntity> type, Level world) {
@@ -55,6 +56,14 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_FLUID.get(), SFStackView.of(SoftFluidStack.empty(this.level().registryAccess())));
+    }
+
+    public void setDataFluid(SFStackView fluid) {
+        this.entityData.set(DATA_FLUID.get(), fluid);
+    }
+
+    public SFStackView getDataFluid() {
+        return this.entityData.get(DATA_FLUID.get());
     }
 
     //data to be saved when the entity gets unloaded

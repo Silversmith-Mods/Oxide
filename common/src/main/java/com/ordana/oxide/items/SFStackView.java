@@ -22,6 +22,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 // immutable view of a SoftFluidStack. Because components need to be guaranteed immutable
+// technically not needed
 public class SFStackView implements TooltipProvider {
 
     public static final Codec<SFStackView> CODEC = SoftFluidStack.CODEC.xmap(SFStackView::new, SFStackView::toMutable);
@@ -36,6 +37,10 @@ public class SFStackView implements TooltipProvider {
 
     public static SFStackView of(SoftFluidStack stack) {
         return new SFStackView(stack);
+    }
+
+    public SFStackView copyWithCount(int count) {
+        return new SFStackView(this.fluid.copyWithCount(count));
     }
 
     public int getCount() {
