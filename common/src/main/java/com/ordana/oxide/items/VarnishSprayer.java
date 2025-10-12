@@ -10,6 +10,7 @@ import net.mehvahdjukaar.moonlight.api.misc.FabricOverride;
 import net.mehvahdjukaar.moonlight.api.misc.ForgeOverride;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -41,10 +42,10 @@ public class VarnishSprayer extends Item
 
     //initialize if null
     @NotNull
-    public static SFStackView getFluid(ItemStack stack, Level level) {
+    public static SFStackView getFluid(ItemStack stack, HolderLookup.Provider reg) {
         SFStackView f = stack.get(ModComponents.FLUID.get());
         if (f == null) {
-            SFStackView view = SFStackView.of(SoftFluidStack.empty(level.registryAccess()));
+            SFStackView view = SFStackView.of(SoftFluidStack.empty(reg));
             stack.set(ModComponents.FLUID.get(), view);
             f = view;
         }
@@ -56,12 +57,19 @@ public class VarnishSprayer extends Item
     public InteractionResult useOn(UseOnContext context) {
         BlockPos pos = context.getClickedPos();
         Level level = context.getLevel();
+        ItemStack stack = context.getItemInHand();
 
         FluidState state = context.getLevel().getFluidState(pos);
         if (!state.isEmpty()) {
-            SoftFluidStack sf = SoftFluidStack.fromFluid(state, level.registryAccess());
-            if (!sf.isEmpty() && sf.is(ModTags.CAN_GO_IN_SPRAY)) {
-                //TODO: fill
+            SoftFluidStack fluidThatBlockContains = SoftFluidStack.fromFluid(state, level.registryAccess());
+            if (!fluidThatBlockContains.isEmpty() && fluidThatBlockContains.is(ModTags.CAN_GO_IN_SPRAY)) {
+                var myFluid = getFluid(stack, level.registryAccess());
+                boolean full = getMaxCharges(stack) <= myFluid.getCount();
+                if(!full){
+                    int bottles = fluidThatBlockContains.getCount();
+                    //TODO: fill
+
+                }
             }
 
         }
@@ -73,7 +81,7 @@ public class VarnishSprayer extends Item
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
 
-        SFStackView fluid = getFluid(itemstack, level);
+        SFStackView fluid = getFluid(itemstack, level.registryAccess());
 
         if (!fluid.isEmpty()) {
             //TODO: play sound here
@@ -151,7 +159,7 @@ public class VarnishSprayer extends Item
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
         if (PlatHelper.getPhysicalSide().isClient()) {
-            SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel());
+            SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel().registryAccess());
             fluid.addToTooltip(context, tooltipComponents::add, tooltipFlag);
         }
     }
@@ -159,14 +167,14 @@ public class VarnishSprayer extends Item
     @Environment(EnvType.CLIENT)
     @Override
     public boolean isBarVisible(ItemStack stack) {
-        SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel());
+        SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel().registryAccess());
         return !fluid.isEmpty();
     }
 
     @Environment(EnvType.CLIENT)
     @Override
     public int getBarWidth(ItemStack stack) {
-        SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel());
+        SFStackView fluid = getFluid(stack, OxideClient.getClienntLevel().registryAccess());
         if (fluid.isEmpty()) return 0;
         int getMaxCharges = getMaxCharges(stack);
         return Math.round(((((float) getMaxCharges + fluid.getCount()) / getMaxCharges * 13f) - 13));
@@ -176,7 +184,7 @@ public class VarnishSprayer extends Item
     @Override
     public int getBarColor(ItemStack stack) {
         Level clienntLevel = OxideClient.getClienntLevel();
-        SFStackView fluid = getFluid(stack, clienntLevel);
+        SFStackView fluid = getFluid(stack, clienntLevel.registryAccess());
         if (fluid.isEmpty()) return -1;
         return fluid.getParticleColor(clienntLevel, BlockPos.ZERO);
     }
