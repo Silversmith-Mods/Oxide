@@ -44,11 +44,6 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
             .spacing(0.3f)
             .build();
 
-    //TODO: remove? what is active for?
-    private boolean active = true;
-    private int changeTimer = -1;
-    private boolean superCharged = false;
-
     public FluidDropEntity(Level level, LivingEntity shooter, SFStackView fluid) {
         super(ModEntities.FLUID_DROP.get(), shooter, level);
         this.maxAge = (level.dimensionType().ultraWarm() ? 7 : 300);
@@ -114,7 +109,7 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
 
     @Override
     public void spawnTrailParticles() {
-        if (this.active && this.tickCount > 1) {
+        if (this.tickCount > 1) {
             var pt = level().dimensionType().ultraWarm() ? ParticleTypes.POOF : ParticleTypes.FALLING_WATER;
             trailEmitter.tick(this, (pos, speed) -> {
                 this.level().addParticle(
