@@ -27,6 +27,7 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
+//TODO: remove?
 public class SprayParticleEntity extends ImprovedProjectileEntity {
 
     private boolean active = true;

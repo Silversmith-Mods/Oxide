@@ -96,6 +96,10 @@ public class VarnishSprayer extends Item
         return InteractionResultHolder.fail(itemstack);
     }
 
+    @Override
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+        return 72000; //arbitrary high value, we will stop using manually. same as bow. arm gets tired i guess
+    }
 
     //spray here
     @Override

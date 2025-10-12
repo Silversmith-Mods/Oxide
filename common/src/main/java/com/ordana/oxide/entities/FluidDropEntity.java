@@ -44,6 +44,7 @@ public class FluidDropEntity extends ImprovedProjectileEntity {
             .spacing(0.3f)
             .build();
 
+    //TODO: remove? what is active for?
     private boolean active = true;
     private int changeTimer = -1;
     private boolean superCharged = false;
