@@ -2,6 +2,7 @@ package com.ordana.oxide.items;
 
 import com.ordana.oxide.OxideClient;
 import com.ordana.oxide.entities.FluidDropEntity;
+import com.ordana.oxide.entities.SprayParticleEntity;
 import com.ordana.oxide.reg.ModComponents;
 import com.ordana.oxide.reg.ModTags;
 import net.fabricmc.api.EnvType;
@@ -115,8 +116,15 @@ public class VarnishSprayer extends Item
         SoftFluidStack mutable = fluid.toMutable();
         mutable.shrink(1);
         setFluidComponent(stack, mutable);
-        FluidDropEntity fluidDrop = new FluidDropEntity(level, livingEntity, fluid.copyWithCount(1));
+        SprayParticleEntity fluidDrop = new SprayParticleEntity(level, livingEntity);
+
         //TODO: shoot
+        for (int y = -4; y < 4; ++y) {
+            for (int x = -4; x < 4; ++x) {
+                fluidDrop.shootFromRotation(livingEntity, livingEntity.getXRot() + (y * 5 * level.random.nextFloat()), livingEntity.getYRot() + (x * 5 * level.random.nextFloat()), 1.0F + (5 * level.random.nextFloat()), 1.5F + (2 * level.random.nextFloat()), 1.0F);
+                level.addFreshEntity(fluidDrop);
+            }
+        }
     }
 
 

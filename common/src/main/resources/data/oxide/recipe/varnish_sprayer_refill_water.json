@@ -12,7 +12,7 @@
     "id": "oxide:varnish_sprayer",
     "components": {
       "oxide:fluid": {
-        "count": 128,
+        "count": 1000,
         "id": "moonlight:water"
       }
     },
