@@ -25,11 +25,6 @@
         "model": "oxide:block/rusted_plate_iron_stairs/inner_4",
         "uvlock": true,
         "y": 270
-      },
-      {
-        "model": "oxide:block/rusted_plate_iron_stairs/inner_5",
-        "uvlock": true,
-        "y": 270
       }
     ],
     "facing=east,half=bottom,shape=inner_right": [
