@@ -1,7 +1,8 @@
 package com.ordana.oxide;
 
+import com.ordana.oxide.entities.DrippingLiquidParticle;
+import com.ordana.oxide.entities.FallingLiquidParticle;
 import com.ordana.oxide.entities.RustyNailRenderer;
-import com.ordana.oxide.items.VarnishSprayer;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModEntities;
 import com.ordana.oxide.reg.ModItems;
@@ -10,10 +11,7 @@ import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.ExplodeParticle;
-import net.minecraft.client.particle.GlowParticle;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -71,17 +69,32 @@ public class OxideClient {
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         event.register(ModEntities.RUSTY_NAIL.get(), RustyNailRenderer::new);
         event.register(ModEntities.SPRAY_ENTITY.get(), NoopRenderer::new);
-        event.register(ModEntities.FLUID_DROP.get(), NoopRenderer::new);
     }
 
     private static void registerParticles(ClientHelper.ParticleEvent event) {
         event.register(ModParticles.SCRAPE_RUST.get(), ScrapeRustFactory::new);
-        event.register(ModParticles.VARNISH.get(), ExplodeParticle.Provider::new);
-        event.register(ModParticles.WATER.get(), ExplodeParticle.Provider::new);
+        event.register(ModParticles.DRIPPING_LIQUID.get(), DrippingLiquidParticle.Factory::new);
+        event.register(ModParticles.FALLING_LIQUID.get(), FallingLiquidParticle.Factory::new);
+        event.register(ModParticles.SPLASHING_LIQUID.get(), ColoredSplashingParticle::new);
     }
 
-    public static Level getClienntLevel() {
+    public static Level getClientLevel() {
         return Minecraft.getInstance().level;
+    }
+
+
+    public static class ColoredSplashingParticle extends SplashParticle.Provider {
+        public ColoredSplashingParticle(SpriteSet sprites) {
+            super(sprites);
+        }
+
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z,
+                                       double r, double g, double b) {
+            var p = super.createParticle(type, level, x, y, z, 0, 0, 0);
+            p.setColor((float) r, (float) g, (float) b);
+            return p;
+        }
     }
 
     private static class ScrapeRustFactory extends GlowParticle.ScrapeProvider {

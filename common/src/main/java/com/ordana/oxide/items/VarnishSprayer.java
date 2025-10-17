@@ -1,7 +1,6 @@
 package com.ordana.oxide.items;
 
 import com.ordana.oxide.OxideClient;
-import com.ordana.oxide.entities.FluidDropEntity;
 import com.ordana.oxide.entities.SprayParticleEntity;
 import com.ordana.oxide.reg.ModComponents;
 import com.ordana.oxide.reg.ModTags;
@@ -107,20 +106,26 @@ public class VarnishSprayer extends Item
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
         super.onUseTick(level, livingEntity, stack, remainingUseDuration);
 
+        if (remainingUseDuration % 20 != 0) return;
+
         SFStackView fluid = getFluidComponent(stack, level.registryAccess());
         if (fluid.isEmpty()) {
             livingEntity.stopUsingItem();
             return;
         }
         //shrink fluid stack count
-        SoftFluidStack mutable = fluid.toMutable();
-        mutable.shrink(1);
-        setFluidComponent(stack, mutable);
-        SprayParticleEntity fluidDrop = new SprayParticleEntity(level, livingEntity);
+        if (livingEntity instanceof Player player) {
+            if (!player.isCreative()) {
+                SoftFluidStack mutable = fluid.toMutable();
+                mutable.shrink(1);
+                setFluidComponent(stack, mutable);
+            }
+        }
 
         //TODO: shoot
-        for (int y = -4; y < 4; ++y) {
-            for (int x = -4; x < 4; ++x) {
+        for (int y = -3; y < 3; ++y) {
+            for (int x = -3; x < 3; ++x) {
+                SprayParticleEntity fluidDrop = new SprayParticleEntity(level, livingEntity, fluid.copyWithCount(1));
                 fluidDrop.shootFromRotation(livingEntity, livingEntity.getXRot() + (y * 5 * level.random.nextFloat()), livingEntity.getYRot() + (x * 5 * level.random.nextFloat()), 1.0F + (5 * level.random.nextFloat()), 1.5F + (2 * level.random.nextFloat()), 1.0F);
                 level.addFreshEntity(fluidDrop);
             }
@@ -130,65 +135,14 @@ public class VarnishSprayer extends Item
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        //TODO: use anim. leave if using special animation stuff
-        return super.getUseAnimation(stack);
+        return UseAnim.BOW;
     }
-
-    /*
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-
-        stack.set(ModComponents.FLUID.get(), SFStackView.of(SoftFluidStack.of(MLBuiltinSoftFluids.WATER.getHolder(level))));
-
-        BlockHitResult blockHitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
-        if (blockHitResult.getType() == HitResult.Type.BLOCK) {
-            BlockPos blockPos = blockHitResult.getBlockPos();
-            if (!level.mayInteract(player, blockPos)) {
-                return InteractionResultHolder.pass(stack);
-            }
-
-            if (level.getFluidState(blockPos).is(FluidTags.WATER)) {
-                level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 0.6F);
-                level.gameEvent(player, GameEvent.FLUID_PICKUP, blockPos);
-                stack.set(ModComponents.FLUID.get(), SFStackView.of(SoftFluidStack.of(MLBuiltinSoftFluids.WATER.getHolder(level), 128)));
-                //    setFluid(level, stack, MLBuiltinSoftFluids.WATER, 128);
-                //   setPrimed(stack, true);
-                return InteractionResultHolder.success(stack);
-            }
-        }
-
-        SFStackView containedFluid = stack.get(ModComponents.FLUID.get());
-        if (containedFluid == null || containedFluid.isEmpty()) return InteractionResultHolder.pass(stack);
-
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.NEUTRAL, 1F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
-        if (!level.isClientSide) {
-            for (int y = -4; y < 4; ++y) {
-                for (int x = -4; x < 4; ++x) {
-                    ImprovedProjectileEntity entity = null;
-                    //     if (getFluid(stack).is(MLBuiltinSoftFluids.WATER)) entity = new WaterDropEntity(level, player);
-                    //  assert entity != null;
-
-                    //      entity.shootFromRotation(player, player.getXRot() + (y * 5 * level.random.nextFloat()), player.getYRot() + (x * 5 * level.random.nextFloat()), 1.0F + (5 * level.random.nextFloat()), 1.5F + (2 * level.random.nextFloat()), 1.0F);
-                    //      level.addFreshEntity(entity);
-                }
-            }
-        }
-        if (!player.getAbilities().instabuild) {
-            // var bl = getFluid(stack).getCount() == 1;
-            // if (bl) stack.remove(ModComponents.FLUID.get());
-            // else setAmount(stack, getFluid(stack).getCount() - 1);
-            // setPrimed(stack, false);
-        }
-        player.awardStat(Stats.ITEM_USED.get(this));
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
-    }*/
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
         if (PlatHelper.getPhysicalSide().isClient()) {
-            SFStackView fluid = getFluidComponent(stack, OxideClient.getClienntLevel().registryAccess());
+            SFStackView fluid = getFluidComponent(stack, OxideClient.getClientLevel().registryAccess());
             fluid.addToTooltip(context, tooltipComponents::add, tooltipFlag);
         }
     }
@@ -196,14 +150,14 @@ public class VarnishSprayer extends Item
     @Environment(EnvType.CLIENT)
     @Override
     public boolean isBarVisible(ItemStack stack) {
-        SFStackView fluid = getFluidComponent(stack, OxideClient.getClienntLevel().registryAccess());
+        SFStackView fluid = getFluidComponent(stack, OxideClient.getClientLevel().registryAccess());
         return !fluid.isEmpty();
     }
 
     @Environment(EnvType.CLIENT)
     @Override
     public int getBarWidth(ItemStack stack) {
-        SFStackView fluid = getFluidComponent(stack, OxideClient.getClienntLevel().registryAccess());
+        SFStackView fluid = getFluidComponent(stack, OxideClient.getClientLevel().registryAccess());
         if (fluid.isEmpty()) return 0;
         int getMaxCharges = getMaxCharges(stack);
         return Math.round(((((float) getMaxCharges + fluid.getCount()) / getMaxCharges * 13f) - 13));
@@ -212,7 +166,7 @@ public class VarnishSprayer extends Item
     @Environment(EnvType.CLIENT)
     @Override
     public int getBarColor(ItemStack stack) {
-        Level clienntLevel = OxideClient.getClienntLevel();
+        Level clienntLevel = OxideClient.getClientLevel();
         SFStackView fluid = getFluidComponent(stack, clienntLevel.registryAccess());
         if (fluid.isEmpty()) return -1;
         return fluid.getParticleColor(clienntLevel, BlockPos.ZERO);

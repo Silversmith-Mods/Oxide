@@ -21,6 +21,7 @@ public class ModTags {
     public static final TagKey<Block> BARS = registerBlockTag("bars");
 
     public static final TagKey<SoftFluid> CAN_GO_IN_SPRAY = registerSFTag("can_go_in_spray");
+    public static final TagKey<SoftFluid> VARNISH = registerSFTag("varnish");
 
 
     private static TagKey<Block> registerBlockTag(String id) {

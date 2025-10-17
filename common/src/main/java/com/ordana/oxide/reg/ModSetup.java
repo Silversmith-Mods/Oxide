@@ -2,6 +2,7 @@ package com.ordana.oxide.reg;
 
 import com.google.common.base.Stopwatch;
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.entities.SprayParticleEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class ModSetup {
         var list = new ArrayList<Long>();
         try {
             Stopwatch watch = Stopwatch.createStarted();
+
+            SprayParticleEntity.DATA_FLUID.get();
 
             for (int i = 0; i < MOD_SETUP_WORK.size(); i++) {
                 setupStage = i;
