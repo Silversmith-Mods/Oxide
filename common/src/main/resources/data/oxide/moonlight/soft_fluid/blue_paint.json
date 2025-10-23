@@ -1,0 +1,8 @@
+{
+  "from_mod": "oxide",
+  "color": "#2c4cb0",
+  "still_texture": "moonlight:block/soft_fluids/honey_liquid",
+  "flowing_texture": "moonlight:block/soft_fluids/potion_flow",
+  "translation_key": "fluid.oxide.blue_paint",
+  "use_texture_from": "minecraft:honey_block"
+}

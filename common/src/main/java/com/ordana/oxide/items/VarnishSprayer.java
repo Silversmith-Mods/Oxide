@@ -13,15 +13,14 @@ import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.FluidState;
@@ -106,6 +105,7 @@ public class VarnishSprayer extends Item
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
         super.onUseTick(level, livingEntity, stack, remainingUseDuration);
 
+        if (remainingUseDuration > getUseDuration(stack, livingEntity) - 20) return;
         if (remainingUseDuration % 20 != 0) return;
 
         SFStackView fluid = getFluidComponent(stack, level.registryAccess());
@@ -117,16 +117,17 @@ public class VarnishSprayer extends Item
         if (livingEntity instanceof Player player) {
             if (!player.isCreative()) {
                 SoftFluidStack mutable = fluid.toMutable();
-                mutable.shrink(1);
+                if (fluid.getCount() >= 1) mutable.shrink(1);
                 setFluidComponent(stack, mutable);
             }
         }
 
+        level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.NEUTRAL, 1F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         //TODO: shoot
         for (int y = -3; y < 3; ++y) {
             for (int x = -3; x < 3; ++x) {
                 SprayParticleEntity fluidDrop = new SprayParticleEntity(level, livingEntity, fluid.copyWithCount(1));
-                fluidDrop.shootFromRotation(livingEntity, livingEntity.getXRot() + (y * 5 * level.random.nextFloat()), livingEntity.getYRot() + (x * 5 * level.random.nextFloat()), 1.0F + (5 * level.random.nextFloat()), 1.5F + (2 * level.random.nextFloat()), 1.0F);
+                fluidDrop.shootFromRotation(livingEntity, livingEntity.getXRot() + (y * 5 * level.random.nextFloat()), livingEntity.getYRot() + (x * 5 * level.random.nextFloat()), 1.0F + (5 * level.random.nextFloat()), 1.0F + (level.random.nextFloat() / 2), 1.0F);
                 level.addFreshEntity(fluidDrop);
             }
         }
@@ -197,4 +198,5 @@ public class VarnishSprayer extends Item
         }
         return true;
     }
+
 }

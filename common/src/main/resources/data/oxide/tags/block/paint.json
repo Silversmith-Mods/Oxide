@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:red_paint",
+    "oxide:orange_paint",
+    "oxide:yellow_paint",
+    "oxide:lime_paint",
+    "oxide:green_paint",
+    "oxide:cyan_paint",
+    "oxide:blue_paint",
+    "oxide:light_blue_paint",
+    "oxide:purple_paint",
+    "oxide:magenta_paint",
+    "oxide:pink_paint",
+    "oxide:white_paint",
+    "oxide:light_gray_paint",
+    "oxide:gray_paint",
+    "oxide:black_paint",
+    "oxide:brown_paint"
+  ]
+}

@@ -19,9 +19,13 @@ public class ModTags {
     public static final TagKey<Block> WET_CEMENT = registerBlockTag("wet_cement");
     public static final TagKey<Block> REBAR = registerBlockTag("rebar");
     public static final TagKey<Block> BARS = registerBlockTag("bars");
+    public static final TagKey<Block> PAINTABLE = registerBlockTag("paintable");
+    public static final TagKey<Block> WATER_DESTROYS = registerBlockTag("water_destroys");
+    public static final TagKey<Block> PAINT_BLOCK = registerBlockTag("paint");
 
     public static final TagKey<SoftFluid> CAN_GO_IN_SPRAY = registerSFTag("can_go_in_spray");
     public static final TagKey<SoftFluid> VARNISH = registerSFTag("varnish");
+    public static final TagKey<SoftFluid> PAINT = registerSFTag("paint");
 
 
     private static TagKey<Block> registerBlockTag(String id) {

@@ -22,7 +22,7 @@ public class RustableBlock extends Block implements Rustable {
     public RustableBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
-        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
     }
 
     @Override

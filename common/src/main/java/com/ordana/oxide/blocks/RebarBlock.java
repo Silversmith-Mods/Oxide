@@ -48,7 +48,7 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
 
     public RebarBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, true).setValue(EAST, true).setValue(SOUTH, true).setValue(WEST, true).setValue(UP, true).setValue(DOWN, true).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(NORTH, true).setValue(EAST, true).setValue(SOUTH, true).setValue(WEST, true).setValue(UP, true).setValue(DOWN, true).setValue(WATERLOGGED, false));
 
     }
 

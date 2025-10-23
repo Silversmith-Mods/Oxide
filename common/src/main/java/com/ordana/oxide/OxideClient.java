@@ -30,6 +30,23 @@ public class OxideClient {
     }
 
     public static void setup() {
+        ClientHelper.registerRenderType(ModBlocks.WHITE_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.LIGHT_GRAY_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.GRAY_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.BLACK_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.BROWN_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.RED_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.ORANGE_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.YELLOW_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.LIME_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.GREEN_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.CYAN_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.LIGHT_BLUE_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.BLUE_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.PURPLE_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.MAGENTA_PAINT.get(), RenderType.cutout());
+        ClientHelper.registerRenderType(ModBlocks.PINK_PAINT.get(), RenderType.cutout());
+
         ClientHelper.registerRenderType(ModBlocks.IRON_SCAFFOLD.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.WEATHERED_IRON_SCAFFOLD.get(), RenderType.cutout());
         ClientHelper.registerRenderType(ModBlocks.RUSTED_IRON_SCAFFOLD.get(), RenderType.cutout());
@@ -63,7 +80,8 @@ public class OxideClient {
         ClientHelper.registerRenderType(ModBlocks.RUSTED_WROUGHT_IRON_FENCE_GATE.get(), RenderType.cutoutMipped());
 
         ItemProperties.register(ModItems.VARNISH_SPRAYER.get(), Oxide.res("primed"),
-                (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && livingEntity.getUseItem() == itemStack ? 1 : 0);
+                (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && (livingEntity.getUseItemRemainingTicks() != 0) && livingEntity.getUseItem() == itemStack && (livingEntity.getUseItemRemainingTicks() % 20 <= 1) ? 1 : 0);
+
     }
 
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {

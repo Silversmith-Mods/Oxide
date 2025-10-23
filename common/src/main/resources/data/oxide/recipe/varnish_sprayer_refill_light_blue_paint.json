@@ -1,0 +1,25 @@
+{
+  "type": "crafting_shapeless",
+  "group": "varnish_sprayer_paint",
+  "ingredients": [
+    {
+      "item": "oxide:varnish_sprayer"
+    },
+    {
+      "item": "minecraft:light_blue_dye"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "id": "oxide:varnish_sprayer",
+    "components": {
+      "oxide:fluid": {
+        "count": 128,
+        "id": "oxide:light_blue_paint"
+      }
+    },
+    "count": 1
+  }
+}

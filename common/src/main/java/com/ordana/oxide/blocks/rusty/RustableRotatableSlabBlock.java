@@ -27,7 +27,7 @@ public class RustableRotatableSlabBlock extends RustableSlabBlock {
 
     public RustableRotatableSlabBlock(RustLevel rustLevel, Properties settings) {
         super(rustLevel, settings);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(VARNISHED, false));
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {

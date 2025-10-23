@@ -17,7 +17,7 @@ public class RotatableSlabBlock extends SlabBlock {
 
     public RotatableSlabBlock(Properties settings) {
         super(settings);
-        this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, false));
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {

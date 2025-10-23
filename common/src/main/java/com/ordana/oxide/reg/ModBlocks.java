@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.function.Supplier;
 
@@ -451,6 +452,42 @@ public class ModBlocks {
             new RustableFenceGateBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Supplier<Block> RUSTED_WROUGHT_IRON_FENCE_GATE = regWithItem("rusted_wrought_iron_fence_gate", () ->
             new RustableFenceGateBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_ORANGE)));
+
+    //paint
+    public static final Supplier<Block> WHITE_PAINT = regBlock("white_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.WOOL)));
+    public static final Supplier<Block> LIGHT_GRAY_PAINT = regBlock("light_gray_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_LIGHT_GRAY)));
+    public static final Supplier<Block> GRAY_PAINT = regBlock("gray_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_GRAY)));
+    public static final Supplier<Block> BLACK_PAINT = regBlock("black_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_BLACK)));
+    public static final Supplier<Block> BROWN_PAINT = regBlock("brown_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_BROWN)));
+    public static final Supplier<Block> RED_PAINT = regBlock("red_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_RED)));
+    public static final Supplier<Block> ORANGE_PAINT = regBlock("orange_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_ORANGE)));
+    public static final Supplier<Block> YELLOW_PAINT = regBlock("yellow_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_YELLOW)));
+    public static final Supplier<Block> LIME_PAINT = regBlock("lime_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_LIGHT_GREEN)));
+    public static final Supplier<Block> GREEN_PAINT = regBlock("green_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_GREEN)));
+    public static final Supplier<Block> BLUE_PAINT = regBlock("blue_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_BLUE)));
+    public static final Supplier<Block> PURPLE_PAINT = regBlock("purple_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_PURPLE)));
+    public static final Supplier<Block> MAGENTA_PAINT = regBlock("magenta_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_MAGENTA)));
+    public static final Supplier<Block> PINK_PAINT = regBlock("pink_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_PINK)));
+    public static final Supplier<Block> LIGHT_BLUE_PAINT = regBlock("light_blue_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_LIGHT_BLUE)));
+    public static final Supplier<Block> CYAN_PAINT = regBlock("cyan_paint", () ->
+            new PaintBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().instabreak().pushReaction(PushReaction.DESTROY).sound(SoundType.MUD).mapColor(MapColor.COLOR_CYAN)));
+
+
 
 
     public static final Supplier<Block> CEMENT_EATER = regWithItem("cement_eater", () ->
