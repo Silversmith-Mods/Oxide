@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-public class RebarWetCementBlock extends RebarBlock {
+public class CementedRebarBlock extends RebarBlock {
 
     public static final EnumProperty<SlabType> TYPE;
     protected static final VoxelShape TALL_REBAR_SHAPE;
@@ -46,7 +46,7 @@ public class RebarWetCementBlock extends RebarBlock {
     private static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION;
 
 
-    public RebarWetCementBlock(BlockBehaviour.Properties properties) {
+    public CementedRebarBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
 
@@ -59,7 +59,8 @@ public class RebarWetCementBlock extends RebarBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
         var belowState = serverLevel.getBlockState(pos.below());
-        if (!belowState.is(ModTags.WET_CEMENT) && belowState.isFaceSturdy(serverLevel, pos.below(), Direction.UP) &&  serverLevel.isDay()) serverLevel.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ? ModBlocks.REBAR_CEMENT.get().defaultBlockState() : ModBlocks.REBAR_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+        if (!belowState.is(ModTags.WET_CEMENT) && belowState.isFaceSturdy(serverLevel, pos.below(), Direction.UP) && serverLevel.isDay())
+            serverLevel.setBlockAndUpdate(pos, ModBlocks.REINFORCED_CEMENT.get().withPropertiesOf(state));
     }
 
     public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
@@ -180,14 +181,14 @@ public class RebarWetCementBlock extends RebarBlock {
             if (state.getValue(TYPE) == SlabType.DOUBLE) {
                 level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
                 level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
-                        ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM) :
+                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM) :
                         ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM));
                 return;
             }
             else {
                 level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
                 level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
-                        ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)) :
+                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)) :
                         ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)));
             }
             level.scheduleTick(pos.below(), this, 8);
@@ -199,8 +200,8 @@ public class RebarWetCementBlock extends RebarBlock {
                 level.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ?
                         state.setValue(TYPE, SlabType.BOTTOM) :
                         ModBlocks.REBAR.get().withPropertiesOf(state));
-                level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.WET_CEMENT_REBAR.get()) ?
-                        ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.DOUBLE) :
+                level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.CEMENTED_REBAR.get()) ?
+                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.DOUBLE) :
                         ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
                 level.scheduleTick(pos.below(), this, 8);
                 return;
@@ -212,7 +213,7 @@ public class RebarWetCementBlock extends RebarBlock {
                 var dirState = level.getBlockState(pos.relative(dir));
                 if (dirState.canBeReplaced() || dirState.is(ModBlocks.REBAR.get())) {
                     level.setBlockAndUpdate(pos.relative(dir), dirState.is(ModBlocks.REBAR.get()) ?
-                            ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
+                            ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
                             ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
                     level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
                     level.scheduleTick(pos.relative(dir), this, 8);
@@ -232,7 +233,7 @@ public class RebarWetCementBlock extends RebarBlock {
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
                         level.setBlockAndUpdate(dirPos, state.setValue(TYPE, SlabType.BOTTOM));
                         level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.REBAR.get()) ?
-                                ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
+                                ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
                                 ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
                         level.scheduleTick(dirPos, this, 8);
                         break;
@@ -243,7 +244,7 @@ public class RebarWetCementBlock extends RebarBlock {
 
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
                         level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.REBAR.get()) ?
-                                ModBlocks.WET_CEMENT_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE) :
+                                ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE) :
                                 ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
                         level.scheduleTick(dirPos, this, 8);
                         break;

@@ -44,19 +44,16 @@ public class ModBlocks {
 
     public static final Supplier<Block> WET_CEMENT = regBlock("wet_cement", () ->
             new WetCementBlock(BlockBehaviour.Properties.of().sound(SoundType.MUD).randomTicks().strength(3.0F, 6.0F).requiresCorrectToolForDrops().isSuffocating(ModBlocks::always).mapColor(MapColor.DEEPSLATE)));
-
     public static final Supplier<Block> REBAR = regWithItem("rebar", () ->
             new RebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER_GRATE).noOcclusion().mapColor(MapColor.TERRACOTTA_ORANGE)));
-
-    public static final Supplier<Block> WET_CEMENT_REBAR = regBlock("cemented_rebar", () ->
-            new RebarWetCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.COPPER_GRATE).noOcclusion().mapColor(MapColor.DEEPSLATE)));
-
-    public static final Supplier<Block> REBAR_CEMENT = regBlock("reinforced_cement", () ->
-            new RebarCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+    public static final Supplier<Block> CEMENTED_REBAR = regBlock("cemented_rebar", () ->
+            new CementedRebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.COPPER_GRATE).noOcclusion().mapColor(MapColor.DEEPSLATE).randomTicks()));
+    public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
 
     public static final Supplier<Block> CEMENT = regWithItem("cement", () ->
-            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new CementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
     public static final Supplier<Block> CEMENT_STAIRS = regWithItem("cement_stairs", () ->
             new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));

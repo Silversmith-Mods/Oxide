@@ -1,14 +1,9 @@
 package com.ordana.oxide.blocks;
 
 import com.mojang.serialization.MapCodec;
-import com.ordana.oxide.reg.ModItems;
-import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -16,17 +11,13 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
-public class RebarCementBlock extends Block {
+public class ReinforcedCementBlock extends Block {
     public static final MapCodec<WallBlock> CODEC = simpleCodec(WallBlock::new);
 
     public static final BooleanProperty UP;
@@ -46,43 +37,18 @@ public class RebarCementBlock extends Block {
         return CODEC;
     }
 
-    public RebarCementBlock(Properties properties) {
+    public ReinforcedCementBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(NORTH, true).setValue(EAST, true).setValue(SOUTH, true).setValue(WEST, true).setValue(UP, true).setValue(DOWN, true).setValue(TYPE, SlabType.BOTTOM));
 
     }
 
     protected @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return (state.getValue(UP) ? SHAPE : BIG_SHAPE);
+        return (state.getValue(TYPE) == SlabType.DOUBLE ? BIG_SHAPE : SHAPE);
     }
 
     protected boolean useShapeForLightOcclusion(BlockState state) {
         return false;
-    }
-
-    protected VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
-        return Shapes.empty();
-    }
-
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
-        return false;
-    }
-
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockGetter blockGetter = context.getLevel();
-        BlockPos blockPos = context.getClickedPos();
-        FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
-        return this.defaultBlockState()
-                .setValue(DOWN, !blockGetter.getBlockState(blockPos.below()).is(ModTags.REBAR))
-                .setValue(UP, !blockGetter.getBlockState(blockPos.above()).is(ModTags.REBAR))
-                .setValue(NORTH, !blockGetter.getBlockState(blockPos.north()).is(ModTags.REBAR))
-                .setValue(EAST, !blockGetter.getBlockState(blockPos.east()).is(ModTags.REBAR))
-                .setValue(SOUTH, !blockGetter.getBlockState(blockPos.south()).is(ModTags.REBAR))
-                .setValue(WEST, !blockGetter.getBlockState(blockPos.west()).is(ModTags.REBAR));
-    }
-
-    protected @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return state.setValue(PROPERTY_BY_DIRECTION.get(direction), !neighborState.is(ModTags.REBAR));
     }
 
     protected @NotNull BlockState rotate(BlockState state, Rotation rotation) {
@@ -98,8 +64,8 @@ public class RebarCementBlock extends Block {
     }
 
     static {
-        SHAPE = Block.box(2.0, 2.0, 2.0, 14.0, 6.0, 14.0);
-        BIG_SHAPE = Block.box(2.0, 2.0, 2.0, 14.0, 14.0, 14.0);
+        SHAPE = Block.box(0, 0, 0, 16.0, 8.0, 16.0);
+        BIG_SHAPE = Block.box(0, 0, 0, 16.0, 16.0, 16.0);
         
         NORTH = PipeBlock.NORTH;
         EAST = PipeBlock.EAST;
