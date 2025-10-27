@@ -103,7 +103,10 @@ public class CementBucketItem extends Item {
 
                     if (player == null || !player.getAbilities().instabuild) {
                         if (getAmount(itemStack) > 1) this.setAmount(itemStack, getAmount(itemStack) - 1);
-                        else player.setItemInHand(context.getHand(), Items.BUCKET.getDefaultInstance());
+                        else {
+                            itemStack.shrink(1);
+                            player.setItemInHand(context.getHand(), Items.BUCKET.getDefaultInstance());
+                        }
 
                         context.getLevel().scheduleTick(context.getClickedPos(), blockState.getBlock(), 8);
                     }

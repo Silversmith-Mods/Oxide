@@ -59,7 +59,7 @@ public class CementedRebarBlock extends RebarBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
         var belowState = serverLevel.getBlockState(pos.below());
-        if (!belowState.is(ModTags.WET_CEMENT) && belowState.isFaceSturdy(serverLevel, pos.below(), Direction.UP) && serverLevel.isDay())
+        if (!belowState.is(ModTags.WET_CEMENT) && !belowState.isAir() && serverLevel.isDay())
             serverLevel.setBlockAndUpdate(pos, ModBlocks.REINFORCED_CEMENT.get().withPropertiesOf(state));
     }
 

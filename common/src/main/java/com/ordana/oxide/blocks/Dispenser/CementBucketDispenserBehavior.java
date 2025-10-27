@@ -25,15 +25,11 @@ public class CementBucketDispenserBehavior extends DispenserHelper.PlaceBlockBeh
         if (item instanceof CementBucketItem bi) {
             Direction direction = source.state().getValue(DispenserBlock.FACING);
             BlockPos blockpos = source.pos().relative(direction);
+            if (bi.getAmount(stack) == 1) source.blockEntity().insertItem(new ItemStack(Items.BUCKET));
             InteractionResult result = bi.place(new DirectionalPlaceContext(source.level(), blockpos, direction, stack, direction));
             InteractionResultHolder<ItemStack> res = new InteractionResultHolder(result, stack);
 
-
-            if (bi.getAmount(stack) > 1) {
-                bi.setAmount(stack, bi.getAmount(stack) - 1);
-                return InteractionResultHolder.success(stack);
-            }
-            else InteractionResultHolder.success(new ItemStack(Items.BUCKET));
+            return res;
         }
 
         return InteractionResultHolder.pass(stack);

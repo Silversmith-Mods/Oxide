@@ -21,6 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -56,7 +57,7 @@ public class WetCementBlock extends Block {
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
         var belowState = serverLevel.getBlockState(pos.below());
-        if (!belowState.is(ModTags.WET_CEMENT) && belowState.isFaceSturdy(serverLevel, pos.below(), Direction.UP) && serverLevel.isDay())
+        if (!belowState.is(ModTags.WET_CEMENT) && !belowState.isAir() && serverLevel.isDay())
             serverLevel.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ?
                     ModBlocks.CEMENT.get().defaultBlockState() : ModBlocks.CEMENT_SLAB.get().defaultBlockState());
     }
@@ -145,7 +146,7 @@ public class WetCementBlock extends Block {
         ItemStack itemStack = useContext.getItemInHand();
         SlabType slabType = state.getValue(TYPE);
         if (slabType != SlabType.DOUBLE && (itemStack.is(this.asItem()) || itemStack.is(ModItems.CEMENT_BUCKET.get()))) {
-            if (useContext.replacingClickedOnBlock()) {
+
                 boolean bl = useContext.getClickLocation().y - (double)useContext.getClickedPos().getY() > 0.5;
                 Direction direction = useContext.getClickedFace();
                 if (slabType == SlabType.BOTTOM) {
@@ -153,9 +154,6 @@ public class WetCementBlock extends Block {
                 } else {
                     return direction == Direction.DOWN || !bl && direction.getAxis().isHorizontal();
                 }
-            } else {
-                return true;
-            }
         } else {
             return false;
         }
