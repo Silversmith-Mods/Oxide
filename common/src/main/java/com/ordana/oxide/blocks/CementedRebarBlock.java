@@ -21,6 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -53,7 +54,12 @@ public class CementedRebarBlock extends RebarBlock {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, WATERLOGGED, TYPE);
+        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, NORTH_UPPER, EAST_UPPER, SOUTH_UPPER, WEST_UPPER, WATERLOGGED, TYPE);
+    }
+
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
+        super.playerDestroy(level, player, pos, state, blockEntity, tool);
     }
 
     @Override
@@ -175,7 +181,6 @@ public class CementedRebarBlock extends RebarBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-
         var belowState = level.getBlockState(pos.below());
         if (belowState.canBeReplaced() || belowState.is(ModBlocks.REBAR.get())) {
             if (state.getValue(TYPE) == SlabType.DOUBLE) {

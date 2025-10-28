@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "oxide:rebar",
-    "oxide:cemented_rebar",
-    "oxide:cemented_rebar",
-    "oxide:reinforced_cement"
+    "oxide:cemented_rebar"
   ]
 }

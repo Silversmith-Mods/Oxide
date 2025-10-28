@@ -45,11 +45,11 @@ public class ModBlocks {
     public static final Supplier<Block> WET_CEMENT = regBlock("wet_cement", () ->
             new WetCementBlock(BlockBehaviour.Properties.of().sound(SoundType.MUD).randomTicks().strength(3.0F, 6.0F).requiresCorrectToolForDrops().isSuffocating(ModBlocks::always).mapColor(MapColor.DEEPSLATE)));
     public static final Supplier<Block> REBAR = regWithItem("rebar", () ->
-            new RebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER_GRATE).noOcclusion().mapColor(MapColor.TERRACOTTA_ORANGE)));
+            new RebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER_GRATE).strength(1.0F, 20.0F).noOcclusion().mapColor(MapColor.TERRACOTTA_ORANGE)));
     public static final Supplier<Block> CEMENTED_REBAR = regBlock("cemented_rebar", () ->
-            new CementedRebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.COPPER_GRATE).noOcclusion().mapColor(MapColor.DEEPSLATE).randomTicks()));
+            new CementedRebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.MUD).strength(3.0F, 6.0F).noOcclusion().mapColor(MapColor.DEEPSLATE).randomTicks()));
     public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
-            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE)));
 
 
     public static final Supplier<Block> CEMENT = regWithItem("cement", () ->
