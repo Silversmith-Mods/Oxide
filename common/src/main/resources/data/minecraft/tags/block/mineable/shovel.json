@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oxide:wet_cement"
+    "oxide:wet_cement",
+    "oxide:cemented_rebar"
   ]
 }

@@ -41,7 +41,7 @@ public class RustableScaffoldBlock extends Block implements Rustable, SimpleWate
     public RustableScaffoldBlock(Rustable.RustLevel rustLevel, BlockBehaviour.Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
-        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(VARNISHED, false));
     }
 
     @Override

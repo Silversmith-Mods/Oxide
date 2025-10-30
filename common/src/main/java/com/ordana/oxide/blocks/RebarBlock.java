@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
@@ -34,6 +35,10 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty NORTH;
     public static final BooleanProperty SOUTH;
     public static final BooleanProperty WEST;
+    public static final BooleanProperty EAST_UPPER;
+    public static final BooleanProperty NORTH_UPPER;
+    public static final BooleanProperty SOUTH_UPPER;
+    public static final BooleanProperty WEST_UPPER;
     private static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION;
 
     public static final BooleanProperty WATERLOGGED;
@@ -48,7 +53,18 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
 
     public RebarBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, true).setValue(EAST, true).setValue(SOUTH, true).setValue(WEST, true).setValue(UP, true).setValue(DOWN, true).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState()
+                .setValue(NORTH, true)
+                .setValue(EAST, true)
+                .setValue(SOUTH, true)
+                .setValue(WEST, true)
+                .setValue(NORTH_UPPER, true)
+                .setValue(EAST_UPPER, true)
+                .setValue(SOUTH_UPPER, true)
+                .setValue(WEST_UPPER, true)
+                .setValue(UP, true)
+                .setValue(DOWN, true)
+                .setValue(WATERLOGGED, false));
 
     }
 
@@ -69,6 +85,14 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
         return false;
     }
 
+    protected boolean upperCheck(BlockState state) {
+        if (state.hasProperty(RebarBlock.UP) && state.is(ModTags.REBAR)) {
+            return state.getValue(RebarBlock.UP);
+        }
+        return true;
+    }
+
+
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockGetter blockGetter = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
@@ -80,6 +104,10 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
                 .setValue(EAST, !blockGetter.getBlockState(blockPos.east()).is(ModTags.REBAR))
                 .setValue(SOUTH, !blockGetter.getBlockState(blockPos.south()).is(ModTags.REBAR))
                 .setValue(WEST, !blockGetter.getBlockState(blockPos.west()).is(ModTags.REBAR))
+                .setValue(NORTH_UPPER, upperCheck(blockGetter.getBlockState(blockPos.north())))
+                .setValue(EAST_UPPER, upperCheck(blockGetter.getBlockState(blockPos.east())))
+                .setValue(SOUTH_UPPER, upperCheck(blockGetter.getBlockState(blockPos.south())))
+                .setValue(WEST_UPPER, upperCheck(blockGetter.getBlockState(blockPos.west())))
                 .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
     }
 
@@ -88,7 +116,17 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        return state.setValue(PROPERTY_BY_DIRECTION.get(direction), !neighborState.is(ModTags.REBAR));
+        return state
+                .setValue(DOWN, !level.getBlockState(pos.below()).is(ModTags.REBAR))
+                .setValue(UP, !level.getBlockState(pos.above()).is(ModTags.REBAR))
+                .setValue(NORTH, !level.getBlockState(pos.north()).is(ModTags.REBAR))
+                .setValue(EAST, !level.getBlockState(pos.east()).is(ModTags.REBAR))
+                .setValue(SOUTH, !level.getBlockState(pos.south()).is(ModTags.REBAR))
+                .setValue(WEST, !level.getBlockState(pos.west()).is(ModTags.REBAR))
+                .setValue(NORTH_UPPER, upperCheck(level.getBlockState(pos.north())))
+                .setValue(EAST_UPPER, upperCheck(level.getBlockState(pos.east())))
+                .setValue(SOUTH_UPPER, upperCheck(level.getBlockState(pos.south())))
+                .setValue(WEST_UPPER, upperCheck(level.getBlockState(pos.west())));
     }
 
 
@@ -101,7 +139,13 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     protected @NotNull BlockState rotate(BlockState state, Rotation rotation) {
-        return state.setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.NORTH)), state.getValue(NORTH)).setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.SOUTH)), state.getValue(SOUTH)).setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.EAST)), state.getValue(EAST)).setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.WEST)), state.getValue(WEST)).setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.UP)), state.getValue(UP)).setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.DOWN)), state.getValue(DOWN));
+        return state
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.NORTH)), state.getValue(NORTH))
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.SOUTH)), state.getValue(SOUTH))
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.EAST)), state.getValue(EAST))
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.WEST)), state.getValue(WEST))
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.UP)), state.getValue(UP))
+                .setValue(PROPERTY_BY_DIRECTION.get(rotation.rotate(Direction.DOWN)), state.getValue(DOWN));
     }
 
     protected @NotNull BlockState mirror(BlockState state, Mirror mirror) {
@@ -109,7 +153,7 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, WATERLOGGED);
+        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, NORTH_UPPER, EAST_UPPER, SOUTH_UPPER, WEST_UPPER, WATERLOGGED);
     }
 
 
@@ -126,6 +170,10 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
         EAST = PipeBlock.EAST;
         SOUTH = PipeBlock.SOUTH;
         WEST = PipeBlock.WEST;
+        NORTH_UPPER = ModBlockProperties.NORTH_UPPER;
+        EAST_UPPER = ModBlockProperties.EAST_UPPER;
+        SOUTH_UPPER = ModBlockProperties.SOUTH_UPPER;
+        WEST_UPPER = ModBlockProperties.WEST_UPPER;
         UP = PipeBlock.UP;
         DOWN = PipeBlock.DOWN;
         WATERLOGGED = BlockStateProperties.WATERLOGGED;

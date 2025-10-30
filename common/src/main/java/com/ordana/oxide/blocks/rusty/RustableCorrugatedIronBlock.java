@@ -32,7 +32,7 @@ public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements R
     public RustableCorrugatedIronBlock(RustLevel rustLevel, Properties settings) {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AXIS, Direction.Axis.Y).setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(AXIS, Direction.Axis.Y).setValue(VARNISHED, false));
     }
 
     @Override

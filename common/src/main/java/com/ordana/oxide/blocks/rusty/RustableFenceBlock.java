@@ -39,7 +39,7 @@ public class RustableFenceBlock extends WallBlock implements Rustable {
         this.collisionShapeByIndex = this.makeShapes(2.0F, 2.0F, 24.0F, 0.0F, 24.0F, 24.0F);
         this.rustLevel = rustLevel;
 
-        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
     }
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {

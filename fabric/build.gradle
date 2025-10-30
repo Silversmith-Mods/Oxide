@@ -27,7 +27,7 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 
     //modImplementation("curse.maven:selene-499980:6285008")
-    modImplementation("curse.maven:selene-499980:6285009")
+    modImplementation("curse.maven:selene-499980:7100674")
     modLocalRuntime "dev.emi:emi-fabric:${rootProject.emi_version}"
 
     modCompileOnly "com.terraformersmc:modmenu:4.0.6", {

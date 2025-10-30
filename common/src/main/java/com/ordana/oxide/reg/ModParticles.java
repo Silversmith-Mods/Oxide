@@ -11,11 +11,12 @@ public class ModParticles {
     public static void init() {
     }
 
-    public static Supplier<SimpleParticleType> registerParticle(String name) {
+    public static Supplier<SimpleParticleType> reg(String name) {
         return RegHelper.registerParticle(Oxide.res(name));
     }
 
-    public static final Supplier<SimpleParticleType> SCRAPE_RUST = registerParticle("scrape_rust");
-    public static final Supplier<SimpleParticleType> VARNISH = registerParticle("varnish");
-    public static final Supplier<SimpleParticleType> WATER = registerParticle("water");
+    public static final Supplier<SimpleParticleType> SCRAPE_RUST = reg("scrape_rust");
+    public static final Supplier<SimpleParticleType> DRIPPING_LIQUID = reg("dripping_liquid");
+    public static final Supplier<SimpleParticleType> FALLING_LIQUID = reg("falling_liquid");
+    public static final Supplier<SimpleParticleType> SPLASHING_LIQUID = reg("splashing_liquid");
 }

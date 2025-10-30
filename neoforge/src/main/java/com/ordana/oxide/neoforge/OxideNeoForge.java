@@ -12,5 +12,6 @@ public class OxideNeoForge {
         Oxide.commonInit();
         PlatHelper.addCommonSetup(ModSetup::setup);
     }
+
 }
 

@@ -5,13 +5,16 @@
       "item": "oxide:varnish_sprayer"
     },
     {
-      "item": "minecraft:honeycomb"
+      "item": "minecraft:honeycomb_block"
     }
   ],
   "result": {
     "id": "oxide:varnish_sprayer",
     "components": {
-      "oxide:varnish": 1000
+      "oxide:fluid": {
+        "count": 128,
+        "id": "oxide:varnish"
+      }
     },
     "count": 1
   }

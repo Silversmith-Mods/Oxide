@@ -27,7 +27,7 @@ public class RustableTrapdoorBlock extends TrapDoorBlock implements Rustable {
         super(BlockSetType.IRON, properties);
         this.rustLevel = rustLevel;
 
-        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false).setValue(POWERED, false).setValue(OPEN, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false).setValue(POWERED, false).setValue(OPEN, false));
     }
 
     @Override

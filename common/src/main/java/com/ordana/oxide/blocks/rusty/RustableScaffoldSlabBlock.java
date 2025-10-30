@@ -35,7 +35,7 @@ public class RustableScaffoldSlabBlock extends SlabBlock implements Rustable {
         super(Rustable.setRandomTicking(settings, rustLevel));
         this.rustLevel = rustLevel;
 
-        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
     }
 
     @Override

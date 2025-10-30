@@ -103,7 +103,10 @@ public class CementBucketItem extends Item {
 
                     if (player == null || !player.getAbilities().instabuild) {
                         if (getAmount(itemStack) > 1) this.setAmount(itemStack, getAmount(itemStack) - 1);
-                        else player.setItemInHand(context.getHand(), Items.BUCKET.getDefaultInstance());
+                        else {
+                            itemStack.shrink(1);
+                            player.setItemInHand(context.getHand(), Items.BUCKET.getDefaultInstance());
+                        }
 
                         context.getLevel().scheduleTick(context.getClickedPos(), blockState.getBlock(), 8);
                     }
@@ -140,7 +143,7 @@ public class CementBucketItem extends Item {
     protected BlockState getPlacementState(BlockPlaceContext context) {
         var state = context.getLevel().getBlockState(context.getClickedPos());
         BlockState blockState = state.is(
-                ModBlocks.REBAR.get()) ? ModBlocks.WET_CEMENT_REBAR.get().getStateForPlacement(context) :
+                ModBlocks.REBAR.get()) ? ModBlocks.CEMENTED_REBAR.get().getStateForPlacement(context) :
                 this.getBlock().getStateForPlacement(context);
         return blockState != null && this.canPlace(context, blockState) ? blockState : null;
     }

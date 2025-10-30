@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks.rusty;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.entities.SprayParticleEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,11 +28,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -65,7 +66,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
     public RustableFenceGateBlock(RustLevel rustLevel, Properties properties) {
         super(properties);
         this.rustLevel = rustLevel;
-        this.registerDefaultState(this.stateDefinition.any()
+        this.registerDefaultState(this.defaultBlockState()
                 .setValue(OPEN, false)
                 .setValue(POWERED, false)
                 .setValue(TOP, true)
@@ -140,6 +141,12 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
 
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         if (state.getValue(OPEN)) {
+            if (context instanceof EntityCollisionContext c) {
+                var e = c.getEntity();
+                if (e instanceof SprayParticleEntity) {
+                    return Shapes.block();
+                }
+            }
             return Shapes.empty();
         } else {
             return state.getValue(FACING).getAxis() == Direction.Axis.Z ? Z_COLLISION_SHAPE : X_COLLISION_SHAPE;

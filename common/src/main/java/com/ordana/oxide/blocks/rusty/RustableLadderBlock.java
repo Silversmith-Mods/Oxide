@@ -27,7 +27,7 @@ public class RustableLadderBlock extends LadderBlock {
     protected RustableLadderBlock(Properties properties) {
         super(properties);
 
-        this.registerDefaultState(this.stateDefinition.any().setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
     }
 
     private boolean canAttachTo(BlockGetter blockReader, BlockPos pos, Direction direction) {

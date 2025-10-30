@@ -2,7 +2,7 @@ package com.ordana.oxide.reg;
 
 import com.mojang.serialization.Codec;
 import com.ordana.oxide.Oxide;
-import com.ordana.oxide.items.SoftFluidStackView;
+import com.ordana.oxide.items.SFStackView;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -20,12 +20,11 @@ public class ModComponents {
     public static final Supplier<DataComponentType<Integer>> CEMENT = register("cement",
             ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
-    public static final Supplier<DataComponentType<Boolean>> PRIMED = register("primed",
-            Codec.BOOL, ByteBufCodecs.BOOL);
+    public static final Supplier<DataComponentType<Integer>> MAX_DROPS = register("max_drops",
+            ExtraCodecs.POSITIVE_INT, ByteBufCodecs.VAR_INT);
 
-    public static final Supplier<DataComponentType<SoftFluidStackView>> FLUID = register("fluid",
-            SoftFluidStackView.CODEC, SoftFluidStackView.STREAM_CODEC);
-
+    public static final Supplier<DataComponentType<SFStackView>> FLUID = register("fluid",
+            SFStackView.CODEC, SFStackView.STREAM_CODEC);
 
 
     public static <T> Supplier<DataComponentType<T>> register(String name, Codec<T> codec, StreamCodec<? super RegistryFriendlyByteBuf, T> streamCodec) {

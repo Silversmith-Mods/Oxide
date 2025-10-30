@@ -38,6 +38,8 @@ public class Oxide {
         ModItems.init();
         ModEntities.init();
         ModComponents.init();
+        ModRecipes.init();
+        ModDispenserBehaviors.init();
     }
 
     public static void setup() {

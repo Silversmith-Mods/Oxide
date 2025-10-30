@@ -12,7 +12,7 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
 
-    modImplementation("curse.maven:selene-499980:6285008")
+    modImplementation("curse.maven:selene-499980:7100674")
     modImplementation "dev.emi:emi-xplat-intermediary:${rootProject.emi_version}:api"
 
 }
