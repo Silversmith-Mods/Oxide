@@ -237,7 +237,7 @@ public class CementedRebarBlock extends RebarBlock {
                 var dirPos = pos.relative(dir).below();
                 var dirState = level.getBlockState(dirPos);
                 var adjState = level.getBlockState(pos.relative(dir));
-                
+
                 if (adjState.isCollisionShapeFullBlock(level, pos.relative(dir))) break;
 
                 if (dirState.canBeReplaced() || dirState.is(ModBlocks.REBAR.get())) {
