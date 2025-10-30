@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oxide:rusted_iron_scaffold"
+  },
+  "result": {
+    "id": "oxide:rusted_iron_scaffold_stairs"
+  }
+}

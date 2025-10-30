@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:heavy_iron_door",
+    "oxide:weathered_heavy_iron_door",
+    "oxide:rusted_heavy_iron_door"
+  ]
+}

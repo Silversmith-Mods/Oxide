@@ -1,14 +1,74 @@
 {
   "itemGroup.oxide.oxide": "Oxide",
-  "entity.oxide.mod_entity": "Mod Entity",
-  "item.oxide.mod_item": "Mod Item",
-  "block.oxide.mod_block": "Mod Block",
+  "tag.oxide.corrugated_iron": "Corrugated Iron Blocks",
+  "tooltip.oxide.cement_bucket": "%1$s/%2$s Wet Cement stored",
+  "tooltip.oxide.varnish_sprayer_varnish": "%1$s/%2$s Varnish stored",
+  "tooltip.oxide.varnish_sprayer_water": "%1$s/%2$s Water stored",
+  "tooltip.oxide.fluid": "%s: %d/128 charges stored",
 
+  "fluid.oxide.varnish": "Varnish",
+  "fluid.oxide.white_paint": "\"White Paint\"",
+  "fluid.oxide.light_gray_paint": "Light Gray Paint",
+  "fluid.oxide.gray_paint": "Gray Paint",
+  "fluid.oxide.black_paint": "Black Paint",
+  "fluid.oxide.brown_paint": "Brown Paint",
+  "fluid.oxide.red_paint": "Red Paint",
+  "fluid.oxide.orange_paint": "Orange Paint",
+  "fluid.oxide.yellow_paint": "Yellow Paint",
+  "fluid.oxide.lime_paint": "Lime Paint",
+  "fluid.oxide.green_paint": "Green Paint",
+  "fluid.oxide.cyan_paint": "Cyan Paint",
+  "fluid.oxide.light_blue_paint": "Light Blue Paint",
+  "fluid.oxide.blue_paint": "Blue Paint",
+  "fluid.oxide.purple_paint": "Purple Paint",
+  "fluid.oxide.magenta_paint": "Magenta Paint",
+  "fluid.oxide.pink_paint": "Pink Paint",
+
+  "item.oxide.cement_bucket": "Bucket of Wet Cement",
+  "item.oxide.rusty_nail": "Rusty Nail",
+  "item.oxide.pure_nail": "Pure Nail",
+  "item.oxide.varnish_sprayer": "Sprayer",
+
+  "block.oxide.rebar": "Rebar",
+
+  "block.oxide.cemented_rebar": "Cemented Rebar",
   "block.oxide.wet_cement": "Wet Cement",
-  "block.oxide.cement": "Block of Cement",
+  "block.oxide.reinforced_cement": "Reinforced Cement",
+  "block.oxide.cement": "Cement",
   "block.oxide.cement_stairs": "Cement Stairs",
   "block.oxide.cement_slab": "Cement Slab",
-  
+
+  "block.oxide.cement_block": "Block of Cement",
+  "block.oxide.cement_block_slab": "Slab of Cement",
+  "block.oxide.cinder_block": "Cinder Block",
+  "block.oxide.cinder_blocks": "Cinder Blocks",
+  "block.oxide.cinder_block_slab": "Cinder Block Slab",
+
+  "block.oxide.cinder_bricks": "Cinder Bricks",
+  "block.oxide.cinder_brick_slab": "Cinder Brick Slab",
+  "block.oxide.cinder_brick_stairs": "Cinder Brick Stairs",
+  "block.oxide.cinder_brick_wall": "Cinder Brick Wall",
+
+  "block.oxide.weathered_cinder_bricks": "Weathered Cinder Bricks",
+  "block.oxide.weathered_cinder_brick_slab": "Weathered Cinder Brick Slab",
+  "block.oxide.weathered_cinder_brick_stairs": "Weathered Cinder Brick Stairs",
+  "block.oxide.weathered_cinder_brick_wall": "Weathered Cinder Brick Wall",
+
+  "block.oxide.clinker_bricks": "Clinker Bricks",
+  "block.oxide.clinker_brick_slab": "Clinker Brick Slab",
+  "block.oxide.clinker_brick_stairs": "Clinker Brick Stairs",
+  "block.oxide.clinker_brick_wall": "Clinker Brick Wall",
+
+  "block.oxide.stock_bricks": "Stock Bricks",
+  "block.oxide.stock_brick_slab": "Stock Brick Slab",
+  "block.oxide.stock_brick_stairs": "Stock Brick Stairs",
+  "block.oxide.stock_brick_wall": "Stock Brick Wall",
+
+  "block.oxide.cream_bricks": "Cream Bricks",
+  "block.oxide.cream_brick_slab": "Cream Brick Slab",
+  "block.oxide.cream_brick_stairs": "Cream Brick Stairs",
+  "block.oxide.cream_brick_wall": "Cream Brick Wall",
+
   "block.oxide.plate_iron": "Plate Iron",
   "block.oxide.weathered_plate_iron": "Weathered Plate Iron",
   "block.oxide.rusted_plate_iron": "Rusted Plate Iron",
@@ -38,6 +98,10 @@
   "block.oxide.iron_scaffold_slab": "Iron Scaffold Slab",
   "block.oxide.weathered_iron_scaffold_slab": "Weathered Iron Scaffold Slab",
   "block.oxide.rusted_iron_scaffold_slab": "Rusted Iron Scaffold Slab",
+
+  "block.oxide.iron_pillar": "Iron Pillar",
+  "block.oxide.weathered_iron_pillar": "Weathered Iron Pillar",
+  "block.oxide.rusted_iron_pillar": "Rusted Iron Pillar",
 
 
   "block.oxide.red_corrugated_iron": "Red Corrugated Iron",
@@ -159,8 +223,18 @@
   "block.oxide.weathered_heavy_iron_chain": "Weathered Heavy Iron Chain",
   "block.oxide.rusted_heavy_iron_chain": "Rusted Heavy Iron Chain",
 
-  "block.oxide.weathered_iron_bars": "Weathered Iron Bars",
-  "block.oxide.rusted_iron_bars": "Rusted Iron Bars",
+  "block.oxide.wrought_iron_fence": "Wrought Iron Fence",
+  "block.oxide.weathered_wrought_iron_fence": "Weathered Wrought Iron Fence",
+  "block.oxide.rusted_wrought_iron_fence": "Rusted Wrought Iron Fence",
 
-  "item.oxide.rusty_nail": "Rusty Nail"
+  "block.oxide.wrought_iron_fence_gate": "Wrought Iron Gate",
+  "block.oxide.weathered_wrought_iron_fence_gate": "Weathered Wrought Iron Gate",
+  "block.oxide.rusted_wrought_iron_fence_gate": "Rusted Wrought Iron Gate",
+
+  "block.oxide.heavy_iron_bars": "Heavy Iron Bars",
+  "block.oxide.weathered_heavy_iron_bars": "Weathered Heavy Iron Bars",
+  "block.oxide.rusted_heavy_iron_bars": "Rusted Heavy Iron Bars",
+
+  "block.oxide.cement_eater": "Cement Eater",
+  "block.oxide.cirnonail": "Torment Nexus"
 }

@@ -1,0 +1,59 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:plate_iron_stairs",
+    "oxide:cut_iron_stairs",
+
+    "oxide:weathered_plate_iron_stairs",
+    "oxide:weathered_cut_iron_stairs",
+
+    "oxide:rusted_plate_iron_stairs",
+    "oxide:rusted_cut_iron_stairs",
+
+    "oxide:iron_scaffold_stairs",
+    "oxide:weathered_iron_scaffold_stairs",
+    "oxide:rusted_iron_scaffold_stairs",
+    "oxide:cement_stairs",
+    "oxide:cinder_brick_stairs",
+    "oxide:weathered_cinder_brick_stairs",
+    "oxide:clinker_brick_stairs",
+    "oxide:stock_brick_stairs",
+    "oxide:cream_brick_stairs",
+
+    "oxide:red_corrugated_iron_stairs",
+    "oxide:orange_corrugated_iron_stairs",
+    "oxide:yellow_corrugated_iron_stairs",
+    "oxide:lime_corrugated_iron_stairs",
+    "oxide:green_corrugated_iron_stairs",
+    "oxide:cyan_corrugated_iron_stairs",
+    "oxide:blue_corrugated_iron_stairs",
+    "oxide:light_blue_corrugated_iron_stairs",
+    "oxide:purple_corrugated_iron_stairs",
+    "oxide:magenta_corrugated_iron_stairs",
+    "oxide:pink_corrugated_iron_stairs",
+    "oxide:white_corrugated_iron_stairs",
+    "oxide:light_gray_corrugated_iron_stairs",
+    "oxide:gray_corrugated_iron_stairs",
+    "oxide:black_corrugated_iron_stairs",
+    "oxide:brown_corrugated_iron_stairs",
+
+    "oxide:weathered_red_corrugated_iron_stairs",
+    "oxide:weathered_orange_corrugated_iron_stairs",
+    "oxide:weathered_yellow_corrugated_iron_stairs",
+    "oxide:weathered_lime_corrugated_iron_stairs",
+    "oxide:weathered_green_corrugated_iron_stairs",
+    "oxide:weathered_cyan_corrugated_iron_stairs",
+    "oxide:weathered_blue_corrugated_iron_stairs",
+    "oxide:weathered_light_blue_corrugated_iron_stairs",
+    "oxide:weathered_purple_corrugated_iron_stairs",
+    "oxide:weathered_magenta_corrugated_iron_stairs",
+    "oxide:weathered_pink_corrugated_iron_stairs",
+    "oxide:weathered_white_corrugated_iron_stairs",
+    "oxide:weathered_light_gray_corrugated_iron_stairs",
+    "oxide:weathered_gray_corrugated_iron_stairs",
+    "oxide:weathered_black_corrugated_iron_stairs",
+    "oxide:weathered_brown_corrugated_iron_stairs",
+
+    "oxide:rusted_corrugated_iron_stairs"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "oxide:block/cinder_block/block",
+    "side": "oxide:block/cinder_block/lat",
+    "top": "oxide:block/cinder_block/block"
+  }
+}

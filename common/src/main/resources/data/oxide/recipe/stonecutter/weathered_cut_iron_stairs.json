@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oxide:weathered_cut_iron"
+  },
+  "result": {
+    "id": "oxide:weathered_cut_iron_stairs"
+  }
+}

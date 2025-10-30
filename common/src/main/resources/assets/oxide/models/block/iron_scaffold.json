@@ -4,7 +4,7 @@
 		"2": "oxide:block/iron_scaffold/top",
 		"3": "oxide:block/iron_scaffold_stairs/default",
 		"7": "oxide:block/iron_scaffold/side",
-		"particle": "oxide:block/rusted_iron_scaffold/side"
+		"particle": "oxide:block/iron_scaffold/side"
 	},
 	"elements": [
 		{

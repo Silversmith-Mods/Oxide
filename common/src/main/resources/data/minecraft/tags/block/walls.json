@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:wrought_iron_fence",
+    "oxide:weathered_wrought_iron_fence",
+    "oxide:rusted_wrought_iron_fence",
+    "oxide:wrought_iron_fence_gate",
+    "oxide:weathered_wrought_iron_fence_gate",
+    "oxide:rusted_wrought_iron_fence_gate",
+    "oxide:cinder_brick_wall",
+    "oxide:weathered_cinder_brick_wall",
+    "oxide:clinker_brick_wall",
+    "oxide:stock_brick_wall",
+    "oxide:cream_brick_wall",
+    "oxide:rebar"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:plate_iron_slab",
+    "oxide:cut_iron_slab",
+
+    "oxide:weathered_plate_iron_slab",
+    "oxide:weathered_cut_iron_slab",
+
+    "oxide:rusted_plate_iron_slab",
+    "oxide:rusted_cut_iron_slab",
+
+    "oxide:iron_scaffold_slab",
+    "oxide:weathered_iron_scaffold_slab",
+    "oxide:rusted_iron_scaffold_slab",
+    "oxide:cement_slab",
+    "oxide:cement_block_slab",
+    "oxide:cinder_block_slab",
+    "oxide:cinder_brick_slab",
+    "oxide:weathered_cinder_brick_slab",
+    "oxide:clinker_brick_slab",
+    "oxide:stock_brick_slab",
+    "oxide:cream_brick_slab",
+
+    "oxide:red_corrugated_iron_slab",
+    "oxide:orange_corrugated_iron_slab",
+    "oxide:yellow_corrugated_iron_slab",
+    "oxide:lime_corrugated_iron_slab",
+    "oxide:green_corrugated_iron_slab",
+    "oxide:cyan_corrugated_iron_slab",
+    "oxide:blue_corrugated_iron_slab",
+    "oxide:light_blue_corrugated_iron_slab",
+    "oxide:purple_corrugated_iron_slab",
+    "oxide:magenta_corrugated_iron_slab",
+    "oxide:pink_corrugated_iron_slab",
+    "oxide:white_corrugated_iron_slab",
+    "oxide:light_gray_corrugated_iron_slab",
+    "oxide:gray_corrugated_iron_slab",
+    "oxide:black_corrugated_iron_slab",
+    "oxide:brown_corrugated_iron_slab",
+
+    "oxide:weathered_red_corrugated_iron_slab",
+    "oxide:weathered_orange_corrugated_iron_slab",
+    "oxide:weathered_yellow_corrugated_iron_slab",
+    "oxide:weathered_lime_corrugated_iron_slab",
+    "oxide:weathered_green_corrugated_iron_slab",
+    "oxide:weathered_cyan_corrugated_iron_slab",
+    "oxide:weathered_blue_corrugated_iron_slab",
+    "oxide:weathered_light_blue_corrugated_iron_slab",
+    "oxide:weathered_purple_corrugated_iron_slab",
+    "oxide:weathered_magenta_corrugated_iron_slab",
+    "oxide:weathered_pink_corrugated_iron_slab",
+    "oxide:weathered_white_corrugated_iron_slab",
+    "oxide:weathered_light_gray_corrugated_iron_slab",
+    "oxide:weathered_gray_corrugated_iron_slab",
+    "oxide:weathered_black_corrugated_iron_slab",
+    "oxide:weathered_brown_corrugated_iron_slab",
+
+    "oxide:rusted_corrugated_iron_slab"
+  ]
+}

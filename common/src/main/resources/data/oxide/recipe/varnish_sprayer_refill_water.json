@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "oxide:varnish_sprayer"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "id": "oxide:varnish_sprayer",
+    "components": {
+      "oxide:fluid": {
+        "count": 128,
+        "id": "moonlight:water"
+      }
+    },
+    "count": 1
+  }
+}

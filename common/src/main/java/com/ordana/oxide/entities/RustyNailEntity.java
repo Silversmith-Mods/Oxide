@@ -2,24 +2,17 @@ package com.ordana.oxide.entities;
 
 import com.ordana.oxide.reg.ModEntities;
 import com.ordana.oxide.reg.ModItems;
-import net.mehvahdjukaar.moonlight.api.entity.IExtraClientSpawnData;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
-import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.LargeFireball;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -56,11 +49,6 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return PlatHelper.getEntitySpawnPacket(this);
     }
 
     @Override
@@ -111,6 +99,7 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
             if (this.tickCount < 10) return;
             playSound(SoundEvents.THORNS_HIT);
             if (!entityIn.isCreative()) {
+                entityIn.hurt(level().damageSources().thrown(this, this.getOwner()), 1);
                 entityIn.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 1, true, false, true));
             }
             this.discard();
@@ -120,10 +109,10 @@ public class RustyNailEntity extends ImprovedProjectileEntity {
     @Override
     protected void onHitEntity(EntityHitResult hit) {
         super.onHitEntity(hit);
-        hit.getEntity().hurt(level().damageSources().thrown(this, this.getOwner()), 1);
         playSound(SoundEvents.THORNS_HIT);
         if (hit.getEntity() instanceof Player player) {
             if (!player.isCreative()) {
+                hit.getEntity().hurt(level().damageSources().thrown(this, this.getOwner()), 1);
                 player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 1, true, false, true));
             }
         }

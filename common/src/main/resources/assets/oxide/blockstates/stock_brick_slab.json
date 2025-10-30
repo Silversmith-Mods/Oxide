@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "oxide:block/stock_bricks/slab/top"
+    },
+    "type=bottom": {
+      "model": "oxide:block/stock_bricks/slab/bottom"
+    },
+    "type=double": {
+      "model": "oxide:block/stock_bricks/0"
+    }
+  }
+}

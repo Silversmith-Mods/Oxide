@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "U": {
+      "item": "minecraft:glass_bottle"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "N  ",
+    "UB ",
+    "  C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oxide:varnish_sprayer"
+  }
+}

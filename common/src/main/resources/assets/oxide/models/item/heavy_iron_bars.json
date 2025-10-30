@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oxide:block/heavy_iron_bars/0"
+  }
+}

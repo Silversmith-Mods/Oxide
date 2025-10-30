@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oxide:rusted_heavy_iron_trapdoor"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "oxide:blocks/rusted_heavy_iron_trapdoor"
+}

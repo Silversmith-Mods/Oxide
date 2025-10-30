@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "": [
+            {
+                "model": "oxide:block/weathered_cinder_bricks/0",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/weathered_cinder_bricks/1",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/weathered_cinder_bricks/2",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/weathered_cinder_bricks/3",
+                "weight": 5
+            }
+        ]
+    }
+}

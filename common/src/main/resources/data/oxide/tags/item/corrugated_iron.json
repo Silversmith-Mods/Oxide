@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:red_corrugated_iron",
+    "oxide:orange_corrugated_iron",
+    "oxide:yellow_corrugated_iron",
+    "oxide:lime_corrugated_iron",
+    "oxide:green_corrugated_iron",
+    "oxide:cyan_corrugated_iron",
+    "oxide:blue_corrugated_iron",
+    "oxide:light_blue_corrugated_iron",
+    "oxide:purple_corrugated_iron",
+    "oxide:magenta_corrugated_iron",
+    "oxide:pink_corrugated_iron",
+    "oxide:white_corrugated_iron",
+    "oxide:light_gray_corrugated_iron",
+    "oxide:gray_corrugated_iron",
+    "oxide:black_corrugated_iron",
+    "oxide:brown_corrugated_iron"
+  ]
+}

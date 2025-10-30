@@ -1,14 +1,20 @@
 architectury {
-    common(rootProject.enabled_platforms.split(","))
+    common(enabled_platforms.split(",")){
+        //it.platformPackage("neoforge", "forge")
+    }
 }
-
 loom {
-    accessWidenerPath = file("src/main/resources/oxide.accesswidener")
+    accessWidenerPath = file("src/main/resources/${mod_id}.accesswidener")
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modImplementation("curse.maven:selene-499980:5928996")
+    // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
+    // Do NOT use other classes from fabric loader
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+
+    modImplementation("curse.maven:selene-499980:7100674")
+    modImplementation "dev.emi:emi-xplat-intermediary:${rootProject.emi_version}:api"
+
 }
 
 publishing {
@@ -21,13 +27,5 @@ publishing {
 
     repositories {
         // Add repositories to publish to here.
-        maven {
-            name = "TerraformersMC"
-            url = "https://maven.terraformersmc.com/releases"
-        }
     }
-}
-
-repositories {
-    maven { url "https://maven.terraformersmc.com/releases" }
 }

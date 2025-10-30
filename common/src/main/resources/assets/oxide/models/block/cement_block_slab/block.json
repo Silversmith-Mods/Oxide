@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "oxide:block/cinder_block/block",
+    "side": "oxide:block/cinder_block/lat"
+  }
+}

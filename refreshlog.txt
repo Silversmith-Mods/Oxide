@@ -1,0 +1,92 @@
+Starting Gradle Daemon...
+Gradle Daemon started in 504 ms
+Downloading https://plugins.gradle.org/m2/com/modrinth/minotaur/com.modrinth.minotaur.gradle.plugin/maven-metadata.xml (1.33 kB / 0 B)Download https://plugins.gradle.org/m2/com/modrinth/minotaur/com.modrinth.minotaur.gradle.plugin/maven-metadata.xml, took 40 ms
+
+> Configure project :
+Architect Plugin: 3.4.161
+Architectury Loom: 1.7.423
+Refresh dependencies is in use, loom will be significantly slower.
+Refresh dependencies is in use, loom will be significantly slower.
+Refresh dependencies is in use, loom will be significantly slower.
+
+> Configure project :common
+:remapping 1 mods from modImplementation (java-api)
+:remapped 1 mods (intermediary -> named) in 354.6 ms
+:remapping 1 mods from modImplementation (java-runtime)
+:remapped 1 mods (intermediary -> named) in 306.3 ms
+
+> Configure project :fabric
+:remapping 1 mods from modImplementation (java-api)
+:remapped 1 mods (intermediary -> named) in 372.1 ms
+:remapping 1 mods from modImplementation (java-runtime)
+:remapped 1 mods (intermediary -> named) in 333.9 ms
+:remapping 50 mods from modApi (java-api)
+:remapped 50 mods (intermediary -> named) in 506.2 ms
+:remapping 50 mods from modApi (java-runtime)
+:remapped 50 mods (intermediary -> named) in 500.8 ms
+:remapping 50 mods from modApi
+:remapped 50 mods (intermediary -> named) in 499.2 ms
+:remapping 1 mods from modCompileOnly (java-api)
+:remapped 1 mods (intermediary -> named) in 303.1 ms
+:remapping 1 mods from modLocalRuntime (java-runtime)
+:remapped 1 mods (intermediary -> named) in 312.2 ms
+
+> Configure project :neoforge
+:executing 10 MCP steps
+:step 1/10 - downloadClient
+:downloadClient done in 847.4 μs
+:step 2/10 - downloadServer
+:downloadServer done in 10.08 μs
+:step 3/10 - extractServer with net.neoforged.installertools:installertools:2.1.2:fatjar
+:extractServer done in 5.333 s
+:step 4/10 - downloadClientMappings
+:downloadClientMappings done in 525.1 ms
+:step 5/10 - mergeMappings with net.neoforged.installertools:installertools:2.1.2:fatjar
+:mergeMappings done in 780.3 ms
+:step 6/10 - stripClient
+:stripClient done in 225.9 ms
+:step 7/10 - stripServer
+:stripServer done in 135.3 ms
+:step 8/10 - merge with net.neoforged:mergetool:2.0.3:fatjar
+:merge done in 1.457 s
+:step 9/10 - listLibraries
+:downloading minecraft libraries, this may take a while...
+:listLibraries done in 26.75 s
+:step 10/10 - rename with net.neoforged:AutoRenamingTool:2.0.3:all
+:rename done in 3.498 s
+:patching jars
+:patched jars in 16.03 s
+:access transforming minecraft
+:access transformed minecraft in 15.00 s
+:remapping minecraft (TinyRemapper, srg -> official)
+:remapping 1 mods from modImplementation (java-api)
+:remapped 1 mods (mojang -> named) in 367.7 ms
+:remapping 1 mods from modImplementation (java-runtime)
+:remapped 1 mods (mojang -> named) in 346.6 ms
+:remapping 1 mods from modLocalRuntime (java-runtime)
+:remapped 1 mods (mojang -> named) in 349.8 ms
+
+> Task :help
+
+Welcome to Gradle 8.10.2.
+
+To run a build, run gradle <task> ...
+
+To see a list of available tasks, run gradle tasks
+
+To see more detail about a task, run gradle help --task <task>
+
+To see a list of command-line options, run gradle --help
+
+For more detail on using Gradle, see https://docs.gradle.org/8.10.2/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 5m 2s
+1 actionable task: 1 executed

@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "type=bottom,axis=z": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom"
+    },
+    "type=double,axis=z": {
+      "model": "oxide:block/cinder_blocks_horizontal"
+    },
+    "type=top,axis=z": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top"
+    },
+
+    
+    "type=bottom,axis=y": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom_vertical"
+    },
+    "type=double,axis=y": {
+      "model": "oxide:block/cinder_blocks"
+    },
+    "type=top,axis=y": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top_vertical"
+    },
+
+    
+    "type=bottom,axis=x": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_bottom",
+      "y": 90
+    },
+    "type=double,axis=x": {
+      "model": "oxide:block/cinder_blocks_horizontal",
+      "y": 90
+    },
+    "type=top,axis=x": {
+      "model": "oxide:block/cinder_block_slab/cinder_block_slab_top",
+      "y": 90
+    }
+  }
+}

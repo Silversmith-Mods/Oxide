@@ -1,0 +1,120 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/post_ends_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/post_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true",
+        "west": "false",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/cap_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/cap_0",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "false",
+        "south": "true",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/cap_alt_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "false",
+        "west": "true",
+        "south": "false",
+        "east": "false"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/cap_alt_0",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/side_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/side_0",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/side_alt_0"
+        }
+      ]
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": [
+        {
+          "model": "oxide:block/heavy_iron_bars/side_alt_0",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

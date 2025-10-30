@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oxide:weathered_purple_corrugated_iron_stairs"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "blocks/weathered_purple_corrugated_iron_stairs"
+}

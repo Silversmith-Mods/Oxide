@@ -1,7 +1,9 @@
 package com.ordana.oxide.fabric;
 
-import net.fabricmc.api.ModInitializer;
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.reg.ModSetup;
+import net.fabricmc.api.ModInitializer;
+import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 
 
 public class OxideFabric implements ModInitializer {
@@ -11,5 +13,6 @@ public class OxideFabric implements ModInitializer {
 
         Oxide.commonInit();
 
+        PlatHelper.addCommonSetup(ModSetup::setup);
     }
 }

@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "": [
+            {
+                "model": "oxide:block/stock_bricks/0",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/stock_bricks/1",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/stock_bricks/2",
+                "weight": 5
+            },
+            {
+                "model": "oxide:block/stock_bricks/3",
+                "weight": 5
+            }
+        ]
+    }
+}

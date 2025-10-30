@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "oxide:varnish_sprayer"
+    },
+    {
+      "item": "minecraft:honeycomb_block"
+    }
+  ],
+  "result": {
+    "id": "oxide:varnish_sprayer",
+    "components": {
+      "oxide:fluid": {
+        "count": 128,
+        "id": "oxide:varnish"
+      }
+    },
+    "count": 1
+  }
+}
