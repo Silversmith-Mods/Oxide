@@ -1,9 +1,8 @@
 {
-	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
 		"4": "oxide:block/rusted_iron_pillar/vert",
-		"particle": "oxide:block/wrought_iron_fence/base"
+		"particle": "oxide:block/rusted_iron_pillar/vert"
 	},
 	"elements": [
 		{

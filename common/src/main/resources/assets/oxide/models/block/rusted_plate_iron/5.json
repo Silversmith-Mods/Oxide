@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oxide:block/rusted_plate_iron/5"
+  }
+}

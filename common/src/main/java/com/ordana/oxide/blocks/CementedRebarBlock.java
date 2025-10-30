@@ -248,7 +248,7 @@ public class CementedRebarBlock extends RebarBlock {
                     if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
 
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
-                        level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.REBAR.get()) ?
+                        level.setBlockAndUpdate(dirPos, (dirState.is(ModBlocks.REBAR.get()) || dirState.is(ModBlocks.CEMENTED_REBAR.get())) ?
                                 ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE) :
                                 ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
                         level.scheduleTick(dirPos, this, 8);

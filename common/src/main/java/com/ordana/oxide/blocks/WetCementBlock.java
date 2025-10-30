@@ -177,6 +177,7 @@ public class WetCementBlock extends Block {
                 level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
                         ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM) :
                         ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM));
+                level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                 return;
             }
             else {
@@ -184,6 +185,7 @@ public class WetCementBlock extends Block {
                 level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
                         ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)) :
                         ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)));
+                level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
             }
             level.scheduleTick(pos.below(), this, 8);
             return;
@@ -197,6 +199,7 @@ public class WetCementBlock extends Block {
                 level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.CEMENTED_REBAR.get()) ?
                         ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.DOUBLE) :
                         ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                 level.scheduleTick(pos.below(), this, 8);
                 return;
             }
@@ -210,6 +213,7 @@ public class WetCementBlock extends Block {
                             ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
                             ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
                     level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
+                    level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                     level.scheduleTick(pos.relative(dir), this, 8);
 
                     break;
@@ -221,14 +225,17 @@ public class WetCementBlock extends Block {
             for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(random)) {
                 var dirPos = pos.relative(dir).below();
                 var dirState = level.getBlockState(dirPos);
+                var adjState = level.getBlockState(pos.relative(dir));
+
+                if (adjState.isCollisionShapeFullBlock(level, pos.relative(dir))) break;
 
                 if (dirState.canBeReplaced() || dirState.is(ModBlocks.REBAR.get())) {
                     if (dirState.canBeReplaced()) {
                         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                        //level.setBlockAndUpdate(dirPos, state.setValue(TYPE, SlabType.BOTTOM));
                         level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.REBAR.get()) ?
                                 ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
                                 ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
+                        level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                         level.scheduleTick(dirPos, this, 8);
                         break;
                     }
@@ -237,9 +244,10 @@ public class WetCementBlock extends Block {
                     if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
 
                         level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
-                        level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.CEMENTED_REBAR.get()) ?
+                        level.setBlockAndUpdate(dirPos, (dirState.is(ModBlocks.REBAR.get()) || dirState.is(ModBlocks.CEMENTED_REBAR.get())) ?
                                 ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE) :
                                 ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                        level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                         level.scheduleTick(dirPos, this, 8);
                         break;
                     }

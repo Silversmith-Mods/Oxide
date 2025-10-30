@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"5": "oxide:block/weathered_cinder_bricks/1",
-		"particle": "oxide:block/weathered_cinder_block/block"
+		"particle": "oxide:block/weathered_cinder_bricks/1"
 	},
 	"elements": [
 		{

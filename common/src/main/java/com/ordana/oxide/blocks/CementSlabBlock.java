@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -28,6 +29,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.OptionalInt;
 
 public class CementSlabBlock extends Block implements Fallable, SimpleWaterloggedBlock {
     public static final MapCodec<SlabBlock> CODEC = simpleCodec(SlabBlock::new);
@@ -60,12 +63,6 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
-        updateOverhang(state, level, pos);
-    }
-
-    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockPos blockPos = context.getClickedPos();
         BlockState blockState = context.getLevel().getBlockState(blockPos);
@@ -80,20 +77,17 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
         }
     }
 
-
-    public boolean shouldFall(BlockState state, BlockState belowState) {
-        return (belowState.isAir() || belowState.canBeReplaced()) && !(belowState.is(this));
-    }
-
-    private boolean hasIncompletePileBelow(BlockState state) {
-        return state.is(this) && state.getValue(TYPE) == SlabType.BOTTOM;
-    }
-
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (state.getValue(OVERHANG) == MAX_OVERHANG) {
-            FallingBlockEntity.fall(level, pos, state.setValue(OVERHANG, 0));
+            FallingCementEntity.fall(level, pos, state.setValue(OVERHANG, 0));
         }
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+        updateOverhang(state, level, pos);
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
     }
 
     private void updateOverhang(BlockState state, Level level, BlockPos pos) {
@@ -107,27 +101,26 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
     }
 
     private int getOverhang(Level level, BlockPos pos) {
-        int overInt = MAX_OVERHANG;
-        for (var dir : Direction.values()) {
-            if (dir != Direction.UP && dir != Direction.DOWN) {
-                BlockState state = level.getBlockState(pos);
-                BlockPos neighborPos = pos.relative(dir);
-                BlockState neighborState = level.getBlockState(neighborPos);
+        var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
+        if (!free) return 0;
 
-                if (neighborState.hasProperty(OVERHANG)) {
-                    if (state.hasProperty(OVERHANG)) if (neighborState.getValue(OVERHANG) > state.getValue(OVERHANG)) return state.getValue(OVERHANG);
-                    overInt = Math.min(neighborState.getValue(OVERHANG) + 1, overInt);
-                    break;
-                }
-            }
-            else if (dir == Direction.DOWN) {
-                var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
-                if (!free) {
-                    return 0;
-                }
+        int overInt = MAX_OVERHANG;
+        BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
+
+        for (var dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.random)) {
+
+            mutableBlockPos.setWithOffset(pos, dir);
+            overInt = Math.min(overInt, getDistanceAt(level.getBlockState(mutableBlockPos)) + 1);
+            if (overInt == 0) {
+                break;
             }
         }
         return overInt;
+    }
+
+    private static int getDistanceAt(BlockState neighbor) {
+        var i = neighbor.hasProperty(OVERHANG) ? OptionalInt.of(neighbor.getValue(OVERHANG)) : OptionalInt.empty();
+        return i.orElse(MAX_OVERHANG);
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {

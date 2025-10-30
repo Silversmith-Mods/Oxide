@@ -15,6 +15,9 @@
       },
       {
         "model": "oxide:block/rusted_plate_iron/4"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron/5"
       }
     ]
   }

@@ -1,6 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.entities.RustyNailEntity;
 import com.ordana.oxide.entities.SprayParticleEntity;
 import com.ordana.oxide.items.SFStackView;
@@ -26,6 +27,12 @@ public class ModEntities {
     public static final Supplier<EntityType<SprayParticleEntity>> SPRAY_ENTITY = RegHelper.registerEntityType(
             Oxide.res("spray_entity"),
             SprayParticleEntity::new, MobCategory.MISC, 0.3F, 0.3F, 10, 20);
+
+    public static final Supplier<EntityType<FallingCementEntity>> FALLING_CEMENT_ENTITY = RegHelper.registerEntityType(
+            Oxide.res("falling_cement_entity"),
+            FallingCementEntity::new, MobCategory.MISC, 0.98F, 0.98F, 10, 20);
+
+
 
 
 

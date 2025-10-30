@@ -15,6 +15,9 @@
       },
       {
         "model": "oxide:block/rusted_plate_iron_slab/bottom_4"
+      },
+      {
+        "model": "oxide:block/rusted_plate_iron_slab/bottom_5"
       }
     ],
     "type=double": [

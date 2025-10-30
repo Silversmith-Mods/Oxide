@@ -1,127 +1,991 @@
 {
   "variants": {
-    "facing=east,bottom=false,open=false,top=true": {
+    "facing=east,bottom=false,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
       "y": 270
     },
-    "facing=east,bottom=false,open=true,top=true": {
+    "facing=east,bottom=false,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
       "y": 270
     },
-    "facing=east,bottom=true,open=false,top=true": {
+
+    "facing=east,bottom=true,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
       "y": 270
     },
-    "facing=east,bottom=true,open=true,top=true": {
+    "facing=east,bottom=true,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
       "y": 270
     },
-    "facing=north,bottom=false,open=false,top=true": {
+    "facing=north,bottom=false,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
       "y": 180
     },
-    "facing=north,bottom=false,open=true,top=true": {
+    "facing=north,bottom=false,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
       "y": 180
     },
-    "facing=north,bottom=true,open=false,top=true": {
+    "facing=north,bottom=true,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
       "y": 180
     },
-    "facing=north,bottom=true,open=true,top=true": {
+    "facing=north,bottom=true,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
       "y": 180
     },
-    "facing=south,bottom=false,open=false,top=true": {
+    "facing=south,bottom=false,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top"
     },
-    "facing=south,bottom=false,open=true,top=true": {
+    "facing=south,bottom=false,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top"
     },
-    "facing=south,bottom=true,open=false,top=true": {
+    "facing=south,bottom=true,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed"
     },
-    "facing=south,bottom=true,open=true,top=true": {
+    "facing=south,bottom=true,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open"
     },
-    "facing=west,bottom=false,open=false,top=true": {
+    "facing=west,bottom=false,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
       "y": 90
     },
-    "facing=west,bottom=false,open=true,top=true": {
+    "facing=west,bottom=false,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
       "y": 90
     },
-    "facing=west,bottom=true,open=false,top=true": {
+    "facing=west,bottom=true,open=false,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
       "y": 90
     },
-    "facing=west,bottom=true,open=true,top=true": {
+    "facing=west,bottom=true,open=true,top=true,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
       "y": 90
     },
 
-
-
-
-    "facing=east,bottom=false,open=false,top=false": {
+    "facing=east,bottom=false,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
       "y": 270
     },
-    "facing=east,bottom=false,open=true,top=false": {
+    "facing=east,bottom=false,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
       "y": 270
     },
-    "facing=east,bottom=true,open=false,top=false": {
+    "facing=east,bottom=true,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
       "y": 270
     },
-    "facing=east,bottom=true,open=true,top=false": {
+    "facing=east,bottom=true,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
       "y": 270
     },
-    "facing=north,bottom=false,open=false,top=false": {
+    "facing=north,bottom=false,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
       "y": 180
     },
-    "facing=north,bottom=false,open=true,top=false": {
+    "facing=north,bottom=false,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
       "y": 180
     },
-    "facing=north,bottom=true,open=false,top=false": {
+    "facing=north,bottom=true,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
       "y": 180
     },
-    "facing=north,bottom=true,open=true,top=false": {
+    "facing=north,bottom=true,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
       "y": 180
     },
-    "facing=south,bottom=false,open=false,top=false": {
+    "facing=south,bottom=false,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle"
     },
-    "facing=south,bottom=false,open=true,top=false": {
+    "facing=south,bottom=false,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle"
     },
-    "facing=south,bottom=true,open=false,top=false": {
+    "facing=south,bottom=true,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom"
     },
-    "facing=south,bottom=true,open=true,top=false": {
+    "facing=south,bottom=true,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom"
     },
-    "facing=west,bottom=false,open=false,top=false": {
+    "facing=west,bottom=false,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
       "y": 90
     },
-    "facing=west,bottom=false,open=true,top=false": {
+    "facing=west,bottom=false,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
       "y": 90
     },
-    "facing=west,bottom=true,open=false,top=false": {
+    "facing=west,bottom=true,open=false,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
       "y": 90
     },
-    "facing=west,bottom=true,open=true,top=false": {
+    "facing=west,bottom=true,open=true,top=false,wide=false,side_dir=north": {
       "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open"
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 90
+    },
+
+    "facing=east,bottom=false,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom"
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=false,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open"
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 90
+    },
+
+    "facing=east,bottom=false,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom"
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=false,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open"
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 90
+    },
+
+    "facing=east,bottom=false,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 270
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom"
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=false,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 90
+    },
+
+
+
+
+
+
+
+    "facing=north,bottom=false,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top"
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top_mirrored"
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side"
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_mirrored"
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle"
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle_mirrored"
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom"
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom_mirrored"
+    },
+    "facing=north,bottom=false,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
+      "y": 180
+    },
+
+    "facing=south,bottom=false,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side"
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom"
+    },
+    "facing=south,bottom=false,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top_mirrored",
+      "y": 180
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 180
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_mirrored",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle_mirrored",
+      "y": 180
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 180
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom_mirrored",
+      "y": 180
+    },
+
+    "facing=east,bottom=false,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top_mirrored",
+      "y": 90
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 90
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_mirrored",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle_mirrored",
+      "y": 90
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 90
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom_mirrored",
+      "y": 90
+    },
+
+    "facing=west,bottom=false,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 270
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top_mirrored",
+      "y": 270
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 270
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_mirrored",
+      "y": 270
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 270
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle_mirrored",
+      "y": 270
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 270
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom_mirrored",
+      "y": 270
+    },
+
+
+
+
+
+
+
+
+
+
+    "facing=south,bottom=false,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open"
+    },
+
+    "facing=south,bottom=false,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom"
+    },
+    "facing=north,bottom=false,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 180
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 90
+    },
+    "facing=east,bottom=false,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_bottom",
+      "y": 270
+    },
+
+    "facing=north,bottom=false,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=true,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 180
+    },
+    "facing=north,bottom=false,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=false,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 180
+    },
+    "facing=north,bottom=true,open=true,top=false,wide=true,side_dir=north": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
+      "y": 180
+    },
+    "facing=south,bottom=false,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top"
+    },
+    "facing=south,bottom=false,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top"
+    },
+    "facing=south,bottom=true,open=false,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side"
+    },
+    "facing=south,bottom=true,open=true,top=true,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side"
+    },
+    "facing=south,bottom=false,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle"
+    },
+    "facing=south,bottom=false,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle"
+    },
+    "facing=south,bottom=true,open=false,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom"
+    },
+    "facing=south,bottom=true,open=true,top=false,wide=true,side_dir=south": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom"
+    },
+
+    "facing=east,bottom=false,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=true,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 270
+    },
+    "facing=east,bottom=false,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=false,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 270
+    },
+    "facing=east,bottom=true,open=true,top=false,wide=true,side_dir=east": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
+      "y": 270
+    },
+    "facing=west,bottom=false,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_top",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_top",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=true,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_middle",
+      "y": 90
+    },
+    "facing=west,bottom=false,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_middle",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=false,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/closed_side_bottom",
+      "y": 90
+    },
+    "facing=west,bottom=true,open=true,top=false,wide=true,side_dir=west": {
+      "model": "oxide:block/rusted_wrought_iron_fence_gate/open_side_bottom",
       "y": 90
     }
   }

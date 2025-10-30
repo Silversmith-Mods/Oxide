@@ -1,14 +1,13 @@
 package com.ordana.oxide.blocks;
 
+import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
-import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -17,6 +16,8 @@ import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+
+import java.util.OptionalInt;
 
 public class CementBlock extends Block implements Fallable {
     public static final IntegerProperty OVERHANG;
@@ -48,14 +49,14 @@ public class CementBlock extends Block implements Fallable {
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (state.getValue(OVERHANG) == MAX_OVERHANG) {
-            FallingBlockEntity.fall(level, pos, state.setValue(OVERHANG, 0));
+            FallingCementEntity.fall(level, pos, state.setValue(OVERHANG, 0));
         }
     }
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
         updateOverhang(state, level, pos);
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
     }
 
     private void updateOverhang(BlockState state, Level level, BlockPos pos) {
@@ -69,27 +70,26 @@ public class CementBlock extends Block implements Fallable {
     }
 
     private int getOverhang(Level level, BlockPos pos) {
-        int overInt = MAX_OVERHANG;
-        for (var dir : Direction.values()) {
-            if (dir != Direction.UP && dir != Direction.DOWN) {
-                BlockState state = level.getBlockState(pos);
-                BlockPos neighborPos = pos.relative(dir);
-                BlockState neighborState = level.getBlockState(neighborPos);
+        var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
+        if (!free) return 0;
 
-                if (neighborState.hasProperty(OVERHANG)) {
-                    if (state.hasProperty(OVERHANG)) if (neighborState.getValue(OVERHANG) > state.getValue(OVERHANG)) return state.getValue(OVERHANG);
-                    overInt = Math.min(neighborState.getValue(OVERHANG) + 1, overInt);
-                    break;
-                }
-            }
-            else if (dir == Direction.DOWN) {
-                var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
-                if (!free) {
-                    return 0;
-                }
+        int overInt = MAX_OVERHANG;
+        BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
+
+        for (var dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.random)) {
+
+            mutableBlockPos.setWithOffset(pos, dir);
+            overInt = Math.min(overInt, getDistanceAt(level.getBlockState(mutableBlockPos)) + 1);
+            if (overInt == 0) {
+                break;
             }
         }
         return overInt;
+    }
+
+    private static int getDistanceAt(BlockState neighbor) {
+        var i = neighbor.hasProperty(OVERHANG) ? OptionalInt.of(neighbor.getValue(OVERHANG)) : OptionalInt.empty();
+        return i.orElse(MAX_OVERHANG);
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
