@@ -1,6 +1,7 @@
 package com.ordana.oxide.blocks;
 
 import com.ordana.oxide.reg.ModBlockProperties;
+import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -19,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class CementBlock extends Block implements Fallable {
     public static final IntegerProperty OVERHANG;
-    public static final int MAX_OVERHANG = 8;
+    public static final int MAX_OVERHANG = 4;
 
     public CementBlock(Properties properties) {
         super(properties);
@@ -38,12 +39,6 @@ public class CementBlock extends Block implements Fallable {
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
-        updateOverhang(state, level, pos);
-    }
-
-    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockPos blockPos = context.getClickedPos();
         Level level = context.getLevel();
@@ -57,30 +52,10 @@ public class CementBlock extends Block implements Fallable {
         }
     }
 
-    private int getOverhang(Level level, BlockPos pos) {
-        int overInt = MAX_OVERHANG;
-        for (var dir : Direction.values()) {
-            if (dir == Direction.DOWN) {
-                var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
-                if (!free) {
-                    return 0;
-                }
-            }
-            else if (dir != Direction.UP) {
-                BlockPos neighborPos = pos.relative(dir);
-                var neighbor = level.getBlockState(neighborPos);
-                if (neighbor.hasProperty(OVERHANG)) {
-                    if (level.getBlockState(pos).hasProperty(OVERHANG)) if (neighbor.getValue(OVERHANG) > level.getBlockState(pos).getValue(OVERHANG)) return neighbor.getValue(OVERHANG);
-                    overInt = Math.min(neighbor.getValue(OVERHANG) + 1, overInt);
-                    break;
-                }
-                else if(neighbor.isFaceSturdy(level, neighborPos, dir.getOpposite())){
-                    overInt = 1;
-                    break;
-                }
-            }
-        }
-        return overInt;
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+        updateOverhang(state, level, pos);
     }
 
     private void updateOverhang(BlockState state, Level level, BlockPos pos) {
@@ -91,6 +66,30 @@ public class CementBlock extends Block implements Fallable {
         if (supported == MAX_OVERHANG) {
             level.scheduleTick(pos, state.getBlock(), 1);
         }
+    }
+
+    private int getOverhang(Level level, BlockPos pos) {
+        int overInt = MAX_OVERHANG;
+        for (var dir : Direction.values()) {
+            if (dir != Direction.UP && dir != Direction.DOWN) {
+                BlockState state = level.getBlockState(pos);
+                BlockPos neighborPos = pos.relative(dir);
+                BlockState neighborState = level.getBlockState(neighborPos);
+
+                if (neighborState.hasProperty(OVERHANG)) {
+                    if (state.hasProperty(OVERHANG)) if (neighborState.getValue(OVERHANG) > state.getValue(OVERHANG)) return state.getValue(OVERHANG);
+                    overInt = Math.min(neighborState.getValue(OVERHANG) + 1, overInt);
+                    break;
+                }
+            }
+            else if (dir == Direction.DOWN) {
+                var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
+                if (!free) {
+                    return 0;
+                }
+            }
+        }
+        return overInt;
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {

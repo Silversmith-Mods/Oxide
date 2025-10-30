@@ -58,7 +58,7 @@ public class ModBlocks {
     public static final Supplier<Block> CEMENT_STAIRS = regWithItem("cement_stairs", () ->
             new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
     public static final Supplier<Block> CEMENT_SLAB = regWithItem("cement_slab", () ->
-            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new CementSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
 
     public static final Supplier<Block> CINDER_BRICKS = regWithItem("cinder_bricks", () ->
