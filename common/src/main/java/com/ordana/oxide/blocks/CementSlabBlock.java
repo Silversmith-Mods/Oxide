@@ -123,7 +123,7 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (random.nextInt(16) == 0 && FallingBlock.isFree(level.getBlockState(pos.below()))) {
+        if (state.getValue(OVERHANG) == MAX_OVERHANG - 1 && random.nextInt(16) == 0 && FallingBlock.isFree(level.getBlockState(pos.below()))) {
             double d = (double) pos.getX() + random.nextDouble();
             double e = (double) pos.getY() - 0.05;
             double f = (double) pos.getZ() + random.nextDouble();

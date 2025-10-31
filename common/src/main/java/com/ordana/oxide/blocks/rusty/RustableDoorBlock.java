@@ -4,8 +4,10 @@ import com.ordana.oxide.reg.ModBlockProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -19,7 +21,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 public class RustableDoorBlock extends DoorBlock implements Rustable {
     public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
@@ -33,6 +38,22 @@ public class RustableDoorBlock extends DoorBlock implements Rustable {
         this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
     }
 
+    @Override
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+
+        state = state.cycle(OPEN);
+        level.setBlock(pos, state, 2);
+
+        playSound(player, level, pos, state.getValue(OPEN));
+        return InteractionResult.sidedSuccess(level.isClientSide);
+
+    }
+
+    protected void playSound(@Nullable Player player, Level level, BlockPos pos, boolean isOpened) {
+        level.playSound(player, pos, isOpened ? this.type.trapdoorOpen() : this.type.trapdoorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+        level.gameEvent(player, isOpened ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+    }
+    
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         DoubleBlockHalf doubleBlockHalf = state.getValue(HALF);

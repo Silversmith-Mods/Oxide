@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -275,7 +276,7 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
                 else if (dir != Direction.DOWN) wetness += 1;
                 //wetness += 1;
             }
-            //if (level.getFluidState(dirPos).is(FluidTags.WATER)) wetness += 20;
+             if (level.getFluidState(dirPos).is(FluidTags.WATER)) wetness += 20;
             if (dirState.is(Blocks.BUBBLE_COLUMN)) wetness += 50;
             if (dirState.getBlock() instanceof Rustable rusty) {
                 if (rusty.getAge() == RustLevel.RUSTED) wetness += 10;

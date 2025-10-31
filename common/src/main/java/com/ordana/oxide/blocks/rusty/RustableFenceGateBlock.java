@@ -177,6 +177,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         Direction direction = context.getHorizontalDirection();
         Direction clockDir = direction.getClockWise();
         Direction cClockDir = direction.getCounterClockWise();
+        BlockState belowState = level.getBlockState(blockPos.below());
 
         boolean above = level.getBlockState(blockPos.above()).is(this);
         boolean below = level.getBlockState(blockPos.below()).is(this);
@@ -197,11 +198,12 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
                 sideDirBl = true;
             }
         }
+        if (belowState.hasProperty(WIDE)) wide = belowState.getValue(WIDE);
 
         BlockState placementState = this.stateDefinition.getOwner().defaultBlockState()
-                .setValue(FACING, direction)
+                .setValue(FACING, below ? belowState.getValue(FACING) : direction)
                 .setValue(WIDE, wide)
-                .setValue(SIDE_DIR, sideDirBl ? sideDir : direction)
+                .setValue(SIDE_DIR, sideDirBl ? sideDir : belowState.hasProperty(SIDE_DIR) ? belowState.getValue(SIDE_DIR) : direction)
                 .setValue(OPEN, bl)
                 .setValue(POWERED, bl)
                 .setValue(TOP, !above)

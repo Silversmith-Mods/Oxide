@@ -2,6 +2,7 @@ package com.ordana.oxide.blocks;
 
 import com.mojang.serialization.MapCodec;
 import com.ordana.oxide.reg.ModBlockProperties;
+import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
@@ -9,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -85,48 +87,63 @@ public class RebarBlock extends Block implements SimpleWaterloggedBlock {
         return false;
     }
 
-    protected boolean upperCheck(BlockState state) {
-        if (state.hasProperty(RebarBlock.UP) && state.is(ModTags.REBAR)) {
-            return state.getValue(RebarBlock.UP);
+    protected boolean upperCheck(BlockState state, Direction dir) {
+        if (state.hasProperty(RebarBlock.UP)) {
+            if (state.is(ModBlocks.REINFORCED_CEMENT.get())) {
+                return state.getValue(PROPERTY_BY_DIRECTION.get(dir.getOpposite()));
+            }
+            if (state.is(ModTags.REBAR)) {
+                return state.getValue(RebarBlock.UP);
+            }
+
+        }
+        return true;
+    }
+
+    protected boolean rebarChecker(BlockGetter level, BlockPos pos, Direction dir) {
+        var dirState = level.getBlockState(pos.relative(dir));
+        if (dirState.is(ModTags.REBAR)) return false;
+        if (dirState.is(ModBlocks.REINFORCED_CEMENT.get())) {
+            return dirState.getValue(PROPERTY_BY_DIRECTION.get(dir.getOpposite()));
         }
         return true;
     }
 
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockGetter blockGetter = context.getLevel();
-        BlockPos blockPos = context.getClickedPos();
+        BlockGetter level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
         FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
         return this.defaultBlockState()
-                .setValue(DOWN, !blockGetter.getBlockState(blockPos.below()).is(ModTags.REBAR))
-                .setValue(UP, !blockGetter.getBlockState(blockPos.above()).is(ModTags.REBAR))
-                .setValue(NORTH, !blockGetter.getBlockState(blockPos.north()).is(ModTags.REBAR))
-                .setValue(EAST, !blockGetter.getBlockState(blockPos.east()).is(ModTags.REBAR))
-                .setValue(SOUTH, !blockGetter.getBlockState(blockPos.south()).is(ModTags.REBAR))
-                .setValue(WEST, !blockGetter.getBlockState(blockPos.west()).is(ModTags.REBAR))
-                .setValue(NORTH_UPPER, upperCheck(blockGetter.getBlockState(blockPos.north())))
-                .setValue(EAST_UPPER, upperCheck(blockGetter.getBlockState(blockPos.east())))
-                .setValue(SOUTH_UPPER, upperCheck(blockGetter.getBlockState(blockPos.south())))
-                .setValue(WEST_UPPER, upperCheck(blockGetter.getBlockState(blockPos.west())))
+                .setValue(DOWN, rebarChecker(level, pos, Direction.DOWN))
+                .setValue(UP, rebarChecker(level, pos, Direction.UP))
+                .setValue(NORTH, rebarChecker(level, pos, Direction.NORTH))
+                .setValue(EAST, rebarChecker(level, pos, Direction.EAST))
+                .setValue(SOUTH, rebarChecker(level, pos, Direction.SOUTH))
+                .setValue(WEST, rebarChecker(level, pos, Direction.WEST))
+                .setValue(NORTH_UPPER, upperCheck(level.getBlockState(pos.north()), Direction.NORTH))
+                .setValue(EAST_UPPER, upperCheck(level.getBlockState(pos.east()), Direction.EAST))
+                .setValue(SOUTH_UPPER, upperCheck(level.getBlockState(pos.south()), Direction.SOUTH))
+                .setValue(WEST_UPPER, upperCheck(level.getBlockState(pos.west()), Direction.WEST))
                 .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
     }
 
-    protected @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         if (state.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
         return state
-                .setValue(DOWN, !level.getBlockState(pos.below()).is(ModTags.REBAR))
-                .setValue(UP, !level.getBlockState(pos.above()).is(ModTags.REBAR))
-                .setValue(NORTH, !level.getBlockState(pos.north()).is(ModTags.REBAR))
-                .setValue(EAST, !level.getBlockState(pos.east()).is(ModTags.REBAR))
-                .setValue(SOUTH, !level.getBlockState(pos.south()).is(ModTags.REBAR))
-                .setValue(WEST, !level.getBlockState(pos.west()).is(ModTags.REBAR))
-                .setValue(NORTH_UPPER, upperCheck(level.getBlockState(pos.north())))
-                .setValue(EAST_UPPER, upperCheck(level.getBlockState(pos.east())))
-                .setValue(SOUTH_UPPER, upperCheck(level.getBlockState(pos.south())))
-                .setValue(WEST_UPPER, upperCheck(level.getBlockState(pos.west())));
+                .setValue(DOWN, rebarChecker(level, pos, Direction.DOWN))
+                .setValue(UP, rebarChecker(level, pos, Direction.UP))
+                .setValue(NORTH, rebarChecker(level, pos, Direction.NORTH))
+                .setValue(EAST, rebarChecker(level, pos, Direction.EAST))
+                .setValue(SOUTH, rebarChecker(level, pos, Direction.SOUTH))
+                .setValue(WEST, rebarChecker(level, pos, Direction.WEST))
+                .setValue(NORTH_UPPER, upperCheck(level.getBlockState(pos.north()), Direction.NORTH))
+                .setValue(EAST_UPPER, upperCheck(level.getBlockState(pos.east()), Direction.EAST))
+                .setValue(SOUTH_UPPER, upperCheck(level.getBlockState(pos.south()), Direction.SOUTH))
+                .setValue(WEST_UPPER, upperCheck(level.getBlockState(pos.west()), Direction.WEST));
     }
 
 

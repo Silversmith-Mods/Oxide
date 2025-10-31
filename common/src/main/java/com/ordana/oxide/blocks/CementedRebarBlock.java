@@ -44,6 +44,8 @@ public class CementedRebarBlock extends RebarBlock {
     protected static final VoxelShape TALL_REBAR_SHAPE;
     protected static final VoxelShape SLAB_SHAPE;
     protected static final VoxelShape REBAR_SHAPE;
+    protected static final VoxelShape BOTTOM_COLLISION_AABB;
+    protected static final VoxelShape DOUBLE_COLLISION_AABB;
     private static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION;
 
 
@@ -128,9 +130,9 @@ public class CementedRebarBlock extends RebarBlock {
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         SlabType slabType = state.getValue(TYPE);
         if (slabType == SlabType.DOUBLE) {
-            return Shapes.block();
+            return DOUBLE_COLLISION_AABB;
         }
-        return SLAB_SHAPE;
+        return BOTTOM_COLLISION_AABB;
     }
 
 
@@ -280,6 +282,8 @@ public class CementedRebarBlock extends RebarBlock {
 
 
         PROPERTY_BY_DIRECTION = PipeBlock.PROPERTY_BY_DIRECTION;
+        BOTTOM_COLLISION_AABB = Block.box(4.0, 0.0, 4.0, 12.0, 4.0, 12.0);
+        DOUBLE_COLLISION_AABB = Block.box(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
     }
 
 }
