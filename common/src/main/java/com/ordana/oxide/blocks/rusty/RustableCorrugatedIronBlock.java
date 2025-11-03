@@ -1,6 +1,8 @@
 package com.ordana.oxide.blocks.rusty;
 
+import com.ordana.oxide.entities.RustyNailEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
+import com.ordana.oxide.reg.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -10,16 +12,19 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -43,6 +48,15 @@ public class RustableCorrugatedIronBlock extends RotatedPillarBlock implements R
     @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
         if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
+    }
+
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        if (rustLevel == RustLevel.RUSTED && !level.isClientSide && level.random.nextFloat() <= 0.1f && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+            RustyNailEntity nail = new RustyNailEntity(level, player, ModEntities.RUSTY_NAIL.get());
+            nail.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+            level.addFreshEntity(nail);
+        }
+        super.playerDestroy(level, player, pos, state, blockEntity, tool);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {

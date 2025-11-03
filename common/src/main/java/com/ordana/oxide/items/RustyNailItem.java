@@ -40,7 +40,7 @@ public class RustyNailItem extends Item {
             RustyNailEntity nail = new RustyNailEntity(level, player, ModEntities.RUSTY_NAIL.get());
             float pitch = -10;//player.isSneaking()?0:-20;
             nail.shootFromRotation(player, player.getXRot(), player.getYRot(),
-                    pitch, nail.getDefaultShootVelocity(), 1);
+                    pitch, 0.4f, 1);
             level.addFreshEntity(nail);
         }
 

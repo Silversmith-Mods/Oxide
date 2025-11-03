@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oxide:stock_brick_wall"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "oxide:blocks/stock_brick_wall"
+}

@@ -1,5 +1,7 @@
 package com.ordana.oxide.blocks;
 
+import com.ordana.oxide.configs.CommonConfigs;
+import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;
@@ -40,23 +42,28 @@ import java.util.Map;
 
 public class CementedRebarBlock extends RebarBlock {
 
+    private static final int FLOW_RATE = 8;
     public static final EnumProperty<SlabType> TYPE;
+    public static final BooleanProperty CURABLE = ModBlockProperties.CURABLE;
     protected static final VoxelShape TALL_REBAR_SHAPE;
     protected static final VoxelShape SLAB_SHAPE;
     protected static final VoxelShape REBAR_SHAPE;
     protected static final VoxelShape BOTTOM_COLLISION_AABB;
     protected static final VoxelShape DOUBLE_COLLISION_AABB;
     private static final Map<Direction, BooleanProperty> PROPERTY_BY_DIRECTION;
+    private static final int REGULAR_HATCH_TIME_TICKS = 24000;
+    private static final int BOOSTED_HATCH_TIME_TICKS = 12000;
+    private static final int OFFSET_TICKS = 300;
 
 
     public CementedRebarBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM);
+        this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false);
 
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, NORTH_UPPER, EAST_UPPER, SOUTH_UPPER, WEST_UPPER, WATERLOGGED, TYPE);
+        builder.add(UP, DOWN, NORTH, EAST, SOUTH, WEST, NORTH_UPPER, EAST_UPPER, SOUTH_UPPER, WEST_UPPER, WATERLOGGED, TYPE, CURABLE);
     }
 
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
@@ -83,7 +90,7 @@ public class CementedRebarBlock extends RebarBlock {
                 if (relativeState.canBeReplaced()) {
                     level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
                     level.setBlockAndUpdate(relativePos, cementState);
-                    level.scheduleTick(relativePos, this, 8);
+                    level.scheduleTick(relativePos, relativeState.getBlock(), FLOW_RATE);
                     level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                     return ItemInteractionResult.sidedSuccess(level.isClientSide);
                 }
@@ -91,7 +98,7 @@ public class CementedRebarBlock extends RebarBlock {
                     if (relativeState.getValue(TYPE) == SlabType.BOTTOM) {
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
                         level.setBlockAndUpdate(relativePos, state.setValue(TYPE, SlabType.DOUBLE));
-                        level.scheduleTick(relativePos, this, 8);
+                        level.scheduleTick(relativePos, relativeState.getBlock(), FLOW_RATE);
                         level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                         return ItemInteractionResult.sidedSuccess(level.isClientSide);
                     }
@@ -101,7 +108,7 @@ public class CementedRebarBlock extends RebarBlock {
                 if (relativeState.canBeReplaced()) {
                     level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
                     level.setBlockAndUpdate(relativePos, state.setValue(TYPE, SlabType.BOTTOM));
-                    level.scheduleTick(relativePos, this, 8);
+                    level.scheduleTick(relativePos, relativeState.getBlock(), FLOW_RATE);
                     level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                     return ItemInteractionResult.sidedSuccess(level.isClientSide);
                 }
@@ -109,7 +116,7 @@ public class CementedRebarBlock extends RebarBlock {
                     if (relativeState.getValue(TYPE) == SlabType.BOTTOM) {
                         level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
                         level.setBlockAndUpdate(relativePos, state.setValue(TYPE, SlabType.DOUBLE));
-                        level.scheduleTick(relativePos, this, 8);
+                        level.scheduleTick(relativePos, relativeState.getBlock(), FLOW_RATE);
                         level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                         return ItemInteractionResult.sidedSuccess(level.isClientSide);
                     }
@@ -142,7 +149,7 @@ public class CementedRebarBlock extends RebarBlock {
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        context.getLevel().scheduleTick(context.getClickedPos(), this, 8);
+        context.getLevel().scheduleTick(context.getClickedPos(), this, FLOW_RATE);
         BlockPos blockPos = context.getClickedPos();
         BlockState blockState = context.getLevel().getBlockState(blockPos);
 
@@ -176,7 +183,7 @@ public class CementedRebarBlock extends RebarBlock {
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
 
-        level.scheduleTick(pos, this, 8);
+        level.scheduleTick(pos, this, FLOW_RATE);
 
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
@@ -185,35 +192,36 @@ public class CementedRebarBlock extends RebarBlock {
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         var belowState = level.getBlockState(pos.below());
         if (belowState.canBeReplaced() || belowState.is(ModBlocks.REBAR.get())) {
+            boolean bl = belowState.is(ModBlocks.REBAR.get());
+            var block = bl ? ModBlocks.CEMENTED_REBAR.get() : ModBlocks.WET_CEMENT.get();
+
             if (state.getValue(TYPE) == SlabType.DOUBLE) {
-                level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
-                level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
-                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM) :
-                        ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM));
+                level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false));
+                level.setBlockAndUpdate(pos.below(), block.withPropertiesOf(belowState).setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false));
                 level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
                 return;
             }
             else {
                 level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
-                level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.REBAR.get()) ?
-                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)) :
-                        ModBlocks.WET_CEMENT.get().withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)));
+                level.setBlockAndUpdate(pos.below(), block.withPropertiesOf(belowState).setValue(TYPE, state.getValue(TYPE)).setValue(CURABLE, false));
                 level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
             }
-            level.scheduleTick(pos.below(), this, 8);
+            level.scheduleTick(pos.below(), block, FLOW_RATE);
             return;
         }
 
         if (belowState.is(ModTags.WET_CEMENT)) {
             if (belowState.getValue(TYPE) == SlabType.BOTTOM) {
+                boolean bl = belowState.is(ModBlocks.CEMENTED_REBAR.get());
+                var block = bl ? ModBlocks.CEMENTED_REBAR.get() : ModBlocks.WET_CEMENT.get();
+
                 level.setBlockAndUpdate(pos, state.getValue(TYPE) == SlabType.DOUBLE ?
-                        state.setValue(TYPE, SlabType.BOTTOM) :
+                        state.setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false) :
                         ModBlocks.REBAR.get().withPropertiesOf(state));
-                level.setBlockAndUpdate(pos.below(), belowState.is(ModBlocks.CEMENTED_REBAR.get()) ?
-                        ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(belowState).setValue(TYPE, SlabType.DOUBLE) :
-                        ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+
+                level.setBlockAndUpdate(pos.below(), block.withPropertiesOf(belowState).setValue(TYPE, SlabType.DOUBLE).setValue(CURABLE, false));
                 level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                level.scheduleTick(pos.below(), this, 8);
+                level.scheduleTick(pos.below(), block, FLOW_RATE);
                 return;
             }
         }
@@ -222,12 +230,14 @@ public class CementedRebarBlock extends RebarBlock {
             for (Direction dir : Direction.Plane.HORIZONTAL.shuffledCopy(random)) {
                 var dirState = level.getBlockState(pos.relative(dir));
                 if (dirState.canBeReplaced() || dirState.is(ModBlocks.REBAR.get())) {
-                    level.setBlockAndUpdate(pos.relative(dir), dirState.is(ModBlocks.REBAR.get()) ?
-                            ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
-                            ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
-                    level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM));
+                    boolean bl = dirState.is(ModBlocks.REBAR.get());
+                    var block = bl ? ModBlocks.CEMENTED_REBAR.get() : ModBlocks.WET_CEMENT.get();
+
+                    level.setBlockAndUpdate(pos.relative(dir), block.withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false));
+                    level.setBlockAndUpdate(pos, state.setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false));
+
                     level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                    level.scheduleTick(pos.relative(dir), this, 8);
+                    level.scheduleTick(pos.relative(dir), block, FLOW_RATE);
 
                     break;
                 }
@@ -243,31 +253,40 @@ public class CementedRebarBlock extends RebarBlock {
                 if (adjState.isCollisionShapeFullBlock(level, pos.relative(dir))) break;
 
                 if (dirState.canBeReplaced() || dirState.is(ModBlocks.REBAR.get())) {
-                    if (dirState.canBeReplaced()) {
+                    boolean bl = dirState.is(ModBlocks.REBAR.get());
+                    var block = bl ? ModBlocks.CEMENTED_REBAR.get() : ModBlocks.WET_CEMENT.get();
+
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
-                        level.setBlockAndUpdate(dirPos, state.setValue(TYPE, SlabType.BOTTOM));
-                        level.setBlockAndUpdate(dirPos, dirState.is(ModBlocks.REBAR.get()) ?
-                                ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.BOTTOM) :
-                                ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.BOTTOM));
+                        level.setBlockAndUpdate(dirPos, block.withPropertiesOf(state).setValue(TYPE, SlabType.BOTTOM).setValue(CURABLE, false));
+
                         level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                        level.scheduleTick(dirPos, this, 8);
+                        level.scheduleTick(dirPos, block, FLOW_RATE);
                         break;
-                    }
+
                 }
                 if (dirState.is(ModTags.WET_CEMENT)) {
                     if (dirState.getValue(TYPE) == SlabType.BOTTOM) {
+                        boolean bl = dirState.is(ModBlocks.CEMENTED_REBAR.get());
+                        var block = bl ? ModBlocks.CEMENTED_REBAR.get() : ModBlocks.WET_CEMENT.get();
 
                         level.setBlockAndUpdate(pos, ModBlocks.REBAR.get().withPropertiesOf(state));
-                        level.setBlockAndUpdate(dirPos, (dirState.is(ModBlocks.REBAR.get()) || dirState.is(ModBlocks.CEMENTED_REBAR.get())) ?
-                                ModBlocks.CEMENTED_REBAR.get().withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE) :
-                                ModBlocks.WET_CEMENT.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE));
+                        level.setBlockAndUpdate(dirPos, block.withPropertiesOf(dirState).setValue(TYPE, SlabType.DOUBLE).setValue(CURABLE, false));
+
                         level.playSound(null, pos, SoundEvents.MUD_PLACE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                        level.scheduleTick(dirPos, this, 8);
+                        level.scheduleTick(dirPos, block, FLOW_RATE);
                         break;
                     }
                 }
             }
         }
+
+        else if (!state.getValue(CURABLE)) {
+            level.setBlockAndUpdate(pos, state.setValue(CURABLE, true));
+            level.scheduleTick(pos, this, REGULAR_HATCH_TIME_TICKS + level.random.nextInt(300));
+        }
+
+        else if (!belowState.is(ModTags.WET_CEMENT) && !belowState.isAir() && level.isDay())
+            level.setBlockAndUpdate(pos, ModBlocks.REINFORCED_CEMENT.get().withPropertiesOf(state));
     }
 
 

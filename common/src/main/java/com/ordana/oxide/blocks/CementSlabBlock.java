@@ -1,8 +1,11 @@
 package com.ordana.oxide.blocks;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.blocks.rusty.Rustable;
 import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
+import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -38,17 +41,23 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
     protected static final VoxelShape BOTTOM_AABB;
     protected static final VoxelShape TOP_AABB;
     public static final IntegerProperty OVERHANG = ModBlockProperties.OVERHANG;
-    public static final int MAX_OVERHANG = 4;
+    private final int maxOverhang;
 
     public MapCodec<? extends SlabBlock> codec() {
         return CODEC;
     }
 
-    public CementSlabBlock(Properties settings) {
+    public CementSlabBlock(int maxOverhang, Properties settings) {
         super(settings);
+        this.maxOverhang = maxOverhang;
         this.registerDefaultState(this.defaultBlockState().setValue(OVERHANG, 0).setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, false));
     }
 
+    @Override
+    public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
+        if (state.is(ModTags.WEATHERED_CEMENT)) return;
+        if (serverLevel.isRainingAt(pos.above()) || serverLevel.getBlockState(pos.above()).is(ModTags.WEATHERED_CEMENT)) serverLevel.setBlockAndUpdate(pos, ModBlocks.WEATHERED_CEMENT_SLAB.get().withPropertiesOf(state));
+    }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(OVERHANG, TYPE, WATERLOGGED);
@@ -78,7 +87,7 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (state.getValue(OVERHANG) == MAX_OVERHANG) {
+        if (state.getValue(OVERHANG) == maxOverhang) {
             FallingCementEntity.fall(level, pos, state.setValue(OVERHANG, 0));
         }
     }
@@ -94,7 +103,7 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
         if (supported != state.getValue(OVERHANG)) {
             level.setBlockAndUpdate(pos, state.setValue(OVERHANG, supported));
         }
-        if (supported == MAX_OVERHANG) {
+        if (supported == maxOverhang) {
             level.scheduleTick(pos, state.getBlock(), 1);
         }
     }
@@ -103,7 +112,7 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
         var free = FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight();
         if (!free) return 0;
 
-        int overInt = MAX_OVERHANG;
+        int overInt = maxOverhang;
         BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
 
         for (var dir : Direction.Plane.HORIZONTAL.shuffledCopy(level.random)) {
@@ -117,13 +126,13 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
         return overInt;
     }
 
-    private static int getDistanceAt(BlockState neighbor) {
+    private int getDistanceAt(BlockState neighbor) {
         var i = neighbor.hasProperty(OVERHANG) ? OptionalInt.of(neighbor.getValue(OVERHANG)) : OptionalInt.empty();
-        return i.orElse(MAX_OVERHANG);
+        return i.orElse(maxOverhang);
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        if (state.getValue(OVERHANG) == MAX_OVERHANG - 1 && random.nextInt(16) == 0 && FallingBlock.isFree(level.getBlockState(pos.below()))) {
+        if (state.getValue(OVERHANG) == maxOverhang - 1 && random.nextInt(16) == 0 && FallingBlock.isFree(level.getBlockState(pos.below()))) {
             double d = (double) pos.getX() + random.nextDouble();
             double e = (double) pos.getY() - 0.05;
             double f = (double) pos.getZ() + random.nextDouble();
@@ -171,7 +180,7 @@ public class CementSlabBlock extends Block implements Fallable, SimpleWaterlogge
     }
 
     protected FluidState getFluidState(BlockState state) {
-        return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {

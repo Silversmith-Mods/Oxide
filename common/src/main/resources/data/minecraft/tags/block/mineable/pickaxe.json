@@ -52,7 +52,12 @@
     "oxide:weathered_heavy_iron_chain",
     "oxide:rusted_heavy_iron_chain",
 
+    "oxide:heavy_iron_bars",
+    "oxide:weathered_heavy_iron_bars",
+    "oxide:rusted_heavy_iron_bars",
 
+
+    "oxide:rebar",
     "oxide:reinforced_cement",
     "oxide:cement",
     "oxide:cement_stairs",

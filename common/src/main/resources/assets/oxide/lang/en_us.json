@@ -6,6 +6,7 @@
   "tooltip.oxide.varnish_sprayer_water": "%1$s/%2$s Water stored",
   "tooltip.oxide.fluid": "%s: %d/128 charges stored",
 
+  "fluid.supplementaries.milk": "Milk",
   "fluid.oxide.varnish": "Varnish",
   "fluid.oxide.white_paint": "\"White Paint\"",
   "fluid.oxide.light_gray_paint": "Light Gray Paint",
@@ -24,6 +25,7 @@
   "fluid.oxide.magenta_paint": "Magenta Paint",
   "fluid.oxide.pink_paint": "Pink Paint",
 
+  "item.oxide.cement_powder_bucket": "Bucket of Cement Powder",
   "item.oxide.cement_bucket": "Bucket of Wet Cement",
   "item.oxide.rusty_nail": "Rusty Nail",
   "item.oxide.pure_nail": "Pure Nail",
@@ -37,6 +39,10 @@
   "block.oxide.cement": "Cement",
   "block.oxide.cement_stairs": "Cement Stairs",
   "block.oxide.cement_slab": "Cement Slab",
+
+  "block.oxide.weathered_reinforced_cement": "Weathered Reinforced Cement",
+  "block.oxide.weathered_cement": "Weathered Cement",
+  "block.oxide.weathered_cement_slab": "Weathered Cement Slab",
 
   "block.oxide.cement_block": "Block of Cement",
   "block.oxide.cement_block_slab": "Slab of Cement",

@@ -1,10 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
-import com.ordana.oxide.items.CementBucketItem;
-import com.ordana.oxide.items.PureNailItem;
-import com.ordana.oxide.items.RustyNailItem;
-import com.ordana.oxide.items.VarnishSprayer;
+import com.ordana.oxide.items.*;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
@@ -20,6 +17,9 @@ public class ModItems {
     public static <T extends Item> Supplier<T> regItem(String name, Supplier<T> itemSup) {
         return RegHelper.registerItem(Oxide.res(name), itemSup);
     }
+
+    public static final Supplier<Item> CEMENT_POWDER_BUCKET = regItem("cement_powder_bucket", () ->
+            new CementPowderBucketItem(new Item.Properties().stacksTo(16)));
     public static final Supplier<Item> CEMENT_BUCKET = regItem("cement_bucket", () ->
             new CementBucketItem(new Item.Properties().component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 

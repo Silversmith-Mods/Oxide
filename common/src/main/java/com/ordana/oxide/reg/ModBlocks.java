@@ -49,16 +49,26 @@ public class ModBlocks {
     public static final Supplier<Block> CEMENTED_REBAR = regBlock("cemented_rebar", () ->
             new CementedRebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.MUD).strength(3.0F, 6.0F).noOcclusion().mapColor(MapColor.DEEPSLATE).randomTicks()));
     public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
-            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE)));
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE).randomTicks()));
 
 
     public static final Supplier<Block> CEMENT = regWithItem("cement", () ->
-            new CementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
-
-    public static final Supplier<Block> CEMENT_STAIRS = regWithItem("cement_stairs", () ->
-            new ModStairBlock(ModBlocks.CEMENT, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new CementBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
     public static final Supplier<Block> CEMENT_SLAB = regWithItem("cement_slab", () ->
-            new CementSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new CementSlabBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
+
+    public static final Supplier<Block> CRACKED_CEMENT = regWithItem("cracked_cement", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+    public static final Supplier<Block> CRACKED_CEMENT_SLAB = regWithItem("cracked_cement_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+
+    public static final Supplier<Block> WEATHERED_CEMENT = regWithItem("weathered_cement", () ->
+            new CementBlock(3, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+    public static final Supplier<Block> WEATHERED_CEMENT_SLAB = regWithItem("weathered_cement_slab", () ->
+            new CementSlabBlock(3, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+    public static final Supplier<Block> WEATHERED_REINFORCED_CEMENT = regBlock("weathered_reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+
 
 
     public static final Supplier<Block> CINDER_BRICKS = regWithItem("cinder_bricks", () ->
@@ -407,17 +417,17 @@ public class ModBlocks {
 
     //iron decor
     public static final Supplier<Block> HEAVY_IRON_DOOR = regWithItem("heavy_iron_door", () ->
-            new RustableDoorBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new RustableDoorBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_GRAY).randomTicks()));
     public static final Supplier<Block> WEATHERED_HEAVY_IRON_DOOR = regWithItem("weathered_heavy_iron_door", () ->
-            new RustableDoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
+            new RustableDoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN).randomTicks()));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_DOOR = regWithItem("rusted_heavy_iron_door", () ->
             new RustableDoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_RED)));
 
 
     public static final Supplier<Block> HEAVY_IRON_TRAPDOOR = regWithItem("heavy_iron_trapdoor", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_GRAY)));
+            new RustableTrapdoorBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_GRAY).randomTicks()));
     public static final Supplier<Block> WEATHERED_HEAVY_IRON_TRAPDOOR = regWithItem("weathered_heavy_iron_trapdoor", () ->
-            new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
+            new RustableTrapdoorBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN).randomTicks()));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_TRAPDOOR = regWithItem("rusted_heavy_iron_trapdoor", () ->
             new RustableTrapdoorBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.TERRACOTTA_RED)));
 
@@ -437,16 +447,16 @@ public class ModBlocks {
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_RED)));
 
     public static final Supplier<Block> WROUGHT_IRON_FENCE = regWithItem("wrought_iron_fence", () ->
-            new RustableFenceBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BLACK)));
+            new RustableFenceBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BLACK).randomTicks()));
     public static final Supplier<Block> WEATHERED_WROUGHT_IRON_FENCE = regWithItem("weathered_wrought_iron_fence", () ->
-            new RustableFenceBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN)));
+            new RustableFenceBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN).randomTicks()));
     public static final Supplier<Block> RUSTED_WROUGHT_IRON_FENCE = regWithItem("rusted_wrought_iron_fence", () ->
             new RustableFenceBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_ORANGE)));
 
     public static final Supplier<Block> WROUGHT_IRON_FENCE_GATE = regWithItem("wrought_iron_fence_gate", () ->
-            new RustableFenceGateBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BLACK)));
+            new RustableFenceGateBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BLACK).randomTicks()));
     public static final Supplier<Block> WEATHERED_WROUGHT_IRON_FENCE_GATE = regWithItem("weathered_wrought_iron_fence_gate", () ->
-            new RustableFenceGateBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN)));
+            new RustableFenceGateBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN).randomTicks()));
     public static final Supplier<Block> RUSTED_WROUGHT_IRON_FENCE_GATE = regWithItem("rusted_wrought_iron_fence_gate", () ->
             new RustableFenceGateBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_ORANGE)));
 

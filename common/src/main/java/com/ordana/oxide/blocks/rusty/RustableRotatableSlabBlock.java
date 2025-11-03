@@ -24,9 +24,11 @@ import java.util.Objects;
 public class RustableRotatableSlabBlock extends RustableSlabBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
+    private final Rustable.RustLevel rustLevel;
 
     public RustableRotatableSlabBlock(RustLevel rustLevel, Properties settings) {
         super(rustLevel, settings);
+        this.rustLevel = rustLevel;
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(VARNISHED, false));
     }
 
@@ -39,6 +41,11 @@ public class RustableRotatableSlabBlock extends RustableSlabBlock {
         if (blockState.is(this)) {
             return blockState.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, false).setValue(FACING, bl ? dir.getOpposite() : dir);
         } return this.defaultBlockState().setValue(FACING, bl ? dir.getOpposite() : dir).setValue(TYPE, type);
+    }
+
+    @Override
+    public RustLevel getAge() {
+        return this.rustLevel;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

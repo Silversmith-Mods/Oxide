@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:weathered_cement",
+    "oxide:weathered_cement_slab",
+    "oxide:weathered_reinforced_cement"
+  ]
+}

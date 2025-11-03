@@ -5,6 +5,7 @@ import com.google.common.base.Suppliers;
 import com.ordana.oxide.blocks.rusty.Rustable;
 import com.ordana.oxide.items.SFStackView;
 import com.ordana.oxide.reg.*;
+import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import net.mehvahdjukaar.moonlight.api.entity.ParticleTrailEmitter;
 import net.mehvahdjukaar.moonlight.api.fluids.MLBuiltinSoftFluids;
@@ -184,19 +185,22 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
             var relPos = pos.relative(hit.getDirection());
             var relState = level().getBlockState(relPos);
             if (relState.is(ModTags.WATER_DESTROYS)) level().destroyBlock(relPos, false);
+
             var rusted = Rustable.getIncreasedRustBlock(state.getBlock());
             if (rusted.isPresent()) {
                 this.level().setBlockAndUpdate(pos, rusted.get().withPropertiesOf(state));
-                if (random.nextFloat() > 0.75)
-                    this.level().playSound(null, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
+                if (random.nextFloat() > 0.75) this.level().playSound(null, pos, SoundEvents.AMBIENT_UNDERWATER_ENTER, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
             }
+            else if (random.nextFloat() > 0.75) this.level().playSound(null, pos, SoundEvents.POINTED_DRIPSTONE_DRIP_WATER, SoundSource.BLOCKS, 2f, 0.7f + random.nextFloat());
         }
 
         if (getDataFluid().is(ModTags.VARNISH)) {
+
             if (state.hasProperty(ModBlockProperties.VARNISHED)) {
                 if (!state.getValue(ModBlockProperties.VARNISHED)) {
                     level().setBlockAndUpdate(pos, state.setValue(ModBlockProperties.VARNISHED, true));
-
+                    level().playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1f, 0.8f + random.nextFloat());
+                    if (level().isClientSide()) ParticleUtils.spawnParticlesOnBlockFaces(level(), pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
                 }
             }
 
@@ -204,19 +208,15 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
             var relState = level().getBlockState(relPos);
             if (relState.hasProperty(ModBlockProperties.VARNISHED)) if (!relState.getValue(ModBlockProperties.VARNISHED)) {
                 level().setBlockAndUpdate(relPos, relState.setValue(ModBlockProperties.VARNISHED, true));
-                if (level().isClientSide) {
-                    if (random.nextFloat() > 0.75) level().playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                    ParticleUtils.spawnParticlesOnBlockFaces(level(), pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
-                }
+                level().playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1f, 0.8f + random.nextFloat());
+                if (level().isClientSide()) ParticleUtils.spawnParticlesOnBlockFaces(level(), pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
             }
 
             var waxed = HoneycombItem.getWaxed(state);
             if (waxed.isPresent()) {
                 level().setBlockAndUpdate(pos, waxed.get());
-                if (level().isClientSide) {
-                    if (random.nextFloat() > 0.75) level().playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
-                    ParticleUtils.spawnParticlesOnBlockFaces(level(), pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
-                }
+                level().playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1f, 0.8f + random.nextFloat());
+                if (level().isClientSide()) ParticleUtils.spawnParticlesOnBlockFaces(level(), pos, ParticleTypes.WAX_ON, UniformInt.of(3, 5));
             }
         }
 

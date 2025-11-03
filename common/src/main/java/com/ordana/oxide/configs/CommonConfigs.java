@@ -15,6 +15,8 @@ public class CommonConfigs {
     public static final Supplier<Integer> RUSTING_INFLUENCE_RADIUS;
     public static final Supplier<Double> RUSTING_RATE;
 
+    public static final Supplier<Integer> CEMENT_FLOW_RATE;
+
 
     public static void init() {
     }
@@ -29,6 +31,7 @@ public class CommonConfigs {
         RUSTING = builder.define("rusting", true);
         RUSTING_INFLUENCE_RADIUS = builder.define("rusting_influence_radius", 4, 1, 8);
         RUSTING_RATE = builder.define("rusting_rate", 0.06, 0, 1);
+        CEMENT_FLOW_RATE = builder.define("cement_flow_rate", 8, 1, 32);
         builder.pop();
 
         //SERVER_SPEC = builder.buildAndRegister();

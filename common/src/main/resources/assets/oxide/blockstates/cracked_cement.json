@@ -1,0 +1,30 @@
+{
+    "variants": {
+        "": [
+            {
+                "model": "oxide:block/cracked_cement/0"
+            },
+            {
+                "model": "oxide:block/cracked_cement/1"
+            },
+            {
+                "model": "oxide:block/cracked_cement/2"
+            },
+            {
+                "model": "oxide:block/cracked_cement/3"
+            },
+            {
+                "model": "oxide:block/cracked_cement/4"
+            },
+            {
+                "model": "oxide:block/cracked_cement/5"
+            },
+            {
+                "model": "oxide:block/cracked_cement/6"
+            },
+            {
+                "model": "oxide:block/cracked_cement/7"
+            }
+        ]
+    }
+}

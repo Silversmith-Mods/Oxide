@@ -1,8 +1,10 @@
 package com.ordana.oxide.blocks.rusty;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.entities.RustyNailEntity;
 import com.ordana.oxide.entities.SprayParticleEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
+import com.ordana.oxide.reg.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -17,12 +19,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -35,6 +35,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
@@ -85,6 +86,15 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         if (entity instanceof LivingEntity liv) entity.causeFallDamage(Math.min(fallDistance, (liv.getHealth() / 2) + 2f), 2.0F, level.damageSources().stalagmite());
     }
 
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        if (rustLevel == RustLevel.RUSTED && !level.isClientSide && level.random.nextFloat() <= 0.1f && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+            RustyNailEntity nail = new RustyNailEntity(level, player, ModEntities.RUSTY_NAIL.get());
+            nail.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+            level.addFreshEntity(nail);
+        }
+        super.playerDestroy(level, player, pos, state, blockEntity, tool);
+    }
+
     @Override
     public RustLevel getAge() {
         return this.rustLevel;
@@ -106,7 +116,7 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
 
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
         Direction.Axis axis = direction.getAxis();
-        if (neighborState.getBlock() == this && !axis.isVertical()) {
+        if (neighborState.getBlock() instanceof RustableFenceGateBlock && !axis.isVertical()) {
             if (!state.getValue(WIDE) && ((state.getValue(FACING) == neighborState.getValue(FACING)) || (state.getValue(FACING) == neighborState.getValue(FACING).getOpposite()))) {
                 if (neighborState.getValue(WIDE))
                     return state.setValue(WIDE, true).setValue(SIDE_DIR, neighborState.getValue(SIDE_DIR).getOpposite());
@@ -179,10 +189,10 @@ public class RustableFenceGateBlock extends HorizontalDirectionalBlock implement
         Direction cClockDir = direction.getCounterClockWise();
         BlockState belowState = level.getBlockState(blockPos.below());
 
-        boolean above = level.getBlockState(blockPos.above()).is(this);
-        boolean below = level.getBlockState(blockPos.below()).is(this);
-        boolean adjacent = level.getBlockState(blockPos.relative(clockDir)).is(this);
-        boolean adjacent2 = level.getBlockState(blockPos.relative(cClockDir)).is(this);
+        boolean above = level.getBlockState(blockPos.above()).getBlock() instanceof RustableFenceGateBlock;
+        boolean below = level.getBlockState(blockPos.below()).getBlock() instanceof RustableFenceGateBlock;
+        boolean adjacent = level.getBlockState(blockPos.relative(clockDir)).getBlock() instanceof RustableFenceGateBlock;
+        boolean adjacent2 = level.getBlockState(blockPos.relative(cClockDir)).getBlock() instanceof RustableFenceGateBlock;
         boolean wide = false;
         boolean sideDirBl = false;
 

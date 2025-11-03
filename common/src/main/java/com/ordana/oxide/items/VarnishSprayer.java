@@ -126,7 +126,7 @@ public class VarnishSprayer extends Item
         }
 
         level.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.NEUTRAL, 1F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
-        //TODO: shoot
+
         for (int y = -3; y < 3; ++y) {
             for (int x = -3; x < 3; ++x) {
                 SprayParticleEntity fluidDrop = new SprayParticleEntity(level, livingEntity, fluid.copyWithCount(1));

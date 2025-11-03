@@ -3,8 +3,11 @@ package com.ordana.oxide.blocks;
 import com.mojang.serialization.MapCodec;
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -52,6 +55,12 @@ public class ReinforcedCementBlock extends Block {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(NORTH, true).setValue(EAST, true).setValue(SOUTH, true).setValue(WEST, true).setValue(UP, true).setValue(DOWN, true).setValue(TYPE, SlabType.BOTTOM));
 
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource random) {
+        if (state.is(ModTags.WEATHERED_CEMENT)) return;
+        if (serverLevel.isRainingAt(pos.above()) || serverLevel.getBlockState(pos.above()).is(ModTags.WEATHERED_CEMENT)) serverLevel.setBlockAndUpdate(pos, ModBlocks.WEATHERED_REINFORCED_CEMENT.get().withPropertiesOf(state));
     }
 
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {

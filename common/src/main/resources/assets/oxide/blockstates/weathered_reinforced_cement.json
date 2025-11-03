@@ -1,0 +1,424 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oxide:block/weathered_cement/slab/bottom"
+      },
+      "when": {
+        "type": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/weathered_cement/block"
+      },
+      "when": {
+        "type": "double"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/up"
+      },
+      "when": {
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/ring_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "true",
+        "south_upper": "true",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/nesw_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "false",
+        "south_upper": "false",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/down"
+      },
+      "when": {
+        "down": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/nesw"
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/ring"
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert_alt",
+        "y": 90
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert"
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side"
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_alt",
+        "y": 90
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side",
+        "y": 180
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_alt",
+        "y": 270
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t"
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_alt",
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t",
+        "y": 180
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_alt",
+        "y": 270
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner"
+      },
+      "when": {
+        "north": "true",
+        "east": "true",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_alt",
+        "y": 90
+      },
+      "when": {
+        "north": "false",
+        "east": "true",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner",
+        "y": 180
+      },
+      "when": {
+        "north": "false",
+        "east": "false",
+        "south": "true",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_alt",
+        "y": 270
+      },
+      "when": {
+        "north": "true",
+        "east": "false",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert_alt_upper",
+        "y": 90
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "false",
+        "south_upper": "true",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/vert_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "true",
+        "south_upper": "false",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "true",
+        "south_upper": "true",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_alt_upper",
+        "y": 90
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "false",
+        "south_upper": "true",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_upper",
+        "y": 180
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "true",
+        "south_upper": "false",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/side_alt_upper",
+        "y": 270
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "true",
+        "south_upper": "true",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "false",
+        "south_upper": "false",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_alt_upper",
+        "y": 90
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "true",
+        "south_upper": "false",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_upper",
+        "y": 180
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "false",
+        "south_upper": "true",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/t_alt_upper",
+        "y": 270
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "false",
+        "south_upper": "false",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_upper"
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "true",
+        "south_upper": "false",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_alt_upper",
+        "y": 90
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "true",
+        "south_upper": "true",
+        "west_upper": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_upper",
+        "y": 180
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "false",
+        "east_upper": "false",
+        "south_upper": "true",
+        "west_upper": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "oxide:block/rebar/corner_alt_upper",
+        "y": 270
+      },
+      "when": {
+        "up": "false",
+        "north_upper": "true",
+        "east_upper": "false",
+        "south_upper": "false",
+        "west_upper": "true"
+      }
+    }
+  ]
+}
