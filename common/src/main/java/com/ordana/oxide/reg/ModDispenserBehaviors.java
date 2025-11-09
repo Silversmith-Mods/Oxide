@@ -1,7 +1,7 @@
 package com.ordana.oxide.reg;
 
-import com.ordana.oxide.blocks.Dispenser.CementBucketDispenserBehavior;
-import com.ordana.oxide.blocks.Dispenser.SprayerDispenserBehavior;
+import com.ordana.oxide.blocks.dispenser.CementBucketDispenserBehavior;
+import com.ordana.oxide.blocks.dispenser.SprayerDispenserBehavior;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.mehvahdjukaar.moonlight.api.util.DispenserHelper;
 

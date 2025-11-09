@@ -26,7 +26,7 @@ public class Oxide {
         CommonConfigs.init();
 
         if (PlatHelper.getPhysicalSide().isClient()) {
-            ClientConfigs.init();
+            //ClientConfigs.init();
             OxideClient.init();
         }
 
@@ -40,6 +40,8 @@ public class Oxide {
         ModComponents.init();
         ModRecipes.init();
         ModDispenserBehaviors.init();
+
+        CommonConfigs.init();
     }
 
     public static void setup() {

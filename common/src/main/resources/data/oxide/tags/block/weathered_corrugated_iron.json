@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:weathered_red_corrugated_iron",
+    "oxide:weathered_orange_corrugated_iron",
+    "oxide:weathered_yellow_corrugated_iron",
+    "oxide:weathered_lime_corrugated_iron",
+    "oxide:weathered_green_corrugated_iron",
+    "oxide:weathered_cyan_corrugated_iron",
+    "oxide:weathered_blue_corrugated_iron",
+    "oxide:weathered_light_blue_corrugated_iron",
+    "oxide:weathered_purple_corrugated_iron",
+    "oxide:weathered_magenta_corrugated_iron",
+    "oxide:weathered_pink_corrugated_iron",
+    "oxide:weathered_white_corrugated_iron",
+    "oxide:weathered_light_gray_corrugated_iron",
+    "oxide:weathered_gray_corrugated_iron",
+    "oxide:weathered_black_corrugated_iron",
+    "oxide:weathered_brown_corrugated_iron"
+  ]
+}

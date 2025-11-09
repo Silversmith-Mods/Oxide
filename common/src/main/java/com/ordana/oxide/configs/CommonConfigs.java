@@ -3,39 +3,52 @@ package com.ordana.oxide.configs;
 import com.ordana.oxide.Oxide;
 import net.mehvahdjukaar.moonlight.api.platform.configs.ConfigBuilder;
 import net.mehvahdjukaar.moonlight.api.platform.configs.ConfigType;
+import net.mehvahdjukaar.moonlight.api.platform.configs.ModConfigHolder;
 
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class CommonConfigs {
 
-    //public static final ConfigSpec SERVER_SPEC;
-
-    public static final Supplier<Boolean> CREATIVE_TAB;
-    public static final Supplier<Boolean> RUSTING;
-    public static final Supplier<Integer> RUSTING_INFLUENCE_RADIUS;
-    public static final Supplier<Double> RUSTING_RATE;
-
-    public static final Supplier<Integer> CEMENT_FLOW_RATE;
-
-
     public static void init() {
     }
 
-    static{
-        ConfigBuilder builder = ConfigBuilder.create(Oxide.res("common"), ConfigType.COMMON);
+    public static final ModConfigHolder CONFIG_HOLDER;
+    private static final WeakReference<ConfigBuilder> builderReference;
 
-        //builder.setSynced();
+    static {
+        ConfigBuilder builder = ConfigBuilder.create(Oxide.MOD_ID, ConfigType.COMMON_SYNCED);
 
-        builder.push("rusting");
-        CREATIVE_TAB = builder.define("creative_tab", false);
-        RUSTING = builder.define("rusting", true);
-        RUSTING_INFLUENCE_RADIUS = builder.define("rusting_influence_radius", 4, 1, 8);
-        RUSTING_RATE = builder.define("rusting_rate", 0.06, 0, 1);
-        CEMENT_FLOW_RATE = builder.define("cement_flow_rate", 8, 1, 32);
-        builder.pop();
+        builderReference = new WeakReference<>(builder);
 
-        //SERVER_SPEC = builder.buildAndRegister();
-        //SERVER_SPEC.loadFromFile();
+        General.init();
+
+        CONFIG_HOLDER = builder.build();
+        CONFIG_HOLDER.forceLoad();
     }
 
+    public static class General {
+        public static void init() {
+        }
+
+        static {
+            ConfigBuilder builder = builderReference.get();
+
+            builder.comment("General settings")
+                    .push("general");
+
+            CREATIVE_TAB = builder.comment("Enable Creative Tab").define("creative_tab", false);
+
+            RUST_RATE = builder.comment("Enable Creative Tab").define("rusting_rate", 50, 0, 100);
+            CEMENT_FLOW_RATE = builder.comment("Rate at which Wet Cement flows").define("cement_flow_rate", 8, 1, 32);
+
+            builder.pop();
+        }
+
+        public static final Supplier<Boolean> CREATIVE_TAB;
+        public static final Supplier<Integer> RUST_RATE;
+        public static final Supplier<Integer> CEMENT_FLOW_RATE;
+    }
 }

@@ -60,10 +60,16 @@
     "oxide:rebar",
     "oxide:reinforced_cement",
     "oxide:cement",
-    "oxide:cement_stairs",
     "oxide:cement_slab",
     "oxide:cement_block",
     "oxide:cement_block_slab",
+
+    "oxide:weathered_reinforced_cement",
+    "oxide:weathered_cement",
+    "oxide:weathered_cement_slab",
+    "oxide:weathered_cement_block",
+    "oxide:weathered_cement_block_slab",
+
     "oxide:cinder_block",
     "oxide:cinder_blocks",
     "oxide:cinder_block_slab",
@@ -77,6 +83,11 @@
     "oxide:weathered_cinder_brick_stairs",
     "oxide:weathered_cinder_brick_slab",
     "oxide:weathered_cinder_brick_wall",
+
+    "oxide:stock_bricks",
+    "oxide:stock_brick_slab",
+    "oxide:stock_brick_stairs",
+    "oxide:stock_brick_wall",
 
     "oxide:clinker_bricks",
     "oxide:clinker_brick_slab",

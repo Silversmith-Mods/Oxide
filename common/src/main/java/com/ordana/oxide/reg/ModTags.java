@@ -23,6 +23,7 @@ public class ModTags {
     public static final TagKey<Block> WATER_DESTROYS = registerBlockTag("water_destroys");
     public static final TagKey<Block> PAINT_BLOCK = registerBlockTag("paint");
     public static final TagKey<Block> WEATHERED_CEMENT = registerBlockTag("weathered_cement");
+    public static final TagKey<Block> REINFORCED_CEMENT = registerBlockTag("reinforced_cement");
 
     public static final TagKey<SoftFluid> CAN_GO_IN_SPRAY = registerSFTag("can_go_in_spray");
     public static final TagKey<SoftFluid> VARNISH = registerSFTag("varnish");

@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +35,7 @@ public class RustableDoorBlock extends DoorBlock implements Rustable {
     protected final Rustable.RustLevel rustLevel;
 
     public RustableDoorBlock(Rustable.RustLevel rustLevel, Properties properties) {
-        super(BlockSetType.COPPER, properties);
+        super(BlockSetType.COPPER, Rustable.setRandomTicking(properties, rustLevel));
         this.rustLevel = rustLevel;
 
         this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));

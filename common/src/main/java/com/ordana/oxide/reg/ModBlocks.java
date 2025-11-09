@@ -2,6 +2,7 @@ package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
 import com.ordana.oxide.blocks.*;
+import com.ordana.oxide.blocks.cement.*;
 import com.ordana.oxide.blocks.rusty.*;
 import net.mehvahdjukaar.moonlight.api.block.ModStairBlock;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
@@ -48,28 +49,53 @@ public class ModBlocks {
             new RebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER_GRATE).strength(1.0F, 20.0F).noOcclusion().mapColor(MapColor.TERRACOTTA_ORANGE)));
     public static final Supplier<Block> CEMENTED_REBAR = regBlock("cemented_rebar", () ->
             new CementedRebarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(SoundType.MUD).strength(3.0F, 6.0F).noOcclusion().mapColor(MapColor.DEEPSLATE).randomTicks()));
-    public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
-            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE).randomTicks()));
-
 
     public static final Supplier<Block> CEMENT = regWithItem("cement", () ->
-            new CementBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
+            new CementBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(5.0F, 15.0F).mapColor(MapColor.STONE).randomTicks()));
     public static final Supplier<Block> CEMENT_SLAB = regWithItem("cement_slab", () ->
-            new CementSlabBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
-
+            new CementSlabBlock(6, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(5.0F, 15.0F).mapColor(MapColor.STONE).randomTicks()));
     public static final Supplier<Block> CRACKED_CEMENT = regWithItem("cracked_cement", () ->
-            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+            new CementBlock(2, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(2.0F, 8.0F).mapColor(MapColor.STONE).randomTicks()));
     public static final Supplier<Block> CRACKED_CEMENT_SLAB = regWithItem("cracked_cement_slab", () ->
+            new CementSlabBlock(2, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(2.0F, 8.0F).mapColor(MapColor.STONE).randomTicks()));
+    public static final Supplier<Block> WEATHERED_CEMENT = regWithItem("weathered_cement", () ->
+            new CementBlock(4, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(4.0F, 10.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+    public static final Supplier<Block> WEATHERED_CEMENT_SLAB = regWithItem("weathered_cement_slab", () ->
+            new CementSlabBlock(4, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(4.0F, 10.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+    public static final Supplier<Block> CRACKED_WEATHERED_CEMENT = regWithItem("cracked_weathered_cement", () ->
+            new CementBlock(1, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(1.0F, 5.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+    public static final Supplier<Block> CRACKED_WEATHERED_CEMENT_SLAB = regWithItem("cracked_weathered_cement_slab", () ->
+            new CementSlabBlock(1, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(1.0F, 5.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
+
+
+    public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE).randomTicks()));
+    public static final Supplier<Block> CRACKED_REINFORCED_CEMENT = regBlock("cracked_reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(3.0F, 15.0F).mapColor(MapColor.STONE).randomTicks()));
+    public static final Supplier<Block> WEATHERED_REINFORCED_CEMENT = regBlock("weathered_reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(5.0F, 25.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).randomTicks()));
+    public static final Supplier<Block> CRACKED_WEATHERED_REINFORCED_CEMENT = regBlock("cracked_weathered_reinforced_cement", () ->
+            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(2.0F, 10.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).randomTicks()));
+
+
+    public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
+            new WeatherableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
+    public static final Supplier<Block> CEMENT_BLOCK_SLAB = regWithItem("cement_block_slab", () ->
+            new WeatherableSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE).randomTicks()));
+
+    public static final Supplier<Block> WEATHERED_CEMENT_BLOCK = regWithItem("weathered_cement_block", () ->
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+    public static final Supplier<Block> WEATHERED_CEMENT_BLOCK_SLAB = regWithItem("weathered_cement_block_slab", () ->
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
-    public static final Supplier<Block> WEATHERED_CEMENT = regWithItem("weathered_cement", () ->
-            new CementBlock(3, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
-    public static final Supplier<Block> WEATHERED_CEMENT_SLAB = regWithItem("weathered_cement_slab", () ->
-            new CementSlabBlock(3, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
-    public static final Supplier<Block> WEATHERED_REINFORCED_CEMENT = regBlock("weathered_reinforced_cement", () ->
-            new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
 
 
+    public static final Supplier<Block> CINDER_BLOCKS = regWithItem("cinder_blocks", () ->
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+    public static final Supplier<Block> CINDER_BLOCK = regWithItem("cinder_block", () ->
+            new CinderBlockBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
+    public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->
+            new RotatableSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
     public static final Supplier<Block> CINDER_BRICKS = regWithItem("cinder_bricks", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)));
@@ -88,17 +114,6 @@ public class ModBlocks {
             new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
     public static final Supplier<Block> WEATHERED_CINDER_BRICK_WALL = regWithItem("weathered_cinder_brick_wall", () ->
             new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.COLOR_GRAY)));
-
-    public static final Supplier<Block> CEMENT_BLOCK = regWithItem("cement_block", () ->
-            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
-    public static final Supplier<Block> CEMENT_BLOCK_SLAB = regWithItem("cement_block_slab", () ->
-            new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
-    public static final Supplier<Block> CINDER_BLOCKS = regWithItem("cinder_blocks", () ->
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
-    public static final Supplier<Block> CINDER_BLOCK = regWithItem("cinder_block", () ->
-            new CinderBlockBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
-    public static final Supplier<Block> CINDER_BLOCK_SLAB = regWithItem("cinder_block_slab", () ->
-            new RotatableSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.STONE)));
 
     public static final Supplier<Block> CLINKER_BRICKS = regWithItem("clinker_bricks", () ->
             new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).mapColor(MapColor.TERRACOTTA_RED)));

@@ -34,4 +34,34 @@ public class FallingCementEntity extends FallingBlockEntity {
         level.addFreshEntity(fallingBlockEntity);
         return fallingBlockEntity;
     }
+
+
+
+    /*
+
+    public FallingCementEntity(EntityType<? extends FallingBlockEntity> type, Level level) {
+        super(type, level);
+    }
+
+    @Override
+    public void setBlockState(BlockState state) {
+        if (state.hasProperty(BlockStateProperties.SLAB_TYPE)) {
+            state = state.setValue(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM);
+        }
+        CompoundTag tag = new CompoundTag();
+        tag.put("BlockState", NbtUtils.writeBlockState(state));
+        tag.putInt("Time", this.time);
+        this.readAdditionalSaveData(tag);
+    }
+
+    public FallingCementEntity(Level level, BlockPos pos, BlockState blockState) {
+        super(ModEntities.FALLING_CEMENT_ENTITY.get(), level, pos, blockState, false);
+    }
+
+    public static FallingCementEntity fall(Level level, BlockPos pos, BlockState state) {
+        FallingCementEntity entity = new FallingCementEntity(level, pos, state);
+        level.addFreshEntity(entity);
+        return entity;
+    }
+     */
 }

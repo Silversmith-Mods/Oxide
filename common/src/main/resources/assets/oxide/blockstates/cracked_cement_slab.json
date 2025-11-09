@@ -1,82 +1,13 @@
 {
   "variants": {
-    "type=bottom": [
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_0"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_1"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_2"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_3"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_4"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_5"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_6"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/bottom_7"
-      }
-    ],
-    "type=double": [
-      {
-        "model": "oxide:block/cracked_cement/0"
-      },
-      {
-        "model": "oxide:block/cracked_cement/1"
-      },
-      {
-        "model": "oxide:block/cracked_cement/2"
-      },
-      {
-        "model": "oxide:block/cracked_cement/3"
-      },
-      {
-        "model": "oxide:block/cracked_cement/4"
-      },
-      {
-        "model": "oxide:block/cracked_cement/5"
-      },
-      {
-        "model": "oxide:block/cracked_cement/6"
-      },
-      {
-        "model": "oxide:block/cracked_cement/7"
-      }
-    ],
-    "type=top": [
-      {
-        "model": "oxide:block/cracked_cement_slab/top_0"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_1"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_2"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_3"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_4"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_5"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_6"
-      },
-      {
-        "model": "oxide:block/cracked_cement_slab/top_7"
-      }
-    ]
+    "type=top": {
+      "model": "oxide:block/cracked_cement_slab/top"
+    },
+    "type=bottom": {
+      "model": "oxide:block/cracked_cement_slab/bottom"
+    },
+    "type=double": {
+      "model": "oxide:block/cracked_cement/block"
+    }
   }
 }

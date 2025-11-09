@@ -2,6 +2,7 @@ package com.ordana.oxide.blocks.rusty;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.ordana.oxide.configs.CommonConfigs;
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
@@ -193,6 +194,8 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
         return Rustable.getIncreasedRustBlock(state.getBlock()).map(block -> block.withPropertiesOf(state));
     }
 
+    int RUST_RATE = CommonConfigs.General.RUST_RATE.get();
+
     default ItemInteractionResult use(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         var item = stack.getItem();
         var age = getAge();
@@ -263,6 +266,7 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
     }
 
     default void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
+        if (randomSource.nextInt(100) >= RUST_RATE) return;
         int airCheck = 0;
         int wetness = 0;
         if (getAge() == RustLevel.WAXED || getAge() == RustLevel.RUSTED) return;

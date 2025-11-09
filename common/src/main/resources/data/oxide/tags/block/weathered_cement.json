@@ -3,6 +3,11 @@
   "values": [
     "oxide:weathered_cement",
     "oxide:weathered_cement_slab",
-    "oxide:weathered_reinforced_cement"
+    "oxide:cracked_weathered_cement",
+    "oxide:cracked_weathered_cement_slab",
+    "oxide:weathered_reinforced_cement",
+    "oxide:cracked_weathered_reinforced_cement",
+    "oxide:weathered_cement_block",
+    "oxide:weathered_cement_block_slab"
   ]
 }

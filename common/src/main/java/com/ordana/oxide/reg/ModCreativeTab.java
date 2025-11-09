@@ -1,6 +1,7 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
+import com.ordana.oxide.configs.CommonConfigs;
 import net.mehvahdjukaar.moonlight.api.misc.RegSupplier;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -16,7 +17,7 @@ import java.util.function.Supplier;
 
 public class ModCreativeTab {
 
-    public static final RegSupplier<CreativeModeTab> MOD_TAB =
+    public static final RegSupplier<CreativeModeTab> MOD_TAB = !CommonConfigs.General.CREATIVE_TAB.get() ? null :
             RegHelper.registerCreativeModeTab(Oxide.res("oxide"),
                     (c) -> c.title(Component.translatable("itemGroup.oxide.oxide"))
                             .icon(() -> ModBlocks.RUSTED_CUT_IRON.get().asItem().getDefaultInstance()));
@@ -103,7 +104,12 @@ public class ModCreativeTab {
 
                 ModItems.CEMENT_POWDER_BUCKET, ModItems.CEMENT_BUCKET, ModBlocks.REBAR,
                 ModBlocks.CEMENT, ModBlocks.CEMENT_SLAB,
+                ModBlocks.WEATHERED_CEMENT, ModBlocks.WEATHERED_CEMENT_SLAB,
+                ModBlocks.CRACKED_CEMENT, ModBlocks.CRACKED_CEMENT,
+                ModBlocks.CRACKED_WEATHERED_CEMENT, ModBlocks.CRACKED_WEATHERED_CEMENT_SLAB,
                 ModBlocks.CEMENT_BLOCK, ModBlocks.CEMENT_BLOCK_SLAB,
+                ModBlocks.WEATHERED_CEMENT_BLOCK, ModBlocks.WEATHERED_CEMENT_BLOCK_SLAB,
+
                 ModBlocks.CINDER_BLOCKS, ModBlocks.CINDER_BLOCK_SLAB, ModBlocks.CINDER_BLOCK,
                 ModBlocks.CINDER_BRICKS, ModBlocks.CINDER_BRICK_SLAB, ModBlocks.CINDER_BRICK_STAIRS, ModBlocks.CINDER_BRICK_WALL,
                 ModBlocks.WEATHERED_CINDER_BRICKS, ModBlocks.WEATHERED_CINDER_BRICK_SLAB, ModBlocks.WEATHERED_CINDER_BRICK_STAIRS, ModBlocks.WEATHERED_CINDER_BRICK_WALL,

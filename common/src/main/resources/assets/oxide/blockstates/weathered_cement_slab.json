@@ -1,13 +1,46 @@
 {
   "variants": {
-    "type=top": {
-      "model": "oxide:block/weathered_cement/slab/top"
-    },
-    "type=bottom": {
-      "model": "oxide:block/weathered_cement/slab/bottom"
-    },
-    "type=double": {
-      "model": "oxide:block/weathered_cement/block"
-    }
+    "type=top": [
+      {
+        "model": "oxide:block/weathered_cement/slab/top",
+        "weight": 8
+      },
+      {
+        "model": "oxide:block/weathered_cement/slab/top_0",
+        "weight": 1
+      },
+      {
+        "model": "oxide:block/weathered_cement/slab/top_1",
+        "weight": 1
+      }
+    ],
+    "type=bottom": [
+      {
+        "model": "oxide:block/weathered_cement/slab/bottom",
+        "weight": 8
+      },
+      {
+        "model": "oxide:block/weathered_cement/slab/bottom_0",
+        "weight": 1
+      },
+      {
+        "model": "oxide:block/weathered_cement/slab/bottom_1",
+        "weight": 1
+      }
+    ],
+    "type=double": [
+      {
+        "model": "oxide:block/weathered_cement/block",
+        "weight": 8
+      },
+      {
+        "model": "oxide:block/weathered_cement/0",
+        "weight": 1
+      },
+      {
+        "model": "oxide:block/weathered_cement/1",
+        "weight": 1
+      }
+    ]
   }
 }

@@ -5,7 +5,6 @@ import com.google.common.base.Suppliers;
 import com.ordana.oxide.blocks.rusty.Rustable;
 import com.ordana.oxide.items.SFStackView;
 import com.ordana.oxide.reg.*;
-import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import net.mehvahdjukaar.moonlight.api.entity.ParticleTrailEmitter;
 import net.mehvahdjukaar.moonlight.api.fluids.MLBuiltinSoftFluids;
@@ -33,6 +32,7 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -49,7 +49,6 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
     public static final Supplier<EntityDataAccessor<SFStackView>> DATA_FLUID = Suppliers.memoize(() ->
             SynchedEntityData.defineId(SprayParticleEntity.class, Preconditions.checkNotNull(ModEntities.FLUID_DATA.get())));
 
-    //TODO configure to your linking. this makes sure particles are equally spread out no matter the proj speed
     private final ParticleTrailEmitter trailEmitter = new ParticleTrailEmitter.Builder()
             .maxParticlesPerTick(20)
             .minParticlesPerTick(1)
@@ -121,10 +120,6 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
 
     @Override
     public void tick() {
-
-        //if (this.active && this.isInWater() && this.type != BombType.BLUE) {
-        //    this.turnOff();
-        //}
         super.tick();
     }
 
@@ -137,8 +132,6 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
             boolean ultraWarm = level().dimensionType().ultraWarm();
             var pt = ultraWarm ? ParticleTypes.POOF : ModParticles.FALLING_LIQUID.get();
             int color = ultraWarm ? 0 : getDataFluid().getParticleColor(level(), this.blockPosition());
-            //TODO:copy supplementaries faucet drop particles (how it does its color). then pass this color arg to the particle or similar
-
 
             float r = FastColor.ARGB32.red(color) / 255f;
             float g = FastColor.ARGB32.green(color) / 255f;
@@ -175,6 +168,12 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
 
         BlockPos pos = hit.getBlockPos();
         BlockState state = this.level().getBlockState(pos);
+
+
+        if (getDataFluid().is(MLBuiltinSoftFluids.LAVA)) {
+            placeFire(this.level(), hit);
+            if (random.nextFloat() > 0.75) level().playSound(null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 0.5f, 0.8f + random.nextFloat());
+        }
 
         if (getDataFluid().is(ModTags.PAINT)) {
             placePaint(this.level(), hit);
@@ -239,6 +238,17 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
         if (getDataFluid().is(MLBuiltinSoftFluids.LAVA)) if (!entity.fireImmune()) entity.lavaHurt();
         if (getDataFluid().is(MLBuiltinSoftFluids.MILK)) if (entity instanceof LivingEntity livingEntity) livingEntity.removeAllEffects();
         if (getDataFluid().is(ModTags.VARNISH)) if (entity instanceof LivingEntity livingEntity) livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1, true, false, true));
+    }
+
+    public void placeFire(Level level, BlockHitResult hitResult) {
+        Direction dir = hitResult.getDirection();
+        BlockPos pos = hitResult.getBlockPos();
+        BlockPos relativePos = pos.relative(dir);
+
+        if (BaseFireBlock.canBePlacedAt(level, relativePos, dir)) {
+            level.setBlockAndUpdate(relativePos, BaseFireBlock.getState(level, relativePos));
+        }
+        this.remove(RemovalReason.DISCARDED);
     }
 
     public void placePaint(Level level, BlockHitResult hitResult) {

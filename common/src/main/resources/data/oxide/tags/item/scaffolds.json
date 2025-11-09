@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "oxide:iron_scaffold",
+    "oxide:weathered_iron_scaffold",
+    "oxide:rusted_iron_scaffold",
+    "oxide:iron_scaffold_stairs",
+    "oxide:weathered_iron_scaffold_stairs",
+    "oxide:rusted_iron_scaffold_stairs",
+    "oxide:iron_scaffold_slab",
+    "oxide:weathered_iron_scaffold_slab",
+    "oxide:rusted_iron_scaffold_slab"
+  ]
+}

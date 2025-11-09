@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "oxide:block/cracked_cement/0",
-    "side": "oxide:block/cracked_cement/0",
-    "top": "oxide:block/cracked_cement/0"
-  }
-}

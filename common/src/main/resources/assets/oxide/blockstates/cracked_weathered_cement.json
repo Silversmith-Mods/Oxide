@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            {
+                "model": "oxide:block/cracked_weathered_cement/block"
+            }
+        ]
+    }
+}

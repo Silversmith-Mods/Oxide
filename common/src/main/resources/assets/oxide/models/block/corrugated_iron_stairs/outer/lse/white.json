@@ -1,8 +1,0 @@
-{
-  "parent": "oxide:block/stairs_outer",
-  "textures": {
-    "bottom": "oxide:block/corrugated_iron_stairs/lse/white",
-    "side": "oxide:block/corrugated_iron/white",
-    "top": "oxide:block/corrugated_iron_stairs/lse/white"
-  }
-}

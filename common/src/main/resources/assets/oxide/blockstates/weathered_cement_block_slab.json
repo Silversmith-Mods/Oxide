@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "oxide:block/weathered_cement_block_slab/top"
+    },
+    "type=bottom": {
+      "model": "oxide:block/weathered_cement_block_slab/bottom"
+    },
+    "type=double": {
+      "model": "oxide:block/weathered_cement_block_slab/block"
+    }
+  }
+}
+

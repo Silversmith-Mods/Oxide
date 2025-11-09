@@ -44,6 +44,9 @@
   "block.oxide.weathered_cement": "Weathered Cement",
   "block.oxide.weathered_cement_slab": "Weathered Cement Slab",
 
+  "block.oxide.weathered_cement_block": "Block of Weathered Cement",
+  "block.oxide.weathered_cement_block_slab": "Slab of Weathered Cement",
+
   "block.oxide.cement_block": "Block of Cement",
   "block.oxide.cement_block_slab": "Slab of Cement",
   "block.oxide.cinder_block": "Cinder Block",
