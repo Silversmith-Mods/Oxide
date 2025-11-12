@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/door_top_right_open",
   "textures": {
-    "bottom": "oxide:block/rusted_heavy_iron_door/bottom",
-    "top": "oxide:block/rusted_heavy_iron_door/top"
+    "bottom": "oxide:block/heavy_iron_door/rusted/bottom",
+    "top": "oxide:block/heavy_iron_door/rusted/top"
   }
 }

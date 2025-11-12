@@ -1,13 +1,13 @@
 {
   "variants": {
     "axis=x": {
-      "model": "oxide:block/rusted_iron_pillar/x"
+      "model": "oxide:block/iron_pillar/rusted/x"
     },
     "axis=z": {
-      "model": "oxide:block/rusted_iron_pillar/z"
+      "model": "oxide:block/iron_pillar/rusted/z"
     },
     "axis=y": {
-      "model": "oxide:block/rusted_iron_pillar/y"
+      "model": "oxide:block/iron_pillar/rusted/y"
     }
   }
 }

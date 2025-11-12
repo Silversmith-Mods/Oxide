@@ -3,16 +3,16 @@
     {
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_ends_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_ends_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_ends_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_ends_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_ends_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_ends_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_ends_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_ends_3"
         }
       ]
     },
@@ -25,16 +25,16 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/post_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/post_3"
         }
       ]
     },
@@ -47,16 +47,16 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_3"
         }
       ]
     },
@@ -69,19 +69,19 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_0",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_0",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_1",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_1",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_2",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_2",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_3",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_3",
           "y": 90
         }
       ]
@@ -95,16 +95,16 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_3"
         }
       ]
     },
@@ -117,19 +117,19 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_0",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_0",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_1",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_1",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_2",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_2",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/cap_alt_3",
+          "model": "oxide:block/heavy_iron_bars/rusted/cap_alt_3",
           "y": 90
         }
       ]
@@ -140,16 +140,16 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_3"
         }
       ]
     },
@@ -159,19 +159,19 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_0",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_0",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_1",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_1",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_2",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_2",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_3",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_3",
           "y": 90
         }
       ]
@@ -182,16 +182,16 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_0"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_0"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_1"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_1"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_2"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_2"
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_3"
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_3"
         }
       ]
     },
@@ -201,19 +201,19 @@
       },
       "apply": [
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_0",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_0",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_1",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_1",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_2",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_2",
           "y": 90
         },
         {
-          "model": "oxide:block/rusted_heavy_iron_bars/side_alt_3",
+          "model": "oxide:block/heavy_iron_bars/rusted/side_alt_3",
           "y": 90
         }
       ]

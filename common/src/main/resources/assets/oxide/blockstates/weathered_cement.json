@@ -2,15 +2,15 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/weathered_cement/block",
+        "model": "oxide:block/cement/weathered/block",
         "weight": 8
       },
       {
-        "model": "oxide:block/weathered_cement/0",
+        "model": "oxide:block/cement/weathered/0",
         "weight": 1
       },
       {
-        "model": "oxide:block/weathered_cement/1",
+        "model": "oxide:block/cement/weathered/1",
         "weight": 1
       }
     ]

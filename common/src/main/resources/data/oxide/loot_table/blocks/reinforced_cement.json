@@ -6,30 +6,34 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "oxide:cement_block",
+          "conditions": [
             {
-              "add": false,
-              "conditions": [
-                {
-                  "block": "oxide:reinforced_cement",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "type": "double"
-                  }
-                }
-              ],
-              "count": 2,
-              "function": "minecraft:set_count"
-            },
+              "condition": "minecraft:block_state_property",
+              "block": "oxide:reinforced_cement",
+              "properties": {
+                "type": "double"
+              }
+            }
+          ],
+          "functions": [
             {
               "function": "minecraft:explosion_decay"
             }
-          ],
-          "name": "oxide:cement_block_slab"
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "oxide:cement_block_slab",
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ]
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "oxide:blocks/cemented_rebar"
+  "random_sequence": "oxide:blocks/reinforced_cement"
 }

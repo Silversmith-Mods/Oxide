@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "oxide:block/weathered_cement/slab/bottom"
+        "model": "oxide:block/cement/weathered/slab/bottom"
       },
       "when": {
         "type": "bottom"
@@ -10,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "oxide:block/weathered_cement/block"
+        "model": "oxide:block/cement/weathered/block"
       },
       "when": {
         "type": "double"

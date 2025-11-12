@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "oxide:block/weathered_corrugated_iron/pink",
-    "side": "oxide:block/weathered_corrugated_iron/pink"
+    "end": "oxide:block/corrugated_iron/weathered/pink",
+    "side": "oxide:block/corrugated_iron/weathered/pink"
   }
 }

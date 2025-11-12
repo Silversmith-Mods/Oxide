@@ -2,7 +2,7 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/cement_block"
+        "model": "oxide:block/cement/block/block"
       }
     ]
   }

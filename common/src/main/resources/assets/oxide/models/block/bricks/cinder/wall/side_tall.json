@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_side_tall",
   "textures": {
-    "wall": "oxide:block/cinder_bricks/0"
+    "wall": "oxide:block/bricks/cinder/0"
   }
 }

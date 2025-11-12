@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "oxide:block/weathered_iron_pillar/end",
-		"1": "oxide:block/weathered_iron_pillar/lat",
-		"2": "oxide:block/weathered_iron_pillar/vert",
-		"particle": "oxide:block/weathered_iron_pillar/end"
+		"0": "oxide:block/iron_pillar/weathered/end",
+		"1": "oxide:block/iron_pillar/weathered/lat",
+		"2": "oxide:block/iron_pillar/weathered/vert",
+		"particle": "oxide:block/iron_pillar/weathered/end"
 	},
 	"elements": [
 		{

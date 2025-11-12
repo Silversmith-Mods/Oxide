@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "minecraft:item/generated",
 	"textures": {
 		"layer0": "oxide:item/pure_nail"

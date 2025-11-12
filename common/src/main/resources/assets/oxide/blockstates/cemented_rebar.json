@@ -1,10 +1,8 @@
-
 {
   "multipart": [
-
     {
       "apply": {
-        "model": "oxide:block/cement_wet/bottom"
+        "model": "oxide:block/cement/wet/bottom"
       },
       "when": {
         "type": "bottom"
@@ -12,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "oxide:block/cement_wet/double"
+        "model": "oxide:block/cement/wet/double"
       },
       "when": {
         "type": "double"

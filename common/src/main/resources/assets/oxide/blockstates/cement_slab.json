@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "oxide:block/cement_dry/slab/top"
+      "model": "oxide:block/cement/slab/top"
     },
     "type=bottom": {
-      "model": "oxide:block/cement_dry/slab/bottom"
+      "model": "oxide:block/cement/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/cement_dry/block"
+      "model": "oxide:block/cement/block"
     }
   }
 }

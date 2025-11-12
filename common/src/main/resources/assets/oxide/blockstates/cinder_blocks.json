@@ -1,14 +1,14 @@
 {
   "variants": {
     "axis=x": {
-      "model": "oxide:block/cinder_blocks_horizontal",
+      "model": "oxide:block/cinder_block/block/horizontal",
       "y": 90
     },
     "axis=z": {
-      "model": "oxide:block/cinder_blocks_horizontal"
+      "model": "oxide:block/cinder_block/block/horizontal"
     },
     "axis=y": {
-      "model": "oxide:block/cinder_blocks"
+      "model": "oxide:block/cinder_block/block/block"
     }
   }
 }

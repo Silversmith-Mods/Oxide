@@ -2,10 +2,10 @@
   "parent": "oxide:block/fancy_outer_stairs",
   "textures": {
     "bottom": "oxide:block/iron_scaffold/side",
-    "top": "oxide:block/iron_scaffold_stairs/top/lnw",
-    "north": "oxide:block/iron_scaffold_stairs/ttop",
-	"south": "oxide:block/iron_scaffold_stairs/lnw",
-	"west": "oxide:block/iron_scaffold_stairs/ttop",
-	"east": "oxide:block/iron_scaffold_stairs/lne"
+    "top": "oxide:block/iron_scaffold/stairs/top/lnw",
+    "north": "oxide:block/iron_scaffold/stairs/ttop",
+	"south": "oxide:block/iron_scaffold/stairs/lnw",
+	"west": "oxide:block/iron_scaffold/stairs/ttop",
+	"east": "oxide:block/iron_scaffold/stairs/lne"
   }
 }

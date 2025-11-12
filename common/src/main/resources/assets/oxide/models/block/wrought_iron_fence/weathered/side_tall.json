@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "oxide:block/weathered_wrought_iron_fence/base",
-		"particle": "oxide:block/weathered_wrought_iron_fence/base"
+		"1": "oxide:block/wrought_iron_fence/weathered/base",
+		"particle": "oxide:block/wrought_iron_fence/weathered/base"
 	},
 	"elements": [
 		{

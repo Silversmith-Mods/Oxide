@@ -105,8 +105,14 @@ public class ModCreativeTab {
                 ModItems.CEMENT_POWDER_BUCKET, ModItems.CEMENT_BUCKET, ModBlocks.REBAR,
                 ModBlocks.CEMENT, ModBlocks.CEMENT_SLAB,
                 ModBlocks.WEATHERED_CEMENT, ModBlocks.WEATHERED_CEMENT_SLAB,
-                ModBlocks.CRACKED_CEMENT, ModBlocks.CRACKED_CEMENT,
+                ModBlocks.CRACKED_CEMENT, ModBlocks.CRACKED_CEMENT_SLAB,
                 ModBlocks.CRACKED_WEATHERED_CEMENT, ModBlocks.CRACKED_WEATHERED_CEMENT_SLAB,
+
+                ModBlocks.REINFORCED_CEMENT,
+                ModBlocks.WEATHERED_REINFORCED_CEMENT,
+                ModBlocks.CRACKED_REINFORCED_CEMENT,
+                ModBlocks.CRACKED_WEATHERED_REINFORCED_CEMENT,
+
                 ModBlocks.CEMENT_BLOCK, ModBlocks.CEMENT_BLOCK_SLAB,
                 ModBlocks.WEATHERED_CEMENT_BLOCK, ModBlocks.WEATHERED_CEMENT_BLOCK_SLAB,
 

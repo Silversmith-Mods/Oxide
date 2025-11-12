@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "oxide:block/cream_bricks/slab/top"
+      "model": "oxide:block/bricks/cream/slab/top"
     },
     "type=bottom": {
-      "model": "oxide:block/cream_bricks/slab/bottom"
+      "model": "oxide:block/bricks/cream/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/cream_bricks/0"
+      "model": "oxide:block/bricks/cream/0"
     }
   }
 }

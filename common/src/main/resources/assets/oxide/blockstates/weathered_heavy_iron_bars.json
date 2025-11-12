@@ -3,7 +3,7 @@
     {
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/post_ends_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/post_ends_0"
         }
       ]
     },
@@ -16,7 +16,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/post_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/post_0"
         }
       ]
     },
@@ -29,7 +29,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/cap_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/cap_0"
         }
       ]
     },
@@ -42,7 +42,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/cap_0",
+          "model": "oxide:block/heavy_iron_bars/weathered/cap_0",
           "y": 90
         }
       ]
@@ -56,7 +56,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/cap_alt_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/cap_alt_0"
         }
       ]
     },
@@ -69,7 +69,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/cap_alt_0",
+          "model": "oxide:block/heavy_iron_bars/weathered/cap_alt_0",
           "y": 90
         }
       ]
@@ -80,7 +80,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/side_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/side_0"
         }
       ]
     },
@@ -90,7 +90,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/side_0",
+          "model": "oxide:block/heavy_iron_bars/weathered/side_0",
           "y": 90
         }
       ]
@@ -101,7 +101,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/side_alt_0"
+          "model": "oxide:block/heavy_iron_bars/weathered/side_alt_0"
         }
       ]
     },
@@ -111,7 +111,7 @@
       },
       "apply": [
         {
-          "model": "oxide:block/weathered_heavy_iron_bars/side_alt_0",
+          "model": "oxide:block/heavy_iron_bars/weathered/side_alt_0",
           "y": 90
         }
       ]

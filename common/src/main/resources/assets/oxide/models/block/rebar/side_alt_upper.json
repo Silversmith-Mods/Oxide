@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "oxide:block/rusted_iron_pillar/vert",
-		"particle": "oxide:block/wrought_iron_fence/base"
+		"2": "oxide:block/iron_pillar/rusted/vert",
+		"particle": "oxide:block/iron_pillar/rusted/base"
 	},
 	"elements": [
 		{

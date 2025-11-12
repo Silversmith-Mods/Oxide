@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "oxide:block/iron_scaffold_slab/bottom"
+      "model": "oxide:block/iron_scaffold/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/iron_scaffold_slab/double"
+      "model": "oxide:block/iron_scaffold/slab/double"
     },
     "type=top": {
-      "model": "oxide:block/iron_scaffold_slab/top"
+      "model": "oxide:block/iron_scaffold/slab/top"
     }
   }
 }

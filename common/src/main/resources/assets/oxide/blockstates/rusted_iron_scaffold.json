@@ -2,7 +2,7 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/rusted_iron_scaffold"
+        "model": "oxide:block/iron_scaffold/rusted/block"
       }
     ]
   }

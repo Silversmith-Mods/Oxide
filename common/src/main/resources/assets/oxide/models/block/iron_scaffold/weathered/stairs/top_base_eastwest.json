@@ -1,11 +1,11 @@
 {
   "parent": "oxide:block/fancy_stairs_top",
   "textures": {
-    "top": "oxide:block/weathered_iron_scaffold_stairs/top/block",
-    "bottom": "oxide:block/weathered_iron_scaffold_stairs/vert",
-    "north": "oxide:block/weathered_iron_scaffold_stairs/lse",
-    "south": "oxide:block/weathered_iron_scaffold_stairs/lsw",
-    "west": "oxide:block/weathered_iron_scaffold_stairs/lat",
-    "east": "oxide:block/weathered_iron_scaffold/side_top"
+    "top": "oxide:block/iron_scaffold/weathered/stairs/top/block",
+    "bottom": "oxide:block/iron_scaffold/weathered/stairs/vert",
+    "north": "oxide:block/iron_scaffold/weathered/stairs/lse",
+    "south": "oxide:block/iron_scaffold/weathered/stairs/lsw",
+    "west": "oxide:block/iron_scaffold/weathered/stairs/lat",
+    "east": "oxide:block/iron_scaffold/weathered/side_top"
   }
 }

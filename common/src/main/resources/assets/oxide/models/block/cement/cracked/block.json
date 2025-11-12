@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "oxide:block/cracked_cement"
+    "all": "oxide:block/cement/cracked"
   }
 }

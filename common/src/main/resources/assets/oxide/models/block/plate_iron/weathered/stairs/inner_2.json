@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "bottom": "oxide:block/weathered_plate_iron/2",
-    "side": "oxide:block/weathered_plate_iron/2",
-    "top": "oxide:block/weathered_plate_iron/2"
+    "bottom": "oxide:block/plate_iron/weathered/2",
+    "side": "oxide:block/plate_iron/weathered/2",
+    "top": "oxide:block/plate_iron/weathered/2"
   }
 }

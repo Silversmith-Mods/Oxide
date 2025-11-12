@@ -1,12 +1,12 @@
 {
 	"parent": "oxide:block/fancy_slab",
 	"textures": {
-		"bottom": "oxide:block/rusted_iron_scaffold/side",
-		"top": "oxide:block/rusted_iron_scaffold_stairs/top/block",
-		"north": "oxide:block/rusted_iron_scaffold_stairs/lat",
-		"south": "oxide:block/rusted_iron_scaffold_stairs/lat",
-		"west": "oxide:block/rusted_iron_scaffold_stairs/lat",
-		"east": "oxide:block/rusted_iron_scaffold_stairs/lat"
+		"bottom": "oxide:block/iron_scaffold/rusted/side",
+		"top": "oxide:block/iron_scaffold/rusted/stairs/top/block",
+		"north": "oxide:block/iron_scaffold/rusted/stairs/lat",
+		"south": "oxide:block/iron_scaffold/rusted/stairs/lat",
+		"west": "oxide:block/iron_scaffold/rusted/stairs/lat",
+		"east": "oxide:block/iron_scaffold/rusted/stairs/lat"
 	},
 	"gui_light": "front",
 	"display": {

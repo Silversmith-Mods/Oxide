@@ -2,22 +2,22 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/rusted_plate_iron/0"
+        "model": "oxide:block/plate_iron/rusted/0"
       },
       {
-        "model": "oxide:block/rusted_plate_iron/1"
+        "model": "oxide:block/plate_iron/rusted/1"
       },
       {
-        "model": "oxide:block/rusted_plate_iron/2"
+        "model": "oxide:block/plate_iron/rusted/2"
       },
       {
-        "model": "oxide:block/rusted_plate_iron/3"
+        "model": "oxide:block/plate_iron/rusted/3"
       },
       {
-        "model": "oxide:block/rusted_plate_iron/4"
+        "model": "oxide:block/plate_iron/rusted/4"
       },
       {
-        "model": "oxide:block/rusted_plate_iron/5"
+        "model": "oxide:block/plate_iron/rusted/5"
       }
     ]
   }

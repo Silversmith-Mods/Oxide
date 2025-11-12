@@ -1,7 +1,6 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
-		"5": "oxide:block/cinder_bricks/1",
+		"5": "oxide:block/bricks/cinder/1",
 		"particle": "oxide:block/cinder_block/block"
 	},
 	"elements": [

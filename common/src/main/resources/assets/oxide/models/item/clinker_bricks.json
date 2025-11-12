@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"all": "oxide:block/clinker_bricks/1"
+		"all": "oxide:block/bricks/clinker/1"
 	}
 }

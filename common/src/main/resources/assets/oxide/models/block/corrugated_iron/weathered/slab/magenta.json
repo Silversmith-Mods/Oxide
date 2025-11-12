@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "oxide:block/weathered_corrugated_iron/magenta",
-    "side": "oxide:block/weathered_corrugated_iron/magenta",
-    "top": "oxide:block/weathered_corrugated_iron/magenta"
+    "bottom": "oxide:block/corrugated_iron/weathered/magenta",
+    "side": "oxide:block/corrugated_iron/weathered/magenta",
+    "top": "oxide:block/corrugated_iron/weathered/magenta"
   }
 }

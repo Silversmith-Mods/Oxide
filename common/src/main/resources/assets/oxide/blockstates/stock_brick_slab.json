@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "oxide:block/stock_bricks/slab/top"
+      "model": "oxide:block/bricks/stock/slab/top"
     },
     "type=bottom": {
-      "model": "oxide:block/stock_bricks/slab/bottom"
+      "model": "oxide:block/bricks/stock/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/stock_bricks/0"
+      "model": "oxide:block/bricks/stock/0"
     }
   }
 }

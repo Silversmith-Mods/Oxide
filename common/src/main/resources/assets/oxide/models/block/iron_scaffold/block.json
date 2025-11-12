@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"2": "oxide:block/iron_scaffold/top",
-		"3": "oxide:block/iron_scaffold_stairs/default",
+		"3": "oxide:block/iron_scaffold/stairs/default",
 		"7": "oxide:block/iron_scaffold/side",
 		"particle": "oxide:block/iron_scaffold/side"
 	},

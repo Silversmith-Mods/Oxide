@@ -1,8 +1,8 @@
 {
   "parent": "oxide:block/stairs_inner",
   "textures": {
-    "bottom": "oxide:block/weathered_corrugated_iron_stairs/lsw/pink",
-    "side": "oxide:block/weathered_corrugated_iron/pink",
-    "top": "oxide:block/weathered_corrugated_iron_stairs/lsw/pink"
+    "bottom": "oxide:block/corrugated_iron/weathered/stairs/lsw/pink",
+    "side": "oxide:block/corrugated_iron/weathered/pink",
+    "top": "oxide:block/corrugated_iron/weathered/stairs/lsw/pink"
   }
 }

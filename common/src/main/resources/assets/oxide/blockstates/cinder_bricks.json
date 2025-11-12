@@ -2,19 +2,19 @@
     "variants": {
         "": [
             {
-                "model": "oxide:block/cinder_bricks/0",
+                "model": "oxide:block/bricks/cinder/0",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cinder_bricks/1",
+                "model": "oxide:block/bricks/cinder/1",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cinder_bricks/2",
+                "model": "oxide:block/bricks/cinder/2",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cinder_bricks/3",
+                "model": "oxide:block/bricks/cinder/3",
                 "weight": 5
             }
         ]

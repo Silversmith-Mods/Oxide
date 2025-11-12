@@ -1,14 +1,13 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"6": "oxide:block/iron_scaffold_stairs/default",
-		"7": "oxide:block/iron_scaffold_stairs/lat",
-		"8": "oxide:block/iron_scaffold_stairs/lne",
-		"9": "oxide:block/iron_scaffold_stairs/lnw",
+		"6": "oxide:block/iron_scaffold/stairs/default",
+		"7": "oxide:block/iron_scaffold/stairs/lat",
+		"8": "oxide:block/iron_scaffold/stairs/lne",
+		"9": "oxide:block/iron_scaffold/stairs/lnw",
 		"20": "oxide:block/iron_scaffold/side_top",
-		"21": "oxide:block/iron_scaffold_stairs/top/vert",
-		"particle": "oxide:block/iron_scaffold_stairs/lse"
+		"21": "oxide:block/iron_scaffold/stairs/top/vert",
+		"particle": "oxide:block/iron_scaffold/stairs/lse"
 	},
 	"elements": [
 		{

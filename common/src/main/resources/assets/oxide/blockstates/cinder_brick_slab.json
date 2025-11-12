@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "oxide:block/cinder_bricks/slab/top"
+      "model": "oxide:block/bricks/cinder/slab/top"
     },
     "type=bottom": {
-      "model": "oxide:block/cinder_bricks/slab/bottom"
+      "model": "oxide:block/bricks/cinder/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/cinder_bricks/0"
+      "model": "oxide:block/bricks/cinder/0"
     }
   }
 }

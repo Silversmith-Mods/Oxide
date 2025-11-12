@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_trapdoor_open",
   "textures": {
-    "texture": "oxide:block/rusted_heavy_iron_trapdoor"
+    "texture": "oxide:block/heavy_iron_trapdoor/rusted"
   }
 }

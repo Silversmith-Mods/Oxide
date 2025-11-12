@@ -1,7 +1,7 @@
 {
     "parent": "block/iron_bars_post",
     "textures": {
-        "particle": "oxide:block/rusted_heavy_iron_bars/0",
-        "bars": "oxide:block/rusted_heavy_iron_bars/0"
+        "particle": "oxide:block/heavy_iron_bars/rusted/0",
+        "bars": "oxide:block/heavy_iron_bars/rusted/0"
     }
 }

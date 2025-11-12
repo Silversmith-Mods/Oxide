@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab_top",
   "textures": {
-    "bottom": "oxide:block/weathered_cement",
-    "side": "oxide:block/weathered_cement",
-    "top": "oxide:block/weathered_cement"
+    "bottom": "oxide:block/cement/weathered",
+    "side": "oxide:block/cement/weathered",
+    "top": "oxide:block/cement/weathered"
   }
 }

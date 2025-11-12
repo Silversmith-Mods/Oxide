@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=top": {
-      "model": "oxide:block/cracked_weathered_cement_slab/top"
+      "model": "oxide:block/cement/cracked_weathered/slab/top"
     },
     "type=bottom": {
-      "model": "oxide:block/cracked_weathered_cement_slab/bottom"
+      "model": "oxide:block/cement/cracked_weathered/slab/bottom"
     },
     "type=double": {
-      "model": "oxide:block/cracked_weathered_cement/block"
+      "model": "oxide:block/cement/cracked_weathered/block"
     }
   }
 }

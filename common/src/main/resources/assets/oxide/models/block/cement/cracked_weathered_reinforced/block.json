@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "oxide:block/cracked_weathered_reinforced_cement_top",
-    "side": "oxide:block/cracked_weathered_reinforced_cement"
+    "end": "oxide:block/cement/cracked_weathered_reinforced_top",
+    "side": "oxide:block/cement/cracked_weathered_reinforced"
   }
 }

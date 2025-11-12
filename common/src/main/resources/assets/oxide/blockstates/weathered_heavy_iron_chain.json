@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "oxide:block/weathered_heavy_iron_chain/0",
+      "model": "oxide:block/heavy_iron_chain/weathered",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "oxide:block/weathered_heavy_iron_chain/0"
+      "model": "oxide:block/heavy_iron_chain/weathered"
     },
     "axis=z": {
-      "model": "oxide:block/weathered_heavy_iron_chain/0",
+      "model": "oxide:block/heavy_iron_chain/weathered",
       "x": 90
     }
   }

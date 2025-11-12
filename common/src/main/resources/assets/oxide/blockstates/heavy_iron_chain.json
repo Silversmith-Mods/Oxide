@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "oxide:block/heavy_iron_chain/0",
+      "model": "oxide:block/heavy_iron_chain/block",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "oxide:block/heavy_iron_chain/0"
+      "model": "oxide:block/heavy_iron_chain/block"
     },
     "axis=z": {
-      "model": "oxide:block/heavy_iron_chain/0",
+      "model": "oxide:block/heavy_iron_chain/block",
       "x": 90
     }
   }

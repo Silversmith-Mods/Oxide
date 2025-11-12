@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "oxide:block/rusted_corrugated_iron/2",
-    "side": "oxide:block/rusted_corrugated_iron/2"
+    "end": "oxide:block/corrugated_iron/rusted/2",
+    "side": "oxide:block/corrugated_iron/rusted/2"
   }
 }

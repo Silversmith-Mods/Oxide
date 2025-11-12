@@ -2,7 +2,7 @@
     "variants": {
         "": [
             {
-                "model": "oxide:block/cracked_cement"
+                "model": "oxide:block/cement/cracked/block"
             }
         ]
     }

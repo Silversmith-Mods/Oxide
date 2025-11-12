@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "oxide:block/weathered_iron_scaffold_stairs/default",
-		"3": "oxide:block/weathered_iron_scaffold/side",
-		"4": "oxide:block/weathered_iron_scaffold/top",
-		"particle": "oxide:block/weathered_iron_scaffold_stairs/default"
+		"1": "oxide:block/iron_scaffold/weathered/stairs/default",
+		"3": "oxide:block/iron_scaffold/weathered/side",
+		"4": "oxide:block/iron_scaffold/weathered/top",
+		"particle": "oxide:block/iron_scaffold/weathered/stairs/default"
 	},
 	"elements": [
 		{

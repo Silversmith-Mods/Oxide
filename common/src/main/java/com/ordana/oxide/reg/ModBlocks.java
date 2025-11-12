@@ -68,13 +68,13 @@ public class ModBlocks {
             new CementSlabBlock(1, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(1.0F, 5.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)));
 
 
-    public static final Supplier<Block> REINFORCED_CEMENT = regBlock("reinforced_cement", () ->
+    public static final Supplier<Block> REINFORCED_CEMENT = regWithItem("reinforced_cement", () ->
             new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(6.0F, 30.0F).mapColor(MapColor.STONE).randomTicks()));
-    public static final Supplier<Block> CRACKED_REINFORCED_CEMENT = regBlock("cracked_reinforced_cement", () ->
+    public static final Supplier<Block> CRACKED_REINFORCED_CEMENT = regWithItem("cracked_reinforced_cement", () ->
             new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(3.0F, 15.0F).mapColor(MapColor.STONE).randomTicks()));
-    public static final Supplier<Block> WEATHERED_REINFORCED_CEMENT = regBlock("weathered_reinforced_cement", () ->
+    public static final Supplier<Block> WEATHERED_REINFORCED_CEMENT = regWithItem("weathered_reinforced_cement", () ->
             new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(5.0F, 25.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).randomTicks()));
-    public static final Supplier<Block> CRACKED_WEATHERED_REINFORCED_CEMENT = regBlock("cracked_weathered_reinforced_cement", () ->
+    public static final Supplier<Block> CRACKED_WEATHERED_REINFORCED_CEMENT = regWithItem("cracked_weathered_reinforced_cement", () ->
             new ReinforcedCementBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(2.0F, 10.0F).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).randomTicks()));
 
 

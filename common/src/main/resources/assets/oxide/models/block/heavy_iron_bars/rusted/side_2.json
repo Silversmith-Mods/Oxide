@@ -1,8 +1,8 @@
 {
     "parent": "block/iron_bars_side",
     "textures": {
-        "particle": "oxide:block/rusted_heavy_iron_bars/2",
-        "bars": "oxide:block/rusted_heavy_iron_bars/2",
-        "edge": "oxide:block/rusted_heavy_iron_bars/2"
+        "particle": "oxide:block/heavy_iron_bars/rusted/2",
+        "bars": "oxide:block/heavy_iron_bars/rusted/2",
+        "edge": "oxide:block/heavy_iron_bars/rusted/2"
     }
 }

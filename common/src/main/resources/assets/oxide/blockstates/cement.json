@@ -2,7 +2,7 @@
   "variants": {
     "": [
       {
-        "model": "oxide:block/cement_dry/block"
+        "model": "oxide:block/cement/block"
       }
     ]
   }

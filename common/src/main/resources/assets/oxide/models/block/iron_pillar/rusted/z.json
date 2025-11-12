@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "oxide:block/rusted_iron_pillar/end",
-		"1": "oxide:block/rusted_iron_pillar/lat",
-		"2": "oxide:block/rusted_iron_pillar/vert",
-		"particle": "oxide:block/rusted_iron_pillar/end"
+		"0": "oxide:block/iron_pillar/rusted/end",
+		"1": "oxide:block/iron_pillar/rusted/lat",
+		"2": "oxide:block/iron_pillar/rusted/vert",
+		"particle": "oxide:block/iron_pillar/rusted/end"
 	},
 	"elements": [
 		{

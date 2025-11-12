@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "oxide:block/rusted_wrought_iron_fence_gate/side_1",
-		"3": "oxide:block/rusted_wrought_iron_fence/topper",
-		"4": "oxide:block/rusted_wrought_iron_fence_gate/side_0",
-		"particle": "oxide:block/rusted_wrought_iron_fence_gate/side_0"
+		"2": "oxide:block/wrought_iron_fence_gate/rusted/side_1",
+		"3": "oxide:block/wrought_iron_fence/rusted/topper",
+		"4": "oxide:block/wrought_iron_fence_gate/rusted/side_0",
+		"particle": "oxide:block/wrought_iron_fence_gate/rusted/side_0"
 	},
 	"elements": [
 		{

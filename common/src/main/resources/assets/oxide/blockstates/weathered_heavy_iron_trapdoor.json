@@ -1,57 +1,57 @@
 {
   "variants": {
     "facing=east,half=bottom,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/bottom"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/bottom"
     },
     "facing=east,half=bottom,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 90
     },
     "facing=east,half=top,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/top"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/top"
     },
     "facing=east,half=top,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 90
     },
     "facing=north,half=bottom,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/bottom"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/bottom"
     },
     "facing=north,half=bottom,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open"
     },
     "facing=north,half=top,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/top"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/top"
     },
     "facing=north,half=top,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open"
     },
     "facing=south,half=bottom,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/bottom"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/bottom"
     },
     "facing=south,half=bottom,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 180
     },
     "facing=south,half=top,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/top"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/top"
     },
     "facing=south,half=top,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 180
     },
     "facing=west,half=bottom,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/bottom"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/bottom"
     },
     "facing=west,half=bottom,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 270
     },
     "facing=west,half=top,open=false": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/top"
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/top"
     },
     "facing=west,half=top,open=true": {
-      "model": "oxide:block/weathered_heavy_iron_trapdoor/open",
+      "model": "oxide:block/heavy_iron_trapdoor/weathered/open",
       "y": 270
     }
   }

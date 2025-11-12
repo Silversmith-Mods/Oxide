@@ -1,203 +1,203 @@
 {
   "variants": {
     "facing=east,half=bottom,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lne/orange",
       "uvlock": true,
       "y": 270
     },
     "facing=east,half=bottom,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lse/orange"
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lse/orange"
     },
     "facing=east,half=bottom,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lsw/orange",
       "uvlock": true,
       "y": 270
     },
     "facing=east,half=bottom,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lnw/orange"
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lnw/orange"
     },
     "facing=east,half=bottom,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange"
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange"
     },
     "facing=east,half=top,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lse/orange",
       "uvlock": true,
       "x": 180
     },
     "facing=east,half=top,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lne/orange",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
     "facing=east,half=top,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lnw/orange",
       "uvlock": true,
       "x": 180
     },
     "facing=east,half=top,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lsw/orange",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
     "facing=east,half=top,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "uvlock": true,
       "x": 180
     },
     "facing=north,half=bottom,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lnw/orange",
       "uvlock": true,
       "y": 180
     },
     "facing=north,half=bottom,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lne/orange",
       "uvlock": true,
       "y": 270
     },
     "facing=north,half=bottom,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lse/orange",
       "uvlock": true,
       "y": 180
     },
     "facing=north,half=bottom,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lsw/orange",
       "uvlock": true,
       "y": 270
     },
     "facing=north,half=bottom,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "y": 270
     },
     "facing=north,half=top,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lsw/orange",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
     "facing=north,half=top,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lse/orange",
       "uvlock": true,
       "x": 180
     },
     "facing=north,half=top,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lne/orange",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
     "facing=north,half=top,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lnw/orange",
       "uvlock": true,
       "x": 180
     },
     "facing=north,half=top,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
     "facing=south,half=bottom,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lse/orange"
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lse/orange"
     },
     "facing=south,half=bottom,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lsw/orange",
       "uvlock": true,
       "y": 90
     },
     "facing=south,half=bottom,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lnw/orange"
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lnw/orange"
     },
     "facing=south,half=bottom,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lne/orange",
       "uvlock": true,
       "y": 90
     },
     "facing=south,half=bottom,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "y": 90
     },
     "facing=south,half=top,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lne/orange",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
     "facing=south,half=top,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lnw/orange",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
     "facing=south,half=top,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lsw/orange",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
     "facing=south,half=top,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lse/orange",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
     "facing=south,half=top,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "uvlock": true,
       "x": 180,
       "y": 90
     },
     "facing=west,half=bottom,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lsw/orange",
       "uvlock": true,
       "y": 90
     },
     "facing=west,half=bottom,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lnw/orange",
       "uvlock": true,
       "y": 180
     },
     "facing=west,half=bottom,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lne/orange",
       "uvlock": true,
       "y": 90
     },
     "facing=west,half=bottom,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lse/orange",
       "uvlock": true,
       "y": 180
     },
     "facing=west,half=bottom,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "y": 180
     },
     "facing=west,half=top,shape=inner_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lnw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lnw/orange",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
     "facing=west,half=top,shape=inner_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/inner/lsw/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/inner/lsw/orange",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
     "facing=west,half=top,shape=outer_left": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lse/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lse/orange",
       "uvlock": true,
       "x": 180,
       "y": 180
     },
     "facing=west,half=top,shape=outer_right": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/outer/lne/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/outer/lne/orange",
       "uvlock": true,
       "x": 180,
       "y": 270
     },
     "facing=west,half=top,shape=straight": {
-      "model": "oxide:block/weathered_corrugated_iron_stairs/orange",
+      "model": "oxide:block/corrugated_iron/weathered/stairs/orange",
       "uvlock": true,
       "x": 180,
       "y": 180

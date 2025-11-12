@@ -2,19 +2,19 @@
     "variants": {
         "": [
             {
-                "model": "oxide:block/cream_bricks/0",
+                "model": "oxide:block/bricks/cream/0",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cream_bricks/1",
+                "model": "oxide:block/bricks/cream/1",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cream_bricks/2",
+                "model": "oxide:block/bricks/cream/2",
                 "weight": 5
             },
             {
-                "model": "oxide:block/cream_bricks/3",
+                "model": "oxide:block/bricks/cream/3",
                 "weight": 5
             }
         ]

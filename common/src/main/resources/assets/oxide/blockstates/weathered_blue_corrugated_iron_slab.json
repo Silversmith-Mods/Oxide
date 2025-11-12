@@ -1,51 +1,51 @@
 {
   "variants": {
     "type=bottom,facing=north": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue"
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue"
     },
     "type=double,facing=north": {
-      "model": "oxide:block/weathered_corrugated_iron/blue"
+      "model": "oxide:block/corrugated_iron/weathered/blue"
     },
     "type=top,facing=north": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue_top"
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue_top"
     },
 
     "type=bottom,facing=south": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue",
       "y": 180
     },
     "type=double,facing=south": {
-      "model": "oxide:block/weathered_corrugated_iron/blue",
+      "model": "oxide:block/corrugated_iron/weathered/blue",
       "y": 180
     },
     "type=top,facing=south": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue_top",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue_top",
       "y": 180
     },
 
     "type=bottom,facing=east": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue",
       "y": 90
     },
     "type=double,facing=east": {
-      "model": "oxide:block/weathered_corrugated_iron/blue",
+      "model": "oxide:block/corrugated_iron/weathered/blue",
       "y": 90
     },
     "type=top,facing=east": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue_top",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue_top",
       "y": 90
     },
 
     "type=bottom,facing=west": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue",
       "y": 270
     },
     "type=double,facing=west": {
-      "model": "oxide:block/weathered_corrugated_iron/blue",
+      "model": "oxide:block/corrugated_iron/weathered/blue",
       "y": 270
     },
     "type=top,facing=west": {
-      "model": "oxide:block/weathered_corrugated_iron_slab/blue_top",
+      "model": "oxide:block/corrugated_iron/weathered/slab/blue_top",
       "y": 270
     }
   }

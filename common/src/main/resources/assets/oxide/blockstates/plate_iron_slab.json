@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "oxide:block/plate_iron_slab/bottom"
+      "model": "oxide:block/plate_iron/slab/bottom"
     },
     "type=double": {
       "model": "oxide:block/plate_iron/0"
     },
     "type=top": {
-      "model": "oxide:block/plate_iron_slab/top"
+      "model": "oxide:block/plate_iron/slab/top"
     }
   }
 }

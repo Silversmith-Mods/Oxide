@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "oxide:block/cement_dry/slab/bottom"
+        "model": "oxide:block/cement/slab/bottom"
       },
       "when": {
         "type": "bottom"
@@ -10,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "oxide:block/cement_dry/block"
+        "model": "oxide:block/cement/block"
       },
       "when": {
         "type": "double"

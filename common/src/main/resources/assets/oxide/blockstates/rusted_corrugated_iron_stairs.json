@@ -2,103 +2,103 @@
   "variants": {
     "facing=east,half=bottom,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_0",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_1",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_2",
         "uvlock": true,
         "y": 270
       }
     ],
     "facing=east,half=bottom,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_0"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_0"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_1"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_1"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_2"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_2"
       }
     ],
     "facing=east,half=bottom,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_0",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_1",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_2",
         "uvlock": true,
         "y": 270
       }
     ],
     "facing=east,half=bottom,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_0"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_0"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_1"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_1"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_2"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_2"
       }
     ],
     "facing=east,half=bottom,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2"
       }
     ],
     "facing=east,half=top,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_0",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_1",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_2",
         "uvlock": true,
         "x": 180
       }
     ],
     "facing=east,half=top,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_0",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_1",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_2",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -106,36 +106,36 @@
     ],
     "facing=east,half=top,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_0",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_1",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_2",
         "uvlock": true,
         "x": 180
       }
     ],
     "facing=east,half=top,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_0",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_1",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_2",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -143,118 +143,118 @@
     ],
     "facing=east,half=top,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "uvlock": true,
         "x": 180
       }
     ],
     "facing=north,half=bottom,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_0",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_1",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_2",
         "uvlock": true,
         "y": 180
       }
     ],
     "facing=north,half=bottom,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_0",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_1",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_2",
         "uvlock": true,
         "y": 270
       }
     ],
     "facing=north,half=bottom,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_0",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_1",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_2",
         "uvlock": true,
         "y": 180
       }
     ],
     "facing=north,half=bottom,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_0",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_1",
         "uvlock": true,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_2",
         "uvlock": true,
         "y": 270
       }
     ],
     "facing=north,half=bottom,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "y": 270
       }
     ],
     "facing=north,half=top,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_0",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_1",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_2",
         "uvlock": true,
         "x": 180,
         "y": 270
@@ -262,36 +262,36 @@
     ],
     "facing=north,half=top,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_0",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_1",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_2",
         "uvlock": true,
         "x": 180
       }
     ],
     "facing=north,half=top,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_0",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_1",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_2",
         "uvlock": true,
         "x": 180,
         "y": 270
@@ -299,36 +299,36 @@
     ],
     "facing=north,half=top,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_0",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_1",
         "uvlock": true,
         "x": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_2",
         "uvlock": true,
         "x": 180
       }
     ],
     "facing=north,half=top,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "uvlock": true,
         "x": 180,
         "y": 270
@@ -336,89 +336,89 @@
     ],
     "facing=south,half=bottom,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_0"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_0"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_1"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_1"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lse_2"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lse_2"
       }
     ],
     "facing=south,half=bottom,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_0",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_1",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_2",
         "uvlock": true,
         "y": 90
       }
     ],
     "facing=south,half=bottom,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_0"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_0"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_1"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_1"
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lnw_2"
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lnw_2"
       }
     ],
     "facing=south,half=bottom,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_0",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_1",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_2",
         "uvlock": true,
         "y": 90
       }
     ],
     "facing=south,half=bottom,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "y": 90
       }
     ],
     "facing=south,half=top,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_0",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_1",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lne_2",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -426,19 +426,19 @@
     ],
     "facing=south,half=top,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_0",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_1",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_2",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -446,19 +446,19 @@
     ],
     "facing=south,half=top,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_0",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_1",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lsw_2",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -466,19 +466,19 @@
     ],
     "facing=south,half=top,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_0",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_1",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_2",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -486,19 +486,19 @@
     ],
     "facing=south,half=top,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "uvlock": true,
         "x": 180,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "uvlock": true,
         "x": 180,
         "y": 90
@@ -506,101 +506,101 @@
     ],
     "facing=west,half=bottom,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_0",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_1",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_2",
         "uvlock": true,
         "y": 90
       }
     ],
     "facing=west,half=bottom,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_0",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_1",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_2",
         "uvlock": true,
         "y": 180
       }
     ],
     "facing=west,half=bottom,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_0",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_1",
         "uvlock": true,
         "y": 90
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_2",
         "uvlock": true,
         "y": 90
       }
     ],
     "facing=west,half=bottom,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_0",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_1",
         "uvlock": true,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_2",
         "uvlock": true,
         "y": 180
       }
     ],
     "facing=west,half=bottom,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "y": 180
       }
     ],
     "facing=west,half=top,shape=inner_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_0",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_1",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lnw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lnw_2",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -608,19 +608,19 @@
     ],
     "facing=west,half=top,shape=inner_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_0",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_1",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/inner/lsw_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/inner/lsw_2",
         "uvlock": true,
         "x": 180,
         "y": 270
@@ -628,19 +628,19 @@
     ],
     "facing=west,half=top,shape=outer_left": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_0",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_1",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lse_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lse_2",
         "uvlock": true,
         "x": 180,
         "y": 180
@@ -648,19 +648,19 @@
     ],
     "facing=west,half=top,shape=outer_right": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_0",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_1",
         "uvlock": true,
         "x": 180,
         "y": 270
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/outer/lne_2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/outer/lne_2",
         "uvlock": true,
         "x": 180,
         "y": 270
@@ -668,19 +668,19 @@
     ],
     "facing=west,half=top,shape=straight": [
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/0",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/0",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/1",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/1",
         "uvlock": true,
         "x": 180,
         "y": 180
       },
       {
-        "model": "oxide:block/rusted_corrugated_iron_stairs/2",
+        "model": "oxide:block/corrugated_iron/rusted/stairs/2",
         "uvlock": true,
         "x": 180,
         "y": 180

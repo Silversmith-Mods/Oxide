@@ -1,11 +1,11 @@
 {
   "parent": "oxide:block/fancy_slab_double",
   "textures": {
-    "bottom": "oxide:block/weathered_iron_scaffold/side",
-    "top": "oxide:block/weathered_iron_scaffold_stairs/top/block",
-    "north": "oxide:block/weathered_iron_scaffold_stairs/lat",
-	"south": "oxide:block/weathered_iron_scaffold_stairs/lat",
-	"west": "oxide:block/weathered_iron_scaffold_stairs/lat",
-	"east": "oxide:block/weathered_iron_scaffold_stairs/lat"
+    "bottom": "oxide:block/iron_scaffold/weathered/side",
+    "top": "oxide:block/iron_scaffold/weathered/stairs/top/block",
+    "north": "oxide:block/iron_scaffold/weathered/stairs/lat",
+	"south": "oxide:block/iron_scaffold/weathered/stairs/lat",
+	"west": "oxide:block/iron_scaffold/weathered/stairs/lat",
+	"east": "oxide:block/iron_scaffold/weathered/stairs/lat"
   }
 }
