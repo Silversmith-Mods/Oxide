@@ -1,6 +1,0 @@
-{
-  "parent": "oxide:block/paint/paint",
-  "textures": {
-    "paint": "oxide:block/paint/white"
-  }
-}

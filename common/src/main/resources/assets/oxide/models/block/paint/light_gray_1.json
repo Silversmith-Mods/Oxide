@@ -1,0 +1,6 @@
+{
+  "parent": "oxide:block/paint/paint",
+  "textures": {
+    "paint": "oxide:block/paint/light_gray_1"
+  }
+}

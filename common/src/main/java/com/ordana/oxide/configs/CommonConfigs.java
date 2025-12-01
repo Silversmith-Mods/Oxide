@@ -43,6 +43,7 @@ public class CommonConfigs {
 
             RUST_RATE = builder.comment("Enable Creative Tab").define("rusting_rate", 50, 0, 100);
             CEMENT_FLOW_RATE = builder.comment("Rate at which Wet Cement flows").define("cement_flow_rate", 8, 1, 32);
+            CEMENT_CURE_DELAY = builder.comment("Amount of age states before cement can harden").define("cement_cure_delay", 10, 1, 25);
 
             builder.pop();
         }
@@ -50,5 +51,6 @@ public class CommonConfigs {
         public static final Supplier<Boolean> CREATIVE_TAB;
         public static final Supplier<Integer> RUST_RATE;
         public static final Supplier<Integer> CEMENT_FLOW_RATE;
+        public static final Supplier<Integer> CEMENT_CURE_DELAY;
     }
 }

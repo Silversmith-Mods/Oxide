@@ -39,14 +39,19 @@ public interface WeatherableCement {
 
     default void tryWeather(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (state.is(ModTags.WEATHERED_CEMENT)) return;
-        if (level.getBlockState(pos.above()).is(ModTags.WEATHERED_CEMENT) && level.isRaining()) this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
-        if (random.nextFloat() <= 0.2) {
-            for (Direction dir : Direction.values()) {
-                if (level.isRainingAt(pos.relative(dir))) {
-                    if (dir == Direction.DOWN) break;
-                    else if (dir == Direction.UP) this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
-                    else if (random.nextFloat() <= 0.2) this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
-                    return;
+        if (level.isRaining()) {
+            if (level.getBlockState(pos.above()).is(ModTags.WEATHERED_CEMENT))
+                this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
+            else if (random.nextFloat() <= 0.2) {
+                for (Direction dir : Direction.values()) {
+                    if (level.isRainingAt(pos.relative(dir))) {
+                        if (dir == Direction.DOWN) break;
+                        else if (dir == Direction.UP)
+                            this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
+                        else if (random.nextFloat() <= 0.2)
+                            this.getNext(state).ifPresent(s -> level.setBlockAndUpdate(pos, s));
+                        return;
+                    }
                 }
             }
         }
