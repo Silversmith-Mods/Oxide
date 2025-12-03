@@ -35,7 +35,7 @@ public class RustableDoorBlock extends DoorBlock implements Rustable {
     protected final Rustable.RustLevel rustLevel;
 
     public RustableDoorBlock(Rustable.RustLevel rustLevel, Properties properties) {
-        super(BlockSetType.COPPER, Rustable.setRandomTicking(properties, rustLevel));
+        super(BlockSetType.IRON, Rustable.setRandomTicking(properties, rustLevel));
         this.rustLevel = rustLevel;
 
         this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
@@ -48,17 +48,6 @@ public class RustableDoorBlock extends DoorBlock implements Rustable {
             level.addFreshEntity(nail);
         }
         super.playerDestroy(level, player, pos, state, blockEntity, tool);
-    }
-
-    @Override
-    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-
-        state = state.cycle(OPEN);
-        level.setBlock(pos, state, 2);
-
-        playSound(player, level, pos, state.getValue(OPEN));
-        return InteractionResult.sidedSuccess(level.isClientSide);
-
     }
 
     protected void playSound(@Nullable Player player, Level level, BlockPos pos, boolean isOpened) {
@@ -89,10 +78,6 @@ public class RustableDoorBlock extends DoorBlock implements Rustable {
 
     public Rustable.RustLevel getAge() {
         return rustLevel;
-    }
-
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        return this.use(stack, state, level, pos, player, hand, hitResult);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

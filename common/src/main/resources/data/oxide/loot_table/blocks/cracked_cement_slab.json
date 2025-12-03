@@ -10,7 +10,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "oxide:reinforced_cement",
+              "block": "oxide:cracked_cement_slab",
               "properties": {
                 "type": "double"
               }
@@ -25,15 +25,6 @@
         {
           "type": "minecraft:item",
           "name": "oxide:cement_block_slab",
-          "conditions": [
-            {
-              "condition": "minecraft:block_state_property",
-              "block": "oxide:reinforced_cement",
-              "properties": {
-                "type": "bottom"
-              }
-            }
-          ],
           "functions": [
             {
               "function": "minecraft:explosion_decay"
@@ -44,5 +35,5 @@
       "rolls": 1
     }
   ],
-  "random_sequence": "minecraft:blocks/acacia_slab"
+  "random_sequence": "oxide:blocks/cement_slab"
 }

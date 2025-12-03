@@ -29,7 +29,7 @@ public class RustableTrapdoorBlock extends TrapDoorBlock implements Rustable {
     private final Rustable.RustLevel rustLevel;
 
     public RustableTrapdoorBlock(Rustable.RustLevel rustLevel, Properties properties) {
-        super(BlockSetType.COPPER, Rustable.setRandomTicking(properties, rustLevel));
+        super(BlockSetType.IRON, Rustable.setRandomTicking(properties, rustLevel));
         this.rustLevel = rustLevel;
 
         this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false).setValue(POWERED, false).setValue(OPEN, false));
@@ -49,26 +49,8 @@ public class RustableTrapdoorBlock extends TrapDoorBlock implements Rustable {
         if (!state.getValue(VARNISHED)) this.tryWeather(state, serverLevel, pos, random);
     }
 
-    @Override
-    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-
-        state = state.cycle(OPEN);
-        level.setBlock(pos, state, 2);
-        if (state.getValue(WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
-
-        playSound(player, level, pos, state.getValue(OPEN));
-        return InteractionResult.sidedSuccess(level.isClientSide);
-
-    }
-
     public Rustable.RustLevel getAge() {
         return this.rustLevel;
-    }
-
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        return this.use(stack, state, level, pos, player, hand, hitResult);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

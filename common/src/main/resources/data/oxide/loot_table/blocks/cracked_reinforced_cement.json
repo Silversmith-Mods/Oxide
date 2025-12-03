@@ -10,7 +10,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "oxide:reinforced_cement",
+              "block": "oxide:cracked_reinforced_cement",
               "properties": {
                 "type": "double"
               }
@@ -28,7 +28,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "oxide:reinforced_cement",
+              "block": "oxide:cracked_reinforced_cement",
               "properties": {
                 "type": "bottom"
               }

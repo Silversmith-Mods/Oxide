@@ -40,9 +40,18 @@
   "block.oxide.cement_stairs": "Cement Stairs",
   "block.oxide.cement_slab": "Cement Slab",
 
+
+  "block.oxide.cracked_reinforced_cement": "Cracked Reinforced Cement",
+  "block.oxide.cracked_cement": "Cracked Cement",
+  "block.oxide.cracked_cement_slab": "Cracked Cement Slab",
+
   "block.oxide.weathered_reinforced_cement": "Weathered Reinforced Cement",
   "block.oxide.weathered_cement": "Weathered Cement",
   "block.oxide.weathered_cement_slab": "Weathered Cement Slab",
+
+  "block.oxide.cracked_weathered_reinforced_cement": "Cracked Weathered Reinforced Cement",
+  "block.oxide.cracked_weathered_cement": "Cracked Weathered Cement",
+  "block.oxide.cracked_weathered_cement_slab": "Cracked Weathered Cement Slab",
 
   "block.oxide.weathered_cement_block": "Block of Weathered Cement",
   "block.oxide.weathered_cement_block_slab": "Slab of Weathered Cement",
