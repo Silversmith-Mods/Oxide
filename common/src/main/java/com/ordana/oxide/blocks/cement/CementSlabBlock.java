@@ -1,18 +1,25 @@
 package com.ordana.oxide.blocks.cement;
 
 import com.mojang.serialization.MapCodec;
+import com.ordana.oxide.configs.CommonConfigs;
 import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;
+import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -60,6 +67,16 @@ public class CementSlabBlock extends WeatherableSlabBlock implements Fallable, S
     }
 
     @Override
+    public void onLand(Level level, BlockPos pos, BlockState state, BlockState replaceableState, FallingBlockEntity fallingBlock) {
+        level.playSound(null, pos, SoundEvents.DEEPSLATE_BREAK, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+        boolean bl = state.is(this);
+        ParticleUtils.spawnParticlesOnBlockFaces(level, pos, new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.CRACKED_CEMENT.get().defaultBlockState()), UniformInt.of(3, 5));
+        boolean bl2 = state.is(ModBlocks.CEMENT_SLAB.get());
+        var state2 = bl2 ? ModBlocks.CRACKED_CEMENT_SLAB.get() : ModBlocks.CRACKED_WEATHERED_CEMENT_SLAB.get();
+        if (level.random.nextFloat() < CommonConfigs.General.FALLING_CEMENT_CRACK_CHANCE.get()) level.setBlockAndUpdate(pos, state2.defaultBlockState().setValue(TYPE, bl ? SlabType.BOTTOM : SlabType.DOUBLE));
+    }
+
+    @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!level.isClientSide) {
             level.scheduleTick(pos, this, 1);
@@ -86,6 +103,12 @@ public class CementSlabBlock extends WeatherableSlabBlock implements Fallable, S
         if (state.getValue(OVERHANG) == maxOverhang) {
             FallingCementEntity.fall(level, pos, state.setValue(OVERHANG, 0));
         }
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+
+        return this.getShape(state, level, pos, context);
     }
 
     @Override

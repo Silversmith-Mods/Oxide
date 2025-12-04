@@ -1,14 +1,26 @@
 package com.ordana.oxide.entities;
 
+import com.ordana.oxide.blocks.cement.CementBlock;
+import com.ordana.oxide.blocks.cement.CementSlabBlock;
+import com.ordana.oxide.configs.CommonConfigs;
+import com.ordana.oxide.reg.ModBlocks;
+import com.ordana.oxide.reg.ModTags;
+import net.mehvahdjukaar.moonlight.api.entity.ImprovedFallingBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.ConcretePowderBlock;
+import net.minecraft.world.level.block.Fallable;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.phys.Vec3;
 
-public class FallingCementEntity extends FallingBlockEntity {
+public class FallingCementEntity extends ImprovedFallingBlockEntity implements Fallable {
 
     public FallingCementEntity(EntityType<? extends FallingBlockEntity> entityType, Level level) {
         super(entityType, level);
@@ -33,6 +45,28 @@ public class FallingCementEntity extends FallingBlockEntity {
         level.setBlock(pos, blockState.getFluidState().createLegacyBlock(), 3);
         level.addFreshEntity(fallingBlockEntity);
         return fallingBlockEntity;
+    }
+
+    @Override
+    public void tick() {
+        BlockPos blockPos = this.blockPosition();
+        var relativeState = this.level().getBlockState(blockPos);
+        boolean bl = this.blockState.getBlock() instanceof CementSlabBlock;
+        boolean bl2 = this.blockState.getBlock() instanceof CementBlock;
+        boolean bl3 = (bl||bl2) && relativeState.getBlock() instanceof CementSlabBlock;
+        if (bl3) {
+            boolean weathered = this.blockState.is(ModTags.WEATHERED_CEMENT);
+            var state = weathered ?
+                    (level().random.nextFloat() < CommonConfigs.General.FALLING_CEMENT_CRACK_CHANCE.get()) ?
+                            ModBlocks.CRACKED_WEATHERED_CEMENT_SLAB.get() : ModBlocks.WEATHERED_CEMENT_SLAB.get() : (level().random.nextFloat() < CommonConfigs.General.FALLING_CEMENT_CRACK_CHANCE.get()) ? ModBlocks.CRACKED_CEMENT_SLAB.get() : ModBlocks.CEMENT_SLAB.get();
+
+            level().setBlockAndUpdate(blockPos, state.defaultBlockState().setValue(BlockStateProperties.SLAB_TYPE, SlabType.DOUBLE));
+            if (bl2) level().setBlockAndUpdate(blockPos.above(), state.defaultBlockState().setValue(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM));
+            level().playSound(null, blockPos, SoundEvents.DEEPSLATE_BREAK, SoundSource.BLOCKS, 1.0F, level().getRandom().nextFloat() * 0.1F + 0.9F);
+            this.discard();
+            return;
+        }
+        super.tick();
     }
 
 
