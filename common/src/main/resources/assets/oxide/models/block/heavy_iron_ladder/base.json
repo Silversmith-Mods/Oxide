@@ -1,0 +1,18 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "oxide:block/heavy_iron_ladder/block",
+		"particle": "oxide:block/heavy_iron_ladder/block"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 14],
+			"to": [15, 16, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 14]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 16], "texture": "#0"},
+				"south": {"uv": [0, 1, 14, 16], "texture": "#0"}
+			}
+		}
+	]
+}

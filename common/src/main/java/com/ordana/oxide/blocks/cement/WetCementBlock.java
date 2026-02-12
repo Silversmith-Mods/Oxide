@@ -1,7 +1,6 @@
 package com.ordana.oxide.blocks.cement;
 
 import com.ordana.oxide.configs.CommonConfigs;
-import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;
@@ -26,7 +25,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;

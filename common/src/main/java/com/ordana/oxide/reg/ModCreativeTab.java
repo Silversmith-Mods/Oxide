@@ -102,6 +102,10 @@ public class ModCreativeTab {
                 ModBlocks.HEAVY_IRON_CHAIN, ModBlocks.WEATHERED_HEAVY_IRON_CHAIN, ModBlocks.RUSTED_HEAVY_IRON_CHAIN
         );
 
+        after(e, Items.LADDER, CreativeModeTabs.FUNCTIONAL_BLOCKS,
+                ModBlocks.HEAVY_IRON_LADDER, ModBlocks.WEATHERED_HEAVY_IRON_LADDER, ModBlocks.RUSTED_HEAVY_IRON_LADDER
+        );
+
         after(e, Items.CHAIN, CreativeModeTabs.FUNCTIONAL_BLOCKS,
                 ModBlocks.HEAVY_IRON_CHAIN
         );

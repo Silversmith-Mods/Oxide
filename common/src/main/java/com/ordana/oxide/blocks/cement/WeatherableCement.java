@@ -2,7 +2,6 @@ package com.ordana.oxide.blocks.cement;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
-import com.ordana.oxide.blocks.rusty.Rustable;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;

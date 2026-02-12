@@ -12,6 +12,7 @@ public class ModDispenserBehaviors {
     }
 
     public static void registerBehaviors(DispenserHelper.Event event) {
+        event.register(new DispenserHelper.FillFluidHolderBehavior(ModItems.CEMENT_POWDER_BUCKET.get()));
         event.register(new SprayerDispenserBehavior(ModItems.VARNISH_SPRAYER.get()));
         event.register(new CementBucketDispenserBehavior(ModItems.CEMENT_BUCKET.get()));
     }

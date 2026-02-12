@@ -266,24 +266,24 @@ public interface Rustable extends ChangeOverTimeBlock<Rustable.RustLevel> {
     }
 
     default void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
+        if (getAge() == RustLevel.WAXED || getAge() == RustLevel.RUSTED) return;
         if (randomSource.nextInt(100) >= RUST_RATE) return;
         int airCheck = 0;
         int wetness = 0;
-        if (getAge() == RustLevel.WAXED || getAge() == RustLevel.RUSTED) return;
         for (Direction dir : Direction.values()) {
             var dirPos = pos.relative(dir);
             var dirState = level.getBlockState(dirPos);
             if (!dirState.isSuffocating(level, dirPos)) airCheck += 1;
 
             if (level.isRainingAt(dirPos)) {
-                if (dir == Direction.UP) wetness += 30;
+                if (dir == Direction.UP) wetness += 10;
                 else if (dir != Direction.DOWN) wetness += 1;
                 //wetness += 1;
             }
              if (level.getFluidState(dirPos).is(FluidTags.WATER)) wetness += 20;
             if (dirState.is(Blocks.BUBBLE_COLUMN)) wetness += 50;
             if (dirState.getBlock() instanceof Rustable rusty) {
-                if (rusty.getAge() == RustLevel.RUSTED) wetness += 10;
+                if (rusty.getAge() == RustLevel.RUSTED) wetness += 5;
                 if (rusty.getAge() == RustLevel.WEATHERED) wetness += 10;
             }
         }

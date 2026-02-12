@@ -1,7 +1,6 @@
 package com.ordana.oxide.blocks.cement;
 
 import com.ordana.oxide.configs.CommonConfigs;
-import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
 import com.ordana.oxide.reg.ModTags;

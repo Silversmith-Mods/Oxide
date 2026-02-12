@@ -1,6 +1,5 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
 	"textures": {
 		"1": "block/texture",
 		"2": "assets:block/candle",

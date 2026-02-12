@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "up=false,hanging=false,facing=north": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base"
+    },
+    "up=true,hanging=false,facing=north": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top"
+    },
+    "up=false,hanging=true,facing=north": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base_attached"
+    },
+    "up=true,hanging=true,facing=north": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top"
+    },
+    "up=false,hanging=false,facing=east": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base",
+      "y": 90
+    },
+    "up=true,hanging=false,facing=east": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 90
+    },
+    "up=false,hanging=true,facing=east": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base_attached",
+      "y": 90
+    },
+    "up=true,hanging=true,facing=east": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 90
+    },
+    "up=false,hanging=false,facing=west": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base",
+      "y": 270
+    },
+    "up=true,hanging=false,facing=west": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 270
+    },
+    "up=false,hanging=true,facing=west": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base_attached",
+      "y": 270
+    },
+    "up=true,hanging=true,facing=west": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 270
+    },
+    "up=false,hanging=false,facing=south": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base",
+      "y": 180
+    },
+    "up=true,hanging=false,facing=south": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 180
+    },
+    "up=false,hanging=true,facing=south": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/base_attached",
+      "y": 180
+    },
+    "up=true,hanging=true,facing=south": {
+      "model": "oxide:block/heavy_iron_ladder/rusted/top",
+      "y": 180
+    }
+  }
+}

@@ -3,7 +3,6 @@ package com.ordana.oxide.blocks.cement;
 import com.mojang.serialization.MapCodec;
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
-import com.ordana.oxide.reg.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

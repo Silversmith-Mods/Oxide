@@ -18,16 +18,18 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.Nullable;
 
-public class RustableLadderBlock extends LadderBlock {
+public class RustableLadderBlock extends LadderBlock implements Rustable{
     public static final BooleanProperty UP;
     public static final BooleanProperty HANGING;
     public static final BooleanProperty VARNISHED = ModBlockProperties.VARNISHED;
+    private final RustLevel rustLevel;
 
 
-    protected RustableLadderBlock(Properties properties) {
-        super(properties);
+    public RustableLadderBlock(RustLevel rustLevel, Properties properties) {
+        super(Rustable.setRandomTicking(properties, rustLevel));
+        this.rustLevel = rustLevel;
 
-        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(VARNISHED, false).setValue(UP, true).setValue(HANGING, true));
     }
 
     private boolean canAttachTo(BlockGetter blockReader, BlockPos pos, Direction direction) {
@@ -36,19 +38,22 @@ public class RustableLadderBlock extends LadderBlock {
     }
 
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = (Direction)state.getValue(FACING);
-        return this.canAttachTo(level, pos.relative(direction.getOpposite()), direction);
+        Direction direction = state.getValue(FACING);
+        return (this.canAttachTo(level, pos.relative(direction.getOpposite()), direction) || level.getBlockState(pos.above()).getBlock() instanceof RustableLadderBlock);
     }
 
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (direction.getOpposite() == state.getValue(FACING) && !state.canSurvive(level, pos)) {
+        if (!state.canSurvive(level, pos)) {
             return Blocks.AIR.defaultBlockState();
+        }
+
+        if (direction.getOpposite() == state.getValue(FACING)) {
+            return state.setValue(HANGING, false).setValue(UP, isTop(level, pos)).setValue(HANGING, !isHanging(level, pos, neighborPos, direction));
         } else {
-            if ((Boolean)state.getValue(WATERLOGGED)) {
+            if (state.getValue(WATERLOGGED)) {
                 level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
             }
-
-            return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+            return super.updateShape(state.setValue(UP, isTop(level, pos)), direction, neighborState, level, pos, neighborPos);
         }
     }
 
@@ -57,38 +62,51 @@ public class RustableLadderBlock extends LadderBlock {
         BlockState blockState;
         if (!context.replacingClickedOnBlock()) {
             blockState = context.getLevel().getBlockState(context.getClickedPos().relative(context.getClickedFace().getOpposite()));
-            if (blockState.is(this) && blockState.getValue(FACING) == context.getClickedFace()) {
+            if (blockState.getBlock() instanceof RustableLadderBlock && blockState.getValue(FACING) == context.getClickedFace()) {
                 return null;
             }
         }
 
-        blockState = this.defaultBlockState();
         LevelReader levelReader = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
+        blockState = this.defaultBlockState();
         FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
-        Direction[] var6 = context.getNearestLookingDirections();
-        int var7 = var6.length;
 
-        for(int var8 = 0; var8 < var7; ++var8) {
-            Direction direction = var6[var8];
-            if (direction.getAxis().isHorizontal()) {
-                blockState = (BlockState)blockState.setValue(FACING, direction.getOpposite());
-                if (blockState.canSurvive(levelReader, blockPos)) {
-                    return (BlockState)blockState.setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
-                }
-            }
+        if (context.getClickedFace() != Direction.UP && context.getClickedFace() != Direction.DOWN) {
+            blockState = blockState.setValue(FACING, context.getClickedFace());
+        }
+        else if (levelReader.getBlockState(blockPos.above()).getBlock() instanceof RustableLadderBlock) {
+            blockState = blockState.setValue(FACING, levelReader.getBlockState(blockPos.above()).getValue(FACING));
+        }
+        blockState = blockState.setValue(UP, isTop(levelReader, blockPos)).setValue(HANGING, !isHanging(levelReader, blockPos, blockPos.relative(blockState.getValue(FACING).getOpposite()), blockState.getValue(FACING)));
+
+        if (blockState.canSurvive(levelReader, blockPos)) {
+            return blockState.setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
         }
 
         return null;
     }
 
+    private boolean isTop(BlockGetter level, BlockPos pos) {
+        return !(level.getBlockState(pos.above()).getBlock() instanceof RustableLadderBlock);
+    }
+
+    private boolean isHanging(BlockGetter level, BlockPos pos, BlockPos relativeState, Direction dir) {
+        return !level.getBlockState(relativeState).isFaceSturdy(level, pos, dir);
+    }
+
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED, VARNISHED);
+        builder.add(UP, FACING, HANGING, WATERLOGGED, VARNISHED);
     }
 
 
     static {
         HANGING = BlockStateProperties.HANGING;
         UP = BlockStateProperties.UP;
+    }
+
+    @Override
+    public RustLevel getAge() {
+        return this.rustLevel;
     }
 }

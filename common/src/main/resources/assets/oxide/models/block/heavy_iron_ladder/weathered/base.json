@@ -1,0 +1,7 @@
+{
+	"parent": "oxide:block/heavy_iron_ladder/base",
+	"textures": {
+		"0": "oxide:block/heavy_iron_ladder/weathered",
+		"particle": "oxide:block/heavy_iron_ladder/weathered"
+	}
+}

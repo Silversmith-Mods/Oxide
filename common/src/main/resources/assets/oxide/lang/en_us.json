@@ -253,6 +253,10 @@
   "block.oxide.weathered_heavy_iron_bars": "Weathered Heavy Iron Bars",
   "block.oxide.rusted_heavy_iron_bars": "Rusted Heavy Iron Bars",
 
+  "block.oxide.heavy_iron_ladder": "Heavy Iron Ladder",
+  "block.oxide.weathered_heavy_iron_ladder": "Weathered Heavy Iron Ladder",
+  "block.oxide.rusted_heavy_iron_ladder": "Rusted Heavy Iron Ladder",
+
   "block.oxide.cement_eater": "Cement Eater",
   "block.oxide.cirnonail": "Torment Nexus"
 }

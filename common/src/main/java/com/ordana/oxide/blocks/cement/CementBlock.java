@@ -5,15 +5,12 @@ import com.ordana.oxide.entities.FallingCementEntity;
 import com.ordana.oxide.reg.ModBlockProperties;
 import com.ordana.oxide.reg.ModBlocks;
 import com.ordana.oxide.reg.ModItems;
-import com.ordana.oxide.reg.ModTags;
 import net.mehvahdjukaar.moonlight.api.client.util.ParticleUtil;
-import net.mehvahdjukaar.moonlight.api.entity.ImprovedFallingBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -55,7 +52,7 @@ public class CementBlock extends WeatherableBlock implements Fallable, Weatherab
     public void onLand(Level level, BlockPos pos, BlockState state, BlockState replaceableState, FallingBlockEntity fallingBlock) {
         level.playSound(null, pos, SoundEvents.DEEPSLATE_BREAK, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
         ParticleUtil.spawnParticlesOnBlockFaces(level, pos, new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.CRACKED_CEMENT.get().defaultBlockState()), UniformInt.of(3, 5), -0.05f, 0.05f, false);
-        boolean bl = state.is(ModBlocks.CEMENT.get());
+        boolean bl = state.is(ModBlocks.CEMENT.get()) || state.is(ModBlocks.CRACKED_CEMENT.get());
         if (level.random.nextFloat() < CommonConfigs.General.FALLING_CEMENT_CRACK_CHANCE.get()) level.setBlockAndUpdate(pos, bl ? ModBlocks.CRACKED_CEMENT.get().defaultBlockState() : ModBlocks.CRACKED_WEATHERED_CEMENT.get().defaultBlockState());
     }
 

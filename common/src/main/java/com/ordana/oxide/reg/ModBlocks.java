@@ -1,7 +1,8 @@
 package com.ordana.oxide.reg;
 
 import com.ordana.oxide.Oxide;
-import com.ordana.oxide.blocks.*;
+import com.ordana.oxide.blocks.PaintBlock;
+import com.ordana.oxide.blocks.RotatableSlabBlock;
 import com.ordana.oxide.blocks.cement.*;
 import com.ordana.oxide.blocks.rusty.*;
 import net.mehvahdjukaar.moonlight.api.block.ModStairBlock;
@@ -460,6 +461,13 @@ public class ModBlocks {
             new RustableBarsBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Supplier<Block> RUSTED_HEAVY_IRON_BARS = regWithItem("rusted_heavy_iron_bars", () ->
             new RustableBarsBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_RED)));
+
+    public static final Supplier<Block> HEAVY_IRON_LADDER = regWithItem("heavy_iron_ladder", () ->
+            new RustableLadderBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_GRAY)));
+    public static final Supplier<Block> WEATHERED_HEAVY_IRON_LADDER = regWithItem("weathered_heavy_iron_ladder", () ->
+            new RustableLadderBlock(Rustable.RustLevel.WEATHERED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Supplier<Block> RUSTED_HEAVY_IRON_LADDER = regWithItem("rusted_heavy_iron_ladder", () ->
+            new RustableLadderBlock(Rustable.RustLevel.RUSTED, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_RED)));
 
     public static final Supplier<Block> WROUGHT_IRON_FENCE = regWithItem("wrought_iron_fence", () ->
             new RustableFenceBlock(Rustable.RustLevel.CLEAN, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.COPPER).mapColor(MapColor.TERRACOTTA_BLACK).randomTicks()));

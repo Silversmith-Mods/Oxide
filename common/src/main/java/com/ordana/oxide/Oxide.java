@@ -1,7 +1,6 @@
 package com.ordana.oxide;
 
 import com.ordana.oxide.blocks.rusty.Rustable;
-import com.ordana.oxide.configs.ClientConfigs;
 import com.ordana.oxide.configs.CommonConfigs;
 import com.ordana.oxide.reg.*;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;

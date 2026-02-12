@@ -1,6 +1,5 @@
 {
 	"parent": "minecraft:block/slab",
-	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "oxide:block/cinder_block/end",
 		"1": "oxide:block/cinder_block/holes",

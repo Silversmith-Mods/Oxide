@@ -6,11 +6,12 @@
     }
   },
   "pattern": [
-    "##",
-    "##"
+    " # ",
+    "# #",
+    " # "
   ],
   "result": {
-    "count": 4,
+    "count": 12,
     "id": "oxide:heavy_iron_trapdoor"
   }
 }

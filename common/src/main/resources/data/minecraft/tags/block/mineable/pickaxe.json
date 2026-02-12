@@ -56,6 +56,10 @@
     "oxide:weathered_heavy_iron_bars",
     "oxide:rusted_heavy_iron_bars",
 
+    "oxide:heavy_iron_ladder",
+    "oxide:weathered_heavy_iron_ladder",
+    "oxide:rusted_heavy_iron_ladder",
+
 
     "oxide:rebar",
     "oxide:reinforced_cement",
