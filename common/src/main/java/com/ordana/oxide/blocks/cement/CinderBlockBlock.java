@@ -1,6 +1,5 @@
 package com.ordana.oxide.blocks.cement;
 
-import com.ordana.oxide.blocks.rusty.RustableLadderBlock;
 import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
