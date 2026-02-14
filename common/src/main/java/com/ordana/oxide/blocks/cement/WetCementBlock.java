@@ -40,10 +40,10 @@ import org.jetbrains.annotations.Nullable;
 public class WetCementBlock extends Block {
 
     private static final int FLOW_RATE = CommonConfigs.General.CEMENT_FLOW_RATE.get();
-    private static final int CEMENT_CURE_DELAY = CommonConfigs.General.CEMENT_FLOW_RATE.get();
+    private static final int CEMENT_CURE_DELAY = CommonConfigs.General.CEMENT_CURE_DELAY.get();
 
     public static final EnumProperty<SlabType> TYPE;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_25;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     protected static final VoxelShape BOTTOM_AABB;
     protected static final VoxelShape BOTTOM_COLLISION_AABB;
     protected static final VoxelShape DOUBLE_COLLISION_AABB;

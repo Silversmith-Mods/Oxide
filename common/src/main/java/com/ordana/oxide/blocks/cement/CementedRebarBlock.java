@@ -41,10 +41,10 @@ import java.util.Map;
 public class CementedRebarBlock extends RebarBlock {
 
     private static final int FLOW_RATE = CommonConfigs.General.CEMENT_FLOW_RATE.get();
-    private static final int CEMENT_CURE_DELAY = CommonConfigs.General.CEMENT_FLOW_RATE.get();
+    private static final int CEMENT_CURE_DELAY = CommonConfigs.General.CEMENT_CURE_DELAY.get();
 
     public static final EnumProperty<SlabType> TYPE;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_25;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
     protected static final VoxelShape TALL_REBAR_SHAPE;
     protected static final VoxelShape SLAB_SHAPE;
     protected static final VoxelShape REBAR_SHAPE;

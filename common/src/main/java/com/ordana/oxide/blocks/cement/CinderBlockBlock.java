@@ -1,5 +1,6 @@
 package com.ordana.oxide.blocks.cement;
 
+import com.ordana.oxide.blocks.rusty.RustableLadderBlock;
 import com.ordana.oxide.reg.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -7,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -116,8 +118,7 @@ public class CinderBlockBlock extends Block implements SimpleWaterloggedBlock {
         if (state.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-
-        return direction.getAxis().isHorizontal() ? state.setValue(SHAPE, getStairsShape(state, level, pos)) : super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : direction.getAxis().isHorizontal() ? state.setValue(SHAPE, getStairsShape(state, level, pos)) : super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     private static StairsShape getStairsShape(BlockState state, BlockGetter level, BlockPos pos) {
@@ -210,6 +211,10 @@ public class CinderBlockBlock extends Block implements SimpleWaterloggedBlock {
         }
 
         return super.mirror(state, mirror);
+    }
+
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return level.getBlockState(pos.below()).isFaceSturdy(level, pos, Direction.UP);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
