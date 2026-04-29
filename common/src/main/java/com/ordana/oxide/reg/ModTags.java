@@ -5,6 +5,7 @@ import net.mehvahdjukaar.moonlight.api.fluids.SoftFluid;
 import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
@@ -29,9 +30,14 @@ public class ModTags {
     public static final TagKey<SoftFluid> VARNISH = registerSFTag("varnish");
     public static final TagKey<SoftFluid> PAINT = registerSFTag("paint");
 
+    public static final TagKey<Item> LEATHER_ARMOR = registerItemTag("leather_armor");
+
 
     private static TagKey<Block> registerBlockTag(String id) {
         return TagKey.create(Registries.BLOCK, Oxide.res(id));
+    }
+    private static TagKey<Item> registerItemTag(String id) {
+        return TagKey.create(Registries.ITEM, Oxide.res(id));
     }
 
     private static TagKey<SoftFluid> registerSFTag(String id) {

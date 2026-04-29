@@ -13,6 +13,7 @@ import net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack;
 import net.mehvahdjukaar.moonlight.api.set.BlocksColorAPI;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -31,6 +32,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.DyedItemColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.Block;
@@ -233,7 +235,14 @@ public class SprayParticleEntity extends ImprovedProjectileEntity {
         Entity entity = result.getEntity();
         if (entity.is(this)) return;
 
-        if (getDataFluid().is(ModTags.PAINT)) if (entity instanceof Sheep sheep) sheep.setColor(getDye(getDataFluid().getFluid()));
+        if (getDataFluid().is(ModTags.PAINT)) {
+            if (entity instanceof LivingEntity livingEntity) {
+                for (ItemStack armor : livingEntity.getArmorSlots()) {
+                    if (armor.is(ModTags.LEATHER_ARMOR)) armor.set(DataComponents.DYED_COLOR, new DyedItemColor(getDye(getDataFluid().getFluid()).getId(), true));
+                }
+            }
+            if (entity instanceof Sheep sheep) sheep.setColor(getDye(getDataFluid().getFluid()));
+        }
         if (getDataFluid().is(MLBuiltinSoftFluids.WATER)) if (entity instanceof Blaze) entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float) 3);
         if (getDataFluid().is(MLBuiltinSoftFluids.LAVA)) if (!entity.fireImmune()) entity.lavaHurt();
         if (getDataFluid().is(MLBuiltinSoftFluids.MILK)) if (entity instanceof LivingEntity livingEntity) livingEntity.removeAllEffects();
