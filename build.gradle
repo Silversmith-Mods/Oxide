@@ -159,7 +159,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
 
         maven {
-            url = 'https://maven.neoforged.net'
+            url = 'https://maven.neoforged.net/releases'
         }
 
         maven {
