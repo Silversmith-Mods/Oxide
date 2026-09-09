@@ -21,7 +21,7 @@ public class ModItems {
     }
 
     public static final Supplier<Item> CEMENT_POWDER_BUCKET = regItem("cement_powder_bucket", (properties) ->
-            new CementPowderBucketItem(properties.stacksTo(16)));
+            new CementPowderBucketItem(properties.stacksTo(1)));
     public static final Supplier<Item> CEMENT_BUCKET = regItem("cement_bucket", (properties) ->
             new CementBucketItem(properties.component(ModComponents.CEMENT.get(), 128).stacksTo(1)));
 
