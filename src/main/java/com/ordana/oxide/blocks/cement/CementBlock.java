@@ -58,7 +58,9 @@ public class CementBlock extends WeatherableBlock implements Fallable, Weatherab
     @Override
     public void onLand(Level level, BlockPos pos, BlockState state, BlockState replaceableState, FallingBlockEntity fallingBlock) {
         level.playSound(null, pos, SoundEvents.DEEPSLATE_BREAK, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
-        ParticleUtil.spawnParticlesOnBlockFaces(level, pos, new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.CRACKED_CEMENT.get().defaultBlockState()), UniformInt.of(3, 5), -0.05f, 0.05f, false);
+        if (level.isClientSide()) {
+            ParticleUtil.spawnParticlesOnBlockFaces(level, pos, new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.CRACKED_CEMENT.get().defaultBlockState()), UniformInt.of(3, 5), -0.05f, 0.05f, false);
+        }
         boolean bl = state.is(ModBlocks.CEMENT.get()) || state.is(ModBlocks.CRACKED_CEMENT.get());
         if (level.getRandom().nextFloat() < CommonConfigs.General.FALLING_CEMENT_CRACK_CHANCE.get()) level.setBlockAndUpdate(pos, bl ? ModBlocks.CRACKED_CEMENT.get().defaultBlockState() : ModBlocks.CRACKED_WEATHERED_CEMENT.get().defaultBlockState());
     }

@@ -73,13 +73,13 @@ public class RustableScaffoldBlock extends Block implements Rustable, SimpleWate
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 
     public boolean skipRendering(BlockState state, BlockState adjacentState, Direction direction) {
         boolean bl = adjacentState.is(ModTags.SCAFFOLDS) && direction.getAxis() == Direction.Axis.Y;
-        if (adjacentState.is(BlockTags.STAIRS)) {
+        if (adjacentState.is(BlockTags.STAIRS) && adjacentState.hasProperty(BlockStateProperties.HALF)) {
             if (adjacentState.getValue(BlockStateProperties.HALF) == Half.TOP) bl = false;
         }
         if (adjacentState.is(BlockTags.SLABS)) {
